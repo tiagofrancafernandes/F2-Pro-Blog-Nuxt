@@ -1,4 +1,5 @@
-import { computed, Ref } from 'vue'
+import { computed } from 'vue'
+import type { Ref } from 'vue'
 
 const WORDS_PER_MINUTE = 200
 

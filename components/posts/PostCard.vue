@@ -56,10 +56,7 @@
                         {{ formattedDate }}
                     </time>
 
-                    <span class="flex items-center gap-1">
-                        <iconify-icon icon="fa7-solid:clock" class="h-4 w-4" />
-                        {{ post.readTime }}
-                    </span>
+                    <ReadingTime :content="post.content" />
                 </div>
             </div>
         </article>
@@ -68,6 +65,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import ReadingTime from '~/components/posts/ReadingTime.vue';
 
 interface Post {
     slug: string;
@@ -76,6 +74,7 @@ interface Post {
     image: string;
     readTime: string | number;
     publishedAt: string;
+    content: string;
 }
 
 const props = defineProps<{
