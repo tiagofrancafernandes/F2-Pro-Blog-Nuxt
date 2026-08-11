@@ -58,28 +58,30 @@
 
                 <!-- Dark Mode Toggle & Mobile Menu -->
                 <div class="flex items-center gap-4">
-                    <button
-                        type="button"
-                        @click="toggleDarkMode"
-                        :style="{
-                            color: isDark ? appConfig.public.colors.dark.primary : appConfig.public.colors.primary,
-                        }"
-                        class="p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-                        aria-label="Toggle dark mode"
-                    >
-                        <Icon v-if="isDark" icon="fa7-solid:sun" class="w-5 h-5" />
-                        <Icon v-else icon="fa7-solid:moon" class="w-5 h-5" />
-                    </button>
+                    <ClientOnly>
+                        <button
+                            type="button"
+                            @click="toggleDarkMode"
+                            :style="{
+                                color: isDark ? appConfig.public.colors.dark.primary : appConfig.public.colors.primary,
+                            }"
+                            class="p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+                            aria-label="Toggle dark mode"
+                        >
+                            <Icon v-if="isDark" icon="fa7-solid:sun" class="w-5 h-5" />
+                            <Icon v-else icon="fa7-solid:moon" class="w-5 h-5" />
+                        </button>
 
-                    <button
-                        type="button"
-                        @click="isMenuOpen = !isMenuOpen"
-                        class="md:hidden p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-                        :style="{ color: textColor }"
-                        aria-label="Toggle mobile menu"
-                    >
-                        <Icon icon="fa7-solid:bars" class="w-5 h-5" />
-                    </button>
+                        <button
+                            type="button"
+                            @click="isMenuOpen = !isMenuOpen"
+                            class="md:hidden p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+                            :style="{ color: textColor }"
+                            aria-label="Toggle mobile menu"
+                        >
+                            <Icon icon="fa7-solid:bars" class="w-5 h-5" />
+                        </button>
+                    </ClientOnly>
                 </div>
             </div>
 

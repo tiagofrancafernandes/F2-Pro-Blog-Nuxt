@@ -19,6 +19,23 @@ export default defineNuxtConfig({
         },
     },
 
+    // Vue compiler options to register custom elements
+    vue: {
+        compilerOptions: {
+            isCustomElement: (tag) => tag === 'iconify-icon',
+        },
+    },
+
+    // Component auto-import configuration
+    components: {
+        dirs: [
+            {
+                path: '~/components',
+                pathPrefix: false,
+            },
+        ],
+    },
+
     // App config with dynamic values from environment
     appConfig: {
         siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
