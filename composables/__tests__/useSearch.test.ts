@@ -1,5 +1,14 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { useSearch } from '../useSearch'
+
+// Mock useAppConfig
+vi.mock('#app', () => ({
+  useAppConfig: () => ({
+    search: {
+      minScore: 0.6,
+    },
+  }),
+}))
 
 describe('useSearch', () => {
   const mockPosts = [
