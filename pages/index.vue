@@ -136,7 +136,7 @@ const filteredPosts = computed(() => {
     }
 
     return enrichedPosts.value.filter((post) =>
-        post.category?.includes(activeTag.value)
+        post.tags?.includes(activeTag.value)
     );
 });
 
