@@ -39,8 +39,7 @@
                         v-for="i in 3"
                         :key="`skeleton-${i}`"
                         class="h-96 animate-pulse rounded-lg"
-                        :style="{ backgroundColor: skeletonColor }
-"
+                        :style="{ backgroundColor: skeletonColor }"
                     ></div>
                 </div>
 
@@ -114,10 +113,15 @@ const textSecondary = computed(() => isDark.value ? '#bfbfbf' : '#6b7280')
 const textTertiary = computed(() => isDark.value ? '#999999' : '#9ca3af')
 const skeletonColor = computed(() => isDark.value ? '#2d2d2d' : '#e5e7eb')
 
-const categoryName = computed(() => {
+// Get category name from route params safely
+const getCategoryName = () => {
+    if (!route.params.name) return 'Categoria'
     const name = Array.isArray(route.params.name) ? route.params.name[0] : route.params.name
+    if (!name || typeof name !== 'string') return 'Categoria'
     return name.charAt(0).toUpperCase() + name.slice(1)
-})
+}
+
+const categoryName = computed(() => getCategoryName())
 
 const enrichedPosts = computed<EnrichedPost[]>(() => {
     return postsIndex.value
@@ -131,7 +135,9 @@ const enrichedPosts = computed<EnrichedPost[]>(() => {
 })
 
 const categoryPosts = computed<EnrichedPost[]>(() => {
+    if (!route.params.name) return []
     const name = Array.isArray(route.params.name) ? route.params.name[0] : route.params.name
+    if (!name || typeof name !== 'string') return []
     return enrichedPosts.value.filter((p) => p.category.toLowerCase() === name.toLowerCase())
 })
 
