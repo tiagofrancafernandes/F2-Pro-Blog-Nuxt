@@ -10,4 +10,12 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@oro.ad/nuxt-claude-devtools',
     ],
+
+    nuxtOgImage: {
+        enabled: false,
+    },
+
+    sitemap: {
+        xsl: false,
+    },
 });
