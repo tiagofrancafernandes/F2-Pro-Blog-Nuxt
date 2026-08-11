@@ -1,10 +1,10 @@
-import { computed, Ref } from 'vue'
+import { computed } from 'vue'
 
 interface Post {
   tags: string[]
 }
 
-export function useTags(posts: Ref<Post[]> | Post[]) {
+export function useTags(posts: any) {
   const allTags = computed(() => {
     const tags = new Set<string>()
     const postArray = Array.isArray(posts) ? posts : posts.value

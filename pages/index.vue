@@ -44,9 +44,28 @@
                     ></div>
                 </div>
 
-                <!-- Posts Grid -->
-                <div v-else-if="enrichedPosts.length > 0" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    <PostCard v-for="post in enrichedPosts" :key="post.id" :post="post" />
+                <!-- Tag Filter and Posts Grid -->
+                <div v-if="enrichedPosts.length > 0" class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+                    <!-- Tag Filter Sidebar -->
+                    <div class="lg:col-span-1">
+                        <TagFilter :posts="enrichedPosts" />
+                    </div>
+
+                    <!-- Posts Grid -->
+                    <div class="lg:col-span-3">
+                        <div v-if="filteredPosts.length > 0" class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+                            <PostCard v-for="post in filteredPosts" :key="post.id" :post="post" />
+                        </div>
+
+                        <!-- No results -->
+                        <div v-else class="flex flex-col items-center justify-center space-y-4 py-16">
+                            <iconify-icon
+                                icon="fa7-solid:inbox"
+                                class="text-6xl text-neutral-400 dark:text-neutral-600"
+                            ></iconify-icon>
+                            <p class="text-neutral-600 dark:text-neutral-400">No posts with tag "{{ activeTag }}"</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Empty State -->
@@ -65,6 +84,8 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import { useHead } from '#app';
+import { useRoute } from 'vue-router';
+import TagFilter from '~/components/tags/TagFilter.vue';
 
 interface PostIndex {
     id: number;
@@ -94,6 +115,8 @@ const postsIndex = ref<PostIndex[]>([]);
 const postsData = ref<Map<string, PostData>>(new Map());
 const isLoading = ref(true);
 
+const route = useRoute();
+
 const enrichedPosts = computed<EnrichedPost[]>(() => {
     return postsIndex.value
         .map((indexPost) => {
@@ -103,6 +126,18 @@ const enrichedPosts = computed<EnrichedPost[]>(() => {
         .filter((post): post is EnrichedPost => {
             return postsData.value.has(post.slug);
         });
+});
+
+const activeTag = computed(() => route.query.tag as string || null);
+
+const filteredPosts = computed(() => {
+    if (!activeTag.value) {
+        return enrichedPosts.value;
+    }
+
+    return enrichedPosts.value.filter((post) =>
+        post.category?.includes(activeTag.value)
+    );
 });
 
 async function fetchPosts(): Promise<void> {
