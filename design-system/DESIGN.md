@@ -67,36 +67,36 @@ The primary color palette is used for calls-to-action, links, and key interactiv
 
 | Shade | Hex Value | Usage |
 |-------|-----------|-------|
-| 50 | #f0f5ff | Very light backgrounds |
-| 100 | #e0ebff | Light backgrounds |
-| 200 | #c7d9ff | Hover states |
-| 300 | #a3bbff | Disabled states |
-| 400 | #7d95ff | Subtle highlights |
-| 500 | #5b6dff | **Primary action buttons** |
-| 600 | #4052e0 | Hover on primary |
-| 700 | #2c38b8 | Active state |
-| 800 | #1f2a8a | Dark accent |
-| 900 | #151d5c | Very dark accent |
+| 50 | #fef2f2 | Very light backgrounds |
+| 100 | #fee2e2 | Light backgrounds |
+| 200 | #fecaca | Hover states |
+| 300 | #fca5a5 | Disabled states |
+| 400 | #f87171 | Subtle highlights |
+| 500 | #ef4444 | **Primary action buttons (Red)** |
+| 600 | #dc2626 | Hover on primary |
+| 700 | #b91c1c | Active state |
+| 800 | #991b1b | Dark accent |
+| 900 | #7f1d1d | Very dark accent |
 
 **Usage:** Primary buttons, links, focus states, active tab indicators.
 
-#### Secondary Colors
-Used for additional interactive elements and complementary highlights.
+#### Secondary Colors (Gray Scale)
+Used for backgrounds, borders, and secondary UI elements.
 
 | Shade | Hex Value | Usage |
 |-------|-----------|-------|
-| 50 | #f5f3ff | Light backgrounds |
-| 100 | #ebe7ff | Background tints |
-| 200 | #d7cfff | Secondary buttons |
-| 300 | #b8a8ff | Hover states |
-| 400 | #9878ff | Active states |
-| 500 | #7c5cff | **Secondary highlights** |
-| 600 | #6b42e0 | Hover secondary |
-| 700 | #572db8 | Active secondary |
-| 800 | #3f1f8a | Dark secondary |
-| 900 | #2d1a5c | Very dark secondary |
+| 50 | #f8f8f8 | Lightest background |
+| 100 | #f0f0f0 | Light backgrounds |
+| 200 | #e5e5e5 | Secondary buttons |
+| 300 | #d4d4d4 | Hover states |
+| 400 | #a6a6a6 | Active states |
+| 500 | #737373 | **Secondary text** |
+| 600 | #525252 | Hover secondary |
+| 700 | #404040 | Darker text |
+| 800 | #262626 | Dark secondary |
+| 900 | #171717 | Very dark secondary |
 
-**Usage:** Secondary buttons, component highlights, decorative accents.
+**Usage:** Secondary buttons, backgrounds, borders, secondary text, component accents.
 
 #### Neutral Colors (Grayscale)
 Used for text, backgrounds, borders, and structural elements.
@@ -130,16 +130,16 @@ Convey meaning through color (status, actions, alerts).
 
 ### Dark Mode Colors
 
-The dark mode uses inverted color values while maintaining the same visual hierarchy and contrast ratios. Primary shades are lighter and backgrounds are darker.
+The dark mode uses inverted color values while maintaining the same visual hierarchy and contrast ratios. Primary colors (red) become lighter and backgrounds become darker.
 
-#### Dark Mode Primary (Example - Full values in `design.json`)
+#### Dark Mode Primary (Red variants - Full values in `design.json`)
 | Shade | Hex Value | Usage |
 |-------|-----------|-------|
-| 600 | #8a8aff | **Primary buttons in dark mode** |
-| 700 | #9d9dff | Primary hover state |
-| 900 | #d4d4ff | Primary light accent |
+| 500 | #f87171 | **Primary buttons in dark mode** |
+| 600 | #fca5a5 | Primary hover state |
+| 900 | #fef2f2 | Primary light accent |
 
-#### Dark Mode Neutral (Full gradient in `design.json`)
+#### Dark Mode Secondary (Gray variants - Full gradient in `design.json`)
 - **Primary Background:** #0f0f0f
 - **Secondary Background:** #1a1a1a
 - **Tertiary Background:** #2d2d2d
@@ -150,11 +150,11 @@ The dark mode uses inverted color values while maintaining the same visual hiera
 
 ### Color Usage Guidelines
 
-1. **Consistency:** Use primary color (#5b6dff in light mode, #8a8aff in dark mode) for all primary actions
+1. **Consistency:** Use primary color (#ef4444 red in light mode, lighter red shades in dark mode) for all primary actions
 2. **Contrast:** Minimum contrast ratio of 4.5:1 for text
 3. **Accessibility:** Don't rely on color alone to convey information
 4. **Semantic Colors:** Use success, warning, danger, and info colors consistently across the application
-5. **Backgrounds:** Use neutral 50-100 in light mode, neutral 100-200 in dark mode
+5. **Backgrounds:** Use secondary 50-100 (light gray) in light mode, secondary 100-200 in dark mode
 
 For exact color hex values in all states, refer to `design.json`.
 
