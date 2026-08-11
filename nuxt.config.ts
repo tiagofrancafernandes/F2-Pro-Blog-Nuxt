@@ -43,4 +43,11 @@ export default defineNuxtConfig({
         blogAuthor: process.env.NUXT_PUBLIC_BLOG_AUTHOR || 'Tiago França',
         blogDescription: process.env.NUXT_PUBLIC_BLOG_DESCRIPTION || 'Explore artigos sobre desenvolvimento, arquitetura de software, e melhores práticas em programação.',
     },
+
+    // Add FuseJS to Vite
+    vite: {
+        ssr: {
+            external: [],
+        },
+    },
 });
