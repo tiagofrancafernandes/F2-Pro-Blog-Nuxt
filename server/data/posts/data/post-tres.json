@@ -8,5 +8,6 @@
     "category": "devops",
     "date": "2024-08-08",
     "readTime": 12,
-    "author": "Tiago França"
+    "author": "Tiago França",
+    "tags": ["docker", "containers", "devops", "deployment", "kubernetes"]
 }

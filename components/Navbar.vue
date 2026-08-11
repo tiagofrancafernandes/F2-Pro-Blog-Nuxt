@@ -162,7 +162,7 @@ const bgColor = computed(() => {
 
 onMounted(async () => {
     try {
-        const res = await fetch('/server/data/posts/index.json');
+        const res = await fetch('/data/posts/index.json');
         const data = await res.json();
         allPosts.value = data.posts || data;
     } catch (error) {

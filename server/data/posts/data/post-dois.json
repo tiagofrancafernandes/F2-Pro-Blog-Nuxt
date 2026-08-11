@@ -8,5 +8,6 @@
     "category": "database",
     "date": "2024-08-09",
     "readTime": 10,
-    "author": "Tiago França"
+    "author": "Tiago França",
+    "tags": ["postgresql", "database", "optimization", "sql", "performance"]
 }
