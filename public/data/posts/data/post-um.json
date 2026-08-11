@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "slug": "post-um",
+    "title": "Arquitetura de APIs REST com Laravel",
+    "description": "Aprenda como construir APIs REST robustas e escaláveis utilizando Laravel, seguindo as melhores práticas de arquitetura e design.",
+    "content": "Laravel é um framework PHP moderno que facilita a construção de APIs REST profissionais. Neste artigo, exploraremos as melhores práticas para estruturar sua aplicação.\n\n## Estrutura do Projeto\n\nUma boa arquitetura começa com a organização adequada de diretórios e camadas. Em Laravel, é recomendado seguir o padrão MVC com separação clara entre Controllers, Models e Services.\n\n## Autenticação e Segurança\n\nA autenticação é crucial em qualquer API. Laravel oferece várias opções como Sanctum, Passport e JWT. Escolha de acordo com suas necessidades.\n\n## Validação de Dados\n\nSempre valide os dados de entrada. Use as regras de validação do Laravel para garantir que apenas dados válidos sejam processados.\n\n## Tratamento de Erros\n\nImplemente um tratamento de erros consistente em toda sua API. Use exception handlers personalizados para fornecer respostas de erro estruturadas.\n\n## Versionamento de API\n\nConsidere versionamento desde o início. Isso permite que você evolua sua API sem quebrar clientes existentes.\n\n## Recursos Adicionais\n\nExplore middleware, rate limiting, e paginação para criar APIs robustas e escaláveis.",
+    "coverImage": "https://picsum.photos/1024/768?random=10",
+    "category": "backend",
+    "date": "2024-08-10",
+    "readTime": 8,
+    "author": "Tiago França",
+    "tags": ["laravel", "api", "backend", "php", "rest"]
+}
