@@ -74,7 +74,7 @@ interface Post {
     title: string;
     category: string;
     image: string;
-    readTime: string;
+    readTime: string | number;
     publishedAt: string;
 }
 
