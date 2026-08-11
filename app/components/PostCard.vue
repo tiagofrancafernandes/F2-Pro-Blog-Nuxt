@@ -1,9 +1,8 @@
 <template>
-    <NuxtLink
-        :to="`/posts/${post.slug}`"
-        class="group block h-full transition-all duration-300 hover:shadow-lg"
-    >
-        <div class="flex h-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
+    <NuxtLink :to="`/posts/${post.slug}`" class="group block h-full transition-all duration-300 hover:shadow-lg">
+        <div
+            class="flex h-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
+        >
             <!-- Cover Image -->
             <div class="relative h-48 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                 <img
@@ -40,7 +39,9 @@
                 </div>
 
                 <!-- Footer -->
-                <div class="mt-4 flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-neutral-800">
+                <div
+                    class="mt-4 flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-neutral-800"
+                >
                     <div class="flex items-center gap-4 text-xs text-neutral-600 dark:text-neutral-500">
                         <!-- Date -->
                         <time :datetime="post.date" class="flex items-center gap-1">
@@ -61,27 +62,27 @@
 </template>
 
 <script setup lang="ts">
-    interface PostCard {
-        id: number;
-        slug: string;
-        title: string;
-        description: string;
-        date: string;
-        category: string;
-        coverImage: string;
-        readTime?: number;
-    }
+interface PostCard {
+    id: number;
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+    category: string;
+    coverImage: string;
+    readTime?: number;
+}
 
-    defineProps<{
-        post: PostCard;
-    }>();
+defineProps<{
+    post: PostCard;
+}>();
 
-    function formatDate(dateString: string): string {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('pt-BR', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-        });
-    }
+function formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('pt-BR', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+    });
+}
 </script>

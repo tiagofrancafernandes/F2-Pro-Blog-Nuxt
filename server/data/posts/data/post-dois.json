@@ -1,12 +1,12 @@
 {
-  "id": 2,
-  "slug": "post-dois",
-  "title": "Otimização de Queries PostgreSQL",
-  "description": "Técnicas avançadas para otimizar suas queries PostgreSQL e melhorar significativamente a performance da sua aplicação.",
-  "content": "PostgreSQL é um banco de dados poderoso, mas sua performance depende muito de como você escreve suas queries. Neste artigo, vamos explorar técnicas de otimização.\n\n## Análise de Query Plans\n\nUse EXPLAIN e EXPLAIN ANALYZE para entender como o PostgreSQL executa suas queries. Isso é essencial para identificar gargalos.\n\n## Criação de Índices\n\nOs índices são fundamentais para performance. Entenda quando criar índices e qual tipo utilizar (B-tree, Hash, GiST, GIN).\n\n## Normalização de Dados\n\nUma boa estrutura de dados normalizados reduz redundância e melhora a performance de leitura e escrita.\n\n## Query Tuning\n\nUtilize técnicas como JOIN otimizado, subqueries eficientes, e agregações adequadas.\n\n## Connection Pooling\n\nGerencie conexões eficientemente com ferramentas como PgBouncer para evitar overhead de criação de conexões.\n\n## Monitoramento\n\nUtilize ferramentas como pg_stat_statements para monitorar e identificar queries lentas.",
-  "coverImage": "https://picsum.photos/1024/768?random=11",
-  "category": "database",
-  "date": "2024-08-09",
-  "readTime": 10,
-  "author": "Tiago França"
+    "id": 2,
+    "slug": "post-dois",
+    "title": "Otimização de Queries PostgreSQL",
+    "description": "Técnicas avançadas para otimizar suas queries PostgreSQL e melhorar significativamente a performance da sua aplicação.",
+    "content": "PostgreSQL é um banco de dados poderoso, mas sua performance depende muito de como você escreve suas queries. Neste artigo, vamos explorar técnicas de otimização.\n\n## Análise de Query Plans\n\nUse EXPLAIN e EXPLAIN ANALYZE para entender como o PostgreSQL executa suas queries. Isso é essencial para identificar gargalos.\n\n## Criação de Índices\n\nOs índices são fundamentais para performance. Entenda quando criar índices e qual tipo utilizar (B-tree, Hash, GiST, GIN).\n\n## Normalização de Dados\n\nUma boa estrutura de dados normalizados reduz redundância e melhora a performance de leitura e escrita.\n\n## Query Tuning\n\nUtilize técnicas como JOIN otimizado, subqueries eficientes, e agregações adequadas.\n\n## Connection Pooling\n\nGerencie conexões eficientemente com ferramentas como PgBouncer para evitar overhead de criação de conexões.\n\n## Monitoramento\n\nUtilize ferramentas como pg_stat_statements para monitorar e identificar queries lentas.",
+    "coverImage": "https://picsum.photos/1024/768?random=11",
+    "category": "database",
+    "date": "2024-08-09",
+    "readTime": 10,
+    "author": "Tiago França"
 }

@@ -1,12 +1,12 @@
 {
-  "id": 4,
-  "slug": "post-quatro",
-  "title": "Vue 3 Composition API Deep Dive",
-  "description": "Explore a Composition API do Vue 3 em profundidade. Aprenda padrões avançados, composables customizados e melhores práticas.",
-  "content": "A Composition API é uma grande inovação no Vue 3, oferecendo mais flexibilidade e capacidade de reutilização de lógica comparado ao Options API.\n\n## Por que Composition API?\n\nA Composition API permite melhor organização de código, especialmente em componentes complexos. Oferece melhor suporte a TypeScript e facilita a criação de composables reutilizáveis.\n\n## Hooks Básicos\n\n- `ref()`: Reatividade para valores primitivos\n- `reactive()`: Reatividade para objetos\n- `computed()`: Propriedades computadas reativas\n- `watch()`: Observar mudanças em dados\n- `onMounted()`, `onUnmounted()`: Lifecycle hooks\n\n## Criando Composables\n\nComposables são funções que encapsulam lógica reativa. São ideais para reutilizar comportamentos entre componentes.\n\n## Padrões Avançados\n\nExplore padrões como composable factories, dependency injection, e composables com async/await.\n\n## Performance\n\nEntenda reactive dependency tracking e como evitar renderizações desnecessárias.\n\n## Boas Práticas\n\n- Mantenha composables focados e pequenos\n- Documente claramente inputs e outputs\n- Use TypeScript para melhor segurança de tipos\n- Teste seus composables isoladamente",
-  "coverImage": "https://picsum.photos/1024/768?random=13",
-  "category": "frontend",
-  "date": "2024-08-07",
-  "readTime": 9,
-  "author": "Tiago França"
+    "id": 4,
+    "slug": "post-quatro",
+    "title": "Vue 3 Composition API Deep Dive",
+    "description": "Explore a Composition API do Vue 3 em profundidade. Aprenda padrões avançados, composables customizados e melhores práticas.",
+    "content": "A Composition API é uma grande inovação no Vue 3, oferecendo mais flexibilidade e capacidade de reutilização de lógica comparado ao Options API.\n\n## Por que Composition API?\n\nA Composition API permite melhor organização de código, especialmente em componentes complexos. Oferece melhor suporte a TypeScript e facilita a criação de composables reutilizáveis.\n\n## Hooks Básicos\n\n- `ref()`: Reatividade para valores primitivos\n- `reactive()`: Reatividade para objetos\n- `computed()`: Propriedades computadas reativas\n- `watch()`: Observar mudanças em dados\n- `onMounted()`, `onUnmounted()`: Lifecycle hooks\n\n## Criando Composables\n\nComposables são funções que encapsulam lógica reativa. São ideais para reutilizar comportamentos entre componentes.\n\n## Padrões Avançados\n\nExplore padrões como composable factories, dependency injection, e composables com async/await.\n\n## Performance\n\nEntenda reactive dependency tracking e como evitar renderizações desnecessárias.\n\n## Boas Práticas\n\n- Mantenha composables focados e pequenos\n- Documente claramente inputs e outputs\n- Use TypeScript para melhor segurança de tipos\n- Teste seus composables isoladamente",
+    "coverImage": "https://picsum.photos/1024/768?random=13",
+    "category": "frontend",
+    "date": "2024-08-07",
+    "readTime": 9,
+    "author": "Tiago França"
 }
