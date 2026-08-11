@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/icon',
         '@nuxtjs/color-mode',
+        '@nuxtjs/seo',
         '@nuxtjs/tailwindcss',
         '@oro.ad/nuxt-claude-devtools',
     ],
