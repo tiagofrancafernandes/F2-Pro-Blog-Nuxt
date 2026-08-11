@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import 'iconify-icon'
+</script>
+
 <template>
     <div class="flex flex-col min-h-screen bg-white dark:bg-neutral-900">
         <NuxtRouteAnnouncer />
