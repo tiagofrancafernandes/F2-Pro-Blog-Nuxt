@@ -8,5 +8,6 @@
     "category": "frontend",
     "date": "2024-08-07",
     "readTime": 9,
-    "author": "Tiago França"
+    "author": "Tiago França",
+    "tags": ["vue", "vue3", "composables", "frontend", "javascript"]
 }
