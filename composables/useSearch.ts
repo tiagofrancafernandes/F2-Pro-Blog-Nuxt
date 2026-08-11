@@ -1,4 +1,4 @@
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watchEffect, toValue } from 'vue'
 import Fuse from 'fuse.js'
 
 interface Post {
@@ -17,9 +17,11 @@ export function useSearch(posts: Post[]) {
   const config = useAppConfig()
   const minScore = config.search.minScore
 
-  onMounted(() => {
-    if (!fuseIndex.value && posts && posts.length > 0) {
-      fuseIndex.value = new Fuse(posts, {
+  watchEffect(() => {
+    const postsArray = toValue(posts)
+
+    if (postsArray && postsArray.length > 0) {
+      fuseIndex.value = new Fuse(postsArray, {
         keys: ['title', 'description', 'tags'],
         threshold: 1 - minScore,
         includeScore: true,
