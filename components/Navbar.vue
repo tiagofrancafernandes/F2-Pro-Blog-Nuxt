@@ -56,9 +56,20 @@
                     </NuxtLink>
                 </div>
 
-                <!-- Dark Mode Toggle & Mobile Menu -->
+                <!-- Dark Mode Toggle, Search & Mobile Menu -->
                 <div class="flex items-center gap-4">
                     <ClientOnly>
+                        <button
+                            type="button"
+                            @click="searchOpen = true"
+                            class="p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+                            :style="{ color: textColor }"
+                            aria-label="Search posts"
+                            title="Search (Cmd+K)"
+                        >
+                            <Icon icon="fa7-solid:magnifying-glass" class="w-5 h-5" />
+                        </button>
+
                         <button
                             type="button"
                             @click="toggleDarkMode"
@@ -115,17 +126,23 @@
                 </NuxtLink>
             </div>
         </div>
+
+        <!-- Search Modal -->
+        <SearchModal :isOpen="searchOpen" :posts="allPosts" @close="searchOpen = false" />
     </nav>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import SearchModal from '~/components/search/SearchModal.vue';
 
 const appConfig = useAppConfig();
 const colorMode = useColorMode();
 const route = useRoute();
 const isMenuOpen = ref(false);
+const searchOpen = ref(false);
+const allPosts = ref([])
 
 const isDark = computed(() => {
     return colorMode.preference === 'dark';
@@ -141,6 +158,16 @@ const borderColor = computed(() => {
 
 const bgColor = computed(() => {
     return isDark.value ? appConfig.public.colors.dark.bg : '#ffffff';
+});
+
+onMounted(async () => {
+    try {
+        const res = await fetch('/server/data/posts/index.json');
+        const data = await res.json();
+        allPosts.value = data.posts || data;
+    } catch (error) {
+        console.error('Failed to fetch posts:', error);
+    }
 });
 
 const toggleDarkMode = () => {
