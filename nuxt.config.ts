@@ -5,10 +5,10 @@ export default defineNuxtConfig({
 
     modules: [
         '@nuxt/icon',
-        '@nuxtjs/algolia',
+        // '@nuxtjs/algolia',
         '@nuxtjs/color-mode',
-        '@nuxtjs/i18n',
-        '@nuxtjs/seo',
+        // '@nuxtjs/i18n',
+        // '@nuxtjs/seo',
         '@nuxtjs/tailwindcss',
         '@oro.ad/nuxt-claude-devtools',
     ],
