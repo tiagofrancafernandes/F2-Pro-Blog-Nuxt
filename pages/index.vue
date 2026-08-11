@@ -111,7 +111,8 @@ async function fetchPosts(): Promise<void> {
 
         // Fetch index
         const indexResponse = await fetch('/data/posts/index.json');
-        postsIndex.value = await indexResponse.json();
+        const indexData = await indexResponse.json();
+        postsIndex.value = indexData.posts ?? indexData;
 
         // Fetch individual posts
         const dataMap = new Map<string, PostData>();

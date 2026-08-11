@@ -2,8 +2,8 @@
     <nav
         class="fixed top-0 z-50 w-full border-b shadow-sm transition-colors"
         :style="{
-            borderBottomColor: isDark ? appConfig.public.colors.dark.surface : '#e5e7eb',
-            backgroundColor: isDark ? appConfig.public.colors.dark.bg : '#ffffff',
+            borderBottomColor: borderColor,
+            backgroundColor: bgColor,
         }"
     >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,45 +30,27 @@
                 <div class="hidden md:flex items-center gap-8">
                     <NuxtLink
                         to="/"
-                        :style="{
-                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
-                        }"
+                        :style="{ color: textColor }"
                         class="transition-all duration-200 hover:opacity-70"
-                        :class="[
-                            {
-                                'font-semibold': route.path === '/',
-                            },
-                        ]"
+                        :class="{ 'font-semibold': route.path === '/' }"
                     >
                         Home
                     </NuxtLink>
 
                     <NuxtLink
                         to="/posts"
-                        :style="{
-                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
-                        }"
+                        :style="{ color: textColor }"
                         class="transition-all duration-200 hover:opacity-70"
-                        :class="[
-                            {
-                                'font-semibold': route.path === '/posts',
-                            },
-                        ]"
+                        :class="{ 'font-semibold': route.path === '/posts' }"
                     >
                         Posts
                     </NuxtLink>
 
                     <NuxtLink
                         to="/about"
-                        :style="{
-                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
-                        }"
+                        :style="{ color: textColor }"
                         class="transition-all duration-200 hover:opacity-70"
-                        :class="[
-                            {
-                                'font-semibold': route.path === '/about',
-                            },
-                        ]"
+                        :class="{ 'font-semibold': route.path === '/about' }"
                     >
                         Sobre
                     </NuxtLink>
@@ -93,9 +75,7 @@
                         type="button"
                         @click="isMenuOpen = !isMenuOpen"
                         class="md:hidden p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-                        :style="{
-                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
-                        }"
+                        :style="{ color: textColor }"
                         aria-label="Toggle mobile menu"
                     >
                         <Icon icon="fa7-solid:bars" class="w-5 h-5" />
@@ -107,45 +87,27 @@
             <div v-if="isMenuOpen" class="md:hidden pb-4 space-y-2">
                 <NuxtLink
                     to="/"
-                    :style="{
-                        color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
-                    }"
+                    :style="{ color: textColor }"
                     class="block px-4 py-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-                    :class="[
-                        {
-                            'font-semibold': route.path === '/',
-                        },
-                    ]"
+                    :class="{ 'font-semibold': route.path === '/' }"
                 >
                     Home
                 </NuxtLink>
 
                 <NuxtLink
                     to="/posts"
-                    :style="{
-                        color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
-                    }"
+                    :style="{ color: textColor }"
                     class="block px-4 py-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-                    :class="[
-                        {
-                            'font-semibold': route.path === '/posts',
-                        },
-                    ]"
+                    :class="{ 'font-semibold': route.path === '/posts' }"
                 >
                     Posts
                 </NuxtLink>
 
                 <NuxtLink
                     to="/about"
-                    :style="{
-                        color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
-                    }"
+                    :style="{ color: textColor }"
                     class="block px-4 py-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-                    :class="[
-                        {
-                            'font-semibold': route.path === '/about',
-                        },
-                    ]"
+                    :class="{ 'font-semibold': route.path === '/about' }"
                 >
                     Sobre
                 </NuxtLink>
@@ -167,11 +129,19 @@ const isDark = computed(() => {
     return colorMode.preference === 'dark';
 });
 
+const textColor = computed(() => {
+    return isDark.value ? appConfig.public.colors.dark.text : '#1f2937';
+});
+
+const borderColor = computed(() => {
+    return isDark.value ? appConfig.public.colors.dark.surface : '#e5e7eb';
+});
+
+const bgColor = computed(() => {
+    return isDark.value ? appConfig.public.colors.dark.bg : '#ffffff';
+});
+
 const toggleDarkMode = () => {
-    if (colorMode.preference === 'dark') {
-        colorMode.preference = 'light';
-    } else {
-        colorMode.preference = 'dark';
-    }
+    colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark';
 };
 </script>
