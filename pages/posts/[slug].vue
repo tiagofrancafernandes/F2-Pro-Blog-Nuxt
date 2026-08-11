@@ -2,6 +2,13 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '@unhead/vue';
+import SearchModal from '~/components/search/SearchModal.vue';
+import ReadingTime from '~/components/posts/ReadingTime.vue';
+import ShareButtons from '~/components/posts/ShareButtons.vue';
+import DisqusComments from '~/components/comments/DisqusComments.vue';
+import TagFilter from '~/components/tags/TagFilter.vue';
+import TLDRBox from '~/components/posts/TLDRBox.vue';
+import TableOfContents from '~/components/posts/TableOfContents.vue';
 
 interface Post {
     id: number;
@@ -14,24 +21,37 @@ interface Post {
     date: string;
     readTime: number;
     author: string;
+    tags?: string[];
+    tldr?: string;
 }
 
 const route = useRoute();
 const post = ref<Post | null>(null);
+const allPosts = ref<Post[]>([]);
 const isLoading = ref(true);
 const error = ref<string | null>(null);
+const searchOpen = ref(false);
 
 onMounted(async () => {
     const slug = route.params.slug as string;
 
     try {
-        const response = await fetch(`/data/posts/data/${slug}.json`);
+        // Fetch index for search/tags
+        const indexRes = await fetch('/data/posts/index.json');
 
-        if (!response.ok) {
+        if (indexRes.ok) {
+            const indexData = await indexRes.json();
+            allPosts.value = indexData.posts || indexData;
+        }
+
+        // Fetch specific post
+        const postRes = await fetch(`/data/posts/data/${slug}.json`);
+
+        if (!postRes.ok) {
             throw new Error('Post não encontrado');
         }
 
-        const data: Post = await response.json();
+        const data: Post = await postRes.json();
         post.value = data;
 
         useHead({
@@ -50,6 +70,8 @@ onMounted(async () => {
         isLoading.value = false;
     }
 });
+
+const { shortname, isEnabled: disqusEnabled } = useDisqus();
 </script>
 
 <template>
@@ -61,7 +83,55 @@ onMounted(async () => {
 
         <!-- Post Content -->
         <template v-else-if="post">
-            <PostDetail :post="post" />
+            <section class="min-h-screen bg-white dark:bg-gray-900">
+                <PostDetail :post="post" />
+
+                <!-- TLDR Box -->
+                <div class="mx-auto max-w-3xl px-4 py-12">
+                    <TLDRBox v-if="post.tldr" :tldr="post.tldr" />
+
+                    <!-- Table of Contents -->
+                    <TableOfContents v-if="post.content" :content="post.content" />
+
+                    <!-- Reading Time -->
+                    <div v-if="post.content" class="mt-8 flex items-center gap-4">
+                        <ReadingTime :content="post.content" />
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="mt-12">
+                        <ShareButtons :post="post" />
+                    </div>
+
+                    <!-- Tags -->
+                    <div v-if="post.tags && post.tags.length > 0" class="mt-12">
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-50">
+                                Tags
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                <NuxtLink
+                                    v-for="tag in post.tags"
+                                    :key="tag"
+                                    :to="{ query: { tag } }"
+                                    class="px-3 py-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors text-sm"
+                                >
+                                    {{ tag }}
+                                </NuxtLink>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Disqus Comments -->
+                    <DisqusComments
+                        v-if="disqusEnabled && post.slug"
+                        :shortname="shortname"
+                        :identifier="post.slug"
+                        :title="post.title"
+                        :url="`${useRuntimeConfig().public.siteUrl}/posts/${post.slug}`"
+                    />
+                </div>
+            </section>
         </template>
 
         <!-- Not Found -->
@@ -83,5 +153,8 @@ onMounted(async () => {
                 </NuxtLink>
             </div>
         </div>
+
+        <!-- Search Modal -->
+        <SearchModal :isOpen="searchOpen" :posts="allPosts" @close="searchOpen = false" />
     </div>
 </template>
