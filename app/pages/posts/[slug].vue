@@ -55,40 +55,29 @@ onMounted(async () => {
 <template>
     <div class="min-h-screen bg-white dark:bg-gray-900">
         <!-- Loading State -->
-        <div v-if="isLoading" class="flex justify-center items-center min-h-screen">
-            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div v-if="isLoading" class="flex items-center justify-center min-h-screen">
+            <div class="h-12 w-12 animate-spin rounded-full border-b-2 border-t-2 border-blue-500"></div>
         </div>
 
         <!-- Post Content -->
         <template v-else-if="post">
             <PostDetail :post="post" />
-
-            <!-- Back to Home -->
-            <div class="max-w-4xl mx-auto px-4 py-8 border-t border-gray-200 dark:border-gray-700">
-                <NuxtLink
-                    to="/"
-                    class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
-                >
-                    <span class="text-lg">←</span>
-                    Voltar para Home
-                </NuxtLink>
-            </div>
         </template>
 
         <!-- Not Found -->
-        <div v-else class="flex flex-col justify-center items-center min-h-screen px-4">
-            <div class="text-center max-w-md">
-                <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <div v-else class="flex min-h-screen flex-col items-center justify-center px-4">
+            <div class="max-w-md text-center">
+                <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
                     Post não encontrado
                 </h1>
 
-                <p class="text-gray-600 dark:text-gray-400 mb-8">
+                <p class="mb-8 text-gray-600 dark:text-gray-400">
                     Desculpe, o post que você está procurando não existe ou foi removido.
                 </p>
 
                 <NuxtLink
                     to="/"
-                    class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                    class="inline-block rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
                 >
                     Voltar para Home
                 </NuxtLink>
