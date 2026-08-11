@@ -7,8 +7,7 @@
                 :class="[
                     'inline-flex items-center gap-2 text-sm font-medium transition-colors',
                     {
-                        'text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300':
-                            true,
+                        'text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300': true,
                     },
                 ]"
             >
@@ -33,9 +32,7 @@
         </h1>
 
         <!-- Meta Information -->
-        <div
-            class="mb-8 flex flex-wrap gap-6 border-b border-neutral-200 pb-8 dark:border-neutral-700"
-        >
+        <div class="mb-8 flex flex-wrap gap-6 border-b border-neutral-200 pb-8 dark:border-neutral-700">
             <!-- Date -->
             <div class="flex items-center gap-2">
                 <iconify-icon
@@ -64,19 +61,13 @@
                     icon="fa7-solid:clock"
                     class="h-4 w-4 text-neutral-600 dark:text-neutral-400"
                 ></iconify-icon>
-                <span class="text-sm text-neutral-600 dark:text-neutral-400">
-                    {{ post.readTime }} min
-                </span>
+                <span class="text-sm text-neutral-600 dark:text-neutral-400">{{ post.readTime }} min</span>
             </div>
         </div>
 
         <!-- Cover Image -->
         <div class="mb-12 overflow-hidden rounded-lg">
-            <img
-                :src="post.coverImage"
-                :alt="post.title"
-                class="h-96 w-full object-cover"
-            />
+            <img :src="post.coverImage" :alt="post.title" class="h-96 w-full object-cover" />
         </div>
 
         <!-- Content -->

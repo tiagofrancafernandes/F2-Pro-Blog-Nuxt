@@ -1,27 +1,119 @@
 <template>
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
-        <div class="flex items-center justify-between px-4 py-4">
-            <!-- Logo/Brand -->
-            <NuxtLink to="/" class="flex items-center gap-2 font-bold text-lg text-neutral-900 dark:text-neutral-100">
-                <div
-                    class="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold"
-                    :style="{ backgroundColor: appConfig.public.colors.primary }"
-                >
-                    T
+    <nav
+        class="fixed top-0 z-50 w-full border-b shadow-sm transition-colors"
+        :style="{
+            borderBottomColor: isDark ? appConfig.public.colors.dark.surface : '#e5e7eb',
+            backgroundColor: isDark ? appConfig.public.colors.dark.bg : '#ffffff',
+        }"
+    >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <NuxtLink to="/" class="flex items-center gap-1">
+                        <span
+                            class="font-bold text-xl transition-colors"
+                            :style="{ color: appConfig.public.colors.primary }"
+                        >
+                            Tiago
+                        </span>
+                        <span
+                            class="font-bold text-xl transition-colors"
+                            :style="{ color: appConfig.public.colors.secondary }"
+                        >
+                            França
+                        </span>
+                    </NuxtLink>
                 </div>
-                <span>{{ appConfig.public.blog.title }}</span>
-            </NuxtLink>
 
-            <!-- Navigation Links -->
-            <div class="flex items-center gap-8">
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <NuxtLink
+                        to="/"
+                        :style="{
+                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
+                        }"
+                        class="transition-all duration-200 hover:opacity-70"
+                        :class="[
+                            {
+                                'font-semibold': route.path === '/',
+                            },
+                        ]"
+                    >
+                        Home
+                    </NuxtLink>
+
+                    <NuxtLink
+                        to="/posts"
+                        :style="{
+                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
+                        }"
+                        class="transition-all duration-200 hover:opacity-70"
+                        :class="[
+                            {
+                                'font-semibold': route.path === '/posts',
+                            },
+                        ]"
+                    >
+                        Posts
+                    </NuxtLink>
+
+                    <NuxtLink
+                        to="/about"
+                        :style="{
+                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
+                        }"
+                        class="transition-all duration-200 hover:opacity-70"
+                        :class="[
+                            {
+                                'font-semibold': route.path === '/about',
+                            },
+                        ]"
+                    >
+                        Sobre
+                    </NuxtLink>
+                </div>
+
+                <!-- Dark Mode Toggle & Mobile Menu -->
+                <div class="flex items-center gap-4">
+                    <button
+                        type="button"
+                        @click="toggleDarkMode"
+                        :style="{
+                            color: isDark ? appConfig.public.colors.dark.primary : appConfig.public.colors.primary,
+                        }"
+                        class="p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+                        aria-label="Toggle dark mode"
+                    >
+                        <Icon v-if="isDark" icon="fa7-solid:sun" class="w-5 h-5" />
+                        <Icon v-else icon="fa7-solid:moon" class="w-5 h-5" />
+                    </button>
+
+                    <button
+                        type="button"
+                        @click="isMenuOpen = !isMenuOpen"
+                        class="md:hidden p-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+                        :style="{
+                            color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
+                        }"
+                        aria-label="Toggle mobile menu"
+                    >
+                        <Icon icon="fa7-solid:bars" class="w-5 h-5" />
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div v-if="isMenuOpen" class="md:hidden pb-4 space-y-2">
                 <NuxtLink
                     to="/"
+                    :style="{
+                        color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
+                    }"
+                    class="block px-4 py-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
                     :class="[
-                        'text-sm font-medium transition-colors',
                         {
-                            'text-blue-600 dark:text-blue-400': $route.path === '/',
-                            'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100':
-                                $route.path !== '/',
+                            'font-semibold': route.path === '/',
                         },
                     ]"
                 >
@@ -29,52 +121,57 @@
                 </NuxtLink>
 
                 <NuxtLink
-                    to="/about"
+                    to="/posts"
+                    :style="{
+                        color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
+                    }"
+                    class="block px-4 py-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
                     :class="[
-                        'text-sm font-medium transition-colors',
                         {
-                            'text-blue-600 dark:text-blue-400': $route.path === '/about',
-                            'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100':
-                                $route.path !== '/about',
+                            'font-semibold': route.path === '/posts',
                         },
                     ]"
                 >
-                    About
+                    Posts
                 </NuxtLink>
 
-                <!-- Dark Mode Toggle -->
-                <button
-                    @click="colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'"
-                    :aria-label="`Switch to ${colorMode.value === 'dark' ? 'light' : 'dark'} mode`"
-                    class="p-2 rounded-lg transition-colors text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                <NuxtLink
+                    to="/about"
+                    :style="{
+                        color: isDark ? appConfig.public.colors.dark.text : '#1f2937',
+                    }"
+                    class="block px-4 py-2 rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+                    :class="[
+                        {
+                            'font-semibold': route.path === '/about',
+                        },
+                    ]"
                 >
-                    <svg
-                        v-if="colorMode.value === 'light'"
-                        class="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                    </svg>
-                    <svg
-                        v-else
-                        class="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.121-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.464 14.536l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zm10.607-2.121a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z"
-                            clip-rule="evenodd"
-                        />
-                    </svg>
-                </button>
+                    Sobre
+                </NuxtLink>
             </div>
         </div>
     </nav>
 </template>
 
 <script setup lang="ts">
+import { computed, ref } from 'vue';
+import { useRoute } from 'vue-router';
+
 const appConfig = useAppConfig();
 const colorMode = useColorMode();
+const route = useRoute();
+const isMenuOpen = ref(false);
+
+const isDark = computed(() => {
+    return colorMode.preference === 'dark';
+});
+
+const toggleDarkMode = () => {
+    if (colorMode.preference === 'dark') {
+        colorMode.preference = 'light';
+    } else {
+        colorMode.preference = 'dark';
+    }
+};
 </script>

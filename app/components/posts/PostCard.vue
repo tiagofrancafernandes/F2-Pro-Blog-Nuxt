@@ -1,8 +1,5 @@
 <template>
-    <NuxtLink
-        :to="`/posts/${post.slug}`"
-        class="group block h-full"
-    >
+    <NuxtLink :to="`/posts/${post.slug}`" class="group block h-full">
         <article
             :class="[
                 'h-full flex flex-col rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden transition-all duration-300',
@@ -52,16 +49,15 @@
                 <div class="flex-1" />
 
                 <!-- Meta Information -->
-                <div class="flex items-center justify-between border-t border-neutral-200 dark:border-neutral-700 pt-3 text-xs text-neutral-600 dark:text-neutral-400">
+                <div
+                    class="flex items-center justify-between border-t border-neutral-200 dark:border-neutral-700 pt-3 text-xs text-neutral-600 dark:text-neutral-400"
+                >
                     <time :datetime="post.publishedAt">
                         {{ formattedDate }}
                     </time>
 
                     <span class="flex items-center gap-1">
-                        <iconify-icon
-                            icon="fa7-solid:clock"
-                            class="h-4 w-4"
-                        />
+                        <iconify-icon icon="fa7-solid:clock" class="h-4 w-4" />
                         {{ post.readTime }}
                     </span>
                 </div>

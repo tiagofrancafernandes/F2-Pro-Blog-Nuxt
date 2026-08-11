@@ -1,12 +1,12 @@
 {
-  "id": 3,
-  "slug": "post-tres",
-  "title": "Docker e Containers para Desenvolvimento",
-  "description": "Um guia completo sobre Docker e containers, desde conceitos básicos até configurações avançadas para seu workflow de desenvolvimento.",
-  "content": "Docker revolucionou a forma como desenvolvemos e implantamos aplicações. Containers fornecem consistência entre ambientes de desenvolvimento, teste e produção.\n\n## O que é Docker?\n\nDocker é uma plataforma que permite empacotar sua aplicação com todas as dependências em um container isolado. Isso garante que funcione independentemente do ambiente.\n\n## Configurando um Dockerfile\n\nUm Dockerfile é um arquivo que contém instruções para criar uma imagem Docker. Aprenda a escrever Dockerfiles eficientes e otimizados.\n\n## Docker Compose\n\nPara desenvolvimento com múltiplos containers (API, banco de dados, cache), use Docker Compose para orquestrar tudo.\n\n## Boas Práticas\n\n- Use imagens oficiais como base\n- Minimize o tamanho das imagens\n- Use .dockerignore para excluir arquivos desnecessários\n- Implemente health checks\n\n## Volumes e Networking\n\nEntenda como usar volumes para persistência de dados e configure networking entre containers.\n\n## Produção\n\nDocker é essencial em produção. Aprenda a usar orquestradores como Kubernetes para gerenciar containers em escala.",
-  "coverImage": "https://picsum.photos/1024/768?random=12",
-  "category": "devops",
-  "date": "2024-08-08",
-  "readTime": 12,
-  "author": "Tiago França"
+    "id": 3,
+    "slug": "post-tres",
+    "title": "Docker e Containers para Desenvolvimento",
+    "description": "Um guia completo sobre Docker e containers, desde conceitos básicos até configurações avançadas para seu workflow de desenvolvimento.",
+    "content": "Docker revolucionou a forma como desenvolvemos e implantamos aplicações. Containers fornecem consistência entre ambientes de desenvolvimento, teste e produção.\n\n## O que é Docker?\n\nDocker é uma plataforma que permite empacotar sua aplicação com todas as dependências em um container isolado. Isso garante que funcione independentemente do ambiente.\n\n## Configurando um Dockerfile\n\nUm Dockerfile é um arquivo que contém instruções para criar uma imagem Docker. Aprenda a escrever Dockerfiles eficientes e otimizados.\n\n## Docker Compose\n\nPara desenvolvimento com múltiplos containers (API, banco de dados, cache), use Docker Compose para orquestrar tudo.\n\n## Boas Práticas\n\n- Use imagens oficiais como base\n- Minimize o tamanho das imagens\n- Use .dockerignore para excluir arquivos desnecessários\n- Implemente health checks\n\n## Volumes e Networking\n\nEntenda como usar volumes para persistência de dados e configure networking entre containers.\n\n## Produção\n\nDocker é essencial em produção. Aprenda a usar orquestradores como Kubernetes para gerenciar containers em escala.",
+    "coverImage": "https://picsum.photos/1024/768?random=12",
+    "category": "devops",
+    "date": "2024-08-08",
+    "readTime": 12,
+    "author": "Tiago França"
 }
