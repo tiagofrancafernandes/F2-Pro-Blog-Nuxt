@@ -134,12 +134,65 @@ onMounted(() => {
 });
 
 useHead({
-    title: 'Home | Blog',
+    title: 'Tiago França - Blog | Senior Backend Engineer',
     meta: [
         {
             name: 'description',
-            content:
-                'Explore artigos sobre desenvolvimento, arquitetura de software, e melhores práticas em programação.',
+            content: 'Explore artigos sobre desenvolvimento, arquitetura de software, e melhores práticas em programação. Aprenda algo novo a cada leitura.',
+        },
+        {
+            property: 'og:title',
+            content: 'Tiago França - Blog',
+        },
+        {
+            property: 'og:description',
+            content: 'Explore artigos sobre desenvolvimento, arquitetura de software, e melhores práticas em programação.',
+        },
+        {
+            property: 'og:type',
+            content: 'website',
+        },
+        {
+            property: 'og:image',
+            content: 'https://picsum.photos/id/10/1200/630',
+        },
+        {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+        },
+        {
+            name: 'twitter:title',
+            content: 'Tiago França - Blog',
+        },
+        {
+            name: 'twitter:description',
+            content: 'Explore artigos sobre desenvolvimento, arquitetura de software, e melhores práticas em programação.',
+        },
+        {
+            name: 'twitter:image',
+            content: 'https://picsum.photos/id/10/1200/630',
+        },
+        {
+            name: 'keywords',
+            content: 'backend, PHP, Laravel, APIs, PostgreSQL, Docker, DevOps, desenvolvimento',
+        },
+        {
+            name: 'author',
+            content: 'Tiago França',
+        },
+        {
+            name: 'robots',
+            content: 'index, follow',
+        },
+        {
+            httpEquiv: 'content-type',
+            content: 'text/html; charset=UTF-8',
+        },
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: 'http://localhost:3000/',
         },
     ],
 });
