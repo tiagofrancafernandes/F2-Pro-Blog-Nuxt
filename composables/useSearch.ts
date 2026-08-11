@@ -18,13 +18,9 @@ export function useSearch(posts: Post[]) {
   const minScore = config.search.minScore
 
   onMounted(() => {
-    if (!fuseIndex.value) {
+    if (!fuseIndex.value && posts && posts.length > 0) {
       fuseIndex.value = new Fuse(posts, {
-        keys: [
-          { name: 'title', weight: 3 },
-          { name: 'description', weight: 2 },
-          { name: 'tags', weight: 1 },
-        ],
+        keys: ['title', 'description', 'tags'],
         threshold: 1 - minScore,
         includeScore: true,
       })
