@@ -1,4 +1,5 @@
-import { computed, Ref } from 'vue'
+import { computed } from 'vue'
+import type { Ref } from 'vue'
 
 interface Post {
   slug: string
@@ -6,7 +7,7 @@ interface Post {
   description?: string
 }
 
-export function useShare(post: Post | Ref<Post>) {
+export function useShare(post: any) {
   const config = useAppConfig()
   const siteUrl = config.siteUrl || 'https://tiagofr.dev'
 
