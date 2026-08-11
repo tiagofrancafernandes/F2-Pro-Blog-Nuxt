@@ -35,7 +35,7 @@
                         <a
                             href="mailto:devtiagofranca@gmail.com"
                             class="flex items-center gap-3 text-sm transition-opacity hover:opacity-70"
-                            :style="{ color: textSecondary }}"
+                            :style="{ color: textSecondary }"
                         >
                             <iconify-icon icon="fa7-solid:envelope" class="w-5 h-5" :style="{ color: primaryColor }"></iconify-icon>
                             devtiagofranca@gmail.com
@@ -43,7 +43,7 @@
                         <a
                             href="tel:+5585987654321"
                             class="flex items-center gap-3 text-sm transition-opacity hover:opacity-70"
-                            :style="{ color: textSecondary }}"
+                            :style="{ color: textSecondary }"
                         >
                             <iconify-icon icon="fa7-solid:phone" class="w-5 h-5" :style="{ color: primaryColor }"></iconify-icon>
                             +55 (85) 98765-4321
@@ -61,7 +61,7 @@
                             <NuxtLink
                                 to="/"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 Home
                             </NuxtLink>
@@ -70,7 +70,7 @@
                             <NuxtLink
                                 to="/about"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 Sobre
                             </NuxtLink>
@@ -79,7 +79,7 @@
                             <NuxtLink
                                 to="/posts"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 Blog
                             </NuxtLink>
@@ -97,7 +97,7 @@
                             <NuxtLink
                                 to="/category/backend"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 Backend
                             </NuxtLink>
@@ -106,7 +106,7 @@
                             <NuxtLink
                                 to="/category/devops"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 DevOps
                             </NuxtLink>
@@ -115,7 +115,7 @@
                             <NuxtLink
                                 to="/category/database"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 Database
                             </NuxtLink>
@@ -133,7 +133,7 @@
                             <a
                                 href="#"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 PHP & Laravel
                             </a>
@@ -142,7 +142,7 @@
                             <a
                                 href="#"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 Vue.js & Nuxt
                             </a>
@@ -151,7 +151,7 @@
                             <a
                                 href="#"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                :style="{ color: textSecondary }}"
+                                :style="{ color: textSecondary }"
                             >
                                 PostgreSQL
                             </a>
@@ -170,7 +170,7 @@
                             target="_blank"
                             rel="noopener noreferrer"
                             class="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-                            :style="{ color: textSecondary }}"
+                            :style="{ color: textSecondary }"
                         >
                             <iconify-icon icon="fa7-brands:github" class="w-5 h-5"></iconify-icon>
                             GitHub
@@ -180,7 +180,7 @@
                             target="_blank"
                             rel="noopener noreferrer"
                             class="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-                            :style="{ color: textSecondary }}"
+                            :style="{ color: textSecondary }"
                         >
                             <iconify-icon icon="fa7-brands:linkedin" class="w-5 h-5"></iconify-icon>
                             LinkedIn
@@ -190,7 +190,7 @@
                             target="_blank"
                             rel="noopener noreferrer"
                             class="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-                            :style="{ color: textSecondary }}"
+                            :style="{ color: textSecondary }"
                         >
                             <iconify-icon icon="fa7-brands:twitter" class="w-5 h-5"></iconify-icon>
                             Twitter
@@ -210,14 +210,14 @@
                     <a
                         href="#"
                         class="text-sm transition-opacity hover:opacity-70"
-                        :style="{ color: textSecondary }}"
+                        :style="{ color: textSecondary }"
                     >
                         Política de Privacidade
                     </a>
                     <a
                         href="#"
                         class="text-sm transition-opacity hover:opacity-70"
-                        :style="{ color: textSecondary }}"
+                        :style="{ color: textSecondary }"
                     >
                         Termos de Serviço
                     </a>
