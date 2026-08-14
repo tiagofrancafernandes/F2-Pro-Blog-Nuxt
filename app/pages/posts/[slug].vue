@@ -64,21 +64,21 @@
                                             class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
                                             aria-label="Share on Twitter"
                                         >
-                                            <Icon name="fa6-brands:twitter" class="w-4 h-4" />
+                                            <Icon name="mdi:twitter" class="w-4 h-4" />
                                         </a>
                                         <a
                                             href="#share-linkedin"
                                             class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
                                             aria-label="Share on LinkedIn"
                                         >
-                                            <Icon name="fa6-brands:linkedin" class="w-4 h-4" />
+                                            <Icon name="mdi:linkedin" class="w-4 h-4" />
                                         </a>
                                         <button
                                             @click="copyLink"
                                             class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
                                             aria-label="Copy link"
                                         >
-                                            <Icon name="fa6-solid:link" class="w-4 h-4" />
+                                            <Icon name="mdi:link" class="w-4 h-4" />
                                         </button>
                                     </div>
                                 </div>

@@ -44,21 +44,21 @@
                             class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-red-600 hover:text-white transition-colors"
                             aria-label="Twitter"
                         >
-                            <Icon name="fa6-brands:twitter" class="w-5 h-5" />
+                            <Icon name="mdi:twitter" class="w-5 h-5" />
                         </a>
                         <a
                             href="#github"
                             class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-red-600 hover:text-white transition-colors"
                             aria-label="GitHub"
                         >
-                            <Icon name="fa6-brands:github" class="w-5 h-5" />
+                            <Icon name="mdi:github" class="w-5 h-5" />
                         </a>
                         <a
                             href="#linkedin"
                             class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-red-600 hover:text-white transition-colors"
                             aria-label="LinkedIn"
                         >
-                            <Icon name="fa6-brands:linkedin" class="w-5 h-5" />
+                            <Icon name="mdi:linkedin" class="w-5 h-5" />
                         </a>
                     </div>
                 </div>
