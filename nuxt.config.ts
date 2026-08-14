@@ -14,6 +14,18 @@ export default defineNuxtConfig({
         '@nuxtjs/robots',
     ],
 
+    colorMode: {
+        preference: 'system',
+        fallback: 'light',
+        hid: 'nuxt-color-mode-script',
+        globalName: '__NUXT_COLOR_MODE__',
+        componentName: 'ColorScheme',
+        classPrefix: '',
+        classNameDark: 'dark',
+        classNameLight: 'light',
+        storageKey: 'nuxt-color-mode',
+    },
+
     i18n: {
         locales: [
             {

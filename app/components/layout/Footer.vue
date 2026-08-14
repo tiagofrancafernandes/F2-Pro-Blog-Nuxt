@@ -65,14 +65,55 @@
             </div>
 
             <div class="mt-12 pt-8 border-t border-gray-200 dark:border-slate-700">
-                <p class="text-center text-sm text-gray-600 dark:text-gray-400">
-                    © 2026 Tiago França. All rights reserved.
-                </p>
+                <div class="flex items-center justify-between">
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        © 2026 Tiago França. All rights reserved.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <!-- Color Mode Toggle -->
+                        <div class="flex items-center gap-2">
+                            <button
+                                @click="colorMode.preference = 'light'"
+                                :class="getThemeButtonClass('light')"
+                                title="Light mode"
+                                aria-label="Switch to light mode"
+                            >
+                                <Icon name="mdi:white-balance-sunny" class="w-4 h-4" />
+                            </button>
+                            <button
+                                @click="colorMode.preference = 'system'"
+                                :class="getThemeButtonClass('system')"
+                                title="System mode (automatic)"
+                                aria-label="Switch to system theme"
+                            >
+                                <Icon name="mdi:desktop-classic" class="w-4 h-4" />
+                            </button>
+                            <button
+                                @click="colorMode.preference = 'dark'"
+                                :class="getThemeButtonClass('dark')"
+                                title="Dark mode"
+                                aria-label="Switch to dark mode"
+                            >
+                                <Icon name="mdi:moon-waning-crescent" class="w-4 h-4" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 </template>
 
 <script setup lang="ts">
-    // No script needed
+    const colorMode = useColorMode()
+
+    function getThemeButtonClass(mode: string): string {
+        const baseClass = 'p-2 rounded-lg transition-colors text-gray-600 dark:text-gray-400'
+
+        if (colorMode.preference === mode) {
+            return `${baseClass} bg-red-600 text-white`
+        }
+
+        return `${baseClass} bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:bg-slate-700`
+    }
 </script>
