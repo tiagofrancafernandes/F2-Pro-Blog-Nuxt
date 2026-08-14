@@ -7,6 +7,8 @@
                     <div class="mb-4 flex items-center gap-2 text-red-100">
                         <NuxtLink to="/" class="hover:text-white">{{ $t('nav.home') }}</NuxtLink>
                         <span>/</span>
+                        <NuxtLink :to="`/posts/search?category=${post?.category}`" class="hover:text-white">{{ post?.category }}</NuxtLink>
+                        <span>/</span>
                         <span>{{ getPostTitle() }}</span>
                     </div>
                     <div class="flex items-start justify-between mb-4">
@@ -55,13 +57,14 @@
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
                                     <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{{ $t('post.tags') }}</h3>
                                     <div class="flex flex-wrap gap-2">
-                                        <span
+                                        <NuxtLink
                                             v-for="tag in post.tags"
                                             :key="tag"
-                                            class="text-xs px-2 py-1 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-full"
+                                            :to="`/posts/search?tags=${tag}`"
+                                            class="text-xs px-2 py-1 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-red-600 dark:hover:bg-red-600 hover:text-white transition-colors"
                                         >
                                             {{ tag }}
-                                        </span>
+                                        </NuxtLink>
                                     </div>
                                 </div>
 

@@ -49,38 +49,61 @@
                     <article
                         v-for="post in filteredPosts"
                         :key="post.slug"
-                        class="border border-gray-200 dark:border-slate-700 rounded-lg p-6 hover:shadow-md dark:hover:shadow-lg transition-shadow"
+                        class="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden hover:shadow-md dark:hover:shadow-lg hover:border-red-400 dark:hover:border-red-500 transition-all group"
                     >
-                        <div class="flex gap-4">
-                            <div class="flex-1">
-                                <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">
-                                    {{ formatDate(post.date) }} • {{ post.readTime }} {{ $t('posts.readTime') }}
+                        <!-- Image -->
+                        <div class="w-full h-40 overflow-hidden bg-gray-100 dark:bg-slate-800">
+                            <img
+                                :src="post.imageUrl"
+                                :alt="getPostTitle(post)"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            />
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-wider">
+                                    {{ post.category }}
                                 </div>
-                                <NuxtLink
-                                    :to="`/posts/${post.slug}`"
-                                    class="block text-lg font-semibold text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 mb-2"
-                                >
-                                    {{ getPostTitle(post) }}
-                                </NuxtLink>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
-                                    {{ getPostDescription(post) }}
-                                </p>
-                                <div class="flex flex-wrap gap-1 mb-4">
-                                    <span
-                                        v-for="t in post.tags"
-                                        :key="t"
-                                        class="text-xs px-2 py-1 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full"
-                                    >
-                                        {{ t }}
-                                    </span>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">
+                                    {{ formatDate(post.date) }}
                                 </div>
-                                <NuxtLink
-                                    :to="`/posts/${post.slug}`"
-                                    class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium text-sm"
-                                >
-                                    {{ $t('posts.readMore') }} →
-                                </NuxtLink>
                             </div>
+
+                            <NuxtLink
+                                :to="`/posts/${post.slug}`"
+                                class="block text-lg font-semibold text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 mb-2"
+                            >
+                                {{ getPostTitle(post) }}
+                            </NuxtLink>
+
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                                {{ getPostDescription(post) }}
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex flex-wrap gap-1">
+                                    <NuxtLink
+                                        v-for="tag in post.tags"
+                                        :key="tag"
+                                        :to="`/posts/search?tags=${tag}`"
+                                        class="text-xs px-2 py-1 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-700 dark:hover:text-red-400 transition-colors"
+                                    >
+                                        {{ tag }}
+                                    </NuxtLink>
+                                </div>
+                                <span class="text-xs text-gray-500 dark:text-gray-400 ml-2">
+                                    {{ post.readTime }} {{ $t('posts.readTime') }}
+                                </span>
+                            </div>
+
+                            <NuxtLink
+                                :to="`/posts/${post.slug}`"
+                                class="block text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium text-sm mt-4"
+                            >
+                                {{ $t('posts.readMore') }} →
+                            </NuxtLink>
                         </div>
                     </article>
                 </div>
@@ -118,6 +141,7 @@
         readTime: number
         category: string
         tags: string[]
+        imageUrl: string
     }
 
     // const { t } = useI18n({})
