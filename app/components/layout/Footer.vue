@@ -41,21 +41,21 @@
                     <div class="flex gap-4">
                         <a
                             href="#twitter"
-                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-red-600 hover:text-white transition-colors"
+                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-red-600 hover:text-white transition-colors"
                             aria-label="Twitter"
                         >
                             <Icon name="mdi:twitter" class="w-5 h-5" />
                         </a>
                         <a
                             href="#github"
-                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-red-600 hover:text-white transition-colors"
+                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-red-600 hover:text-white transition-colors"
                             aria-label="GitHub"
                         >
                             <Icon name="mdi:github" class="w-5 h-5" />
                         </a>
                         <a
                             href="#linkedin"
-                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-red-600 hover:text-white transition-colors"
+                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-red-600 hover:text-white transition-colors"
                             aria-label="LinkedIn"
                         >
                             <Icon name="mdi:linkedin" class="w-5 h-5" />
