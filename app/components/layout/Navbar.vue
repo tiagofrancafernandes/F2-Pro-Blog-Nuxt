@@ -32,29 +32,6 @@
 
                 <!-- Right Actions -->
                 <div class="flex items-center gap-2">
-                    <!-- Language Selector -->
-                    <select
-                        :value="$i18n.locale"
-                        @change="changeLanguage($event)"
-                        class="px-2 py-1 text-sm rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
-                        aria-label="Select language"
-                    >
-                        <option value="en-US">English</option>
-                        <option value="pt-BR">Português</option>
-                    </select>
-
-                    <!-- Theme Toggle -->
-                    <button
-                        @click="toggleTheme"
-                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-700 dark:text-gray-300"
-                        :aria-label="colorMode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-                    >
-                        <Icon
-                            :name="colorMode.value === 'dark' ? 'mdi:sun' : 'mdi:moon'"
-                            class="w-5 h-5 text-gray-700 dark:text-yellow-400"
-                        />
-                    </button>
-
                     <!-- Mobile Menu Button -->
                     <button
                         @click="isMenuOpen = !isMenuOpen"
@@ -97,16 +74,4 @@
     import { ref } from 'vue'
 
     const isMenuOpen = ref(false)
-    const colorMode = useColorMode()
-    const { locale } = useI18n()
-
-    function toggleTheme() {
-        colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-    }
-
-    function changeLanguage(event: Event) {
-        const target = event.target as HTMLSelectElement
-        locale.value = target.value
-        localStorage.setItem('language', target.value)
-    }
 </script>
