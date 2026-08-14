@@ -1,12 +1,21 @@
 {
   "id": 1,
   "slug": "post-um",
-  "title": "Arquitetura de APIs REST com Laravel",
-  "description": "Guia completo sobre design e arquitetura de APIs RESTful usando o framework Laravel. Melhores práticas, padrões de projeto e implementação.",
+  "translations": {
+    "en-US": {
+      "title": "REST API Architecture with Laravel",
+      "description": "Complete guide on designing and architecting RESTful APIs using the Laravel framework. Best practices, design patterns and implementation.",
+      "content": "## Introduction\n\nBuilding scalable REST APIs is one of the most important skills for modern backend developers. This article explores best practices for architecting APIs using Laravel.\n\n## Resource Structure\n\nA well-designed REST API organizes its data around resources. Each resource should have a unique endpoint following the convention:\n\n- `GET /api/users` - List users\n- `POST /api/users` - Create new user\n- `GET /api/users/{id}` - Get specific user\n- `PUT /api/users/{id}` - Update user\n- `DELETE /api/users/{id}` - Delete user\n\n## Standardized Response\n\nAlways return standardized responses with useful meta information:\n\n```json\n{\n  \"success\": true,\n  \"data\": {...},\n  \"meta\": {\n    \"timestamp\": \"2024-08-10T10:30:00Z\",\n    \"version\": \"1.0\"\n  }\n}\n```\n\n## Error Handling\n\nImplement a consistent error system with appropriate HTTP codes and descriptive messages. Use status codes correctly:\n\n- 400: Bad Request\n- 401: Unauthorized\n- 403: Forbidden\n- 404: Not Found\n- 500: Internal Server Error\n\n## Conclusion\n\nFollowing these practices, you will create robust and easy to maintain APIs."
+    },
+    "pt-BR": {
+      "title": "Arquitetura de APIs REST com Laravel",
+      "description": "Guia completo sobre design e arquitetura de APIs RESTful usando o framework Laravel. Melhores práticas, padrões de projeto e implementação.",
+      "content": "## Introdução\n\nA construção de APIs REST escaláveis é uma das habilidades mais importantes para desenvolvedores backend modernos. Este artigo explora as melhores práticas para arquitetar APIs usando Laravel.\n\n## Estrutura de Recursos\n\nUma API REST bem projetada organiza seus dados em torno de recursos. Cada recurso deve ter um endpoint único que segue a convenção:\n\n- `GET /api/users` - Listar usuários\n- `POST /api/users` - Criar novo usuário\n- `GET /api/users/{id}` - Obter usuário específico\n- `PUT /api/users/{id}` - Atualizar usuário\n- `DELETE /api/users/{id}` - Deletar usuário\n\n## Resposta Padronizada\n\nSempre retorne respostas padronizadas com meta informações úteis:\n\n```json\n{\n  \"success\": true,\n  \"data\": {...},\n  \"meta\": {\n    \"timestamp\": \"2024-08-10T10:30:00Z\",\n    \"version\": \"1.0\"\n  }\n}\n```\n\n## Tratamento de Erros\n\nImplemente um sistema consistente de erros com códigos HTTP apropriados e mensagens descritivas. Use os status codes corretamente:\n\n- 400: Bad Request\n- 401: Unauthorized\n- 403: Forbidden\n- 404: Not Found\n- 500: Internal Server Error\n\n## Conclusão\n\nSeguindo estas práticas, você criará APIs robustas e fáceis de manter."
+    }
+  },
   "category": "backend",
   "tags": ["laravel", "api", "backend", "rest"],
   "date": "2024-08-10",
   "readTime": 8,
-  "author": "Tiago França",
-  "content": "## Introdução\n\nA construção de APIs REST escaláveis é uma das habilidades mais importantes para desenvolvedores backend modernos. Este artigo explora as melhores práticas para arquitetar APIs usando Laravel.\n\n## Estrutura de Recursos\n\nUma API REST bem projetada organiza seus dados em torno de recursos. Cada recurso deve ter um endpoint único que segue a convenção:\n\n- `GET /api/users` - Listar usuários\n- `POST /api/users` - Criar novo usuário\n- `GET /api/users/{id}` - Obter usuário específico\n- `PUT /api/users/{id}` - Atualizar usuário\n- `DELETE /api/users/{id}` - Deletar usuário\n\n## Resposta Padronizada\n\nSempre retorne respostas padronizadas com meta informações úteis:\n\n```json\n{\n  \"success\": true,\n  \"data\": {...},\n  \"meta\": {\n    \"timestamp\": \"2024-08-10T10:30:00Z\",\n    \"version\": \"1.0\"\n  }\n}\n```\n\n## Tratamento de Erros\n\nImplemente um sistema consistente de erros com códigos HTTP apropriados e mensagens descritivas. Use os status codes corretamente:\n\n- 400: Bad Request\n- 401: Unauthorized\n- 403: Forbidden\n- 404: Not Found\n- 500: Internal Server Error\n\n## Conclusão\n\nSeguindo estas práticas, você criará APIs robustas e fáceis de manter."
+  "author": "Tiago França"
 }
