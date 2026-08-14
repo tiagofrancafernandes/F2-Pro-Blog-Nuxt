@@ -1,2 +1,18 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Disallow: /admin
+Disallow: /dashboard
+
+# Block search engines
+User-agent: Googlebot
+User-agent: Bingbot
+Disallow: /user-profiles
+
+# Allow social crawlers
+User-agent: facebookexternalhit
+User-agent: Twitterbot
+Allow: /user-profiles
+
+### other Disallows
+User-agent: *
+Disallow: /my-page
+Disallow: /secret/*
