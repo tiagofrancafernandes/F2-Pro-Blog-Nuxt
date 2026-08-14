@@ -1,36 +1,36 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "slug": "post-um",
-      "title": "Arquitetura de APIs REST com Laravel",
-      "category": "backend",
-      "status": "published",
-      "date": "2024-08-10"
-    },
-    {
-      "id": 2,
-      "slug": "post-dois",
-      "title": "Otimização de Queries PostgreSQL",
-      "category": "database",
-      "status": "published",
-      "date": "2024-08-09"
-    },
-    {
-      "id": 3,
-      "slug": "post-tres",
-      "title": "Docker e Containers para Desenvolvimento",
-      "category": "devops",
-      "status": "published",
-      "date": "2024-08-08"
-    },
-    {
-      "id": 4,
-      "slug": "post-quatro",
-      "title": "Vue 3 Composition API Deep Dive",
-      "category": "frontend",
-      "status": "published",
-      "date": "2024-08-07"
-    }
-  ]
+    "posts": [
+        {
+            "id": 1,
+            "slug": "post-um",
+            "title": "Arquitetura de APIs REST com Laravel",
+            "category": "backend",
+            "status": "published",
+            "date": "2024-08-10"
+        },
+        {
+            "id": 2,
+            "slug": "post-dois",
+            "title": "Otimização de Queries PostgreSQL",
+            "category": "database",
+            "status": "published",
+            "date": "2024-08-09"
+        },
+        {
+            "id": 3,
+            "slug": "post-tres",
+            "title": "Docker e Containers para Desenvolvimento",
+            "category": "devops",
+            "status": "published",
+            "date": "2024-08-08"
+        },
+        {
+            "id": 4,
+            "slug": "post-quatro",
+            "title": "Vue 3 Composition API Deep Dive",
+            "category": "frontend",
+            "status": "published",
+            "date": "2024-08-07"
+        }
+    ]
 }

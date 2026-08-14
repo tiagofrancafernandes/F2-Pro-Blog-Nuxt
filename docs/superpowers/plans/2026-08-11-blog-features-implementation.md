@@ -128,9 +128,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@oro.ad/nuxt-claude-devtools',
   ],
-  
+
   // ... existing config ...
-  
+
   // Add FuseJS to Vite
   vite: {
     ssr: {
@@ -831,7 +831,7 @@ git commit -m "feat(composables): add useReadingTime with 200 wpm calculation"
     v-if="minutes > 0"
     class="flex items-center gap-1 text-xs font-medium text-neutral-600 dark:text-neutral-400"
   >
-    <iconify-icon icon="fa7-solid:clock" class="w-3 h-3" />
+    <IconifyIcon icon="fa7-solid:clock" class="w-3 h-3" />
     <span>{{ minutes }} min read</span>
   </div>
 </template>
@@ -997,7 +997,7 @@ git commit -m "feat(composables): add useShare for social network URLs"
         class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#1D9BF0] hover:bg-[#1a8cd8] text-white text-sm font-medium transition-colors"
         aria-label="Share on Twitter"
       >
-        <iconify-icon icon="fa7-brands:twitter" class="w-4 h-4" />
+        <IconifyIcon icon="fa7-brands:twitter" class="w-4 h-4" />
         <span class="hidden sm:inline">Twitter</span>
       </a>
 
@@ -1009,7 +1009,7 @@ git commit -m "feat(composables): add useShare for social network URLs"
         class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#1877F2] hover:bg-[#165dbf] text-white text-sm font-medium transition-colors"
         aria-label="Share on Facebook"
       >
-        <iconify-icon icon="fa7-brands:facebook-f" class="w-4 h-4" />
+        <IconifyIcon icon="fa7-brands:facebook-f" class="w-4 h-4" />
         <span class="hidden sm:inline">Facebook</span>
       </a>
 
@@ -1021,7 +1021,7 @@ git commit -m "feat(composables): add useShare for social network URLs"
         class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0A66C2] hover:bg-[#084b9f] text-white text-sm font-medium transition-colors"
         aria-label="Share on LinkedIn"
       >
-        <iconify-icon icon="fa7-brands:linkedin-in" class="w-4 h-4" />
+        <IconifyIcon icon="fa7-brands:linkedin-in" class="w-4 h-4" />
         <span class="hidden sm:inline">LinkedIn</span>
       </a>
 
@@ -1033,7 +1033,7 @@ git commit -m "feat(composables): add useShare for social network URLs"
         class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-medium transition-colors"
         aria-label="Share on WhatsApp"
       >
-        <iconify-icon icon="fa7-brands:whatsapp" class="w-4 h-4" />
+        <IconifyIcon icon="fa7-brands:whatsapp" class="w-4 h-4" />
         <span class="hidden sm:inline">WhatsApp</span>
       </a>
 
@@ -1048,7 +1048,7 @@ git commit -m "feat(composables): add useShare for social network URLs"
         ]"
         aria-label="Copy link to clipboard"
       >
-        <iconify-icon
+        <IconifyIcon
           :icon="copySuccess ? 'fa7-solid:check' : 'fa7-solid:link'"
           class="w-4 h-4"
         />
@@ -1237,7 +1237,7 @@ In the meta information section (around line 52), replace:
 ```vue
 <!-- Old -->
 <span class="flex items-center gap-1">
-    <iconify-icon icon="fa7-solid:clock" class="h-4 w-4" />
+    <IconifyIcon icon="fa7-solid:clock" class="h-4 w-4" />
     {{ post.readTime }}
 </span>
 
@@ -1425,7 +1425,7 @@ const filteredPosts = computed(() => {
   if (!activeTag.value) {
     return enrichedPosts.value
   }
-  
+
   return enrichedPosts.value.filter((post) =>
     post.tags?.includes(activeTag.value)
   )
@@ -1481,7 +1481,7 @@ In the desktop menu section (after dark mode toggle):
   aria-label="Search posts"
   title="Search (Cmd+K)"
 >
-  <iconify-icon icon="fa7-solid:magnifying-glass" class="w-5 h-5" />
+  <IconifyIcon icon="fa7-solid:magnifying-glass" class="w-5 h-5" />
 </button>
 ```
 
@@ -1592,21 +1592,20 @@ git commit -m "feat: complete blog features implementation (search, tags, readin
 
 ## Success Criteria Met
 
-✅ Search: Client-side, instant, fuzzy matching  
-✅ Tags: Dynamic aggregation, counts, filtering  
-✅ Reading Time: 200 wpm formula, accurate  
-✅ Social Share: 5 networks, native links, copy feedback  
-✅ Disqus: Optional via env var  
-✅ Performance: < 15KB new code  
-✅ Mobile: Fully responsive  
-✅ Dark Mode: Full support  
-✅ Extensible: Composables reusable for future features  
+✅ Search: Client-side, instant, fuzzy matching
+✅ Tags: Dynamic aggregation, counts, filtering
+✅ Reading Time: 200 wpm formula, accurate
+✅ Social Share: 5 networks, native links, copy feedback
+✅ Disqus: Optional via env var
+✅ Performance: < 15KB new code
+✅ Mobile: Fully responsive
+✅ Dark Mode: Full support
+✅ Extensible: Composables reusable for future features
 
 ---
 
 **Plan saved to:** `docs/superpowers/plans/2026-08-11-blog-features-implementation.md`
 
-**Version:** 1.0  
-**Status:** Ready for Implementation  
+**Version:** 1.0
+**Status:** Ready for Implementation
 **Tasks:** 15 (all granular, testable, committable)
-
