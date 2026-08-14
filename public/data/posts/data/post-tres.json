@@ -1,13 +1,12 @@
 {
-    "id": 3,
-    "slug": "post-tres",
-    "title": "Docker e Containers para Desenvolvimento",
-    "description": "Um guia completo sobre Docker e containers, desde conceitos básicos até configurações avançadas para seu workflow de desenvolvimento.",
-    "content": "Docker revolucionou a forma como desenvolvemos e implantamos aplicações. Containers fornecem consistência entre ambientes de desenvolvimento, teste e produção.\n\n## O que é Docker?\n\nDocker é uma plataforma que permite empacotar sua aplicação com todas as dependências em um container isolado. Isso garante que funcione independentemente do ambiente.\n\n## Configurando um Dockerfile\n\nUm Dockerfile é um arquivo que contém instruções para criar uma imagem Docker. Aprenda a escrever Dockerfiles eficientes e otimizados.\n\n## Docker Compose\n\nPara desenvolvimento com múltiplos containers (API, banco de dados, cache), use Docker Compose para orquestrar tudo.\n\n## Boas Práticas\n\n- Use imagens oficiais como base\n- Minimize o tamanho das imagens\n- Use .dockerignore para excluir arquivos desnecessários\n- Implemente health checks\n\n## Volumes e Networking\n\nEntenda como usar volumes para persistência de dados e configure networking entre containers.\n\n## Produção\n\nDocker é essencial em produção. Aprenda a usar orquestradores como Kubernetes para gerenciar containers em escala.",
-    "coverImage": "https://picsum.photos/1024/768?random=12",
-    "category": "devops",
-    "date": "2024-08-08",
-    "readTime": 12,
-    "author": "Tiago França",
-    "tags": ["docker", "containers", "devops", "deployment", "kubernetes"]
+  "id": 3,
+  "slug": "post-tres",
+  "title": "Docker e Containers para Desenvolvimento",
+  "description": "Aprenda Docker e containerização para otimizar seu workflow de desenvolvimento. Configuração, best practices e deploy com containers.",
+  "category": "devops",
+  "tags": ["docker", "devops", "containers", "deployment"],
+  "date": "2024-08-08",
+  "readTime": 15,
+  "author": "Tiago França",
+  "content": "## Por que Docker?\n\nDocker revolucionou como desenvolvemos e deployamos aplicações. Oferece consistência entre ambientes de desenvolvimento, teste e produção.\n\n## Conceitos Fundamentais\n\n### Imagens\nUma imagem Docker é um template com todas as dependências necessárias. É criada a partir de um Dockerfile.\n\n### Containers\nUm container é uma instância em execução de uma imagem. Isolado, leve e portável.\n\n## Dockerfile Básico\n\n```dockerfile\nFROM php:8.2-fpm\n\nWORKDIR /app\n\nCOPY . .\n\nRUN composer install\n\nEXPOSE 9000\n\nCMD [\"php-fpm\"]\n```\n\n## Docker Compose\n\nPara aplicações multi-container, use docker-compose:\n\n```yaml\nversion: '3'\nservices:\n  app:\n    build: .\n    ports:\n      - \"8000:8000\"\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: myapp\n```\n\n## Best Practices\n\n- Use imagens oficiais como base\n- Minimize o tamanho das imagens\n- Use `.dockerignore` para excluir arquivos\n- Não rode como root\n- Use volumes para dados persistentes\n\n## Conclusão\n\nDocker é essencial para desenvolvimento moderno e DevOps eficiente."
 }

@@ -38,7 +38,30 @@
       "category": "frontend",
       "tags": ["vue3", "frontend", "javascript", "reactivity"],
       "status": "published",
-      "date": "2024-08-07"
+      "date": "2024-08-07",
+      "readTime": 14
+    },
+    {
+      "id": 5,
+      "slug": "post-cinco",
+      "title": "TypeScript Strict Mode: Benefícios e Desafios",
+      "description": "Entenda como usar TypeScript strict mode para aumentar a segurança de tipos. Tipagem rigorosa, benefícios e estratégias de migração.",
+      "category": "frontend",
+      "tags": ["typescript", "javascript", "types", "tooling"],
+      "status": "published",
+      "date": "2024-08-06",
+      "readTime": 9
+    },
+    {
+      "id": 6,
+      "slug": "post-seis",
+      "title": "Design Patterns em PHP Moderno",
+      "description": "Padrões de design essenciais para desenvolvimento PHP profissional. Singleton, Factory, Observer e aplicações práticas.",
+      "category": "backend",
+      "tags": ["php", "design-patterns", "backend", "architecture"],
+      "status": "published",
+      "date": "2024-08-05",
+      "readTime": 11
     }
   ]
 }

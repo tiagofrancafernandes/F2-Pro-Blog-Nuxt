@@ -1,0 +1,12 @@
+{
+  "id": 5,
+  "slug": "post-cinco",
+  "title": "TypeScript Strict Mode: Benefícios e Desafios",
+  "description": "Entenda como usar TypeScript strict mode para aumentar a segurança de tipos. Tipagem rigorosa, benefícios e estratégias de migração.",
+  "category": "frontend",
+  "tags": ["typescript", "javascript", "types", "tooling"],
+  "date": "2024-08-06",
+  "readTime": 9,
+  "author": "Tiago França",
+  "content": "## O que é Strict Mode?\n\nTypeScript strict mode ativa uma série de verificações de tipo rigorosas que ajudam a evitar bugs comuns.\n\n## Ativando Strict Mode\n\nEm `tsconfig.json`:\n\n```json\n{\n  \"compilerOptions\": {\n    \"strict\": true\n  }\n}\n```\n\nIsso ativa todas as verificações:\n- noImplicitAny\n- strictNullChecks\n- strictFunctionTypes\n- strictBindCallApply\n- strictPropertyInitialization\n- noImplicitThis\n- alwaysStrict\n\n## Benefícios\n\n### Type Safety\nCapta erros em tempo de compilação:\n\n```typescript\nlet name: string = 'John'\nname = 42 // Error!\n```\n\n### Null Safety\nForça tratamento de valores null/undefined:\n\n```typescript\nfunction greet(name: string) {\n  return `Hello, ${name}`\n}\n\ngreet(null) // Error!\ngreet('John') // OK\n```\n\n## Migração Gradual\n\nNão precisa ativar tudo de uma vez. Comece com verificações individuais e aumente gradualmente.\n\n## Conclusão\n\nStrict mode é essencial para código TypeScript robusto e manutenível."
+}
