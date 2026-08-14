@@ -12,6 +12,7 @@ export default {
                 blog: 'Blog',
                 portfolio: 'Portfolio',
                 hireMe: 'Hire Me',
+                search: 'Search articles...',
             },
             hero: {
                 title: 'Real Insights on Development, Architecture & Business',
@@ -61,6 +62,7 @@ export default {
                 blog: 'Blog',
                 portfolio: 'Portfólio',
                 hireMe: 'Contrate-me',
+                search: 'Pesquisar artigos...',
             },
             hero: {
                 title: 'Insights Reais sobre Desenvolvimento, Arquitetura e Negócios',

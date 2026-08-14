@@ -28,6 +28,17 @@
                     >
                         {{ $t('nav.about') }}
                     </NuxtLink>
+
+                    <!-- Search Bar -->
+                    <form @submit.prevent="handleSearch" class="hidden lg:flex items-center gap-2 bg-gray-100 dark:bg-slate-800 rounded-lg px-3 py-1 focus-within:ring-2 focus-within:ring-red-600">
+                        <Icon name="mdi:magnify" class="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                        <input
+                            v-model="searchInput"
+                            type="text"
+                            :placeholder="$t('nav.search')"
+                            class="bg-transparent text-sm text-gray-700 dark:text-gray-300 placeholder-gray-500 dark:placeholder-gray-400 border-none outline-none w-32"
+                        />
+                    </form>
                 </div>
 
                 <!-- Right Actions -->
@@ -73,6 +84,18 @@
 
 <script setup lang="ts">
     import { ref } from 'vue'
+    import { useRouter } from 'vue-router'
 
+    const router = useRouter()
     const isMenuOpen = ref(false)
+    const searchInput = ref('')
+
+    function handleSearch(): void {
+        if (!searchInput.value.trim()) {
+            return
+        }
+
+        router.push(`/posts/search?q=${encodeURIComponent(searchInput.value)}`)
+        searchInput.value = ''
+    }
 </script>
