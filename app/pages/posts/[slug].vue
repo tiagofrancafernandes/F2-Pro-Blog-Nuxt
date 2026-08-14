@@ -5,14 +5,14 @@
             <section class="bg-red-600 dark:bg-red-700 text-white py-12 sm:py-16">
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                     <div class="mb-4 flex items-center gap-2 text-red-100">
-                        <NuxtLink to="/" class="hover:text-white">Home</NuxtLink>
+                        <NuxtLink to="/" class="hover:text-white">{{ $t('nav.home') }}</NuxtLink>
                         <span>/</span>
-                        <span>{{ post.title }}</span>
+                        <span>{{ getPostTitle() }}</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl font-bold mb-4">{{ post.title }}</h1>
+                    <h1 class="text-4xl sm:text-5xl font-bold mb-4">{{ getPostTitle() }}</h1>
                     <div class="flex flex-wrap gap-4 text-red-100 text-sm">
                         <span>{{ formatDate(post.date) }}</span>
-                        <span>{{ post.readTime }} min read</span>
+                        <span>{{ post.readTime }} {{ $t('posts.readTime') }}</span>
                         <span>{{ post.category }}</span>
                     </div>
                 </div>
@@ -30,10 +30,10 @@
 
                             <!-- CTA Section -->
                             <div class="mt-16 p-8 bg-red-600 dark:bg-red-700 text-white rounded-lg">
-                                <h2 class="text-2xl font-bold mb-2">Ready to Work Together?</h2>
-                                <p class="mb-4">Let's discuss your next project and how I can help.</p>
+                                <h2 class="text-2xl font-bold mb-2">{{ $t('post.cta') }}</h2>
+                                <p class="mb-4">{{ $t('post.ctaDescription') }}</p>
                                 <button class="px-6 py-2 bg-white text-red-600 font-semibold rounded hover:bg-red-50 transition-colors">
-                                    Get in Touch
+                                    {{ $t('post.ctaButton') }}
                                 </button>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div class="sticky top-20 space-y-6">
                                 <!-- Tags -->
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
-                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Tags</h3>
+                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{{ $t('post.tags') }}</h3>
                                     <div class="flex flex-wrap gap-2">
                                         <span
                                             v-for="tag in post.tags"
@@ -57,7 +57,7 @@
 
                                 <!-- Share -->
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
-                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Share</h3>
+                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{{ $t('post.share') }}</h3>
                                     <div class="flex gap-2">
                                         <a
                                             href="#share-twitter"
@@ -89,7 +89,7 @@
                                         to="/"
                                         class="block text-center px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors font-medium"
                                     >
-                                        ← Back to Posts
+                                        {{ $t('post.backToPosts') }}
                                     </NuxtLink>
                                 </div>
                             </div>
@@ -100,21 +100,43 @@
         </div>
 
         <div v-else class="text-center py-16">
-            <p class="text-gray-600 dark:text-gray-400">Post not found.</p>
+            <p class="text-gray-600 dark:text-gray-400">{{ $t('posts.noResults') }}</p>
             <NuxtLink to="/" class="text-red-600 dark:text-red-400 hover:text-red-700 mt-4 inline-block">
-                Back to Home
+                {{ $t('post.backToPosts') }}
             </NuxtLink>
         </div>
     </div>
 
     <div v-else class="text-center py-16">
-        <p class="text-gray-600 dark:text-gray-400">Loading...</p>
+        <p class="text-gray-600 dark:text-gray-400">{{ $t('posts.loading') }}</p>
     </div>
 </template>
 
 <script setup lang="ts">
     import { ref, onMounted } from 'vue'
     import { useRoute } from 'vue-router'
+    import { useI18n } from 'vue-i18n'
+
+    interface PostData {
+        id: number
+        slug: string
+        translations: {
+            'en-US': {
+                title: string
+                description: string
+                content: string
+            }
+            'pt-BR': {
+                title: string
+                description: string
+                content: string
+            }
+        }
+        date: string
+        readTime: number
+        category: string
+        tags: string[]
+    }
 
     interface Post {
         id: number
@@ -129,9 +151,18 @@
     }
 
     const route = useRoute()
+    const { locale } = useI18n()
     const post = ref<Post | null>(null)
     const isLoading = ref(true)
     const renderedContent = ref('')
+
+    function getPostTitle(): string {
+        if (!post.value) {
+            return ''
+        }
+
+        return post.value.title
+    }
 
     function formatDate(date: string): string {
         return new Date(date).toLocaleDateString('en-US', {
@@ -169,6 +200,23 @@
         }
     }
 
+    function mapPostData(data: PostData): Post {
+        const currentLocale = locale.value as 'en-US' | 'pt-BR'
+        const translations = data.translations[currentLocale] || data.translations['en-US']
+
+        return {
+            id: data.id,
+            slug: data.slug,
+            title: translations.title,
+            description: translations.description,
+            content: translations.content,
+            date: data.date,
+            readTime: data.readTime,
+            category: data.category,
+            tags: data.tags,
+        }
+    }
+
     onMounted(async () => {
         if (isLoading.value === false) {
             return
@@ -184,9 +232,9 @@
                 return
             }
 
-            const data = await response.json()
-            post.value = data
-            renderedContent.value = renderMarkdown(data.content || '')
+            const data: PostData = await response.json()
+            post.value = mapPostData(data)
+            renderedContent.value = renderMarkdown(post.value.content || '')
         } catch (error) {
             console.error('Failed to fetch post:', error)
             post.value = null
