@@ -65,13 +65,29 @@
             </div>
 
             <div class="mt-12 pt-8 border-t border-gray-200 dark:border-slate-700">
-                <div class="flex items-center justify-between">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p class="text-sm text-gray-600 dark:text-gray-400 order-3 sm:order-1">
                         © 2026 Tiago França. All rights reserved.
                     </p>
-                    <div class="flex items-center gap-4">
+
+                    <div class="flex items-center gap-6 order-1 sm:order-2">
+                        <!-- Language Selector -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">{{ $t('nav.posts') }}:</span>
+                            <select
+                                :value="locale"
+                                @change="changeLanguage($event)"
+                                class="px-2 py-1 text-sm rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-300 dark:border-slate-700 hover:bg-gray-300 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                                aria-label="Select language"
+                            >
+                                <option value="en-US">English</option>
+                                <option value="pt-BR">Português</option>
+                            </select>
+                        </div>
+
                         <!-- Color Mode Toggle -->
                         <div class="flex items-center gap-2">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">Theme:</span>
                             <button
                                 @click="colorMode.preference = 'light'"
                                 :class="getThemeButtonClass('light')"
@@ -106,6 +122,7 @@
 
 <script setup lang="ts">
     const colorMode = useColorMode()
+    const { locale } = useI18n()
 
     function getThemeButtonClass(mode: string): string {
         const baseClass = 'p-2 rounded-lg transition-colors text-gray-600 dark:text-gray-400'
@@ -115,5 +132,11 @@
         }
 
         return `${baseClass} bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:bg-slate-700`
+    }
+
+    function changeLanguage(event: Event) {
+        const target = event.target as HTMLSelectElement
+        locale.value = target.value
+        localStorage.setItem('i18n_locale', target.value)
     }
 </script>
