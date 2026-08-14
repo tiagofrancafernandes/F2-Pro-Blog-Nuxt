@@ -1,7 +1,197 @@
-<script setup lang="ts">
-//
-</script>
-
 <template>
-    <!--  -->
+    <div v-if="!isLoading">
+        <div v-if="post">
+            <!-- Hero -->
+            <section class="bg-red-600 dark:bg-red-700 text-white py-12 sm:py-16">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                    <div class="mb-4 flex items-center gap-2 text-red-100">
+                        <NuxtLink to="/" class="hover:text-white">Home</NuxtLink>
+                        <span>/</span>
+                        <span>{{ post.title }}</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl font-bold mb-4">{{ post.title }}</h1>
+                    <div class="flex flex-wrap gap-4 text-red-100 text-sm">
+                        <span>{{ formatDate(post.date) }}</span>
+                        <span>{{ post.readTime }} min read</span>
+                        <span>{{ post.category }}</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content -->
+            <div class="bg-white dark:bg-slate-900">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                        <!-- Main Content -->
+                        <div class="lg:col-span-3">
+                            <article class="prose dark:prose-invert max-w-none">
+                                <div v-html="renderedContent" class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"></div>
+                            </article>
+
+                            <!-- CTA Section -->
+                            <div class="mt-16 p-8 bg-red-600 dark:bg-red-700 text-white rounded-lg">
+                                <h2 class="text-2xl font-bold mb-2">Ready to Work Together?</h2>
+                                <p class="mb-4">Let's discuss your next project and how I can help.</p>
+                                <button class="px-6 py-2 bg-white text-red-600 font-semibold rounded hover:bg-red-50 transition-colors">
+                                    Get in Touch
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="lg:col-span-1">
+                            <div class="sticky top-20 space-y-6">
+                                <!-- Tags -->
+                                <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
+                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Tags</h3>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            v-for="tag in post.tags"
+                                            :key="tag"
+                                            class="text-xs px-2 py-1 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-full"
+                                        >
+                                            {{ tag }}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Share -->
+                                <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
+                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Share</h3>
+                                    <div class="flex gap-2">
+                                        <a
+                                            href="#share-twitter"
+                                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
+                                            aria-label="Share on Twitter"
+                                        >
+                                            <Icon name="fa6-brands:twitter" class="w-4 h-4" />
+                                        </a>
+                                        <a
+                                            href="#share-linkedin"
+                                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
+                                            aria-label="Share on LinkedIn"
+                                        >
+                                            <Icon name="fa6-brands:linkedin" class="w-4 h-4" />
+                                        </a>
+                                        <button
+                                            @click="copyLink"
+                                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
+                                            aria-label="Copy link"
+                                        >
+                                            <Icon name="fa6-solid:link" class="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Navigation -->
+                                <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
+                                    <NuxtLink
+                                        to="/"
+                                        class="block text-center px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors font-medium"
+                                    >
+                                        ← Back to Posts
+                                    </NuxtLink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div v-else class="text-center py-16">
+            <p class="text-gray-600 dark:text-gray-400">Post not found.</p>
+            <NuxtLink to="/" class="text-red-600 dark:text-red-400 hover:text-red-700 mt-4 inline-block">
+                Back to Home
+            </NuxtLink>
+        </div>
+    </div>
+
+    <div v-else class="text-center py-16">
+        <p class="text-gray-600 dark:text-gray-400">Loading...</p>
+    </div>
 </template>
+
+<script setup lang="ts">
+    import { ref, onMounted } from 'vue'
+    import { useRoute } from 'vue-router'
+
+    interface Post {
+        id: number
+        slug: string
+        title: string
+        description: string
+        content: string
+        date: string
+        readTime: number
+        category: string
+        tags: string[]
+    }
+
+    const route = useRoute()
+    const post = ref<Post | null>(null)
+    const isLoading = ref(true)
+    const renderedContent = ref('')
+
+    function formatDate(date: string): string {
+        return new Date(date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        })
+    }
+
+    function renderMarkdown(markdown: string): string {
+        if (!markdown) {
+            return '<p>No content</p>'
+        }
+
+        let html = markdown
+            .replace(/^### (.*?)$/gm, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
+            .replace(/^## (.*?)$/gm, '<h2 class="text-3xl font-bold mt-12 mb-6">$1</h2>')
+            .replace(/^# (.*?)$/gm, '<h1 class="text-4xl font-bold mt-12 mb-6">$1</h1>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+            .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded text-sm">$1</code>')
+            .replace(/\n\n/g, '</p><p>')
+
+        return `<p>${html}</p>`
+    }
+
+    async function copyLink(): Promise<void> {
+        const url = `${window.location.origin}/posts/${route.params.slug}`
+
+        try {
+            await navigator.clipboard.writeText(url)
+            alert('Link copied!')
+        } catch (error) {
+            console.error('Failed to copy link:', error)
+        }
+    }
+
+    onMounted(async () => {
+        if (isLoading.value === false) {
+            return
+        }
+
+        try {
+            const slug = route.params.slug as string
+            const response = await fetch(`/data/posts/data/${slug}.json`)
+
+            if (!response.ok) {
+                post.value = null
+                isLoading.value = false
+                return
+            }
+
+            const data = await response.json()
+            post.value = data
+            renderedContent.value = renderMarkdown(data.content || '')
+        } catch (error) {
+            console.error('Failed to fetch post:', error)
+            post.value = null
+        } finally {
+            isLoading.value = false
+        }
+    })
+</script>
