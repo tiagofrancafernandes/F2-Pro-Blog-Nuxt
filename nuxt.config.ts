@@ -31,14 +31,14 @@ export default defineNuxtConfig({
         strategy: 'no_prefix',
         detectBrowserLanguage: {
             useCookie: true,
-            cookieKey: 'i18n_redirected',
+            cookieKey: 'i18n_locale',
             redirectOn: 'root',
             cookieDomain: undefined,
             cookieCrossOrigin: false,
             alwaysRedirect: false,
             fallbackLocale: 'en-US',
         },
-        vueI18n: './i18n.config.ts',
+        vueI18n: '~/i18n.config.ts',
     },
 
     // Environment variables for dynamic configuration
