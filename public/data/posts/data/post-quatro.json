@@ -14,8 +14,14 @@
     }
   },
   "category": "frontend",
-  "tags": ["vue3", "frontend", "javascript", "reactivity"],
+  "tags": [
+    "vue3",
+    "frontend",
+    "javascript",
+    "reactivity"
+  ],
   "date": "2024-08-07",
   "readTime": 14,
-  "author": "Tiago França"
+  "author": "Tiago França",
+  "status": "published"
 }

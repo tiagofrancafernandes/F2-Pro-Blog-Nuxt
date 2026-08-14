@@ -9,7 +9,12 @@
                         <span>/</span>
                         <span>{{ getPostTitle() }}</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl font-bold mb-4">{{ getPostTitle() }}</h1>
+                    <div class="flex items-start justify-between mb-4">
+                        <h1 class="text-4xl sm:text-5xl font-bold">{{ getPostTitle() }}</h1>
+                        <span v-if="post.status !== 'published'" :class="getStatusBadgeClass()">
+                            {{ post.status.toUpperCase() }}
+                        </span>
+                    </div>
                     <div class="flex flex-wrap gap-4 text-red-100 text-sm">
                         <span>{{ formatDate(post.date) }}</span>
                         <span>{{ post.readTime }} {{ $t('posts.readTime') }}</span>
@@ -136,6 +141,7 @@
         readTime: number
         category: string
         tags: string[]
+        status: 'published' | 'draft' | 'archived'
     }
 
     interface Post {
@@ -148,6 +154,7 @@
         readTime: number
         category: string
         tags: string[]
+        status: 'published' | 'draft' | 'archived'
     }
 
     const route = useRoute()
@@ -162,6 +169,24 @@
         }
 
         return post.value.title
+    }
+
+    function getStatusBadgeClass(): string {
+        if (!post.value) {
+            return ''
+        }
+
+        const baseClasses = 'px-3 py-1 rounded-full text-xs font-semibold'
+
+        if (post.value.status === 'draft') {
+            return `${baseClasses} bg-yellow-200 text-yellow-800`
+        }
+
+        if (post.value.status === 'archived') {
+            return `${baseClasses} bg-gray-200 text-gray-800`
+        }
+
+        return baseClasses
     }
 
     function formatDate(date: string): string {
@@ -214,6 +239,7 @@
             readTime: data.readTime,
             category: data.category,
             tags: data.tags,
+            status: data.status,
         }
     }
 

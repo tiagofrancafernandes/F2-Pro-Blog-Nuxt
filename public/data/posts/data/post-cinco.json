@@ -14,8 +14,14 @@
     }
   },
   "category": "frontend",
-  "tags": ["typescript", "javascript", "types", "tooling"],
+  "tags": [
+    "typescript",
+    "javascript",
+    "types",
+    "tooling"
+  ],
   "date": "2024-08-06",
   "readTime": 9,
-  "author": "Tiago França"
+  "author": "Tiago França",
+  "status": "published"
 }

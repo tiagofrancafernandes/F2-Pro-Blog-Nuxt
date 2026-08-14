@@ -14,8 +14,14 @@
     }
   },
   "category": "backend",
-  "tags": ["php", "design-patterns", "backend", "architecture"],
+  "tags": [
+    "php",
+    "design-patterns",
+    "backend",
+    "architecture"
+  ],
   "date": "2024-08-05",
   "readTime": 11,
-  "author": "Tiago França"
+  "author": "Tiago França",
+  "status": "published"
 }
