@@ -27,6 +27,11 @@
             <div class="bg-white dark:bg-slate-900">
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
                     <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                        <!-- Table of Contents Sidebar -->
+                        <div class="lg:col-span-1 order-last lg:order-first">
+                            <TableOfContents :headings="headings" />
+                        </div>
+
                         <!-- Main Content -->
                         <div class="lg:col-span-3">
                             <article class="prose dark:prose-invert max-w-none">
@@ -157,11 +162,18 @@
         status: 'published' | 'draft' | 'archived'
     }
 
+    interface Heading {
+        id: string
+        text: string
+        level: number
+    }
+
     const route = useRoute()
     const { locale } = useI18n()
     const post = ref<Post | null>(null)
     const isLoading = ref(true)
     const renderedContent = ref('')
+    const headings = ref<Heading[]>([])
 
     function getPostTitle(): string {
         if (!post.value) {
@@ -197,19 +209,60 @@
         })
     }
 
+    function generateSlug(text: string): string {
+        return text
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+    }
+
     function renderMarkdown(markdown: string): string {
         if (!markdown) {
             return '<p>No content</p>'
         }
 
+        const extractedHeadings: Heading[] = []
+        let headingCounter = 0
+
         let html = markdown
-            .replace(/^### (.*?)$/gm, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
-            .replace(/^## (.*?)$/gm, '<h2 class="text-3xl font-bold mt-12 mb-6">$1</h2>')
-            .replace(/^# (.*?)$/gm, '<h1 class="text-4xl font-bold mt-12 mb-6">$1</h1>')
+            .replace(/^### (.*?)$/gm, (match, text) => {
+                const id = `heading-${headingCounter++}`
+                extractedHeadings.push({
+                    id,
+                    text: text.trim(),
+                    level: 3,
+                })
+
+                return `<h3 id="${id}" class="text-2xl font-bold mt-8 mb-4">${text}</h3>`
+            })
+            .replace(/^## (.*?)$/gm, (match, text) => {
+                const id = `heading-${headingCounter++}`
+                extractedHeadings.push({
+                    id,
+                    text: text.trim(),
+                    level: 2,
+                })
+
+                return `<h2 id="${id}" class="text-3xl font-bold mt-12 mb-6">${text}</h2>`
+            })
+            .replace(/^# (.*?)$/gm, (match, text) => {
+                const id = `heading-${headingCounter++}`
+                extractedHeadings.push({
+                    id,
+                    text: text.trim(),
+                    level: 1,
+                })
+
+                return `<h1 id="${id}" class="text-4xl font-bold mt-12 mb-6">${text}</h1>`
+            })
             .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
             .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
             .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded text-sm">$1</code>')
             .replace(/\n\n/g, '</p><p>')
+
+        headings.value = extractedHeadings.filter((h) => h.level >= 2)
 
         return `<p>${html}</p>`
     }
