@@ -14,8 +14,14 @@
     }
   },
   "category": "devops",
-  "tags": ["docker", "devops", "containers", "deployment"],
+  "tags": [
+    "docker",
+    "devops",
+    "containers",
+    "deployment"
+  ],
   "date": "2024-08-08",
   "readTime": 15,
-  "author": "Tiago França"
+  "author": "Tiago França",
+  "status": "published"
 }
