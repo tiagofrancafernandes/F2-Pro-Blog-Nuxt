@@ -3,63 +3,108 @@
     {
       "id": 1,
       "slug": "post-um",
-      "title": "Arquitetura de APIs REST com Laravel",
-      "description": "Guia completo sobre design e arquitetura de APIs RESTful usando o framework Laravel. Melhores práticas, padrões de projeto e implementação.",
+      "translations": {
+        "en-US": {
+          "title": "REST API Architecture with Laravel",
+          "description": "Complete guide on designing and architecting RESTful APIs using the Laravel framework. Best practices, design patterns and implementation."
+        },
+        "pt-BR": {
+          "title": "Arquitetura de APIs REST com Laravel",
+          "description": "Guia completo sobre design e arquitetura de APIs RESTful usando o framework Laravel. Melhores práticas, padrões de projeto e implementação."
+        }
+      },
       "category": "backend",
       "tags": ["laravel", "api", "backend", "rest"],
-      "status": "published",
-      "date": "2024-08-10"
+      "date": "2024-08-10",
+      "readTime": 8
     },
     {
       "id": 2,
       "slug": "post-dois",
-      "title": "Otimização de Queries PostgreSQL",
-      "description": "Técnicas avançadas de otimização de queries em PostgreSQL. Índices, execução de planos e tuning de performance para produção.",
+      "translations": {
+        "en-US": {
+          "title": "PostgreSQL Query Optimization",
+          "description": "Advanced optimization techniques for queries in PostgreSQL. Indexes, execution plans and performance tuning for production."
+        },
+        "pt-BR": {
+          "title": "Otimização de Queries PostgreSQL",
+          "description": "Técnicas avançadas de otimização de queries em PostgreSQL. Índices, execução de planos e tuning de performance para produção."
+        }
+      },
       "category": "database",
       "tags": ["postgresql", "database", "sql", "performance"],
-      "status": "published",
-      "date": "2024-08-09"
+      "date": "2024-08-09",
+      "readTime": 12
     },
     {
       "id": 3,
       "slug": "post-tres",
-      "title": "Docker e Containers para Desenvolvimento",
-      "description": "Aprenda Docker e containerização para otimizar seu workflow de desenvolvimento. Configuração, best practices e deploy com containers.",
+      "translations": {
+        "en-US": {
+          "title": "Docker and Containers for Development",
+          "description": "Learn Docker and containerization to optimize your development workflow. Configuration, best practices and container deployment."
+        },
+        "pt-BR": {
+          "title": "Docker e Containers para Desenvolvimento",
+          "description": "Aprenda Docker e containerização para otimizar seu workflow de desenvolvimento. Configuração, best practices e deploy com containers."
+        }
+      },
       "category": "devops",
       "tags": ["docker", "devops", "containers", "deployment"],
-      "status": "published",
-      "date": "2024-08-08"
+      "date": "2024-08-08",
+      "readTime": 10
     },
     {
       "id": 4,
       "slug": "post-quatro",
-      "title": "Vue 3 Composition API Deep Dive",
-      "description": "Análise profunda da Composition API do Vue 3. Reatividade, composables, melhor organização de código e padrões de desenvolvimento.",
+      "translations": {
+        "en-US": {
+          "title": "Vue 3 Composition API Deep Dive",
+          "description": "In-depth analysis of Vue 3 Composition API. Reactivity, composables, better code organization and development patterns."
+        },
+        "pt-BR": {
+          "title": "Vue 3 Composition API Deep Dive",
+          "description": "Análise profunda da Composition API do Vue 3. Reatividade, composables, melhor organização de código e padrões de desenvolvimento."
+        }
+      },
       "category": "frontend",
       "tags": ["vue3", "frontend", "javascript", "reactivity"],
-      "status": "published",
       "date": "2024-08-07",
       "readTime": 14
     },
     {
       "id": 5,
       "slug": "post-cinco",
-      "title": "TypeScript Strict Mode: Benefícios e Desafios",
-      "description": "Entenda como usar TypeScript strict mode para aumentar a segurança de tipos. Tipagem rigorosa, benefícios e estratégias de migração.",
+      "translations": {
+        "en-US": {
+          "title": "TypeScript Strict Mode: Benefits and Challenges",
+          "description": "Understand how to use TypeScript strict mode to increase type safety. Rigorous typing, benefits and migration strategies."
+        },
+        "pt-BR": {
+          "title": "TypeScript Strict Mode: Benefícios e Desafios",
+          "description": "Entenda como usar TypeScript strict mode para aumentar a segurança de tipos. Tipagem rigorosa, benefícios e estratégias de migração."
+        }
+      },
       "category": "frontend",
       "tags": ["typescript", "javascript", "types", "tooling"],
-      "status": "published",
       "date": "2024-08-06",
       "readTime": 9
     },
     {
       "id": 6,
       "slug": "post-seis",
-      "title": "Design Patterns em PHP Moderno",
-      "description": "Padrões de design essenciais para desenvolvimento PHP profissional. Singleton, Factory, Observer e aplicações práticas.",
+      "translations": {
+        "en-US": {
+          "title": "Design Patterns in Modern PHP",
+          "description": "Essential design patterns for professional PHP development. Singleton, Factory, Observer and practical applications."
+        },
+        "pt-BR": {
+          "title": "Design Patterns em PHP Moderno",
+          "description": "Padrões de design essenciais para desenvolvimento PHP profissional. Singleton, Factory, Observer e aplicações práticas."
+        }
+      },
       "category": "backend",
       "tags": ["php", "design-patterns", "backend", "architecture"],
-      "status": "published",
       "date": "2024-08-05",
       "readTime": 11
     }
