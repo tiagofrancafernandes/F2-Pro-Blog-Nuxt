@@ -98,7 +98,7 @@
                     >
                         <!-- Image -->
                         <ImageWithFallback
-                            :src="post.imageUrl"
+                            :src="post.coverImage"
                             :alt="post.title"
                             container-class="flex-shrink-0 w-full sm:w-48 h-32 sm:h-40 rounded-lg overflow-hidden"
                         />
@@ -199,7 +199,7 @@
         readTime: number
         category: string
         tags: string[]
-        imageUrl: string
+        coverImage?: string
         status: 'published' | 'draft' | 'archived'
     }
 

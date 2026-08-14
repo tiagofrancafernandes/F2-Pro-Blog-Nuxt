@@ -17,7 +17,8 @@
       "tags": ["laravel", "api", "backend", "rest"],
       "status": "published",
       "date": "2024-08-10",
-      "readTime": 8
+      "readTime": 8,
+      "coverImage": "https://picsum.photos/600/400?random=1"
     },
     {
       "id": 2,
@@ -36,7 +37,8 @@
       "tags": ["postgresql", "database", "sql", "performance"],
       "status": "published",
       "date": "2024-08-09",
-      "readTime": 12
+      "readTime": 12,
+      "coverImage": ""
     },
     {
       "id": 3,
@@ -55,7 +57,8 @@
       "tags": ["docker", "devops", "containers", "deployment"],
       "status": "published",
       "date": "2024-08-08",
-      "readTime": 10
+      "readTime": 10,
+      "coverImage": "https://picsum.photos/600/400?random=3"
     },
     {
       "id": 4,
@@ -74,7 +77,8 @@
       "tags": ["vue3", "frontend", "javascript", "reactivity"],
       "status": "published",
       "date": "2024-08-07",
-      "readTime": 14
+      "readTime": 14,
+      "coverImage": null
     },
     {
       "id": 5,
@@ -93,7 +97,8 @@
       "tags": ["typescript", "javascript", "types", "tooling"],
       "status": "published",
       "date": "2024-08-06",
-      "readTime": 9
+      "readTime": 9,
+      "coverImage": "https://picsum.photos/600/400?random=5"
     },
     {
       "id": 6,
@@ -112,7 +117,8 @@
       "tags": ["php", "design-patterns", "backend", "architecture"],
       "status": "published",
       "date": "2024-08-05",
-      "readTime": 11
+      "readTime": 11,
+      "coverImage": "https://picsum.photos/600/400?random=6"
     }
   ]
 }

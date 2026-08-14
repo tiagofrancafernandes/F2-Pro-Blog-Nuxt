@@ -53,7 +53,7 @@
                     >
                         <!-- Image -->
                         <ImageWithFallback
-                            :src="post.imageUrl"
+                            :src="post.coverImage"
                             :alt="getPostTitle(post)"
                         />
 
@@ -138,7 +138,7 @@
         readTime: number
         category: string
         tags: string[]
-        imageUrl: string
+        coverImage?: string
     }
 
     // const { t } = useI18n({})
