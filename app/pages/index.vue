@@ -98,7 +98,7 @@
     import { useI18n } from 'vue-i18n'
 
     interface PostTranslations {
-        en-US: {
+        'en-US': {
             title: string
             description: string
             content: string
