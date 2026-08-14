@@ -1,7 +1,16 @@
 <template>
     <div class="border-b border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-16 z-40">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-4 sm:gap-8 overflow-x-auto py-3">
+            <div
+                class="flex items-center gap-4 sm:gap-8 overflow-x-auto"
+                :class="[
+                    {
+                        // TODO: identificar se tem scroll ou se a página está com rolagem fora do topo (0)
+                        'py-2 md:py-3': true , // se feito scroll menor que X
+                        'py-1 md:py-1': false , // se feito scroll de X ou mais
+                    },
+                ]"
+            >
                 <!-- Resources Label -->
                 <div class="flex items-center gap-2 flex-shrink-0 text-gray-600 dark:text-gray-400 text-sm font-medium">
                     <Icon name="mdi:bookmark-multiple" class="w-4 h-4" />

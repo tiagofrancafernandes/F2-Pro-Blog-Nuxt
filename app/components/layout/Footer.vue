@@ -67,12 +67,12 @@
 
                 <!-- Growth Section -->
                 <div>
-                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-red-500">Resources</h3>
+                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-red-500">{{ $t('footer.resources') }}</h3>
                     <ul class="space-y-3">
-                        <li><a href="#blog" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Blog</a></li>
+                        <li><NuxtLink to="/about" class="text-gray-300 hover:text-red-500 transition-colors text-sm">{{ $t('nav.about') }}</NuxtLink></li>
+                        <li><a href="/" class="text-gray-300 hover:text-red-500 transition-colors text-sm">{{ $t('nav.posts') }}</a></li>
                         <li><a href="#tutorials" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Tutorials</a></li>
                         <li><a href="#guides" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Guides</a></li>
-                        <li><a href="#tools" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Tools</a></li>
                         <li><a href="#portfolio" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Portfolio</a></li>
                     </ul>
                 </div>

@@ -29,6 +29,7 @@ export default {
                 links: 'Links',
                 follow: 'Follow',
                 copyright: '© 2026 Tiago França. All rights reserved.',
+                resources: 'Resources',
             },
             post: {
                 backToPosts: '← Back to Posts',
@@ -77,6 +78,7 @@ export default {
                 links: 'Links',
                 follow: 'Seguir',
                 copyright: '© 2026 Tiago França. Todos os direitos reservados.',
+                resources: 'Recursos',
             },
             post: {
                 backToPosts: '← Voltar aos Posts',
