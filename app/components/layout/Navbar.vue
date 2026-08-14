@@ -38,7 +38,7 @@
                         :aria-label="colorMode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
                     >
                         <Icon
-                            :name="colorMode.value === 'dark' ? 'fa6-solid:sun' : 'fa6-solid:moon'"
+                            :name="colorMode.value === 'dark' ? 'mdi:sun' : 'mdi:moon'"
                             class="w-5 h-5"
                         />
                     </button>
@@ -49,7 +49,7 @@
                         class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800"
                         aria-label="Toggle menu"
                     >
-                        <Icon name="fa6-solid:bars" class="w-5 h-5" />
+                        <Icon name="mdi:menu" class="w-5 h-5" />
                     </button>
                 </div>
             </div>
