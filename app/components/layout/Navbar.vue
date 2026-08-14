@@ -14,20 +14,20 @@
                         to="/"
                         class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                     >
-                        Home
+                        {{ $t('nav.home') }}
                     </NuxtLink>
                     <NuxtLink
                         to="/"
                         class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                     >
-                        Posts
+                        {{ $t('nav.posts') }}
                     </NuxtLink>
-                    <a
-                        href="#about"
+                    <NuxtLink
+                        to="/about"
                         class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                     >
-                        About
-                    </a>
+                        {{ $t('nav.about') }}
+                    </NuxtLink>
                 </div>
 
                 <!-- Right Actions -->
@@ -50,21 +50,22 @@
                     class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400"
                     @click="isMenuOpen = false"
                 >
-                    Home
+                    {{ $t('nav.home') }}
                 </NuxtLink>
                 <NuxtLink
                     to="/"
                     class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400"
                     @click="isMenuOpen = false"
                 >
-                    Posts
+                    {{ $t('nav.posts') }}
                 </NuxtLink>
-                <a
-                    href="#about"
+                <NuxtLink
+                    to="/about"
                     class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400"
+                    @click="isMenuOpen = false"
                 >
-                    About
-                </a>
+                    {{ $t('nav.about') }}
+                </NuxtLink>
             </div>
         </div>
     </nav>
