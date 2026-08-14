@@ -234,7 +234,7 @@
 
                             <div class="space-y-3">
                                 <div v-if="selectedService" class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-red-600">
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.service') }}</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.serviceList') }}</p>
                                     <p class="font-semibold text-gray-900 dark:text-white">{{ selectedService.label }}</p>
                                 </div>
 
@@ -271,13 +271,21 @@
                             </div>
 
                             <!-- Send Button -->
-                            <button
-                                v-if="selectedService"
-                                @click="showPreview = true"
-                                class="w-full mt-6 px-4 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
-                            >
-                                {{ $t('hireMe.sendRequest') }}
-                            </button>
+                            <div v-if="selectedService" class="mt-6">
+                                <button
+                                    v-if="hasWhatsAppConfigured()"
+                                    @click="showPreview = true"
+                                    class="w-full px-4 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                                >
+                                    {{ $t('hireMe.sendRequest') }}
+                                </button>
+                                <div
+                                    v-else
+                                    class="p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg text-sm text-yellow-800 dark:text-yellow-200"
+                                >
+                                    {{ $t('hireMe.whatsappNotConfigured') }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -348,12 +356,21 @@
                             />
                         </div>
 
-                        <button
-                            type="submit"
-                            class="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
-                        >
-                            {{ $t('hireMe.sendMessage') }}
-                        </button>
+                        <div>
+                            <button
+                                v-if="hasWhatsAppConfigured()"
+                                type="submit"
+                                class="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                            >
+                                {{ $t('hireMe.sendMessage') }}
+                            </button>
+                            <div
+                                v-else
+                                class="p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg text-sm text-yellow-800 dark:text-yellow-200"
+                            >
+                                {{ $t('hireMe.whatsappNotConfigured') }}
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -382,7 +399,7 @@
                     <!-- Selection Summary Cards -->
                     <div class="space-y-3">
                         <div v-if="selectedService" class="p-4 bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-900/10 rounded-lg border border-red-200 dark:border-red-800">
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.service') }}</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.serviceList') }}</p>
                             <p class="font-bold text-lg text-gray-900 dark:text-white">{{ selectedService.label }}</p>
                         </div>
 
@@ -440,12 +457,19 @@
                             {{ $t('hireMe.back') }}
                         </button>
                         <button
+                            v-if="hasWhatsAppConfigured()"
                             @click="sendViaWhatsApp"
                             class="flex-1 px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
                         >
                             <Icon name="mdi:whatsapp" class="w-5 h-5" />
                             {{ $t('hireMe.sendViaWhatsApp') }}
                         </button>
+                        <div
+                            v-else
+                            class="flex-1 px-4 py-3 bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400 font-semibold rounded-lg text-center text-sm"
+                        >
+                            {{ $t('hireMe.whatsappNotConfigured') }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -479,8 +503,8 @@
     const serviceOptions = [
         {
             id: 'development',
-            label: t('hireMe.service.development'),
-            description: t('hireMe.service.developmentDesc'),
+            label: t('hireMe.serviceList.development'),
+            description: t('hireMe.serviceList.developmentDesc'),
             icon: 'mdi:code-braces',
             details: [
                 { id: 'fix', label: t('hireMe.detail.fixMaintenance') },
@@ -489,8 +513,8 @@
         },
         {
             id: 'classes',
-            label: t('hireMe.service.classes'),
-            description: t('hireMe.service.classesDesc'),
+            label: t('hireMe.serviceList.classes'),
+            description: t('hireMe.serviceList.classesDesc'),
             icon: 'mdi:school',
             details: [
                 { id: 'tech', label: t('hireMe.detail.technologies') },
@@ -498,8 +522,8 @@
         },
         {
             id: 'consulting',
-            label: t('hireMe.service.consulting'),
-            description: t('hireMe.service.consultingDesc'),
+            label: t('hireMe.serviceList.consulting'),
+            description: t('hireMe.serviceList.consultingDesc'),
             icon: 'mdi:briefcase',
             details: [
                 { id: 'training', label: t('hireMe.detail.training') },
@@ -568,7 +592,7 @@
         lines.push('')
 
         if (selectedService.value) {
-            lines.push('*' + t('hireMe.service') + ':* ' + selectedService.value.label)
+            lines.push('*' + t('hireMe.serviceList') + ':* ' + selectedService.value.label)
         }
 
         if (selectedDetails.value) {
@@ -596,10 +620,46 @@
         return lines.join('\n')
     }
 
+    function onlyNumbers(value: any): string {
+        value = ['number', 'string'].includes(typeof value) ? String(value ?? '') : null;
+
+        if (!value) {
+            return ''
+        }
+
+        return value.replaceAll(/\D+/g, '');
+    }
+
+    function getWhatsAppNumber(): string {
+        const config = useAppConfig()
+        const waNumber = config.contact?.whatsapp?.number || ''
+
+        return waNumber
+    }
+
+    function hasWhatsAppConfigured(): boolean {
+        return getWhatsAppNumber().length > 0
+    }
+
+    function getWhatsAppUrl(text: null|string = null, number: number|string|null = null): string {
+        const waNumber = onlyNumbers(number) || onlyNumbers(getWhatsAppNumber());
+
+        text = typeof text === 'string' && text.trim()?.length ? text?.trim() : null;
+
+        const whatsappUrl = `https://wa.me/${waNumber}`
+
+        if (!text) {
+            return whatsappUrl
+        }
+
+        const encodedMessage = encodeURIComponent(text)
+
+        return `${whatsappUrl}?text=${encodedMessage}`;
+    }
+
     function sendViaWhatsApp(): void {
         const message = buildMessage()
-        const encodedMessage = encodeURIComponent(message)
-        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`
+        const whatsappUrl = getWhatsAppUrl(message)
 
         window.open(whatsappUrl, '_blank')
     }
@@ -608,7 +668,7 @@
         const message = [
             '*' + t('hireMe.newRequest') + '*',
             '',
-            selectedService.value ? ('*' + t('hireMe.service') + ':* ' + freeTextService.value) : '',
+            selectedService.value ? ('*' + t('hireMe.serviceList') + ':* ' + freeTextService.value) : '',
             '',
             '*' + t('hireMe.description') + ':*',
             freeTextDescription.value,
@@ -624,8 +684,7 @@
         }
 
         const finalMessage = message.filter(line => line.trim()).join('\n')
-        const encodedMessage = encodeURIComponent(finalMessage)
-        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`
+        const whatsappUrl = getWhatsAppUrl(finalMessage)
 
         window.open(whatsappUrl, '_blank')
     }
@@ -680,6 +739,7 @@
             "additionalMessagePlaceholder": "Add any extra context or requirements...",
             "sendViaWhatsApp": "Send via WhatsApp",
             "newRequest": "New Work Request",
+            "whatsappNotConfigured": "WhatsApp contact is not configured. Please contact the owner directly.",
             "service": {
                 "development": "Development/Product Creation",
                 "developmentDesc": "Build new software or fix existing ones",
@@ -748,7 +808,8 @@
             "additionalMessagePlaceholder": "Adicione qualquer contexto ou requisito extra...",
             "sendViaWhatsApp": "Enviar via WhatsApp",
             "newRequest": "Nova Solicitação de Trabalho",
-            "service": {
+            "whatsappNotConfigured": "O WhatsApp não está configurado. Por favor, entre em contato direto com o proprietário.",
+            "serviceList": {
                 "development": "Desenvolvimento/Criação de Produtos",
                 "developmentDesc": "Criar novo software ou corrigir existentes",
                 "classes": "Aulas Particulares",
