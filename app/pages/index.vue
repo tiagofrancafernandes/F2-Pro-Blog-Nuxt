@@ -120,6 +120,7 @@
         tags: string[]
     }
 
+    // const { t } = useI18n({})
     const { locale } = useI18n()
     const posts = ref<Post[]>([])
     const isLoading = ref(true)

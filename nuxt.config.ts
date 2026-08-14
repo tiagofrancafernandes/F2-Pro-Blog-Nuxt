@@ -26,8 +26,13 @@ export default defineNuxtConfig({
                 iso: 'pt-BR',
                 name: 'Português',
             },
+            {
+                code: 'pt',
+                iso: 'pt-BR',
+                name: 'Português',
+            },
         ],
-        defaultLocale: 'en-US',
+        defaultLocale: 'en',
         strategy: 'no_prefix',
         detectBrowserLanguage: {
             useCookie: true,
