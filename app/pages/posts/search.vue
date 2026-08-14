@@ -18,7 +18,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
                     <!-- Sidebar - Filters -->
                     <aside class="lg:col-span-1">
-                        <div class="bg-gray-50 dark:bg-slate-800 rounded-lg p-6 sticky top-24">
+                        <div class="bg-gray-50 dark:bg-slate-800 rounded-lg p-2 sticky top-24">
                             <!-- Search Input -->
                             <div class="mb-8">
                                 <label class="block text-sm font-semibold text-gray-900 dark:text-white mb-3">
@@ -29,11 +29,11 @@
                                         v-model="searchQuery"
                                         type="text"
                                         :placeholder="$t('search.searchPlaceholder')"
-                                        class="flex-1 px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+                                        class="flex-1 w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
                                     />
                                     <button
                                         type="submit"
-                                        class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
+                                        class="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
                                     >
                                         <Icon name="mdi:magnify" class="w-5 h-5" />
                                     </button>

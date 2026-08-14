@@ -71,6 +71,7 @@
                     <ul class="space-y-3">
                         <li><NuxtLink to="/about" class="text-gray-300 hover:text-red-500 transition-colors text-sm">{{ $t('nav.about') }}</NuxtLink></li>
                         <li><a href="/" class="text-gray-300 hover:text-red-500 transition-colors text-sm">{{ $t('nav.posts') }}</a></li>
+                        <li><NuxtLink to="/hire-me" class="text-gray-300 hover:text-red-500 transition-colors text-sm">{{ $t('nav.hireMe') }}</NuxtLink></li>
                         <li><a href="#tutorials" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Tutorials</a></li>
                         <li><a href="#guides" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Guides</a></li>
                         <li><a href="#portfolio" class="text-gray-300 hover:text-red-500 transition-colors text-sm">Portfolio</a></li>
@@ -83,9 +84,9 @@
                         <Icon name="mdi:star" class="w-6 h-6 text-red-500 mb-3" />
                         <h4 class="text-white font-semibold mb-2">Need a Developer?</h4>
                         <p class="text-gray-300 text-sm mb-4">Let's build something amazing together.</p>
-                        <a href="#hire" class="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors text-sm font-medium">
+                        <NuxtLink to="/hire-me" class="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors text-sm font-medium">
                             Hire Me
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
