@@ -9,10 +9,37 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
+        '@nuxtjs/i18n',
         '@oro.ad/nuxt-claude-devtools',
         '@nuxtjs/robots',
-        //
     ],
+
+    i18n: {
+        locales: [
+            {
+                code: 'en-US',
+                iso: 'en-US',
+                name: 'English',
+            },
+            {
+                code: 'pt-BR',
+                iso: 'pt-BR',
+                name: 'Português',
+            },
+        ],
+        defaultLocale: 'en-US',
+        strategy: 'no_prefix',
+        detectBrowserLanguage: {
+            useCookie: true,
+            cookieKey: 'i18n_redirected',
+            redirectOn: 'root',
+            cookieDomain: undefined,
+            cookieCrossOrigin: false,
+            alwaysRedirect: false,
+            fallbackLocale: 'en-US',
+        },
+        vueI18n: './i18n.config.ts',
+    },
 
     // Environment variables for dynamic configuration
     app: {

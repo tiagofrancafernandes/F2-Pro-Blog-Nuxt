@@ -6,13 +6,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <h1 class="text-4xl sm:text-5xl font-bold mb-4">
-                            Real Insights on Development, Architecture & Business
+                            {{ $t('hero.title') }}
                         </h1>
                         <p class="text-lg sm:text-xl mb-8 text-red-100">
-                            Learn from my experience building scalable systems, leading technical teams, and growing businesses.
+                            {{ $t('hero.subtitle') }}
                         </p>
                         <button class="px-6 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-red-50 transition-colors">
-                            Subscribe Now
+                            {{ $t('hero.cta') }}
                         </button>
                     </div>
                     <div class="hidden md:flex items-center justify-center">
@@ -54,16 +54,16 @@
                         <div class="flex gap-4">
                             <div class="flex-1">
                                 <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">
-                                    {{ formatDate(post.date) }} • {{ post.readTime }} min read
+                                    {{ formatDate(post.date) }} • {{ post.readTime }} {{ $t('posts.readTime') }}
                                 </div>
                                 <NuxtLink
                                     :to="`/posts/${post.slug}`"
                                     class="block text-lg font-semibold text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 mb-2"
                                 >
-                                    {{ post.title }}
+                                    {{ getPostTitle(post) }}
                                 </NuxtLink>
                                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
-                                    {{ post.description }}
+                                    {{ getPostDescription(post) }}
                                 </p>
                                 <div class="flex flex-wrap gap-1 mb-4">
                                     <span
@@ -78,7 +78,7 @@
                                     :to="`/posts/${post.slug}`"
                                     class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium text-sm"
                                 >
-                                    Read More →
+                                    {{ $t('posts.readMore') }} →
                                 </NuxtLink>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                 </div>
 
                 <div v-else class="text-center py-16">
-                    <p class="text-gray-600 dark:text-gray-400">No posts found in this category.</p>
+                    <p class="text-gray-600 dark:text-gray-400">{{ $t('posts.noResults') }}</p>
                 </div>
             </div>
         </section>
@@ -94,19 +94,33 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, computed, onMounted } from 'vue'
+    import { ref, computed, onMounted, watch } from 'vue'
+    import { useI18n } from 'vue-i18n'
+
+    interface PostTranslations {
+        en-US: {
+            title: string
+            description: string
+            content: string
+        }
+        'pt-BR': {
+            title: string
+            description: string
+            content: string
+        }
+    }
 
     interface Post {
         id: number
         slug: string
-        title: string
-        description: string
+        translations: PostTranslations
         date: string
         readTime: number
         category: string
         tags: string[]
     }
 
+    const { locale } = useI18n()
     const posts = ref<Post[]>([])
     const isLoading = ref(true)
     const activeTag = ref<string | null>(null)
@@ -126,6 +140,16 @@
 
         return posts.value.filter((post) => post.tags.includes(activeTag.value!))
     })
+
+    function getPostTitle(post: Post): string {
+        const currentLocale = locale.value as 'en-US' | 'pt-BR'
+        return post.translations[currentLocale]?.title || post.translations['en-US'].title
+    }
+
+    function getPostDescription(post: Post): string {
+        const currentLocale = locale.value as 'en-US' | 'pt-BR'
+        return post.translations[currentLocale]?.description || post.translations['en-US'].description
+    }
 
     function formatDate(date: string): string {
         return new Date(date).toLocaleDateString('en-US', {
