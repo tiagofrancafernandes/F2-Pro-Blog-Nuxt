@@ -7,6 +7,11 @@ export default {
                 home: 'Home',
                 posts: 'Posts',
                 about: 'About',
+                resources: 'Resources',
+                tutorials: 'Tutorials',
+                blog: 'Blog',
+                portfolio: 'Portfolio',
+                hireMe: 'Hire Me',
             },
             hero: {
                 title: 'Real Insights on Development, Architecture & Business',
@@ -41,6 +46,11 @@ export default {
                 home: 'Início',
                 posts: 'Posts',
                 about: 'Sobre',
+                resources: 'Recursos',
+                tutorials: 'Tutoriais',
+                blog: 'Blog',
+                portfolio: 'Portfólio',
+                hireMe: 'Contrate-me',
             },
             hero: {
                 title: 'Insights Reais sobre Desenvolvimento, Arquitetura e Negócios',
