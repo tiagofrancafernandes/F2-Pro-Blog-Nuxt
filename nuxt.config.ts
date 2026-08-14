@@ -38,7 +38,7 @@ export default defineNuxtConfig({
             alwaysRedirect: false,
             fallbackLocale: 'en-US',
         },
-        vueI18n: '~/i18n.config.ts',
+        vueI18n: './i18n.config.ts',
     },
 
     // Environment variables for dynamic configuration
