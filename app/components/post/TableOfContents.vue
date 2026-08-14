@@ -11,7 +11,8 @@
                 :href="`#${heading.id}`"
                 @click.prevent="scrollToHeading(heading.id)"
                 :class="[
-                    'block py-2 px-3 transition-all duration-200 relative group',
+                    'block py-2 transition-all duration-200 relative group',
+                    getHeadingClasses(heading.level),
                     activeHeading === heading.id
                         ? 'text-gray-900 dark:text-white font-semibold bg-gray-100 dark:bg-slate-700'
                         : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200',
@@ -53,6 +54,15 @@
     }>()
 
     const activeHeading = ref<string>('')
+
+    function getHeadingClasses(level: number): string {
+        const paddingMap: Record<number, string> = {
+            2: 'px-3',
+            3: 'px-6',
+        }
+
+        return paddingMap[level] || 'px-3'
+    }
 
     function scrollToHeading(id: string): void {
         const element = document.getElementById(id)
