@@ -52,13 +52,10 @@
                         class="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden hover:shadow-md dark:hover:shadow-lg hover:border-red-400 dark:hover:border-red-500 transition-all group"
                     >
                         <!-- Image -->
-                        <div class="w-full h-40 overflow-hidden bg-gray-100 dark:bg-slate-800">
-                            <img
-                                :src="post.imageUrl"
-                                :alt="getPostTitle(post)"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                            />
-                        </div>
+                        <ImageWithFallback
+                            :src="post.imageUrl"
+                            :alt="getPostTitle(post)"
+                        />
 
                         <!-- Content -->
                         <div class="p-6">
