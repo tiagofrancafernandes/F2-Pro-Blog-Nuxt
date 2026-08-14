@@ -15,4 +15,9 @@ export default defineAppConfig({
             text: '#f1f5f9',
         },
     },
+    contact: {
+        whatsapp: {
+            number: process.env.NUXT_PUBLIC_WHATSAPP_NUMBER || '',
+        },
+    },
 });
