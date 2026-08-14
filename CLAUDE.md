@@ -5,6 +5,16 @@
 **Version:** 1.0
 
 ---
+## Project Context & Tech Stack
+- **Framework:** Nuxt 4 (Strictly follow the new Nuxt 4 folder structures, composition imports, and standards).
+- **Styling:** Tailwind CSS.
+
+## Mandatory Assistant Behavior (Context7)
+- Before generating, refactoring, or explaining any code, you **MUST always consult Context7** using your available tools (such as the `find-docs` skill located in `.claude/skills/find-docs`).
+- Specifically query Context7 for updated documentation on `nuxt@4.x` and `tailwindcss` to prevent hallucinations or deprecated Nuxt 3 patterns.
+- Treat the instruction "use context7" as implicitly active for every single prompt in this repository.
+
+---
 
 ## 1. Compliance & Code Style
 
@@ -400,17 +410,17 @@ export function usePosts() {
     async function fetchPosts(): Promise<Post[]> {
         try {
             const response = await fetch('/server/data/posts/index.json')
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`)
             }
-            
+
             const data = await response.json()
-            
+
             return data.posts ?? []
         } catch (error) {
             console.error('Failed to fetch posts:', error)
-            
+
             return []
         }
     }
@@ -418,15 +428,15 @@ export function usePosts() {
     async function fetchPostBySlug(slug: string): Promise<Post | null> {
         try {
             const response = await fetch(`/server/data/posts/data/${slug}.json`)
-            
+
             if (!response.ok) {
                 return null
             }
-            
+
             return await response.json()
         } catch (error) {
             console.error(`Failed to fetch post "${slug}":`, error)
-            
+
             return null
         }
     }
