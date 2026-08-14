@@ -97,13 +97,11 @@
                         class="flex flex-col sm:flex-row gap-6 p-6 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-red-400 dark:hover:border-red-500 hover:shadow-lg transition-all group"
                     >
                         <!-- Image -->
-                        <div class="flex-shrink-0 w-full sm:w-48 h-32 sm:h-40 rounded-lg overflow-hidden bg-gray-100 dark:bg-slate-800">
-                            <img
-                                :src="post.imageUrl"
-                                :alt="post.title"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                            />
-                        </div>
+                        <ImageWithFallback
+                            :src="post.imageUrl"
+                            :alt="post.title"
+                            container-class="flex-shrink-0 w-full sm:w-48 h-32 sm:h-40 rounded-lg overflow-hidden"
+                        />
 
                         <!-- Content -->
                         <div class="flex-1 flex flex-col justify-between">
