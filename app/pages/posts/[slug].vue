@@ -25,6 +25,18 @@
                 </div>
             </section>
 
+            <!-- Featured Image -->
+            <section v-if="post.coverImage" class="bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+                    <ImageWithFallback
+                        :src="post.coverImage"
+                        :alt="getPostTitle()"
+                        container-class="w-full h-80 rounded-lg overflow-hidden"
+                        image-class="w-full h-full object-cover"
+                    />
+                </div>
+            </section>
+
             <!-- Content -->
             <div class="bg-white dark:bg-slate-900">
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
@@ -150,6 +162,7 @@
         category: string
         tags: string[]
         status: 'published' | 'draft' | 'archived'
+        coverImage?: string
     }
 
     interface Post {
@@ -163,6 +176,7 @@
         category: string
         tags: string[]
         status: 'published' | 'draft' | 'archived'
+        coverImage?: string
     }
 
     interface Heading {
@@ -296,6 +310,7 @@
             category: data.category,
             tags: data.tags,
             status: data.status,
+            coverImage: data.coverImage,
         }
     }
 
