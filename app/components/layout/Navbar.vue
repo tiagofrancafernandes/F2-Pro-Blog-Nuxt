@@ -28,6 +28,12 @@
                     >
                         {{ $t('nav.about') }}
                     </NuxtLink>
+                    <NuxtLink
+                        to="/hire-me?type=classes"
+                        class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                    >
+                        {{ $t('nav.classes') }}
+                    </NuxtLink>
 
                     <!-- Search Bar -->
                     <form @submit.prevent="handleSearch" class="hidden lg:flex items-center gap-2 bg-gray-100 dark:bg-slate-800 rounded-lg px-3 py-1 focus-within:ring-2 focus-within:ring-red-600">
