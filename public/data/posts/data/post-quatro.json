@@ -1,13 +1,12 @@
 {
-    "id": 4,
-    "slug": "post-quatro",
-    "title": "Vue 3 Composition API Deep Dive",
-    "description": "Explore a Composition API do Vue 3 em profundidade. Aprenda padrões avançados, composables customizados e melhores práticas.",
-    "content": "A Composition API é uma grande inovação no Vue 3, oferecendo mais flexibilidade e capacidade de reutilização de lógica comparado ao Options API.\n\n## Por que Composition API?\n\nA Composition API permite melhor organização de código, especialmente em componentes complexos. Oferece melhor suporte a TypeScript e facilita a criação de composables reutilizáveis.\n\n## Hooks Básicos\n\n- `ref()`: Reatividade para valores primitivos\n- `reactive()`: Reatividade para objetos\n- `computed()`: Propriedades computadas reativas\n- `watch()`: Observar mudanças em dados\n- `onMounted()`, `onUnmounted()`: Lifecycle hooks\n\n## Criando Composables\n\nComposables são funções que encapsulam lógica reativa. São ideais para reutilizar comportamentos entre componentes.\n\n## Padrões Avançados\n\nExplore padrões como composable factories, dependency injection, e composables com async/await.\n\n## Performance\n\nEntenda reactive dependency tracking e como evitar renderizações desnecessárias.\n\n## Boas Práticas\n\n- Mantenha composables focados e pequenos\n- Documente claramente inputs e outputs\n- Use TypeScript para melhor segurança de tipos\n- Teste seus composables isoladamente",
-    "coverImage": "https://picsum.photos/1024/768?random=13",
-    "category": "frontend",
-    "date": "2024-08-07",
-    "readTime": 9,
-    "author": "Tiago França",
-    "tags": ["vue", "vue3", "composables", "frontend", "javascript"]
+  "id": 4,
+  "slug": "post-quatro",
+  "title": "Vue 3 Composition API Deep Dive",
+  "description": "Análise profunda da Composition API do Vue 3. Reatividade, composables, melhor organização de código e padrões de desenvolvimento.",
+  "category": "frontend",
+  "tags": ["vue3", "frontend", "javascript", "reactivity"],
+  "date": "2024-08-07",
+  "readTime": 14,
+  "author": "Tiago França",
+  "content": "## Vue 3 Revolution\n\nA Composition API é um novo jeito de organizar componentes Vue, oferecendo flexibilidade superior às Options API.\n\n## Básico de Reatividade\n\n```javascript\nimport { ref, reactive, computed } from 'vue'\n\nconst count = ref(0)\nconst state = reactive({\n  user: {\n    name: 'John'\n  }\n})\n\nconst doubled = computed(() => count.value * 2)\n```\n\n## Setup Function\n\nO `<script setup>` simplifica a sintaxe:\n\n```vue\n<script setup>\nimport { ref } from 'vue'\n\nconst count = ref(0)\nconst increment = () => {\n  count.value++\n}\n</script>\n```\n\n## Composables\n\nExtraia lógica reutilizável em composables:\n\n```javascript\nexport function useCounter() {\n  const count = ref(0)\n  const increment = () => count.value++\n  \n  return { count, increment }\n}\n```\n\n## Ciclo de Vida\n\nHooks de ciclo de vida funcionam dentro de setup:\n\n```javascript\nimport { onMounted, onUnmounted } from 'vue'\n\nonMounted(() => {\n  console.log('Component mounted')\n})\n\nonUnmounted(() => {\n  console.log('Component destroyed')\n})\n```\n\n## Conclusão\n\nA Composition API oferece poder, flexibilidade e melhor organização de código."
 }
