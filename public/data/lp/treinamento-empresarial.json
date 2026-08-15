@@ -1,0 +1,229 @@
+{
+  "id": "treinamento-empresarial",
+  "slug": "treinamento-empresarial",
+  "type": "corporate",
+  "translations": {
+    "en-US": {
+      "title": "Corporate Training Programs",
+      "subtitle": "Upskill your team with professional development training",
+      "description": "Customized training programs for employees, interns, and trainees. Build stronger technical teams with expert-led training."
+    },
+    "pt-BR": {
+      "title": "Programas de Treinamento Empresarial",
+      "subtitle": "Desenvolva habilidades de sua equipe com treinamento profissional",
+      "description": "Programas de treinamento customizados para funcionários, estagiários e trainees. Construa equipes técnicas mais fortes com treinamento liderado por especialistas."
+    }
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "translations": {
+        "en-US": {
+          "title": "Transform Your Team's Technical Skills",
+          "subtitle": "Professional development programs tailored to your company's needs"
+        },
+        "pt-BR": {
+          "title": "Transforme as Habilidades Técnicas de Sua Equipe",
+          "subtitle": "Programas de desenvolvimento profissional personalizados às necessidades da sua empresa"
+        }
+      }
+    },
+    {
+      "type": "section",
+      "translations": {
+        "en-US": {
+          "title": "Why Choose Our Training?",
+          "content": "## Expert Instructors\nWith years of professional experience in web development, backend systems, and enterprise architecture.\n\n## Customized Curriculum\nWe tailor the training to match your company's technology stack and business goals.\n\n## Flexible Delivery\nOnsite, remote, or hybrid options to fit your team's schedule.\n\n## Real-World Projects\nHands-on training with practical projects relevant to your industry.\n\n## Measurable Results\nPre and post-training assessments to track skill development.\n\n## Long-term Support\nContinued access to resources and mentor support after training."
+        },
+        "pt-BR": {
+          "title": "Por Que Escolher Nosso Treinamento?",
+          "content": "## Instrutores Especialistas\nCom anos de experiência profissional em desenvolvimento web, sistemas backend e arquitetura empresarial.\n\n## Currículo Personalizado\nAdaptamos o treinamento para corresponder à sua stack tecnológica e objetivos comerciais.\n\n## Entrega Flexível\nOpções presencial, remota ou híbrida para se adequarem ao horário de sua equipe.\n\n## Projetos Reais\nTreinamento prático com projetos relevantes para sua indústria.\n\n## Resultados Mensuráveis\nAvaliações pré e pós-treinamento para rastrear desenvolvimento de habilidades.\n\n## Suporte de Longo Prazo\nAcesso contínuo a recursos e suporte de mentor após o treinamento."
+        }
+      }
+    },
+    {
+      "type": "programs",
+      "translations": {
+        "en-US": {
+          "title": "Training Programs Available"
+        },
+        "pt-BR": {
+          "title": "Programas de Treinamento Disponíveis"
+        }
+      },
+      "programs": [
+        {
+          "en": {
+            "title": "Web Development Fundamentals",
+            "description": "Modern web development with HTML, CSS, JavaScript, and frameworks"
+          },
+          "pt": {
+            "title": "Fundamentos de Desenvolvimento Web",
+            "description": "Desenvolvimento web moderno com HTML, CSS, JavaScript e frameworks"
+          },
+          "duration": "4-6 weeks"
+        },
+        {
+          "en": {
+            "title": "Backend with PHP & Laravel",
+            "description": "Build robust backend systems using PHP and Laravel framework"
+          },
+          "pt": {
+            "title": "Backend com PHP e Laravel",
+            "description": "Construa sistemas backend robustos usando PHP e Laravel"
+          },
+          "duration": "6-8 weeks"
+        },
+        {
+          "en": {
+            "title": "Database Design & SQL",
+            "description": "Master database architecture, design, and optimization"
+          },
+          "pt": {
+            "title": "Design de Banco de Dados & SQL",
+            "description": "Domine arquitetura, design e otimização de banco de dados"
+          },
+          "duration": "4 weeks"
+        },
+        {
+          "en": {
+            "title": "DevOps & Deployment",
+            "description": "Linux, Docker, deployment strategies, and infrastructure"
+          },
+          "pt": {
+            "title": "DevOps & Deployment",
+            "description": "Linux, Docker, estratégias de deployment e infraestrutura"
+          },
+          "duration": "6 weeks"
+        },
+        {
+          "en": {
+            "title": "Frontend with Vue/React",
+            "description": "Modern frontend development with Vue.js or React"
+          },
+          "pt": {
+            "title": "Frontend com Vue/React",
+            "description": "Desenvolvimento frontend moderno com Vue.js ou React"
+          },
+          "duration": "6 weeks"
+        },
+        {
+          "en": {
+            "title": "Custom Programs",
+            "description": "Tailored training programs for specific team needs"
+          },
+          "pt": {
+            "title": "Programas Personalizados",
+            "description": "Programas de treinamento personalizados para necessidades específicas"
+          },
+          "duration": "Variable"
+        }
+      ]
+    },
+    {
+      "type": "benefits",
+      "translations": {
+        "en-US": {
+          "title": "Benefits for Your Company"
+        },
+        "pt-BR": {
+          "title": "Benefícios para Sua Empresa"
+        }
+      },
+      "benefits": [
+        {
+          "en": "Improved Technical Skills",
+          "pt": "Habilidades Técnicas Melhoradas"
+        },
+        {
+          "en": "Higher Productivity",
+          "pt": "Maior Produtividade"
+        },
+        {
+          "en": "Better Code Quality",
+          "pt": "Melhor Qualidade de Código"
+        },
+        {
+          "en": "Reduced Time-to-Market",
+          "pt": "Redução do Time-to-Market"
+        },
+        {
+          "en": "Improved Employee Retention",
+          "pt": "Melhor Retenção de Funcionários"
+        },
+        {
+          "en": "Competitive Advantage",
+          "pt": "Vantagem Competitiva"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "faqs": [
+        {
+          "question": "How long does training typically take?",
+          "questionPt": "Quanto tempo leva o treinamento normalmente?",
+          "answer": "Training programs range from 4 to 8 weeks depending on the curriculum. We can customize the duration to fit your schedule."
+        },
+        {
+          "question": "Can we do training on-site?",
+          "questionPt": "Podemos fazer treinamento nas dependências da empresa?",
+          "answer": "Yes! We offer on-site, remote, and hybrid training options. We'll work with your logistics team to arrange the best setup."
+        },
+        {
+          "question": "What if our team has mixed skill levels?",
+          "questionPt": "E se nossa equipe tiver níveis diferentes de habilidade?",
+          "answer": "We assess each participant's level and customize the curriculum accordingly. We ensure everyone progresses at an appropriate pace."
+        },
+        {
+          "question": "Do you provide training materials?",
+          "questionPt": "Vocês fornecem materiais de treinamento?",
+          "answer": "Yes! We provide comprehensive training materials, code examples, documentation, and access to resource libraries."
+        },
+        {
+          "question": "Can we get a custom program for our specific needs?",
+          "questionPt": "Podemos obter um programa personalizado para nossas necessidades específicas?",
+          "answer": "Absolutely! We specialize in custom programs. We'll work with you to design training that addresses your company's specific challenges."
+        },
+        {
+          "question": "What's the typical team size for training?",
+          "questionPt": "Qual é o tamanho típico da equipe para treinamento?",
+          "answer": "We can train teams of any size, from small groups (5-10 people) to large teams (100+). Pricing varies based on team size."
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "translations": {
+        "en-US": {
+          "title": "Request a Quote",
+          "description": "Tell us about your company's training needs and we'll prepare a customized proposal."
+        },
+        "pt-BR": {
+          "title": "Solicitar Orçamento",
+          "description": "Conte-nos sobre as necessidades de treinamento de sua empresa e preparamos uma proposta personalizada."
+        }
+      }
+    },
+    {
+      "type": "cta",
+      "translations": {
+        "en-US": {
+          "title": "Ready to Upskill Your Team?",
+          "subtitle": "Contact us today to discuss your training needs",
+          "buttonText": "Get Started"
+        },
+        "pt-BR": {
+          "title": "Pronto para Desenvolver Sua Equipe?",
+          "subtitle": "Entre em contato conosco hoje para discutir suas necessidades de treinamento",
+          "buttonText": "Começar"
+        }
+      }
+    }
+  ],
+  "socialProof": {
+    "superprof": "https://www.superprof.com.br/",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com"
+  }
+}
