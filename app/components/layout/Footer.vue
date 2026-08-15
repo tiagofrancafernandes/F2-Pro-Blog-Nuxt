@@ -32,10 +32,10 @@
                         <a href="https://twitter.com" target="_blank" class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors">
                             <Icon name="mdi:twitter" class="w-5 h-5" />
                         </a>
-                        <a href="https://github.com" target="_blank" class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors">
+                        <a href="https://github.com/tiagofrancafernandes" target="_blank" class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors">
                             <Icon name="mdi:github" class="w-5 h-5" />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors">
+                        <a href="https://wwwhttps://linkedin.com/in/tiago-php" target="_blank" class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors">
                             <Icon name="mdi:linkedin" class="w-5 h-5" />
                         </a>
                     </div>

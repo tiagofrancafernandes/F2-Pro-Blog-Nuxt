@@ -13,7 +13,7 @@
                 <!-- Social Proof Links -->
                 <div class="flex flex-wrap gap-4 mt-8">
                     <a
-                        href="https://www.superprof.com.br/"
+                        href="https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 px-4 py-2 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
@@ -22,7 +22,7 @@
                         Superprof
                     </a>
                     <a
-                        href="https://linkedin.com"
+                        href="https://wwwhttps://linkedin.com/in/tiago-php"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 px-4 py-2 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
@@ -31,7 +31,7 @@
                         LinkedIn
                     </a>
                     <a
-                        href="https://github.com"
+                        href="https://github.com/tiagofrancafernandes"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 px-4 py-2 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
