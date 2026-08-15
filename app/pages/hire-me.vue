@@ -474,6 +474,110 @@
                 </div>
             </div>
         </div>
+
+        <!-- Learning Programs Section -->
+        <section class="py-16 sm:py-24 bg-gray-50 dark:bg-slate-800">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    {{ $t('hireMe.learningPrograms') }}
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg mb-12 max-w-2xl">
+                    {{ $t('hireMe.learningProgramsDesc') }}
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <NuxtLink to="/lp/aulas-de-programacao" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-32 flex items-center justify-center">
+                            <Icon name="mdi:school" class="w-12 h-12 text-white" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">
+                                {{ $t('hireMe.generalClasses') }}
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                {{ $t('hireMe.generalClassesDesc') }}
+                            </p>
+                        </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/lp/aula-particular-php" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-32 flex items-center justify-center">
+                            <span class="text-white font-bold text-2xl">PHP</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-purple-600">
+                                {{ $t('hireMe.phpClasses') }}
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                {{ $t('hireMe.phpClassesDesc') }}
+                            </p>
+                        </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/lp/aula-particular-laravel" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-gradient-to-r from-red-500 to-red-600 h-32 flex items-center justify-center">
+                            <span class="text-white font-bold text-2xl">Laravel</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-red-600">
+                                {{ $t('hireMe.laravelClasses') }}
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                {{ $t('hireMe.laravelClassesDesc') }}
+                            </p>
+                        </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/lp/aula-particular-linux" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-gradient-to-r from-amber-500 to-amber-600 h-32 flex items-center justify-center">
+                            <Icon name="mdi:linux" class="w-12 h-12 text-white" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-amber-600">
+                                {{ $t('hireMe.linuxClasses') }}
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                {{ $t('hireMe.linuxClassesDesc') }}
+                            </p>
+                        </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/lp/aula-particular-sql" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-gradient-to-r from-cyan-500 to-cyan-600 h-32 flex items-center justify-center">
+                            <Icon name="mdi:database" class="w-12 h-12 text-white" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-cyan-600">
+                                {{ $t('hireMe.sqlClasses') }}
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                {{ $t('hireMe.sqlClassesDesc') }}
+                            </p>
+                        </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/lp/treinamento-empresarial" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 h-32 flex items-center justify-center">
+                            <Icon name="mdi:briefcase" class="w-12 h-12 text-white" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-green-600">
+                                {{ $t('hireMe.corporateTraining') }}
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                {{ $t('hireMe.corporateTrainingDesc') }}
+                            </p>
+                        </div>
+                    </NuxtLink>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <NuxtLink to="/sitemap" class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors">
+                        {{ $t('hireMe.viewAllPrograms') }}
+                    </NuxtLink>
+                </div>
+            </div>
+        </section>
     </div>
 </template>
 
@@ -740,6 +844,21 @@
             "sendViaWhatsApp": "Send via WhatsApp",
             "newRequest": "New Work Request",
             "whatsappNotConfigured": "WhatsApp contact is not configured. Please contact the owner directly.",
+            "learningPrograms": "Learning & Training Programs",
+            "learningProgramsDesc": "Explore our comprehensive training programs and classes designed to help you master modern development technologies.",
+            "generalClasses": "Programming Classes",
+            "generalClassesDesc": "Learn programming fundamentals and advanced concepts",
+            "phpClasses": "PHP Classes",
+            "phpClassesDesc": "Master PHP programming language and frameworks",
+            "laravelClasses": "Laravel Classes",
+            "laravelClassesDesc": "Learn Laravel web application framework",
+            "linuxClasses": "Linux Administration",
+            "linuxClassesDesc": "Master Linux system administration and DevOps",
+            "sqlClasses": "Database & SQL",
+            "sqlClassesDesc": "Learn SQL and database design",
+            "corporateTraining": "Corporate Training",
+            "corporateTrainingDesc": "Team training programs for companies and organizations",
+            "viewAllPrograms": "View All Programs",
             "service": {
                 "development": "Development/Product Creation",
                 "developmentDesc": "Build new software or fix existing ones",
@@ -809,6 +928,21 @@
             "sendViaWhatsApp": "Enviar via WhatsApp",
             "newRequest": "Nova Solicitação de Trabalho",
             "whatsappNotConfigured": "O WhatsApp não está configurado. Por favor, entre em contato direto com o proprietário.",
+            "learningPrograms": "Programas de Aprendizado e Treinamento",
+            "learningProgramsDesc": "Explore nossos programas de treinamento abrangentes e aulas projetadas para ajudá-lo a dominar tecnologias modernas de desenvolvimento.",
+            "generalClasses": "Aulas de Programação",
+            "generalClassesDesc": "Aprenda fundamentos e conceitos avançados de programação",
+            "phpClasses": "Aulas de PHP",
+            "phpClassesDesc": "Domine a linguagem PHP e frameworks",
+            "laravelClasses": "Aulas de Laravel",
+            "laravelClassesDesc": "Aprenda o framework Laravel para aplicações web",
+            "linuxClasses": "Administração Linux",
+            "linuxClassesDesc": "Domine administração de sistemas Linux e DevOps",
+            "sqlClasses": "Banco de Dados & SQL",
+            "sqlClassesDesc": "Aprenda SQL e design de banco de dados",
+            "corporateTraining": "Treinamento Empresarial",
+            "corporateTrainingDesc": "Programas de treinamento de equipe para empresas e organizações",
+            "viewAllPrograms": "Ver Todos os Programas",
             "serviceList": {
                 "development": "Desenvolvimento/Criação de Produtos",
                 "developmentDesc": "Criar novo software ou corrigir existentes",
