@@ -22,6 +22,7 @@
         "@tailwindcss/vite": "^4.3.3",
         "fuse.js": "^7.5.0",
         "globals": "^17.11.0",
+        "highlight.js": "^11.12.0",
         "isomorphic-dompurify": "^3.22.0",
         "markdown-it": "^15.0.0",
         "md-editor-v3": "^6.5.6",

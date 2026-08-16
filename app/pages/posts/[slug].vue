@@ -53,11 +53,8 @@
 
                         <!-- Main Content -->
                         <div class="lg:col-span-3">
-                            <article class="prose dark:prose-invert max-w-none">
-                                <div
-                                    v-html="renderedContent"
-                                    class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"
-                                ></div>
+                            <article>
+                                <MarkdownRenderer :content="post.content" />
                             </article>
 
                             <!-- CTA Section -->
@@ -206,7 +203,6 @@ const { renderMarkdown, extractHeadings: extractMarkdownHeadings } = useMarkdown
 
 const post = ref<Post | null>(null);
 const isLoading = ref(true);
-const renderedContent = ref('');
 const headings = ref<Heading[]>([]);
 
 function getPostTitle(): string {
@@ -300,7 +296,6 @@ onMounted(async () => {
 
         const data: PostData = await response.json();
         post.value = mapPostData(data);
-        renderedContent.value = renderMarkdown(post.value.content || '');
         headings.value = extractMarkdownHeadings(post.value.content || '');
     } catch (error) {
         console.error('Failed to fetch post:', error);
