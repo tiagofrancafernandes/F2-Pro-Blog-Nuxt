@@ -225,109 +225,109 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted } from 'vue'
-    import { useRoute } from 'vue-router'
-    import { useI18n } from 'vue-i18n'
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
-    const route = useRoute()
-    const { locale } = useI18n()
+const route = useRoute();
+const { locale } = useI18n();
 
-    const pageData = ref<any>(null)
-    const isLoading = ref(true)
-    const expandedFaq = ref<number | null>(null)
-    const renderedContent = ref('')
-    const allTechs = ref<string[]>([])
+const pageData = ref<any>(null);
+const isLoading = ref(true);
+const expandedFaq = ref<number | null>(null);
+const renderedContent = ref('');
+const allTechs = ref<string[]>([]);
 
-    const form = ref({
-        name: '',
-        email: '',
-        question: '',
-        techKnow: [] as string[],
-        techWantToLearn: [] as string[],
-    })
+const form = ref({
+    name: '',
+    email: '',
+    question: '',
+    techKnow: [] as string[],
+    techWantToLearn: [] as string[],
+});
 
-    function toggleFaq(index: number): void {
-        expandedFaq.value = expandedFaq.value === index ? null : index
-    }
+function toggleFaq(index: number): void {
+    expandedFaq.value = expandedFaq.value === index ? null : index;
+}
 
-    function getWhatsAppNumber(): string {
-        const config = useAppConfig()
-        return config.contact?.whatsapp?.number || ''
-    }
+function getWhatsAppNumber(): string {
+    const config = useAppConfig();
+    return config.contact?.whatsapp?.number || '';
+}
 
-    function hasWhatsAppConfigured(): boolean {
-        return getWhatsAppNumber().length > 0
-    }
+function hasWhatsAppConfigured(): boolean {
+    return getWhatsAppNumber().length > 0;
+}
 
-    function renderMarkdown(markdown: string): string {
-        if (!markdown) return '<p>No content</p>'
+function renderMarkdown(markdown: string): string {
+    if (!markdown) return '<p>No content</p>';
 
-        let html = markdown
-            .replace(/^### (.*?)$/gm, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
-            .replace(/^## (.*?)$/gm, '<h2 class="text-3xl font-bold mt-12 mb-6">$1</h2>')
-            .replace(/^# (.*?)$/gm, '<h1 class="text-4xl font-bold mt-12 mb-6">$1</h1>')
-            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-            .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded text-sm">$1</code>')
-            .replace(/^- (.*?)$/gm, '<li class="ml-6">$1</li>')
-            .replace(/✅ (.*?)$/gm, '<li class="ml-6">✅ $1</li>')
-            .replace(/\n\n/g, '</p><p>')
+    let html = markdown
+        .replace(/^### (.*?)$/gm, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
+        .replace(/^## (.*?)$/gm, '<h2 class="text-3xl font-bold mt-12 mb-6">$1</h2>')
+        .replace(/^# (.*?)$/gm, '<h1 class="text-4xl font-bold mt-12 mb-6">$1</h1>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+        .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded text-sm">$1</code>')
+        .replace(/^- (.*?)$/gm, '<li class="ml-6">$1</li>')
+        .replace(/✅ (.*?)$/gm, '<li class="ml-6">✅ $1</li>')
+        .replace(/\n\n/g, '</p><p>');
 
-        return `<p>${html}</p>`
-    }
+    return `<p>${html}</p>`;
+}
 
-    function submitQuestion(): void {
-        const message = [
-            `*New Question from LP: ${pageData.value.slug}*`,
-            '',
-            `*Name:* ${form.value.name}`,
-            `*Email:* ${form.value.email}`,
-            '',
-            `*Question:*`,
-            form.value.question,
-        ].join('\n')
+function submitQuestion(): void {
+    const message = [
+        `*New Question from LP: ${pageData.value.slug}*`,
+        '',
+        `*Name:* ${form.value.name}`,
+        `*Email:* ${form.value.email}`,
+        '',
+        `*Question:*`,
+        form.value.question,
+    ].join('\n');
 
-        const whatsappUrl = `https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(message)}`
-        window.open(whatsappUrl, '_blank')
-    }
+    const whatsappUrl = `https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
 
-    function submitTechPreferences(): void {
-        const message = [
-            `*Technology Skills - ${pageData.value.slug}*`,
-            '',
-            `*Technologies I Know:*`,
-            form.value.techKnow.length > 0 ? form.value.techKnow.join(', ') : 'None selected',
-            '',
-            `*Technologies I Want to Learn:*`,
-            form.value.techWantToLearn.length > 0 ? form.value.techWantToLearn.join(', ') : 'None selected',
-        ].join('\n')
+function submitTechPreferences(): void {
+    const message = [
+        `*Technology Skills - ${pageData.value.slug}*`,
+        '',
+        `*Technologies I Know:*`,
+        form.value.techKnow.length > 0 ? form.value.techKnow.join(', ') : 'None selected',
+        '',
+        `*Technologies I Want to Learn:*`,
+        form.value.techWantToLearn.length > 0 ? form.value.techWantToLearn.join(', ') : 'None selected',
+    ].join('\n');
 
-        const whatsappUrl = `https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(message)}`
-        window.open(whatsappUrl, '_blank')
-    }
+    const whatsappUrl = `https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
 
-    onMounted(async () => {
-        try {
-            const page = route.params.page as string
-            const response = await fetch(`/data/lp/${page}.json`)
+onMounted(async () => {
+    try {
+        const page = route.params.page as string;
+        const response = await fetch(`/data/lp/${page}.json`);
 
-            if (!response.ok) {
-                throw new Error('Page not found')
-            }
-
-            pageData.value = await response.json()
-            renderedContent.value = renderMarkdown(pageData.value.translations[locale.value]?.content || '')
-
-            // Collect all technologies
-            if (pageData.value.technologies) {
-                allTechs.value = pageData.value.technologies
-            }
-        } catch (error) {
-            console.error('Failed to load landing page:', error)
-        } finally {
-            isLoading.value = false
+        if (!response.ok) {
+            throw new Error('Page not found');
         }
-    })
+
+        pageData.value = await response.json();
+        renderedContent.value = renderMarkdown(pageData.value.translations[locale.value]?.content || '');
+
+        // Collect all technologies
+        if (pageData.value.technologies) {
+            allTechs.value = pageData.value.technologies;
+        }
+    } catch (error) {
+        console.error('Failed to load landing page:', error);
+    } finally {
+        isLoading.value = false;
+    }
+});
 </script>
 
 <i18n lang="json">

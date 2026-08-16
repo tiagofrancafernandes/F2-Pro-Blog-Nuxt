@@ -41,61 +41,61 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue';
 
-    interface Heading {
-        id: string
-        text: string
-        level: number
+interface Heading {
+    id: string;
+    text: string;
+    level: number;
+}
+
+defineProps<{
+    headings: Heading[];
+}>();
+
+const activeHeading = ref<string>('');
+
+function getHeadingClasses(level: number): string {
+    const paddingMap: Record<number, string> = {
+        2: 'px-3',
+        3: 'px-6',
+    };
+
+    return paddingMap[level] || 'px-3';
+}
+
+function scrollToHeading(id: string): void {
+    const element = document.getElementById(id);
+
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
     }
+}
 
-    defineProps<{
-        headings: Heading[]
-    }>()
+function updateActiveHeading(): void {
+    const headingElements = document.querySelectorAll('h2, h3');
+    let closestHeading = '';
+    let closestDistance = Infinity;
 
-    const activeHeading = ref<string>('')
+    headingElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 200);
 
-    function getHeadingClasses(level: number): string {
-        const paddingMap: Record<number, string> = {
-            2: 'px-3',
-            3: 'px-6',
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestHeading = element.id;
         }
+    });
 
-        return paddingMap[level] || 'px-3'
-    }
+    activeHeading.value = closestHeading;
+}
 
-    function scrollToHeading(id: string): void {
-        const element = document.getElementById(id)
+onMounted(() => {
+    updateActiveHeading();
+    window.addEventListener('scroll', updateActiveHeading);
+});
 
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
-
-    function updateActiveHeading(): void {
-        const headingElements = document.querySelectorAll('h2, h3')
-        let closestHeading = ''
-        let closestDistance = Infinity
-
-        headingElements.forEach((element) => {
-            const rect = element.getBoundingClientRect()
-            const distance = Math.abs(rect.top - 200)
-
-            if (distance < closestDistance) {
-                closestDistance = distance
-                closestHeading = element.id
-            }
-        })
-
-        activeHeading.value = closestHeading
-    }
-
-    onMounted(() => {
-        updateActiveHeading()
-        window.addEventListener('scroll', updateActiveHeading)
-    })
-
-    onUnmounted(() => {
-        window.removeEventListener('scroll', updateActiveHeading)
-    })
+onUnmounted(() => {
+    window.removeEventListener('scroll', updateActiveHeading);
+});
 </script>

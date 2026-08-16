@@ -1,50 +1,50 @@
 {
-  "id": "aula-particular-linux",
-  "slug": "aula-particular-linux",
-  "translations": {
-    "en-US": {
-      "title": "Private Linux Classes Online",
-      "subtitle": "Master Linux system administration",
-      "description": "Learn Linux administration, server management, and DevOps. Essential skills for modern developers and system administrators.",
-      "content": "## Why Learn Linux?\n\n90% of cloud servers run Linux. It's essential for DevOps, backend development, and system administration. Master Linux and you'll be in high demand.\n\n## What You'll Learn\n\n- Linux basics and file system\n- Command line and shell scripting\n- User and permission management\n- Server configuration and services\n- Networking essentials\n- Security best practices\n- Container basics with Docker\n\n## Course Progression\n\n**Beginner**: Navigation, file operations, basic commands\n**Intermediate**: User management, services, networking\n**Advanced**: Shell scripting, server hardening, DevOps tools\n\n## Hands-On Labs\n\nPractical exercises include:\n- Setting up a web server\n- Managing user accounts and permissions\n- Writing bash scripts\n- Deploying applications\n- Monitoring and troubleshooting\n\n## Job Ready Skills\n\nAfter this course:\n✅ You can administer Linux servers\n✅ You understand cloud infrastructure\n✅ You can automate tasks with bash\n✅ You're ready for DevOps roles\n✅ You understand security best practices"
+    "id": "aula-particular-linux",
+    "slug": "aula-particular-linux",
+    "translations": {
+        "en-US": {
+            "title": "Private Linux Classes Online",
+            "subtitle": "Master Linux system administration",
+            "description": "Learn Linux administration, server management, and DevOps. Essential skills for modern developers and system administrators.",
+            "content": "## Why Learn Linux?\n\n90% of cloud servers run Linux. It's essential for DevOps, backend development, and system administration. Master Linux and you'll be in high demand.\n\n## What You'll Learn\n\n- Linux basics and file system\n- Command line and shell scripting\n- User and permission management\n- Server configuration and services\n- Networking essentials\n- Security best practices\n- Container basics with Docker\n\n## Course Progression\n\n**Beginner**: Navigation, file operations, basic commands\n**Intermediate**: User management, services, networking\n**Advanced**: Shell scripting, server hardening, DevOps tools\n\n## Hands-On Labs\n\nPractical exercises include:\n- Setting up a web server\n- Managing user accounts and permissions\n- Writing bash scripts\n- Deploying applications\n- Monitoring and troubleshooting\n\n## Job Ready Skills\n\nAfter this course:\n✅ You can administer Linux servers\n✅ You understand cloud infrastructure\n✅ You can automate tasks with bash\n✅ You're ready for DevOps roles\n✅ You understand security best practices"
+        },
+        "pt-BR": {
+            "title": "Aula Particular de Linux Online",
+            "subtitle": "Domine administração de sistemas Linux",
+            "description": "Aprenda administração Linux, gerenciamento de servidores e DevOps. Habilidades essenciais para desenvolvedores modernos e administradores de sistemas.",
+            "content": "## Por Que Aprender Linux?\n\n90% dos servidores em nuvem executam Linux. É essencial para DevOps, desenvolvimento backend e administração de sistemas. Domine Linux e você estará em alta demanda.\n\n## O Que Você Aprenderá\n\n- Conceitos básicos de Linux e sistema de arquivos\n- Linha de comando e shell scripting\n- Gerenciamento de usuários e permissões\n- Configuração de servidores e serviços\n- Fundamentos de rede\n- Melhores práticas de segurança\n- Noções básicas de containers com Docker\n\n## Progressão do Curso\n\n**Iniciante**: Navegação, operações de arquivo, comandos básicos\n**Intermediário**: Gerenciamento de usuários, serviços, rede\n**Avançado**: Shell scripting, proteção de servidores, ferramentas DevOps\n\n## Laboratórios Práticos\n\nExercícios práticos incluem:\n- Configuração de servidor web\n- Gerenciamento de contas e permissões de usuários\n- Escrita de scripts bash\n- Deploy de aplicações\n- Monitoramento e resolução de problemas\n\n## Pronto para Trabalhar\n\nApós este curso:\n✅ Você pode administrar servidores Linux\n✅ Compreende infraestrutura em nuvem\n✅ Pode automatizar tarefas com bash\n✅ Está pronto para funções de DevOps\n✅ Compreende melhores práticas de segurança"
+        }
     },
-    "pt-BR": {
-      "title": "Aula Particular de Linux Online",
-      "subtitle": "Domine administração de sistemas Linux",
-      "description": "Aprenda administração Linux, gerenciamento de servidores e DevOps. Habilidades essenciais para desenvolvedores modernos e administradores de sistemas.",
-      "content": "## Por Que Aprender Linux?\n\n90% dos servidores em nuvem executam Linux. É essencial para DevOps, desenvolvimento backend e administração de sistemas. Domine Linux e você estará em alta demanda.\n\n## O Que Você Aprenderá\n\n- Conceitos básicos de Linux e sistema de arquivos\n- Linha de comando e shell scripting\n- Gerenciamento de usuários e permissões\n- Configuração de servidores e serviços\n- Fundamentos de rede\n- Melhores práticas de segurança\n- Noções básicas de containers com Docker\n\n## Progressão do Curso\n\n**Iniciante**: Navegação, operações de arquivo, comandos básicos\n**Intermediário**: Gerenciamento de usuários, serviços, rede\n**Avançado**: Shell scripting, proteção de servidores, ferramentas DevOps\n\n## Laboratórios Práticos\n\nExercícios práticos incluem:\n- Configuração de servidor web\n- Gerenciamento de contas e permissões de usuários\n- Escrita de scripts bash\n- Deploy de aplicações\n- Monitoramento e resolução de problemas\n\n## Pronto para Trabalhar\n\nApós este curso:\n✅ Você pode administrar servidores Linux\n✅ Compreende infraestrutura em nuvem\n✅ Pode automatizar tarefas com bash\n✅ Está pronto para funções de DevOps\n✅ Compreende melhores práticas de segurança"
+    "faqs": [
+        {
+            "question": "Do I need Linux installed on my computer?",
+            "questionPt": "Preciso ter Linux instalado no meu computador?",
+            "answer": "No, we use cloud-based Linux environments for the course, so you can use Windows, Mac, or Linux."
+        },
+        {
+            "question": "Is Linux hard to learn?",
+            "questionPt": "Linux é difícil de aprender?",
+            "answer": "Not at all! With proper guidance and practice, Linux fundamentals are easy to understand. We make it enjoyable!"
+        },
+        {
+            "question": "What's the difference between distributions?",
+            "questionPt": "Qual é a diferença entre as distribuições?",
+            "answer": "We focus on Ubuntu/Debian which are most common. The core concepts apply to all distributions."
+        },
+        {
+            "question": "Will I learn about servers and cloud?",
+            "questionPt": "Vou aprender sobre servidores e nuvem?",
+            "answer": "Yes, we cover server setup, cloud platforms like AWS/Azure, and Docker containerization."
+        },
+        {
+            "question": "Can I get a Linux job after this course?",
+            "questionPt": "Posso conseguir emprego com Linux depois do curso?",
+            "answer": "Yes! System administrator and DevOps roles are in high demand. This course provides the foundation you need."
+        }
+    ],
+    "socialProof": {
+        "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
+        "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
+        "github": "https://github.com/tiagofrancafernandes"
     }
-  },
-  "faqs": [
-    {
-      "question": "Do I need Linux installed on my computer?",
-      "questionPt": "Preciso ter Linux instalado no meu computador?",
-      "answer": "No, we use cloud-based Linux environments for the course, so you can use Windows, Mac, or Linux."
-    },
-    {
-      "question": "Is Linux hard to learn?",
-      "questionPt": "Linux é difícil de aprender?",
-      "answer": "Not at all! With proper guidance and practice, Linux fundamentals are easy to understand. We make it enjoyable!"
-    },
-    {
-      "question": "What's the difference between distributions?",
-      "questionPt": "Qual é a diferença entre as distribuições?",
-      "answer": "We focus on Ubuntu/Debian which are most common. The core concepts apply to all distributions."
-    },
-    {
-      "question": "Will I learn about servers and cloud?",
-      "questionPt": "Vou aprender sobre servidores e nuvem?",
-      "answer": "Yes, we cover server setup, cloud platforms like AWS/Azure, and Docker containerization."
-    },
-    {
-      "question": "Can I get a Linux job after this course?",
-      "questionPt": "Posso conseguir emprego com Linux depois do curso?",
-      "answer": "Yes! System administrator and DevOps roles are in high demand. This course provides the foundation you need."
-    }
-  ],
-  "socialProof": {
-    "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
-    "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
-    "github": "https://github.com/tiagofrancafernandes"
-  }
 }

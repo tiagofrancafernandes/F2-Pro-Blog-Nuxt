@@ -29,10 +29,15 @@
                             class="p-6 border-2 border-gray-200 dark:border-slate-700 rounded-lg hover:border-red-600 dark:hover:border-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all group"
                         >
                             <div class="flex items-start justify-between mb-3">
-                                <h3 class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-red-600 transition-colors">
+                                <h3
+                                    class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-red-600 transition-colors"
+                                >
                                     {{ getPageTitle(page) }}
                                 </h3>
-                                <Icon name="mdi:chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-red-600 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:chevron-right"
+                                    class="w-5 h-5 text-gray-400 group-hover:text-red-600 flex-shrink-0"
+                                />
                             </div>
                             <p class="text-sm text-gray-600 dark:text-gray-400">
                                 {{ getPageDescription(page) }}
@@ -88,29 +93,29 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted } from 'vue'
-    import { useI18n } from 'vue-i18n'
+import { ref, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-    const { locale } = useI18n()
-    const landingPages = ref<any[]>([])
+const { locale } = useI18n();
+const landingPages = ref<any[]>([]);
 
-    function getPageTitle(page: any): string {
-        return page.translations[locale.value]?.title || page.translations['en-US']?.title
+function getPageTitle(page: any): string {
+    return page.translations[locale.value]?.title || page.translations['en-US']?.title;
+}
+
+function getPageDescription(page: any): string {
+    return page.translations[locale.value]?.description || page.translations['en-US']?.description;
+}
+
+onMounted(async () => {
+    try {
+        const response = await fetch('/data/lp/index.json');
+        const data = await response.json();
+        landingPages.value = data.landingPages;
+    } catch (error) {
+        console.error('Failed to load landing pages index:', error);
     }
-
-    function getPageDescription(page: any): string {
-        return page.translations[locale.value]?.description || page.translations['en-US']?.description
-    }
-
-    onMounted(async () => {
-        try {
-            const response = await fetch('/data/lp/index.json')
-            const data = await response.json()
-            landingPages.value = data.landingPages
-        } catch (error) {
-            console.error('Failed to load landing pages index:', error)
-        }
-    })
+});
 </script>
 
 <i18n lang="json">

@@ -17,7 +17,8 @@ export default {
             },
             hero: {
                 title: 'Real Insights on Development, Architecture & Business',
-                subtitle: 'Learn from my experience building scalable systems, leading technical teams, and growing businesses.',
+                subtitle:
+                    'Learn from my experience building scalable systems, leading technical teams, and growing businesses.',
                 cta: 'Subscribe Now',
             },
             posts: {
@@ -42,14 +43,14 @@ export default {
                 copyForAI: 'Copy for AI',
                 shareDescription: 'Share this post or copy for AI tools',
                 cta: 'Ready to Work Together?',
-                ctaDescription: 'Let\'s discuss your next project and how I can help.',
+                ctaDescription: "Let's discuss your next project and how I can help.",
                 ctaButton: 'Get in Touch',
                 writtenBy: 'Written by',
                 onThisPage: 'On this page',
                 relatedTutorials: 'Related Tutorials',
                 tutorial: 'TUTORIAL',
                 hireMeTitle: 'Ready to Work Together?',
-                hireMeDescription: 'Let\'s discuss your next project and how I can help.',
+                hireMeDescription: "Let's discuss your next project and how I can help.",
                 hireMeButton: 'Hire Me',
             },
             search: {
@@ -84,7 +85,8 @@ export default {
             },
             hero: {
                 title: 'Insights Reais sobre Desenvolvimento, Arquitetura e Negócios',
-                subtitle: 'Aprenda com minha experiência construindo sistemas escaláveis, liderando equipes técnicas e desenvolvendo negócios.',
+                subtitle:
+                    'Aprenda com minha experiência construindo sistemas escaláveis, liderando equipes técnicas e desenvolvendo negócios.',
                 cta: 'Inscrever-se',
             },
             posts: {
@@ -137,4 +139,4 @@ export default {
             },
         },
     },
-}
+};

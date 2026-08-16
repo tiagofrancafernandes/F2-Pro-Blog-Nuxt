@@ -3,7 +3,14 @@ import { fileURLToPath } from 'node:url';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
-    devtools: { enabled: true },
+    devtools: {
+        enabled: true,
+        // Configurações internas do painel do DevTools
+        vscode: {
+            // Se você usa a extensão de terminal embutida do VS Code
+            enabled: true,
+        },
+    },
 
     modules: [
         '@nuxt/icon',
@@ -30,6 +37,11 @@ export default defineNuxtConfig({
         locales: [
             {
                 code: 'en-US',
+                iso: 'en-US',
+                name: 'English',
+            },
+            {
+                code: 'en',
                 iso: 'en-US',
                 name: 'English',
             },
@@ -215,5 +227,10 @@ export default defineNuxtConfig({
         images: fileURLToPath(new URL('./assets/images', import.meta.url)),
         style: fileURLToPath(new URL('./assets/style', import.meta.url)),
         data: fileURLToPath(new URL('./assets/other/data', import.meta.url)),
+    },
+    hooks: {
+        'modules:done'() {
+            process.env.LAUNCH_EDITOR = 'code'; // ou 'cursor', 'webstorm', etc.
+        },
     },
 });

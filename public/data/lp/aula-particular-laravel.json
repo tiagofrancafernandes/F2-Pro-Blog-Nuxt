@@ -1,50 +1,50 @@
 {
-  "id": "aula-particular-laravel",
-  "slug": "aula-particular-laravel",
-  "translations": {
-    "en-US": {
-      "title": "Private Laravel Classes Online",
-      "subtitle": "Master the Laravel framework",
-      "description": "Learn Laravel, the most popular PHP framework. Build modern web applications with ease using Laravel's powerful features.",
-      "content": "## Why Laravel?\n\nLaravel is the #1 PHP framework used by professionals worldwide. It makes web development faster, easier, and more enjoyable.\n\n## What You'll Learn\n\n- Laravel fundamentals and setup\n- Routing and controllers\n- Database migrations and Eloquent ORM\n- Authentication and authorization\n- Building APIs with Laravel\n- Testing and deployment\n\n## Course Modules\n\n**Module 1**: Laravel basics, routing, and views\n**Module 2**: Database design and Eloquent ORM\n**Module 3**: User authentication and authorization\n**Module 4**: Building REST APIs\n**Module 5**: Testing and deployment\n\n## Real Projects\n\nBuild production-ready applications:\n- Complete blog platform\n- Real-time chat application\n- E-commerce store\n- Project management tool\n\n## Career Ready\n\nAfter completing this course:\n✅ You'll have production-ready projects for your portfolio\n✅ You'll understand enterprise-level architecture\n✅ You'll be job-ready for Laravel developer positions\n✅ You'll be able to lead development teams"
+    "id": "aula-particular-laravel",
+    "slug": "aula-particular-laravel",
+    "translations": {
+        "en-US": {
+            "title": "Private Laravel Classes Online",
+            "subtitle": "Master the Laravel framework",
+            "description": "Learn Laravel, the most popular PHP framework. Build modern web applications with ease using Laravel's powerful features.",
+            "content": "## Why Laravel?\n\nLaravel is the #1 PHP framework used by professionals worldwide. It makes web development faster, easier, and more enjoyable.\n\n## What You'll Learn\n\n- Laravel fundamentals and setup\n- Routing and controllers\n- Database migrations and Eloquent ORM\n- Authentication and authorization\n- Building APIs with Laravel\n- Testing and deployment\n\n## Course Modules\n\n**Module 1**: Laravel basics, routing, and views\n**Module 2**: Database design and Eloquent ORM\n**Module 3**: User authentication and authorization\n**Module 4**: Building REST APIs\n**Module 5**: Testing and deployment\n\n## Real Projects\n\nBuild production-ready applications:\n- Complete blog platform\n- Real-time chat application\n- E-commerce store\n- Project management tool\n\n## Career Ready\n\nAfter completing this course:\n✅ You'll have production-ready projects for your portfolio\n✅ You'll understand enterprise-level architecture\n✅ You'll be job-ready for Laravel developer positions\n✅ You'll be able to lead development teams"
+        },
+        "pt-BR": {
+            "title": "Aula Particular de Laravel Online",
+            "subtitle": "Domine o framework Laravel",
+            "description": "Aprenda Laravel, o framework PHP mais popular. Construa aplicações web modernas com facilidade usando os poderosos recursos do Laravel.",
+            "content": "## Por Que Laravel?\n\nLaravel é o framework PHP #1 usado por profissionais em todo o mundo. Torna o desenvolvimento web mais rápido, fácil e agradável.\n\n## O Que Você Aprenderá\n\n- Fundamentos do Laravel e setup\n- Routing e controllers\n- Migrações de banco de dados e Eloquent ORM\n- Autenticação e autorização\n- Construção de APIs com Laravel\n- Testes e deployment\n\n## Módulos do Curso\n\n**Módulo 1**: Basics, routing e views\n**Módulo 2**: Design de BD e Eloquent ORM\n**Módulo 3**: Autenticação e autorização\n**Módulo 4**: Construção de APIs REST\n**Módulo 5**: Testes e deployment\n\n## Projetos Reais\n\nConstrua aplicações prontas para produção:\n- Plataforma de blog completa\n- Aplicação de chat em tempo real\n- Loja de e-commerce\n- Ferramenta de gerenciamento de projetos\n\n## Pronto para Carreira\n\nApós completar o curso:\n✅ Você terá projetos prontos para produção no seu portfólio\n✅ Compreenderá arquitetura de nível empresarial\n✅ Estará pronto para posições de desenvolvedor Laravel\n✅ Poderá liderar equipes de desenvolvimento"
+        }
     },
-    "pt-BR": {
-      "title": "Aula Particular de Laravel Online",
-      "subtitle": "Domine o framework Laravel",
-      "description": "Aprenda Laravel, o framework PHP mais popular. Construa aplicações web modernas com facilidade usando os poderosos recursos do Laravel.",
-      "content": "## Por Que Laravel?\n\nLaravel é o framework PHP #1 usado por profissionais em todo o mundo. Torna o desenvolvimento web mais rápido, fácil e agradável.\n\n## O Que Você Aprenderá\n\n- Fundamentos do Laravel e setup\n- Routing e controllers\n- Migrações de banco de dados e Eloquent ORM\n- Autenticação e autorização\n- Construção de APIs com Laravel\n- Testes e deployment\n\n## Módulos do Curso\n\n**Módulo 1**: Basics, routing e views\n**Módulo 2**: Design de BD e Eloquent ORM\n**Módulo 3**: Autenticação e autorização\n**Módulo 4**: Construção de APIs REST\n**Módulo 5**: Testes e deployment\n\n## Projetos Reais\n\nConstrua aplicações prontas para produção:\n- Plataforma de blog completa\n- Aplicação de chat em tempo real\n- Loja de e-commerce\n- Ferramenta de gerenciamento de projetos\n\n## Pronto para Carreira\n\nApós completar o curso:\n✅ Você terá projetos prontos para produção no seu portfólio\n✅ Compreenderá arquitetura de nível empresarial\n✅ Estará pronto para posições de desenvolvedor Laravel\n✅ Poderá liderar equipes de desenvolvimento"
+    "faqs": [
+        {
+            "question": "Do I need to know PHP before learning Laravel?",
+            "questionPt": "Preciso saber PHP antes de aprender Laravel?",
+            "answer": "It helps, but not required. We'll cover PHP essentials as part of the Laravel course."
+        },
+        {
+            "question": "What's the difference between Laravel and plain PHP?",
+            "questionPt": "Qual é a diferença entre Laravel e PHP puro?",
+            "answer": "Laravel provides pre-built solutions, security features, and architecture patterns that make development 10x faster than plain PHP."
+        },
+        {
+            "question": "Can I use Laravel for REST APIs?",
+            "questionPt": "Posso usar Laravel para APIs REST?",
+            "answer": "Absolutely! Laravel is excellent for building REST APIs and we cover this extensively in the course."
+        },
+        {
+            "question": "Will I learn about databases?",
+            "questionPt": "Aprendo sobre bancos de dados?",
+            "answer": "Yes, we cover database design, SQL basics, and Eloquent ORM for database interactions."
+        },
+        {
+            "question": "How is Laravel different from other frameworks?",
+            "questionPt": "Como Laravel é diferente de outros frameworks?",
+            "answer": "Laravel focuses on developer happiness with clean syntax, powerful tools, and excellent documentation. It's the most developer-friendly PHP framework."
+        }
+    ],
+    "socialProof": {
+        "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
+        "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
+        "github": "https://github.com/tiagofrancafernandes"
     }
-  },
-  "faqs": [
-    {
-      "question": "Do I need to know PHP before learning Laravel?",
-      "questionPt": "Preciso saber PHP antes de aprender Laravel?",
-      "answer": "It helps, but not required. We'll cover PHP essentials as part of the Laravel course."
-    },
-    {
-      "question": "What's the difference between Laravel and plain PHP?",
-      "questionPt": "Qual é a diferença entre Laravel e PHP puro?",
-      "answer": "Laravel provides pre-built solutions, security features, and architecture patterns that make development 10x faster than plain PHP."
-    },
-    {
-      "question": "Can I use Laravel for REST APIs?",
-      "questionPt": "Posso usar Laravel para APIs REST?",
-      "answer": "Absolutely! Laravel is excellent for building REST APIs and we cover this extensively in the course."
-    },
-    {
-      "question": "Will I learn about databases?",
-      "questionPt": "Aprendo sobre bancos de dados?",
-      "answer": "Yes, we cover database design, SQL basics, and Eloquent ORM for database interactions."
-    },
-    {
-      "question": "How is Laravel different from other frameworks?",
-      "questionPt": "Como Laravel é diferente de outros frameworks?",
-      "answer": "Laravel focuses on developer happiness with clean syntax, powerful tools, and excellent documentation. It's the most developer-friendly PHP framework."
-    }
-  ],
-  "socialProof": {
-    "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
-    "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
-    "github": "https://github.com/tiagofrancafernandes"
-  }
 }

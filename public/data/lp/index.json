@@ -1,116 +1,137 @@
 {
-  "landingPages": [
-    {
-      "id": "aulas-de-programacao",
-      "slug": "aulas-de-programacao",
-      "type": "classes",
-      "translations": {
-        "en-US": {
-          "title": "Programming Classes Online",
-          "description": "Learn programming with expert guidance. Personalized online classes in web development, backend, and more."
+    "landingPages": [
+        {
+            "id": "aulas-de-programacao",
+            "slug": "aulas-de-programacao",
+            "type": "classes",
+            "translations": {
+                "en-US": {
+                    "title": "Programming Classes Online",
+                    "description": "Learn programming with expert guidance. Personalized online classes in web development, backend, and more."
+                },
+                "pt-BR": {
+                    "title": "Aulas de Programação Online",
+                    "description": "Aprenda programação com orientação de especialista. Aulas particulares personalizadas em desenvolvimento web, backend e muito mais."
+                }
+            },
+            "category": "classes",
+            "technologies": [
+                "PHP",
+                "Laravel",
+                "JavaScript",
+                "Vue.js",
+                "Nuxt",
+                "React",
+                "TypeScript",
+                "PostgreSQL",
+                "Docker"
+            ],
+            "relatedPages": ["aula-particular-php", "aula-particular-laravel"]
         },
-        "pt-BR": {
-          "title": "Aulas de Programação Online",
-          "description": "Aprenda programação com orientação de especialista. Aulas particulares personalizadas em desenvolvimento web, backend e muito mais."
-        }
-      },
-      "category": "classes",
-      "technologies": ["PHP", "Laravel", "JavaScript", "Vue.js", "Nuxt", "React", "TypeScript", "PostgreSQL", "Docker"],
-      "relatedPages": ["aula-particular-php", "aula-particular-laravel"]
-    },
-    {
-      "id": "aula-particular-php",
-      "slug": "aula-particular-php",
-      "type": "classes",
-      "translations": {
-        "en-US": {
-          "title": "Private PHP Classes Online",
-          "description": "Master PHP programming with personalized one-on-one online classes."
+        {
+            "id": "aula-particular-php",
+            "slug": "aula-particular-php",
+            "type": "classes",
+            "translations": {
+                "en-US": {
+                    "title": "Private PHP Classes Online",
+                    "description": "Master PHP programming with personalized one-on-one online classes."
+                },
+                "pt-BR": {
+                    "title": "Aula Particular de PHP Online",
+                    "description": "Domine PHP com aulas particulares personalizadas online."
+                }
+            },
+            "category": "classes",
+            "technology": "PHP",
+            "technologies": ["PHP", "Laravel", "PostgreSQL", "Docker"],
+            "relatedPages": ["aulas-de-programacao", "aula-particular-laravel"]
         },
-        "pt-BR": {
-          "title": "Aula Particular de PHP Online",
-          "description": "Domine PHP com aulas particulares personalizadas online."
-        }
-      },
-      "category": "classes",
-      "technology": "PHP",
-      "technologies": ["PHP", "Laravel", "PostgreSQL", "Docker"],
-      "relatedPages": ["aulas-de-programacao", "aula-particular-laravel"]
-    },
-    {
-      "id": "aula-particular-laravel",
-      "slug": "aula-particular-laravel",
-      "type": "classes",
-      "translations": {
-        "en-US": {
-          "title": "Private Laravel Classes Online",
-          "description": "Learn Laravel framework from scratch with expert guidance."
+        {
+            "id": "aula-particular-laravel",
+            "slug": "aula-particular-laravel",
+            "type": "classes",
+            "translations": {
+                "en-US": {
+                    "title": "Private Laravel Classes Online",
+                    "description": "Learn Laravel framework from scratch with expert guidance."
+                },
+                "pt-BR": {
+                    "title": "Aula Particular de Laravel Online",
+                    "description": "Aprenda Laravel do zero com orientação de especialista."
+                }
+            },
+            "category": "classes",
+            "technology": "Laravel",
+            "technologies": ["Laravel", "PHP", "PostgreSQL", "Docker"],
+            "relatedPages": ["aulas-de-programacao", "aula-particular-php"]
         },
-        "pt-BR": {
-          "title": "Aula Particular de Laravel Online",
-          "description": "Aprenda Laravel do zero com orientação de especialista."
-        }
-      },
-      "category": "classes",
-      "technology": "Laravel",
-      "technologies": ["Laravel", "PHP", "PostgreSQL", "Docker"],
-      "relatedPages": ["aulas-de-programacao", "aula-particular-php"]
-    },
-    {
-      "id": "aula-particular-linux",
-      "slug": "aula-particular-linux",
-      "type": "classes",
-      "translations": {
-        "en-US": {
-          "title": "Private Linux Classes Online",
-          "description": "Master Linux administration and command line."
+        {
+            "id": "aula-particular-linux",
+            "slug": "aula-particular-linux",
+            "type": "classes",
+            "translations": {
+                "en-US": {
+                    "title": "Private Linux Classes Online",
+                    "description": "Master Linux administration and command line."
+                },
+                "pt-BR": {
+                    "title": "Aula Particular de Linux Online",
+                    "description": "Domine administração Linux e linha de comando."
+                }
+            },
+            "category": "classes",
+            "technology": "Linux",
+            "technologies": ["Linux", "Docker", "PostgreSQL", "Bash"],
+            "relatedPages": ["aulas-de-programacao"]
         },
-        "pt-BR": {
-          "title": "Aula Particular de Linux Online",
-          "description": "Domine administração Linux e linha de comando."
-        }
-      },
-      "category": "classes",
-      "technology": "Linux",
-      "technologies": ["Linux", "Docker", "PostgreSQL", "Bash"],
-      "relatedPages": ["aulas-de-programacao"]
-    },
-    {
-      "id": "aula-particular-sql",
-      "slug": "aula-particular-sql",
-      "type": "classes",
-      "translations": {
-        "en-US": {
-          "title": "Private SQL & Database Classes Online",
-          "description": "Learn SQL and database design."
+        {
+            "id": "aula-particular-sql",
+            "slug": "aula-particular-sql",
+            "type": "classes",
+            "translations": {
+                "en-US": {
+                    "title": "Private SQL & Database Classes Online",
+                    "description": "Learn SQL and database design."
+                },
+                "pt-BR": {
+                    "title": "Aula Particular de SQL e Banco de Dados Online",
+                    "description": "Aprenda SQL e design de banco de dados."
+                }
+            },
+            "category": "classes",
+            "technology": "SQL",
+            "technologies": ["PostgreSQL", "SQL", "Database Design", "MySQL"],
+            "relatedPages": ["aulas-de-programacao"]
         },
-        "pt-BR": {
-          "title": "Aula Particular de SQL e Banco de Dados Online",
-          "description": "Aprenda SQL e design de banco de dados."
+        {
+            "id": "treinamento-empresarial",
+            "slug": "treinamento-empresarial",
+            "type": "corporate",
+            "translations": {
+                "en-US": {
+                    "title": "Corporate Training Programs",
+                    "description": "Comprehensive training programs for your team, interns, and trainees."
+                },
+                "pt-BR": {
+                    "title": "Programas de Treinamento Empresarial",
+                    "description": "Programas de treinamento abrangentes para sua equipe, estagiários e trainees."
+                }
+            },
+            "category": "corporate",
+            "technologies": [
+                "PHP",
+                "Laravel",
+                "JavaScript",
+                "Vue.js",
+                "Nuxt",
+                "React",
+                "TypeScript",
+                "PostgreSQL",
+                "Docker",
+                "Linux"
+            ],
+            "relatedPages": []
         }
-      },
-      "category": "classes",
-      "technology": "SQL",
-      "technologies": ["PostgreSQL", "SQL", "Database Design", "MySQL"],
-      "relatedPages": ["aulas-de-programacao"]
-    },
-    {
-      "id": "treinamento-empresarial",
-      "slug": "treinamento-empresarial",
-      "type": "corporate",
-      "translations": {
-        "en-US": {
-          "title": "Corporate Training Programs",
-          "description": "Comprehensive training programs for your team, interns, and trainees."
-        },
-        "pt-BR": {
-          "title": "Programas de Treinamento Empresarial",
-          "description": "Programas de treinamento abrangentes para sua equipe, estagiários e trainees."
-        }
-      },
-      "category": "corporate",
-      "technologies": ["PHP", "Laravel", "JavaScript", "Vue.js", "Nuxt", "React", "TypeScript", "PostgreSQL", "Docker", "Linux"],
-      "relatedPages": []
-    }
-  ]
+    ]
 }

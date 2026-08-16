@@ -7,7 +7,9 @@
                     <div class="mb-4 flex items-center gap-2 text-red-100">
                         <NuxtLink to="/" class="hover:text-white">{{ $t('nav.home') }}</NuxtLink>
                         <span>/</span>
-                        <NuxtLink :to="`/posts/search?category=${post?.category}`" class="hover:text-white">{{ post?.category }}</NuxtLink>
+                        <NuxtLink :to="`/posts/search?category=${post?.category}`" class="hover:text-white">
+                            {{ post?.category }}
+                        </NuxtLink>
                         <span>/</span>
                         <span>{{ getPostTitle() }}</span>
                     </div>
@@ -26,7 +28,10 @@
             </section>
 
             <!-- Featured Image -->
-            <section v-if="post.coverImage" class="bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700">
+            <section
+                v-if="post.coverImage"
+                class="bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700"
+            >
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
                     <ImageWithFallback
                         :src="post.coverImage"
@@ -49,14 +54,19 @@
                         <!-- Main Content -->
                         <div class="lg:col-span-3">
                             <article class="prose dark:prose-invert max-w-none">
-                                <div v-html="renderedContent" class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"></div>
+                                <div
+                                    v-html="renderedContent"
+                                    class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4"
+                                ></div>
                             </article>
 
                             <!-- CTA Section -->
                             <div class="mt-16 p-8 bg-red-600 dark:bg-red-700 text-white rounded-lg">
                                 <h2 class="text-2xl font-bold mb-2">{{ $t('post.cta') }}</h2>
                                 <p class="mb-4">{{ $t('post.ctaDescription') }}</p>
-                                <button class="px-6 py-2 bg-white text-red-600 font-semibold rounded hover:bg-red-50 transition-colors">
+                                <button
+                                    class="px-6 py-2 bg-white text-red-600 font-semibold rounded hover:bg-red-50 transition-colors"
+                                >
                                     {{ $t('post.ctaButton') }}
                                 </button>
                             </div>
@@ -67,7 +77,9 @@
                             <div class="sticky top-20 space-y-6">
                                 <!-- Tags -->
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
-                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{{ $t('post.tags') }}</h3>
+                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                                        {{ $t('post.tags') }}
+                                    </h3>
                                     <div class="flex flex-wrap gap-2">
                                         <NuxtLink
                                             v-for="tag in post.tags"
@@ -82,7 +94,9 @@
 
                                 <!-- Share -->
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
-                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{{ $t('post.share') }}</h3>
+                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
+                                        {{ $t('post.share') }}
+                                    </h3>
                                     <div class="flex gap-2">
                                         <a
                                             href="#share-twitter"
@@ -138,205 +152,205 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, onMounted } from 'vue'
-    import { useRoute } from 'vue-router'
-    import { useI18n } from 'vue-i18n'
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
-    interface PostData {
-        id: number
-        slug: string
-        translations: {
-            'en-US': {
-                title: string
-                description: string
-                content: string
-            }
-            'pt-BR': {
-                title: string
-                description: string
-                content: string
-            }
-        }
-        date: string
-        readTime: number
-        category: string
-        tags: string[]
-        status: 'published' | 'draft' | 'archived'
-        coverImage?: string
+interface PostData {
+    id: number;
+    slug: string;
+    translations: {
+        'en-US': {
+            title: string;
+            description: string;
+            content: string;
+        };
+        'pt-BR': {
+            title: string;
+            description: string;
+            content: string;
+        };
+    };
+    date: string;
+    readTime: number;
+    category: string;
+    tags: string[];
+    status: 'published' | 'draft' | 'archived';
+    coverImage?: string;
+}
+
+interface Post {
+    id: number;
+    slug: string;
+    title: string;
+    description: string;
+    content: string;
+    date: string;
+    readTime: number;
+    category: string;
+    tags: string[];
+    status: 'published' | 'draft' | 'archived';
+    coverImage?: string;
+}
+
+interface Heading {
+    id: string;
+    text: string;
+    level: number;
+}
+
+const route = useRoute();
+const { locale } = useI18n();
+const post = ref<Post | null>(null);
+const isLoading = ref(true);
+const renderedContent = ref('');
+const headings = ref<Heading[]>([]);
+
+function getPostTitle(): string {
+    if (!post.value) {
+        return '';
     }
 
-    interface Post {
-        id: number
-        slug: string
-        title: string
-        description: string
-        content: string
-        date: string
-        readTime: number
-        category: string
-        tags: string[]
-        status: 'published' | 'draft' | 'archived'
-        coverImage?: string
+    return post.value.title;
+}
+
+function getStatusBadgeClass(): string {
+    if (!post.value) {
+        return '';
     }
 
-    interface Heading {
-        id: string
-        text: string
-        level: number
+    const baseClasses = 'px-3 py-1 rounded-full text-xs font-semibold';
+
+    if (post.value.status === 'draft') {
+        return `${baseClasses} bg-yellow-200 text-yellow-800`;
     }
 
-    const route = useRoute()
-    const { locale } = useI18n()
-    const post = ref<Post | null>(null)
-    const isLoading = ref(true)
-    const renderedContent = ref('')
-    const headings = ref<Heading[]>([])
-
-    function getPostTitle(): string {
-        if (!post.value) {
-            return ''
-        }
-
-        return post.value.title
+    if (post.value.status === 'archived') {
+        return `${baseClasses} bg-gray-200 text-gray-800`;
     }
 
-    function getStatusBadgeClass(): string {
-        if (!post.value) {
-            return ''
-        }
+    return baseClasses;
+}
 
-        const baseClasses = 'px-3 py-1 rounded-full text-xs font-semibold'
+function formatDate(date: string): string {
+    return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+}
 
-        if (post.value.status === 'draft') {
-            return `${baseClasses} bg-yellow-200 text-yellow-800`
-        }
+function generateSlug(text: string): string {
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/[\s_]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
 
-        if (post.value.status === 'archived') {
-            return `${baseClasses} bg-gray-200 text-gray-800`
-        }
-
-        return baseClasses
+function renderMarkdown(markdown: string): string {
+    if (!markdown) {
+        return '<p>No content</p>';
     }
 
-    function formatDate(date: string): string {
-        return new Date(date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
+    const extractedHeadings: Heading[] = [];
+    let headingCounter = 0;
+
+    let html = markdown
+        .replace(/^### (.*?)$/gm, (match, text) => {
+            const id = `heading-${headingCounter++}`;
+            extractedHeadings.push({
+                id,
+                text: text.trim(),
+                level: 3,
+            });
+
+            return `<h3 id="${id}" class="text-2xl font-bold mt-8 mb-4">${text}</h3>`;
         })
+        .replace(/^## (.*?)$/gm, (match, text) => {
+            const id = `heading-${headingCounter++}`;
+            extractedHeadings.push({
+                id,
+                text: text.trim(),
+                level: 2,
+            });
+
+            return `<h2 id="${id}" class="text-3xl font-bold mt-12 mb-6">${text}</h2>`;
+        })
+        .replace(/^# (.*?)$/gm, (match, text) => {
+            const id = `heading-${headingCounter++}`;
+            extractedHeadings.push({
+                id,
+                text: text.trim(),
+                level: 1,
+            });
+
+            return `<h1 id="${id}" class="text-4xl font-bold mt-12 mb-6">${text}</h1>`;
+        })
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+        .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded text-sm">$1</code>')
+        .replace(/\n\n/g, '</p><p>');
+
+    headings.value = extractedHeadings.filter((h) => h.level >= 2);
+
+    return `<p>${html}</p>`;
+}
+
+async function copyLink(): Promise<void> {
+    const url = `${window.location.origin}/posts/${route.params.slug}`;
+
+    try {
+        await navigator.clipboard.writeText(url);
+        alert('Link copied!');
+    } catch (error) {
+        console.error('Failed to copy link:', error);
+    }
+}
+
+function mapPostData(data: PostData): Post {
+    const currentLocale = locale.value as 'en-US' | 'pt-BR';
+    const translations = data.translations[currentLocale] || data.translations['en-US'];
+
+    return {
+        id: data.id,
+        slug: data.slug,
+        title: translations.title,
+        description: translations.description,
+        content: translations.content,
+        date: data.date,
+        readTime: data.readTime,
+        category: data.category,
+        tags: data.tags,
+        status: data.status,
+        coverImage: data.coverImage,
+    };
+}
+
+onMounted(async () => {
+    if (isLoading.value === false) {
+        return;
     }
 
-    function generateSlug(text: string): string {
-        return text
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/[\s_]+/g, '-')
-            .replace(/^-+|-+$/g, '')
+    try {
+        const slug = route.params.slug as string;
+        const response = await fetch(`/data/posts/data/${slug}.json`);
+
+        if (!response.ok) {
+            post.value = null;
+            isLoading.value = false;
+            return;
+        }
+
+        const data: PostData = await response.json();
+        post.value = mapPostData(data);
+        renderedContent.value = renderMarkdown(post.value.content || '');
+    } catch (error) {
+        console.error('Failed to fetch post:', error);
+        post.value = null;
+    } finally {
+        isLoading.value = false;
     }
-
-    function renderMarkdown(markdown: string): string {
-        if (!markdown) {
-            return '<p>No content</p>'
-        }
-
-        const extractedHeadings: Heading[] = []
-        let headingCounter = 0
-
-        let html = markdown
-            .replace(/^### (.*?)$/gm, (match, text) => {
-                const id = `heading-${headingCounter++}`
-                extractedHeadings.push({
-                    id,
-                    text: text.trim(),
-                    level: 3,
-                })
-
-                return `<h3 id="${id}" class="text-2xl font-bold mt-8 mb-4">${text}</h3>`
-            })
-            .replace(/^## (.*?)$/gm, (match, text) => {
-                const id = `heading-${headingCounter++}`
-                extractedHeadings.push({
-                    id,
-                    text: text.trim(),
-                    level: 2,
-                })
-
-                return `<h2 id="${id}" class="text-3xl font-bold mt-12 mb-6">${text}</h2>`
-            })
-            .replace(/^# (.*?)$/gm, (match, text) => {
-                const id = `heading-${headingCounter++}`
-                extractedHeadings.push({
-                    id,
-                    text: text.trim(),
-                    level: 1,
-                })
-
-                return `<h1 id="${id}" class="text-4xl font-bold mt-12 mb-6">${text}</h1>`
-            })
-            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-            .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded text-sm">$1</code>')
-            .replace(/\n\n/g, '</p><p>')
-
-        headings.value = extractedHeadings.filter((h) => h.level >= 2)
-
-        return `<p>${html}</p>`
-    }
-
-    async function copyLink(): Promise<void> {
-        const url = `${window.location.origin}/posts/${route.params.slug}`
-
-        try {
-            await navigator.clipboard.writeText(url)
-            alert('Link copied!')
-        } catch (error) {
-            console.error('Failed to copy link:', error)
-        }
-    }
-
-    function mapPostData(data: PostData): Post {
-        const currentLocale = locale.value as 'en-US' | 'pt-BR'
-        const translations = data.translations[currentLocale] || data.translations['en-US']
-
-        return {
-            id: data.id,
-            slug: data.slug,
-            title: translations.title,
-            description: translations.description,
-            content: translations.content,
-            date: data.date,
-            readTime: data.readTime,
-            category: data.category,
-            tags: data.tags,
-            status: data.status,
-            coverImage: data.coverImage,
-        }
-    }
-
-    onMounted(async () => {
-        if (isLoading.value === false) {
-            return
-        }
-
-        try {
-            const slug = route.params.slug as string
-            const response = await fetch(`/data/posts/data/${slug}.json`)
-
-            if (!response.ok) {
-                post.value = null
-                isLoading.value = false
-                return
-            }
-
-            const data: PostData = await response.json()
-            post.value = mapPostData(data)
-            renderedContent.value = renderMarkdown(post.value.content || '')
-        } catch (error) {
-            console.error('Failed to fetch post:', error)
-            post.value = null
-        } finally {
-            isLoading.value = false
-        }
-    })
+});
 </script>

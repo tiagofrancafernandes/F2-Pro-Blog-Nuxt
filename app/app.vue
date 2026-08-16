@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-    const colorMode = useColorMode()
+const colorMode = useColorMode();
 </script>

@@ -1,27 +1,22 @@
 {
-  "id": 6,
-  "slug": "post-seis",
-  "translations": {
-    "en-US": {
-      "title": "Design Patterns in Modern PHP",
-      "description": "Essential design patterns for professional PHP development. Singleton, Factory, Observer and practical applications.",
-      "content": "## Design Patterns\n\nDesign patterns are tested solutions for common problems in software development.\n\n## Singleton\n\nEnsures only one instance of a class:\n\n```php\nclass Database {\n    private static ?Database $instance = null;\n    \n    private function __construct() {}\n    \n    public static function getInstance(): Database {\n        if (self::$instance === null) {\n            self::$instance = new self();\n        }\n        return self::$instance;\n    }\n}\n```\n\n## Factory\n\nCreates objects without specifying exactly which class to use:\n\n```php\nclass TransportFactory {\n    public static function create(string $type): Transport {\n        return match($type) {\n            'car' => new Car(),\n            'bike' => new Bike(),\n            default => throw new Exception('Unknown type')\n        };\n    }\n}\n```\n\n## Observer\n\nNotifies multiple objects about state changes:\n\n```php\ninterface Observer {\n    public function update(Subject $subject);\n}\n\nclass Subject {\n    private array $observers = [];\n    \n    public function attach(Observer $observer): void {\n        $this->observers[] = $observer;\n    }\n    \n    public function notify(): void {\n        foreach ($this->observers as $observer) {\n            $observer->update($this);\n        }\n    }\n}\n```\n\n## Conclusion\n\nMastering design patterns significantly improves your code quality."
+    "id": 6,
+    "slug": "post-seis",
+    "translations": {
+        "en-US": {
+            "title": "Design Patterns in Modern PHP",
+            "description": "Essential design patterns for professional PHP development. Singleton, Factory, Observer and practical applications.",
+            "content": "## Design Patterns\n\nDesign patterns are tested solutions for common problems in software development.\n\n## Singleton\n\nEnsures only one instance of a class:\n\n```php\nclass Database {\n    private static ?Database $instance = null;\n    \n    private function __construct() {}\n    \n    public static function getInstance(): Database {\n        if (self::$instance === null) {\n            self::$instance = new self();\n        }\n        return self::$instance;\n    }\n}\n```\n\n## Factory\n\nCreates objects without specifying exactly which class to use:\n\n```php\nclass TransportFactory {\n    public static function create(string $type): Transport {\n        return match($type) {\n            'car' => new Car(),\n            'bike' => new Bike(),\n            default => throw new Exception('Unknown type')\n        };\n    }\n}\n```\n\n## Observer\n\nNotifies multiple objects about state changes:\n\n```php\ninterface Observer {\n    public function update(Subject $subject);\n}\n\nclass Subject {\n    private array $observers = [];\n    \n    public function attach(Observer $observer): void {\n        $this->observers[] = $observer;\n    }\n    \n    public function notify(): void {\n        foreach ($this->observers as $observer) {\n            $observer->update($this);\n        }\n    }\n}\n```\n\n## Conclusion\n\nMastering design patterns significantly improves your code quality."
+        },
+        "pt-BR": {
+            "title": "Design Patterns em PHP Moderno",
+            "description": "Padrões de design essenciais para desenvolvimento PHP profissional. Singleton, Factory, Observer e aplicações práticas.",
+            "content": "## Padrões de Design\n\nPadrões de design são soluções testadas para problemas comuns no desenvolvimento de software.\n\n## Singleton\n\nGarante apenas uma instância de uma classe:\n\n```php\nclass Database {\n    private static ?Database $instance = null;\n    \n    private function __construct() {}\n    \n    public static function getInstance(): Database {\n        if (self::$instance === null) {\n            self::$instance = new self();\n        }\n        return self::$instance;\n    }\n}\n```\n\n## Factory\n\nCria objetos sem especificar exatamente qual classe usar:\n\n```php\nclass TransportFactory {\n    public static function create(string $type): Transport {\n        return match($type) {\n            'car' => new Car(),\n            'bike' => new Bike(),\n            default => throw new Exception('Unknown type')\n        };\n    }\n}\n```\n\n## Observer\n\nNotifica múltiplos objetos sobre mudanças de estado:\n\n```php\ninterface Observer {\n    public function update(Subject $subject);\n}\n\nclass Subject {\n    private array $observers = [];\n    \n    public function attach(Observer $observer): void {\n        $this->observers[] = $observer;\n    }\n    \n    public function notify(): void {\n        foreach ($this->observers as $observer) {\n            $observer->update($this);\n        }\n    }\n}\n```\n\n## Conclusão\n\nDominar padrões de design melhora significativamente a qualidade do seu código."
+        }
     },
-    "pt-BR": {
-      "title": "Design Patterns em PHP Moderno",
-      "description": "Padrões de design essenciais para desenvolvimento PHP profissional. Singleton, Factory, Observer e aplicações práticas.",
-      "content": "## Padrões de Design\n\nPadrões de design são soluções testadas para problemas comuns no desenvolvimento de software.\n\n## Singleton\n\nGarante apenas uma instância de uma classe:\n\n```php\nclass Database {\n    private static ?Database $instance = null;\n    \n    private function __construct() {}\n    \n    public static function getInstance(): Database {\n        if (self::$instance === null) {\n            self::$instance = new self();\n        }\n        return self::$instance;\n    }\n}\n```\n\n## Factory\n\nCria objetos sem especificar exatamente qual classe usar:\n\n```php\nclass TransportFactory {\n    public static function create(string $type): Transport {\n        return match($type) {\n            'car' => new Car(),\n            'bike' => new Bike(),\n            default => throw new Exception('Unknown type')\n        };\n    }\n}\n```\n\n## Observer\n\nNotifica múltiplos objetos sobre mudanças de estado:\n\n```php\ninterface Observer {\n    public function update(Subject $subject);\n}\n\nclass Subject {\n    private array $observers = [];\n    \n    public function attach(Observer $observer): void {\n        $this->observers[] = $observer;\n    }\n    \n    public function notify(): void {\n        foreach ($this->observers as $observer) {\n            $observer->update($this);\n        }\n    }\n}\n```\n\n## Conclusão\n\nDominar padrões de design melhora significativamente a qualidade do seu código."
-    }
-  },
-  "category": "backend",
-  "tags": [
-    "php",
-    "design-patterns",
-    "backend",
-    "architecture"
-  ],
-  "date": "2024-08-05",
-  "readTime": 11,
-  "author": "Tiago França",
-  "status": "published"
+    "category": "backend",
+    "tags": ["php", "design-patterns", "backend", "architecture"],
+    "date": "2024-08-05",
+    "readTime": 11,
+    "author": "Tiago França",
+    "status": "published"
 }

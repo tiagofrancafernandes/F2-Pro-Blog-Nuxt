@@ -4,7 +4,9 @@
             {{ $t('post.writtenBy') || 'Written by' }}
         </h3>
         <div class="flex gap-4">
-            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex-shrink-0 flex items-center justify-center">
+            <div
+                class="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex-shrink-0 flex items-center justify-center"
+            >
                 <Icon name="mdi:account" class="w-8 h-8 text-white" />
             </div>
             <div class="flex-1">
@@ -23,13 +25,13 @@
 </template>
 
 <script setup lang="ts">
-    interface Author {
-        name: string
-        title: string
-        bio: string
-    }
+interface Author {
+    name: string;
+    title: string;
+    bio: string;
+}
 
-    defineProps<{
-        author: Author
-    }>()
+defineProps<{
+    author: Author;
+}>();
 </script>

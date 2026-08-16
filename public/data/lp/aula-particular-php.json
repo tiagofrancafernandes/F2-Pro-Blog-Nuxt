@@ -1,50 +1,50 @@
 {
-  "id": "aula-particular-php",
-  "slug": "aula-particular-php",
-  "translations": {
-    "en-US": {
-      "title": "Private PHP Classes Online",
-      "subtitle": "Master modern PHP programming",
-      "description": "Learn PHP from basics to advanced concepts. Master modern PHP practices, object-oriented programming, and design patterns.",
-      "content": "## Why Learn PHP?\n\nPHP powers over 76% of the web. It's in high demand and essential for backend development. With personalized classes, you'll master PHP quickly.\n\n## What You'll Learn\n\n- PHP fundamentals and syntax\n- Object-Oriented Programming (OOP)\n- Design patterns and best practices\n- Working with databases\n- API development\n- Security best practices\n\n## Course Structure\n\n**Beginner**: Start with PHP basics, variables, loops, functions\n**Intermediate**: OOP, design patterns, database interactions\n**Advanced**: API development, security, performance optimization\n\n## Real-World Projects\n\nYou'll build real projects including:\n- A personal blog platform\n- REST API for a mobile app\n- E-commerce backend\n- Content management system\n\n## After the Course\n\nYou'll be able to:\n✅ Write clean, maintainable PHP code\n✅ Build web applications from scratch\n✅ Work with databases confidently\n✅ Implement security best practices\n✅ Deploy applications to production"
+    "id": "aula-particular-php",
+    "slug": "aula-particular-php",
+    "translations": {
+        "en-US": {
+            "title": "Private PHP Classes Online",
+            "subtitle": "Master modern PHP programming",
+            "description": "Learn PHP from basics to advanced concepts. Master modern PHP practices, object-oriented programming, and design patterns.",
+            "content": "## Why Learn PHP?\n\nPHP powers over 76% of the web. It's in high demand and essential for backend development. With personalized classes, you'll master PHP quickly.\n\n## What You'll Learn\n\n- PHP fundamentals and syntax\n- Object-Oriented Programming (OOP)\n- Design patterns and best practices\n- Working with databases\n- API development\n- Security best practices\n\n## Course Structure\n\n**Beginner**: Start with PHP basics, variables, loops, functions\n**Intermediate**: OOP, design patterns, database interactions\n**Advanced**: API development, security, performance optimization\n\n## Real-World Projects\n\nYou'll build real projects including:\n- A personal blog platform\n- REST API for a mobile app\n- E-commerce backend\n- Content management system\n\n## After the Course\n\nYou'll be able to:\n✅ Write clean, maintainable PHP code\n✅ Build web applications from scratch\n✅ Work with databases confidently\n✅ Implement security best practices\n✅ Deploy applications to production"
+        },
+        "pt-BR": {
+            "title": "Aula Particular de PHP Online",
+            "subtitle": "Domine PHP moderno",
+            "description": "Aprenda PHP do básico a conceitos avançados. Domine práticas modernas de PHP, programação orientada a objetos e padrões de design.",
+            "content": "## Por Que Aprender PHP?\n\nPHP alimenta mais de 76% da web. Tem alta demanda e é essencial para desenvolvimento backend. Com aulas personalizadas, você dominará PHP rapidamente.\n\n## O Que Você Aprenderá\n\n- Fundamentos e sintaxe de PHP\n- Programação Orientada a Objetos (OOP)\n- Padrões de design e melhores práticas\n- Trabalho com bancos de dados\n- Desenvolvimento de APIs\n- Melhores práticas de segurança\n\n## Estrutura do Curso\n\n**Iniciante**: Comece com o básico, variáveis, loops, funções\n**Intermediário**: OOP, padrões de design, interações com BD\n**Avançado**: Desenvolvimento de APIs, segurança, otimização\n\n## Projetos Reais\n\nVocê construirá projetos reais incluindo:\n- Uma plataforma de blog pessoal\n- API REST para aplicativo mobile\n- Backend de e-commerce\n- Sistema de gerenciamento de conteúdo\n\n## Após o Curso\n\nVocê poderá:\n✅ Escrever código PHP limpo e mantível\n✅ Construir aplicações web do zero\n✅ Trabalhar com bancos de dados com confiança\n✅ Implementar práticas de segurança\n✅ Fazer deploy de aplicações em produção"
+        }
     },
-    "pt-BR": {
-      "title": "Aula Particular de PHP Online",
-      "subtitle": "Domine PHP moderno",
-      "description": "Aprenda PHP do básico a conceitos avançados. Domine práticas modernas de PHP, programação orientada a objetos e padrões de design.",
-      "content": "## Por Que Aprender PHP?\n\nPHP alimenta mais de 76% da web. Tem alta demanda e é essencial para desenvolvimento backend. Com aulas personalizadas, você dominará PHP rapidamente.\n\n## O Que Você Aprenderá\n\n- Fundamentos e sintaxe de PHP\n- Programação Orientada a Objetos (OOP)\n- Padrões de design e melhores práticas\n- Trabalho com bancos de dados\n- Desenvolvimento de APIs\n- Melhores práticas de segurança\n\n## Estrutura do Curso\n\n**Iniciante**: Comece com o básico, variáveis, loops, funções\n**Intermediário**: OOP, padrões de design, interações com BD\n**Avançado**: Desenvolvimento de APIs, segurança, otimização\n\n## Projetos Reais\n\nVocê construirá projetos reais incluindo:\n- Uma plataforma de blog pessoal\n- API REST para aplicativo mobile\n- Backend de e-commerce\n- Sistema de gerenciamento de conteúdo\n\n## Após o Curso\n\nVocê poderá:\n✅ Escrever código PHP limpo e mantível\n✅ Construir aplicações web do zero\n✅ Trabalhar com bancos de dados com confiança\n✅ Implementar práticas de segurança\n✅ Fazer deploy de aplicações em produção"
+    "faqs": [
+        {
+            "question": "What version of PHP do we learn?",
+            "questionPt": "Que versão do PHP aprendemos?",
+            "answer": "We focus on modern PHP (8.0+), which includes the latest features and best practices."
+        },
+        {
+            "question": "Do I need to know any programming language first?",
+            "questionPt": "Preciso conhecer alguma linguagem de programação antes?",
+            "answer": "No! We start from the very beginning. However, any prior programming knowledge will help you progress faster."
+        },
+        {
+            "question": "Will we learn Laravel too?",
+            "questionPt": "Aprenderemos Laravel também?",
+            "answer": "Yes! We cover Laravel as part of the course, focusing on practical web application development."
+        },
+        {
+            "question": "What projects will I build?",
+            "questionPt": "Quais projetos vou construir?",
+            "answer": "You'll build a personal blog, REST API, e-commerce backend, and a content management system."
+        },
+        {
+            "question": "How quickly can I get a job after learning PHP?",
+            "questionPt": "Quanto tempo levo para conseguir emprego depois de aprender PHP?",
+            "answer": "With consistent practice and a strong portfolio, many developers get job offers within 2-3 months of completing the course."
+        }
+    ],
+    "socialProof": {
+        "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
+        "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
+        "github": "https://github.com/tiagofrancafernandes"
     }
-  },
-  "faqs": [
-    {
-      "question": "What version of PHP do we learn?",
-      "questionPt": "Que versão do PHP aprendemos?",
-      "answer": "We focus on modern PHP (8.0+), which includes the latest features and best practices."
-    },
-    {
-      "question": "Do I need to know any programming language first?",
-      "questionPt": "Preciso conhecer alguma linguagem de programação antes?",
-      "answer": "No! We start from the very beginning. However, any prior programming knowledge will help you progress faster."
-    },
-    {
-      "question": "Will we learn Laravel too?",
-      "questionPt": "Aprenderemos Laravel também?",
-      "answer": "Yes! We cover Laravel as part of the course, focusing on practical web application development."
-    },
-    {
-      "question": "What projects will I build?",
-      "questionPt": "Quais projetos vou construir?",
-      "answer": "You'll build a personal blog, REST API, e-commerce backend, and a content management system."
-    },
-    {
-      "question": "How quickly can I get a job after learning PHP?",
-      "questionPt": "Quanto tempo levo para conseguir emprego depois de aprender PHP?",
-      "answer": "With consistent practice and a strong portfolio, many developers get job offers within 2-3 months of completing the course."
-    }
-  ],
-  "socialProof": {
-    "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
-    "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
-    "github": "https://github.com/tiagofrancafernandes"
-  }
 }

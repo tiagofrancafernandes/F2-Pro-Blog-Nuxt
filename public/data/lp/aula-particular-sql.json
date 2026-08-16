@@ -1,50 +1,50 @@
 {
-  "id": "aula-particular-sql",
-  "slug": "aula-particular-sql",
-  "translations": {
-    "en-US": {
-      "title": "Private SQL & Database Classes Online",
-      "subtitle": "Master database design and SQL",
-      "description": "Learn SQL and database design from fundamentals to advanced concepts. Essential skill for all developers.",
-      "content": "## Why Learn SQL?\n\nSQL is the most in-demand database skill. Every application needs a database. Master SQL and you'll be invaluable to any team.\n\n## What You'll Learn\n\n- SQL fundamentals and syntax\n- Database design and normalization\n- Complex queries and joins\n- Optimization and performance tuning\n- Transactions and ACID principles\n- PostgreSQL and MySQL specific features\n- Indexes and query optimization\n\n## Course Structure\n\n**Beginner**: SELECT, WHERE, basic queries\n**Intermediate**: Joins, subqueries, aggregation\n**Advanced**: Performance tuning, optimization, design patterns\n\n## Real-World Scenarios\n\nPractical examples include:\n- E-commerce database design\n- User management systems\n- Analytics and reporting queries\n- Data migration and backup\n- Performance optimization\n\n## Expert-Level Skills\n\nAfter this course:\n✅ You understand database design principles\n✅ You can write optimized queries\n✅ You can normalize databases\n✅ You understand indexes and performance\n✅ You're ready for database administrator roles"
+    "id": "aula-particular-sql",
+    "slug": "aula-particular-sql",
+    "translations": {
+        "en-US": {
+            "title": "Private SQL & Database Classes Online",
+            "subtitle": "Master database design and SQL",
+            "description": "Learn SQL and database design from fundamentals to advanced concepts. Essential skill for all developers.",
+            "content": "## Why Learn SQL?\n\nSQL is the most in-demand database skill. Every application needs a database. Master SQL and you'll be invaluable to any team.\n\n## What You'll Learn\n\n- SQL fundamentals and syntax\n- Database design and normalization\n- Complex queries and joins\n- Optimization and performance tuning\n- Transactions and ACID principles\n- PostgreSQL and MySQL specific features\n- Indexes and query optimization\n\n## Course Structure\n\n**Beginner**: SELECT, WHERE, basic queries\n**Intermediate**: Joins, subqueries, aggregation\n**Advanced**: Performance tuning, optimization, design patterns\n\n## Real-World Scenarios\n\nPractical examples include:\n- E-commerce database design\n- User management systems\n- Analytics and reporting queries\n- Data migration and backup\n- Performance optimization\n\n## Expert-Level Skills\n\nAfter this course:\n✅ You understand database design principles\n✅ You can write optimized queries\n✅ You can normalize databases\n✅ You understand indexes and performance\n✅ You're ready for database administrator roles"
+        },
+        "pt-BR": {
+            "title": "Aula Particular de SQL e Banco de Dados Online",
+            "subtitle": "Domine design de banco de dados e SQL",
+            "description": "Aprenda SQL e design de banco de dados do básico a conceitos avançados. Habilidade essencial para todos os desenvolvedores.",
+            "content": "## Por Que Aprender SQL?\n\nSQL é a habilidade de banco de dados mais demandada. Toda aplicação precisa de um banco de dados. Domine SQL e você será inestimável para qualquer equipe.\n\n## O Que Você Aprenderá\n\n- Fundamentos de SQL e sintaxe\n- Design e normalização de banco de dados\n- Consultas complexas e joins\n- Otimização e ajuste de desempenho\n- Transações e princípios ACID\n- Recursos específicos de PostgreSQL e MySQL\n- Índices e otimização de consultas\n\n## Estrutura do Curso\n\n**Iniciante**: SELECT, WHERE, consultas básicas\n**Intermediário**: Joins, subconsultas, agregação\n**Avançado**: Ajuste de desempenho, otimização, padrões de design\n\n## Cenários Reais\n\nExemplos práticos incluem:\n- Design de banco de dados de e-commerce\n- Sistemas de gerenciamento de usuários\n- Consultas de análise e relatórios\n- Migração e backup de dados\n- Otimização de desempenho\n\n## Habilidades de Nível Especialista\n\nApós este curso:\n✅ Você compreende princípios de design de BD\n✅ Pode escrever consultas otimizadas\n✅ Pode normalizar bancos de dados\n✅ Compreende índices e desempenho\n✅ Está pronto para funções de administrador de BD"
+        }
     },
-    "pt-BR": {
-      "title": "Aula Particular de SQL e Banco de Dados Online",
-      "subtitle": "Domine design de banco de dados e SQL",
-      "description": "Aprenda SQL e design de banco de dados do básico a conceitos avançados. Habilidade essencial para todos os desenvolvedores.",
-      "content": "## Por Que Aprender SQL?\n\nSQL é a habilidade de banco de dados mais demandada. Toda aplicação precisa de um banco de dados. Domine SQL e você será inestimável para qualquer equipe.\n\n## O Que Você Aprenderá\n\n- Fundamentos de SQL e sintaxe\n- Design e normalização de banco de dados\n- Consultas complexas e joins\n- Otimização e ajuste de desempenho\n- Transações e princípios ACID\n- Recursos específicos de PostgreSQL e MySQL\n- Índices e otimização de consultas\n\n## Estrutura do Curso\n\n**Iniciante**: SELECT, WHERE, consultas básicas\n**Intermediário**: Joins, subconsultas, agregação\n**Avançado**: Ajuste de desempenho, otimização, padrões de design\n\n## Cenários Reais\n\nExemplos práticos incluem:\n- Design de banco de dados de e-commerce\n- Sistemas de gerenciamento de usuários\n- Consultas de análise e relatórios\n- Migração e backup de dados\n- Otimização de desempenho\n\n## Habilidades de Nível Especialista\n\nApós este curso:\n✅ Você compreende princípios de design de BD\n✅ Pode escrever consultas otimizadas\n✅ Pode normalizar bancos de dados\n✅ Compreende índices e desempenho\n✅ Está pronto para funções de administrador de BD"
+    "faqs": [
+        {
+            "question": "Which database should I learn first?",
+            "questionPt": "Qual banco de dados devo aprender primeiro?",
+            "answer": "We start with PostgreSQL as it's the most powerful, but SQL concepts apply to all databases. MySQL is also covered."
+        },
+        {
+            "question": "Is SQL hard to learn?",
+            "questionPt": "SQL é difícil de aprender?",
+            "answer": "No! SQL is one of the easiest languages to learn. We make it fun and practical with real examples."
+        },
+        {
+            "question": "Do I need to be a developer to learn SQL?",
+            "questionPt": "Preciso ser desenvolvedor para aprender SQL?",
+            "answer": "Not at all! SQL is useful for anyone who works with data - analysts, business users, and developers all benefit."
+        },
+        {
+            "question": "What if my database is slow?",
+            "questionPt": "E se meu banco de dados estiver lento?",
+            "answer": "We teach query optimization and indexing strategies to dramatically improve database performance."
+        },
+        {
+            "question": "Can I use SQL with my programming language?",
+            "questionPt": "Posso usar SQL com minha linguagem de programação?",
+            "answer": "Absolutely! SQL works with PHP, Python, JavaScript, Java, and every other language. We show how to integrate both."
+        }
+    ],
+    "socialProof": {
+        "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
+        "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
+        "github": "https://github.com/tiagofrancafernandes"
     }
-  },
-  "faqs": [
-    {
-      "question": "Which database should I learn first?",
-      "questionPt": "Qual banco de dados devo aprender primeiro?",
-      "answer": "We start with PostgreSQL as it's the most powerful, but SQL concepts apply to all databases. MySQL is also covered."
-    },
-    {
-      "question": "Is SQL hard to learn?",
-      "questionPt": "SQL é difícil de aprender?",
-      "answer": "No! SQL is one of the easiest languages to learn. We make it fun and practical with real examples."
-    },
-    {
-      "question": "Do I need to be a developer to learn SQL?",
-      "questionPt": "Preciso ser desenvolvedor para aprender SQL?",
-      "answer": "Not at all! SQL is useful for anyone who works with data - analysts, business users, and developers all benefit."
-    },
-    {
-      "question": "What if my database is slow?",
-      "questionPt": "E se meu banco de dados estiver lento?",
-      "answer": "We teach query optimization and indexing strategies to dramatically improve database performance."
-    },
-    {
-      "question": "Can I use SQL with my programming language?",
-      "questionPt": "Posso usar SQL com minha linguagem de programação?",
-      "answer": "Absolutely! SQL works with PHP, Python, JavaScript, Java, and every other language. We show how to integrate both."
-    }
-  ],
-  "socialProof": {
-    "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
-    "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
-    "github": "https://github.com/tiagofrancafernandes"
-  }
 }
