@@ -27,7 +27,7 @@
                         :rel="link.external ? 'noopener noreferrer' : undefined"
                         class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors whitespace-nowrap py-1 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800"
                     >
-                        <span>{{ $t(`nav.${link.translationKey}`) }}</span>
+                        <span>{{ $t(`${link.translationKey}`) }}</span>
                         <Icon v-if="link.external" name="mdi:open-in-new" class="w-3 h-3" />
                     </a>
                 </div>
@@ -45,12 +45,13 @@ interface QuickLink {
 }
 
 const quickLinks: QuickLink[] = [
-    { show: true, translationKey: 'tutorials', href: '/', external: false },
-    { show: true, translationKey: 'blog', href: '/', external: false },
-    { show: true, translationKey: 'portfolio', href: '#portfolio', external: false },
-    { show: !true, translationKey: 'cv', href: '#cv', external: false },
-    { show: true, translationKey: 'hireMe', href: '/hire-me', external: false },
-    { show: true, translationKey: 'LinkedIn', href: 'https://www.linkedin.com/in/tiago-php/', external: true },
+    { show: true, translationKey: 'nav.tutorials', href: '/', external: false },
+    { show: true, translationKey: 'nav.blog', href: '/', external: false },
+    { show: true, translationKey: 'nav.portfolio', href: '#portfolio', external: false },
+    { show: true, translationKey: 'nav.hireMe', href: '/hire-me', external: false },
+    { show: true, translationKey: 'nav.cv', href: '/l/cv', external: true },
+    { show: true, translationKey: 'general.linkedin', href: '/l/linkedin', external: true },
+    { show: true, translationKey: 'general.github', href: '/l/github', external: true },
 ].filter((i: QuickLink) => {
     try {
         let _show = i?.show ?? true;

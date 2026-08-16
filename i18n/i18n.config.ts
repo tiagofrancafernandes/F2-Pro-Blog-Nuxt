@@ -7,7 +7,8 @@ export default {
             general: {
                 'Read More': 'Read More',
                 readMore: 'Read More',
-                LinkedIn: 'LinkedIn',
+                linkedin: 'LinkedIn',
+                github: 'GitHub',
             },
             nav: {
                 home: 'Home',
@@ -19,7 +20,8 @@ export default {
                 blog: 'Blog',
                 portfolio: 'Portfolio',
                 cv: 'CV',
-                LinkedIn: 'LinkedIn',
+                linkedin: 'LinkedIn',
+                github: 'GitHub',
                 hireMe: 'Hire Me',
                 search: 'Search articles...',
             },
@@ -99,7 +101,8 @@ export default {
             general: {
                 'Read More': 'Ler mais',
                 readMore: 'Ler mais',
-                LinkedIn: 'LinkedIn',
+                linkedin: 'LinkedIn',
+                github: 'GitHub',
             },
             nav: {
                 home: 'Início',
@@ -111,7 +114,8 @@ export default {
                 blog: 'Blog',
                 portfolio: 'Portfólio',
                 cv: 'CV',
-                LinkedIn: 'LinkedIn',
+                linkedin: 'LinkedIn',
+                github: 'GitHub',
                 hireMe: 'Contrate-me',
                 search: 'Pesquisar artigos...',
             },

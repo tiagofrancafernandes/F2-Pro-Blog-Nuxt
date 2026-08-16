@@ -143,8 +143,8 @@
         </div>
     </div>
 
-    <div v-else class="text-center py-16">
-        <p class="text-gray-600 dark:text-gray-400">{{ $t('post.loading') }}</p>
+    <div v-else class="flex text-center py-16 justify-center content-center min-h-48 py-24">
+        <span class="text-gray-600 dark:text-gray-400">{{ $t('post.loading') }}</span>
     </div>
 </template>
 

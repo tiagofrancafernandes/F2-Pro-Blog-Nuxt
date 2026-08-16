@@ -50,13 +50,23 @@
                     <article
                         v-for="post in filteredPosts"
                         :key="post.slug"
-                        class="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden hover:shadow-md dark:hover:shadow-lg hover:border-red-400 dark:hover:border-red-500 transition-all group"
+                        class="shadow shadow-gray-200 dark:shadow-slate-700 rounded-lg overflow-hidden hover:shadow-md dark:hover:shadow-lg hover:shadow-red-400 dark:hover:shadow-red-500 transition-all group"
                     >
-                        <!-- Image -->
-                        <ImageWithFallback :src="post.coverImage" :alt="getPostTitle(post)" />
+                        <NuxtLink
+                            :to="`/posts/${post.slug}`">
+                            <!-- Image -->
+                            <ImageWithFallback :src="post.coverImage" :alt="getPostTitle(post)" />
+                        </NuxtLink>
 
                         <!-- Content -->
                         <div class="p-6">
+                            <NuxtLink
+                                :to="`/posts/${post.slug}`"
+                                class="block text-lg font-semibold text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 mb-2"
+                            >
+                                {{ getPostTitle(post) }}
+                            </NuxtLink>
+
                             <div class="flex items-center justify-between mb-2">
                                 <div
                                     class="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-wider"
@@ -67,13 +77,6 @@
                                     {{ formatDate(post.date) }}
                                 </div>
                             </div>
-
-                            <NuxtLink
-                                :to="`/posts/${post.slug}`"
-                                class="block text-lg font-semibold text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 mb-2"
-                            >
-                                {{ getPostTitle(post) }}
-                            </NuxtLink>
 
                             <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
                                 {{ getPostDescription(post) }}
