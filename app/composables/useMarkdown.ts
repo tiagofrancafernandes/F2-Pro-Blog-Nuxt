@@ -24,8 +24,20 @@ export function useMarkdown() {
 
         try {
             const htmlBruto = md.render(markdown);
+            let headingCounter = 0;
 
-            const htmlSeguro = DOMPurify.sanitize(htmlBruto, {
+            const htmlWithIds = htmlBruto
+                .replace(/<h([1-6])([^>]*)>/g, (match, level, attrs) => {
+                    const id = `heading-${headingCounter++}`;
+
+                    if (attrs.includes('id=')) {
+                        return match;
+                    }
+
+                    return `<h${level} id="${id}"${attrs}>`;
+                });
+
+            const htmlSeguro = DOMPurify.sanitize(htmlWithIds, {
                 ALLOWED_TAGS: [
                     'p',
                     'br',
@@ -125,6 +137,7 @@ export function useMarkdown() {
 
         return headings.filter((h) => h.level >= 2);
     }
+
 
     return {
         renderMarkdown,
