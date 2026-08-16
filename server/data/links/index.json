@@ -2,7 +2,7 @@
     "links": [
         {
             "slug": "cv",
-            "url": "https://example.com/cv",
+            "url": "https://github.com/tiagofrancafernandes/tiagofrancafernandes/tree/master/_cvs",
             "active": true,
             "description": "Meu CV completo"
         },
@@ -20,13 +20,13 @@
         },
         {
             "slug": "whatsapp",
-            "url": "https://wa.me/5511999999999",
+            "url": "https://wa.me/5541984402684",
             "active": true,
             "description": "WhatsApp"
         },
         {
             "slug": "superprof",
-            "url": "https://www.superprof.com.br/tiago-franca",
+            "url": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html?utm_source=linkedin&utm_medium=profile-link&utm_campaign=linked_in&utm_content=link+do+perfil",
             "active": true,
             "description": "Perfil SuperProf"
         },
