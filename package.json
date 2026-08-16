@@ -17,9 +17,13 @@
         "@nuxtjs/robots": "^6.0.0",
         "@nuxtjs/tailwindcss": "6.14.0",
         "@oro.ad/nuxt-claude-devtools": "1.5.2",
+        "@tailwindcss/forms": "^0.5.11",
+        "@tailwindcss/typography": "^0.5.20",
+        "@tailwindcss/vite": "^4.3.3",
         "fuse.js": "^7.5.0",
         "nuxt": "^4.5.2",
         "rc9": "^3.0.1",
+        "tailwindcss": "^4.3.3",
         "vue": "^3.5.41",
         "vue-router": "^5.2.0"
     },

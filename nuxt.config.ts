@@ -1,8 +1,11 @@
 import { fileURLToPath } from 'node:url';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
+    css: ['~/assets/css/main.css'],
+
     devtools: {
         enabled: true,
         // Configurações internas do painel do DevTools
@@ -12,10 +15,14 @@ export default defineNuxtConfig({
         },
     },
 
+    // SPA template
+    // ssr: false,              // 1. Enable client-side SPA mode
+    spaLoadingTemplate: true, // 2. Enable the loading template
+
     modules: [
         '@nuxt/icon',
         '@nuxtjs/color-mode',
-        '@nuxtjs/tailwindcss',
+        // '@nuxtjs/tailwindcss',
         '@nuxtjs/i18n',
         '@oro.ad/nuxt-claude-devtools',
         '@nuxtjs/robots',
@@ -200,11 +207,13 @@ export default defineNuxtConfig({
         },
     },
 
-    // Add FuseJS to Vite
     vite: {
         ssr: {
             external: [],
         },
+        plugins: [
+            tailwindcss(),
+        ],
     },
 
     claudeDevtools: {
@@ -217,6 +226,11 @@ export default defineNuxtConfig({
                 '--permission-mode',
                 'acceptEdits',
             ], // Additional CLI arguments
+        },
+    },
+    tailwindcss: {
+        exposeConfig: {
+            level: 4,
         },
     },
     robots: {
