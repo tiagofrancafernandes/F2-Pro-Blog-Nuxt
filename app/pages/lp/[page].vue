@@ -44,7 +44,7 @@
         </section>
 
         <!-- Main Content -->
-        <section class="py-16 sm:py-24">
+        <section v-if="pageData.type !== 'corporate'" class="py-16 sm:py-24">
             <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
                 <!-- Course Description -->
                 <div class="prose dark:prose-invert max-w-none mb-16">
@@ -217,6 +217,182 @@
                 </div>
             </div>
         </section>
+
+        <!-- Corporate Blocks Rendering -->
+        <template v-else>
+            <template v-for="(block, index) in pageData.blocks" :key="index">
+                <!-- Section Block -->
+                <section v-if="block.type === 'section'" class="py-16 sm:py-24 bg-white dark:bg-slate-900">
+                    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12">
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.title : block.translations['en-US']?.title }}
+                        </h2>
+                        <div
+                            v-html="renderMarkdown(locale === 'pt-BR' ? block.translations['pt-BR']?.content : block.translations['en-US']?.content)"
+                            class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
+                        ></div>
+                    </div>
+                </section>
+
+                <!-- Programs Block -->
+                <section v-else-if="block.type === 'programs'" class="py-16 sm:py-24 bg-gray-50 dark:bg-slate-800">
+                    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12">
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.title : block.translations['en-US']?.title }}
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div
+                                v-for="(program, pIndex) in block.programs"
+                                :key="pIndex"
+                                class="bg-white dark:bg-slate-900 rounded-lg p-6 border border-gray-200 dark:border-slate-700 hover:shadow-lg transition-shadow"
+                            >
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                                    {{ locale === 'pt-BR' ? program.pt.title : program.en.title }}
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    {{ locale === 'pt-BR' ? program.pt.description : program.en.description }}
+                                </p>
+                                <p class="text-sm font-semibold text-red-600 dark:text-red-400">
+                                    Duration: {{ program.duration }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Benefits Block -->
+                <section v-else-if="block.type === 'benefits'" class="py-16 sm:py-24 bg-white dark:bg-slate-900">
+                    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12">
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.title : block.translations['en-US']?.title }}
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div v-for="(benefit, bIndex) in block.benefits" :key="bIndex" class="flex items-start gap-4">
+                                <Icon
+                                    name="mdi:check-circle"
+                                    class="w-6 h-6 text-red-600 dark:text-red-400 flex-shrink-0 mt-1"
+                                />
+                                <p class="text-lg text-gray-700 dark:text-gray-300">
+                                    {{ locale === 'pt-BR' ? benefit.pt : benefit.en }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Block -->
+                <section v-else-if="block.type === 'faq'" class="py-16 sm:py-24 bg-gray-50 dark:bg-slate-800">
+                    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12">
+                            {{ $t('lp.faqTitle') }}
+                        </h2>
+                        <div class="space-y-4">
+                            <div
+                                v-for="(faq, fIndex) in block.faqs"
+                                :key="fIndex"
+                                class="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden"
+                            >
+                                <button
+                                    @click="toggleFaq(fIndex)"
+                                    class="w-full px-6 py-4 flex items-center justify-between hover:bg-white dark:hover:bg-slate-700 transition-colors text-left"
+                                >
+                                    <span class="font-semibold text-gray-900 dark:text-white">
+                                        {{ locale === 'pt-BR' ? faq.questionPt : faq.question }}
+                                    </span>
+                                    <Icon
+                                        :name="expandedFaq === fIndex ? 'mdi:chevron-up' : 'mdi:chevron-down'"
+                                        class="w-5 h-5 text-gray-600 dark:text-gray-400 flex-shrink-0"
+                                    />
+                                </button>
+                                <div
+                                    v-if="expandedFaq === fIndex"
+                                    class="px-6 py-4 bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700"
+                                >
+                                    <p class="text-gray-700 dark:text-gray-300">
+                                        {{ faq.answer }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Form Block -->
+                <section v-else-if="block.type === 'form'" class="py-16 sm:py-24 bg-white dark:bg-slate-900">
+                    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.title : block.translations['en-US']?.title }}
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.description : block.translations['en-US']?.description }}
+                        </p>
+                        <form @submit.prevent="submitQuestion" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">
+                                    {{ $t('lp.name') }} *
+                                </label>
+                                <input
+                                    v-model="form.name"
+                                    type="text"
+                                    required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">
+                                    {{ $t('lp.email') }} *
+                                </label>
+                                <input
+                                    v-model="form.email"
+                                    type="email"
+                                    required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600"
+                                />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-900 dark:text-white mb-2">
+                                    {{ $t('lp.question') }} *
+                                </label>
+                                <textarea
+                                    v-model="form.question"
+                                    required
+                                    rows="4"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600"
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                            >
+                                {{ $t('lp.submitQuestion') }}
+                            </button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- CTA Block -->
+                <section v-else-if="block.type === 'cta'" class="py-16 sm:py-24 bg-red-600 dark:bg-red-700 text-white">
+                    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 class="text-4xl font-bold mb-4">
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.title : block.translations['en-US']?.title }}
+                        </h2>
+                        <p class="text-xl text-red-100 mb-8">
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.subtitle : block.translations['en-US']?.subtitle }}
+                        </p>
+                        <button
+                            v-if="hasWhatsAppConfigured()"
+                            @click="submitQuestion"
+                            class="inline-block px-8 py-3 bg-white text-red-600 font-bold rounded-lg hover:bg-red-50 transition-colors"
+                        >
+                            {{ locale === 'pt-BR' ? block.translations['pt-BR']?.buttonText : block.translations['en-US']?.buttonText }}
+                        </button>
+                    </div>
+                </section>
+            </template>
+        </template>
     </div>
 
     <div v-else class="min-h-screen flex items-center justify-center">
@@ -330,41 +506,3 @@ onMounted(async () => {
 });
 </script>
 
-<i18n lang="json">
-{
-    "en-US": {
-        "lp": {
-            "faqTitle": "Frequently Asked Questions",
-            "haveQuestion": "Have a Question?",
-            "name": "Your Name",
-            "email": "Your Email",
-            "question": "Your Question",
-            "submitQuestion": "Send Question",
-            "yourTechnologies": "Your Technologies",
-            "selectTechsDescription": "Select the technologies you already know and the ones you want to learn. This helps me tailor the classes to your needs.",
-            "techKnow": "Technologies I Know",
-            "techWantToLearn": "Technologies I Want to Learn",
-            "sendViaWhatsApp": "Send via WhatsApp",
-            "whatsappNotConfigured": "WhatsApp contact is not configured",
-            "loading": "Loading..."
-        }
-    },
-    "pt-BR": {
-        "lp": {
-            "faqTitle": "Perguntas Frequentes",
-            "haveQuestion": "Tem uma Pergunta?",
-            "name": "Seu Nome",
-            "email": "Seu Email",
-            "question": "Sua Pergunta",
-            "submitQuestion": "Enviar Pergunta",
-            "yourTechnologies": "Suas Tecnologias",
-            "selectTechsDescription": "Selecione as tecnologias que você já conhece e as que quer aprender. Isso me ajuda a adaptar as aulas às suas necessidades.",
-            "techKnow": "Tecnologias que Conheço",
-            "techWantToLearn": "Tecnologias que Quero Aprender",
-            "sendViaWhatsApp": "Enviar via WhatsApp",
-            "whatsappNotConfigured": "WhatsApp não está configurado",
-            "loading": "Carregando..."
-        }
-    }
-}
-</i18n>
