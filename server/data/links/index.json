@@ -1,0 +1,40 @@
+{
+    "links": [
+        {
+            "slug": "cv",
+            "url": "https://example.com/cv",
+            "active": true,
+            "description": "Meu CV completo"
+        },
+        {
+            "slug": "linkedin",
+            "url": "https://linkedin.com/in/tiago-php/",
+            "active": true,
+            "description": "Perfil LinkedIn"
+        },
+        {
+            "slug": "github",
+            "url": "https://github.com/tiagofrancafernandes",
+            "active": true,
+            "description": "Repositórios GitHub"
+        },
+        {
+            "slug": "whatsapp",
+            "url": "https://wa.me/5511999999999",
+            "active": true,
+            "description": "WhatsApp"
+        },
+        {
+            "slug": "superprof",
+            "url": "https://www.superprof.com.br/tiago-franca",
+            "active": true,
+            "description": "Perfil SuperProf"
+        },
+        {
+            "slug": "campanha-xyz",
+            "url": "/posts/post-um",
+            "active": false,
+            "description": "Campanha XYZ (inativa)"
+        }
+    ]
+}
