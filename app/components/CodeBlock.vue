@@ -93,53 +93,55 @@ async function copyCode(): Promise<void> {
 }
 </script>
 
-<style scoped>
+<style>
 /* Estilos para syntax highlighting */
-:deep(.hljs-attr) {
-    @apply text-blue-400;
+:global(.hljs-attr) {
+    color: #60a5fa;
 }
 
-:deep(.hljs-string) {
-    @apply text-green-400;
+:global(.hljs-string) {
+    color: #4ade80;
 }
 
-:deep(.hljs-number) {
-    @apply text-orange-400;
+:global(.hljs-number) {
+    color: #fb923c;
 }
 
-:deep(.hljs-literal) {
-    @apply text-red-400;
+:global(.hljs-literal) {
+    color: #f87171;
 }
 
-:deep(.hljs-keyword) {
-    @apply text-purple-400 font-semibold;
+:global(.hljs-keyword) {
+    color: #c084fc;
+    font-weight: 600;
 }
 
-:deep(.hljs-function) {
-    @apply text-cyan-400;
+:global(.hljs-function) {
+    color: #06b6d4;
 }
 
-:deep(.hljs-title) {
-    @apply text-cyan-300;
+:global(.hljs-title) {
+    color: #67e8f9;
 }
 
-:deep(.hljs-comment) {
-    @apply text-slate-500 italic;
+:global(.hljs-comment) {
+    color: #64748b;
+    font-style: italic;
 }
 
-:deep(.hljs-built_in) {
-    @apply text-yellow-400;
+:global(.hljs-built_in) {
+    color: #facc15;
 }
 
-:deep(.hljs-type) {
-    @apply text-orange-300;
+:global(.hljs-type) {
+    color: #fed7aa;
 }
 
-:deep(.hljs-variable) {
-    @apply text-slate-200;
+:global(.hljs-variable) {
+    color: #e2e8f0;
 }
 
-:deep(.hljs-params) {
-    @apply text-slate-200;
+:global(.hljs-params) {
+    color: #e2e8f0;
 }
 </style>
