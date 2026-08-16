@@ -1,5 +1,5 @@
 <template>
-    <div v-if="headings.length > 0" class="bg-gray-50 dark:bg-slate-800 rounded-lg p-6 sticky top-24">
+    <div v-if="headings.length > 0" class="bg-gray-50 dark:bg-slate-800 rounded-lg p-6 sticky top-34">
         <h3 class="text-xs font-semibold text-gray-400 dark:text-gray-500 mb-6 uppercase tracking-wider">
             {{ $t('post.onThisPage') || 'On this page' }}
         </h3>
@@ -65,10 +65,21 @@ function getHeadingClasses(level: number): string {
 }
 
 function scrollToHeading(id: string): void {
-    const element = document.getElementById(id);
+    if (!import.meta.client) {
+        return;
+    }
+
+    const element = id ? document.getElementById(id) : null;
+    const clearance = 130; // folga
 
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const elementPosition = element?.getBoundingClientRect().top + window.pageYOffset;
+        // element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        window?.scrollTo({
+            top: Math.abs(elementPosition - clearance),
+            behavior: 'smooth'
+        });
     }
 }
 
@@ -79,9 +90,12 @@ function updateActiveHeading(): void {
 
     headingElements.forEach((element) => {
         const rect = element.getBoundingClientRect();
-        const distance = Math.abs(rect.top - 200);
+        const clearance = 300; // folga
+        // const distance = Math.abs(rect.top - clearance);
+        const distance = Math.abs(rect.top);
 
         if (distance < closestDistance) {
+            // closestDistance = Math.abs(distance - clearance);
             closestDistance = distance;
             closestHeading = element.id;
         }

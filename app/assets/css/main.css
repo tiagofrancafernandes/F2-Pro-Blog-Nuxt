@@ -1,6 +1,16 @@
 @import "tailwindcss";
+/* @import 'vue3-toastify/dist/index.css'; */
 @config "../../../tailwind.config.ts";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+button:not([disabled])
+{
+    cursor: pointer;
+}
+
+.Toastify__toast-icon > svg {
+    max-width: 2rem;
+}

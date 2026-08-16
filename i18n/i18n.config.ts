@@ -3,6 +3,12 @@ export default {
     locale: 'en-US',
     messages: {
         'en-US': {
+            /* General use */
+            general: {
+                'Read More': 'Read More',
+                readMore: 'Read More',
+                LinkedIn: 'LinkedIn',
+            },
             nav: {
                 home: 'Home',
                 posts: 'Posts',
@@ -12,6 +18,8 @@ export default {
                 tutorials: 'Tutorials',
                 blog: 'Blog',
                 portfolio: 'Portfolio',
+                cv: 'CV',
+                LinkedIn: 'LinkedIn',
                 hireMe: 'Hire Me',
                 search: 'Search articles...',
             },
@@ -35,6 +43,7 @@ export default {
                 resources: 'Resources',
             },
             post: {
+                loading: 'Loading post content...',
                 backToPosts: '← Back to Posts',
                 tags: 'Tags',
                 share: 'Share',
@@ -86,6 +95,12 @@ export default {
             },
         },
         'pt-BR': {
+            /* General use */
+            general: {
+                'Read More': 'Ler mais',
+                readMore: 'Ler mais',
+                LinkedIn: 'LinkedIn',
+            },
             nav: {
                 home: 'Início',
                 posts: 'Posts',
@@ -95,6 +110,8 @@ export default {
                 tutorials: 'Tutoriais',
                 blog: 'Blog',
                 portfolio: 'Portfólio',
+                cv: 'CV',
+                LinkedIn: 'LinkedIn',
                 hireMe: 'Contrate-me',
                 search: 'Pesquisar artigos...',
             },
@@ -118,6 +135,7 @@ export default {
                 resources: 'Recursos',
             },
             post: {
+                loading: 'Carregando conteúdo do post...',
                 backToPosts: '← Voltar aos Posts',
                 tags: 'Tags',
                 share: 'Compartilhar',

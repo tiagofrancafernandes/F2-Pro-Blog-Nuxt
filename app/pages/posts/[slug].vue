@@ -45,7 +45,7 @@
             <!-- Content -->
             <div class="bg-white dark:bg-slate-900">
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
-                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-x-6 gap-y-6">
                         <!-- Table of Contents Sidebar -->
                         <div class="lg:col-span-1 order-last lg:order-first">
                             <TableOfContents :headings="headings" />
@@ -144,7 +144,7 @@
     </div>
 
     <div v-else class="text-center py-16">
-        <p class="text-gray-600 dark:text-gray-400">{{ $t('posts.loading') }}</p>
+        <p class="text-gray-600 dark:text-gray-400">{{ $t('post.loading') }}</p>
     </div>
 </template>
 
