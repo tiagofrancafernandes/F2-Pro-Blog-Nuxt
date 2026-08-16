@@ -34,7 +34,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import hljs from 'highlight.js';
-import { toast } from 'vue3-toastify';
+
+const { $toast } = useNuxtApp();
 
 interface Props {
     code: string;
@@ -81,14 +82,14 @@ async function copyCode(): Promise<void> {
     try {
         await navigator.clipboard.writeText(props.code);
         isCopied.value = true;
-        toast.success('Code copied to clipboard!', { autoClose: 2000 });
+        $toast('Code copied to clipboard!', { type: 'success' });
 
         setTimeout(() => {
             isCopied.value = false;
         }, 2000);
     } catch (error) {
         console.error('Failed to copy code:', error);
-        toast.error('Failed to copy code', { autoClose: 2000 });
+        $toast('Failed to copy code', { type: 'error' });
     }
 }
 </script>
