@@ -1,11 +1,20 @@
 import MarkdownIt from 'markdown-it';
 import DOMPurify from 'isomorphic-dompurify';
 
+export interface CodeBlockData {
+    language: string;
+    code: string;
+    index: number;
+}
+
 export function useMarkdown() {
     const md = new MarkdownIt({
         html: true,
         linkify: true,
         breaks: true,
+        highlight: (code: string, language: string) => {
+            return code;
+        },
     });
 
     function renderMarkdown(markdown: string): string {
@@ -40,9 +49,9 @@ export function useMarkdown() {
                     'blockquote',
                     'hr',
                 ],
-                ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'target', 'rel', 'class', 'id'],
+                ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'target', 'rel', 'class', 'id', 'data-language'],
                 FORCE_BODY: true,
-                ALLOW_DATA_ATTR: false,
+                ALLOW_DATA_ATTR: true,
             });
 
             return htmlSeguro;
@@ -51,6 +60,25 @@ export function useMarkdown() {
 
             return `<p>${DOMPurify.sanitize(markdown)}</p>`;
         }
+    }
+
+    function extractCodeBlocks(markdown: string): CodeBlockData[] {
+        const codeBlockRegex = /```(\w+)?\n([\s\S]*?)```/g;
+        const codeBlocks: CodeBlockData[] = [];
+        let match;
+        let index = 0;
+
+        while ((match = codeBlockRegex.exec(markdown)) !== null) {
+            codeBlocks.push({
+                language: match[1] || 'text',
+                code: match[2].trim(),
+                index,
+            });
+
+            index++;
+        }
+
+        return codeBlocks;
     }
 
     function extractHeadings(markdown: string): Array<{ id: string; text: string; level: number }> {
@@ -101,5 +129,6 @@ export function useMarkdown() {
     return {
         renderMarkdown,
         extractHeadings,
+        extractCodeBlocks,
     };
 }
