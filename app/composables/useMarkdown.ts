@@ -17,6 +17,15 @@ export function useMarkdown() {
         },
     });
 
+    function generateHeadingId(text: string): string {
+        return text
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    }
+
     function renderMarkdown(markdown: string): string {
         if (!markdown) {
             return '<p>No content</p>';
@@ -24,17 +33,20 @@ export function useMarkdown() {
 
         try {
             const htmlBruto = md.render(markdown);
-            let headingCounter = 0;
 
             const htmlWithIds = htmlBruto
-                .replace(/<h([1-6])([^>]*)>/g, (match, level, attrs) => {
-                    const id = `heading-${headingCounter++}`;
-
+                .replace(/<h([1-6])([^>]*)>(.*?)<\/h\1>/g, (match, level, attrs, content) => {
                     if (attrs.includes('id=')) {
                         return match;
                     }
 
-                    return `<h${level} id="${id}"${attrs}>`;
+                    const id = generateHeadingId(content);
+
+                    if (!id) {
+                        return match;
+                    }
+
+                    return `<h${level} id="${id}"${attrs}>${content}</h${level}>`;
                 });
 
             const htmlSeguro = DOMPurify.sanitize(htmlWithIds, {
@@ -96,7 +108,6 @@ export function useMarkdown() {
     function extractHeadings(markdown: string): Array<{ id: string; text: string; level: number }> {
         const headings: Array<{ id: string; text: string; level: number }> = [];
         const lines = markdown.split('\n');
-        let headingCounter = 0;
 
         lines.forEach((line) => {
             const h1Match = line.match(/^# (.+)$/);
@@ -104,10 +115,12 @@ export function useMarkdown() {
             const h3Match = line.match(/^### (.+)$/);
 
             if (h1Match) {
-                const id = `heading-${headingCounter++}`;
+                const text = h1Match[1].trim();
+                const id = generateHeadingId(text);
+
                 headings.push({
                     id,
-                    text: h1Match[1].trim(),
+                    text,
                     level: 1,
                 });
 
@@ -115,10 +128,12 @@ export function useMarkdown() {
             }
 
             if (h2Match) {
-                const id = `heading-${headingCounter++}`;
+                const text = h2Match[1].trim();
+                const id = generateHeadingId(text);
+
                 headings.push({
                     id,
-                    text: h2Match[1].trim(),
+                    text,
                     level: 2,
                 });
 
@@ -126,10 +141,12 @@ export function useMarkdown() {
             }
 
             if (h3Match) {
-                const id = `heading-${headingCounter++}`;
+                const text = h3Match[1].trim();
+                const id = generateHeadingId(text);
+
                 headings.push({
                     id,
-                    text: h3Match[1].trim(),
+                    text,
                     level: 3,
                 });
             }
