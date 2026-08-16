@@ -293,19 +293,19 @@
                                 class="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden"
                             >
                                 <button
-                                    @click="toggleFaq(fIndex)"
+                                    @click="toggleBlockFaq(index, fIndex)"
                                     class="w-full px-6 py-4 flex items-center justify-between hover:bg-white dark:hover:bg-slate-700 transition-colors text-left"
                                 >
                                     <span class="font-semibold text-gray-900 dark:text-white">
                                         {{ locale === 'pt-BR' ? faq.questionPt : faq.question }}
                                     </span>
                                     <Icon
-                                        :name="expandedFaq === fIndex ? 'mdi:chevron-up' : 'mdi:chevron-down'"
+                                        :name="isBlockFaqExpanded(index, fIndex) ? 'mdi:chevron-up' : 'mdi:chevron-down'"
                                         class="w-5 h-5 text-gray-600 dark:text-gray-400 flex-shrink-0"
                                     />
                                 </button>
                                 <div
-                                    v-if="expandedFaq === fIndex"
+                                    v-if="isBlockFaqExpanded(index, fIndex)"
                                     class="px-6 py-4 bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700"
                                 >
                                     <p class="text-gray-700 dark:text-gray-300">
@@ -411,6 +411,7 @@ const { locale } = useI18n();
 const pageData = ref<any>(null);
 const isLoading = ref(true);
 const expandedFaq = ref<number | null>(null);
+const expandedBlockFaq = ref<Record<number, number | null>>({});
 const renderedContent = ref('');
 const allTechs = ref<string[]>([]);
 
@@ -424,6 +425,18 @@ const form = ref({
 
 function toggleFaq(index: number): void {
     expandedFaq.value = expandedFaq.value === index ? null : index;
+}
+
+function toggleBlockFaq(blockIndex: number, faqIndex: number): void {
+    if (!expandedBlockFaq.value[blockIndex]) {
+        expandedBlockFaq.value[blockIndex] = null;
+    }
+
+    expandedBlockFaq.value[blockIndex] = expandedBlockFaq.value[blockIndex] === faqIndex ? null : faqIndex;
+}
+
+function isBlockFaqExpanded(blockIndex: number, faqIndex: number): boolean {
+    return expandedBlockFaq.value[blockIndex] === faqIndex;
 }
 
 function getWhatsAppNumber(): string {
