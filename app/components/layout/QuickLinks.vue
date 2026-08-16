@@ -41,12 +41,28 @@ interface QuickLink {
     translationKey: string;
     href: string;
     external?: boolean;
+    show?: boolean | (() => boolean);
 }
 
 const quickLinks: QuickLink[] = [
-    { translationKey: 'tutorials', href: '/', external: false },
-    { translationKey: 'blog', href: '/', external: false },
-    { translationKey: 'portfolio', href: '#portfolio', external: false },
-    { translationKey: 'hireMe', href: '#contact', external: false },
-];
+    { show: true, translationKey: 'tutorials', href: '/', external: false },
+    { show: true, translationKey: 'blog', href: '/', external: false },
+    { show: true, translationKey: 'portfolio', href: '#portfolio', external: false },
+    { show: !true, translationKey: 'cv', href: '#cv', external: false },
+    { show: true, translationKey: 'hireMe', href: '/hire-me', external: false },
+    { show: true, translationKey: 'LinkedIn', href: 'https://www.linkedin.com/in/tiago-php/', external: true },
+].filter((i: QuickLink) => {
+    try {
+        let _show = i?.show ?? true;
+
+        if (typeof _show === 'function') {
+            _show = Boolean(_show());
+        }
+
+        return Boolean(Number(_show));
+    } catch (error) {
+        return false;
+    }
+});
+
 </script>

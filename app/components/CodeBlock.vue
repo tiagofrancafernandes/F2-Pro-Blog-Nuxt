@@ -6,6 +6,7 @@
                 {{ language || 'code' }}
             </span>
             <button
+                type="button"
                 @click="copyCode"
                 :class="[
                     'px-3 py-1 rounded text-sm font-medium transition-colors flex items-center gap-2',
@@ -82,14 +83,14 @@ async function copyCode(): Promise<void> {
     try {
         await navigator.clipboard.writeText(props.code);
         isCopied.value = true;
-        $toast('Code copied to clipboard!', { type: 'success' });
+        $toast('Code copied to clipboard!', { autoClose: 1000, type: 'success' });
 
         setTimeout(() => {
             isCopied.value = false;
         }, 2000);
     } catch (error) {
         console.error('Failed to copy code:', error);
-        $toast('Failed to copy code', { type: 'error' });
+        $toast('Failed to copy code', { autoClose: 1000, type: 'error' });
     }
 }
 </script>
