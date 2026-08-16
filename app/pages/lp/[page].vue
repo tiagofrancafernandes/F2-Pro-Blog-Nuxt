@@ -404,9 +404,11 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import { useMarkdown } from '~/composables/useMarkdown';
 
 const route = useRoute();
 const { locale } = useI18n();
+const { renderMarkdown } = useMarkdown();
 
 const pageData = ref<any>(null);
 const isLoading = ref(true);
@@ -446,23 +448,6 @@ function getWhatsAppNumber(): string {
 
 function hasWhatsAppConfigured(): boolean {
     return getWhatsAppNumber().length > 0;
-}
-
-function renderMarkdown(markdown: string): string {
-    if (!markdown) return '<p>No content</p>';
-
-    let html = markdown
-        .replace(/^### (.*?)$/gm, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
-        .replace(/^## (.*?)$/gm, '<h2 class="text-3xl font-bold mt-12 mb-6">$1</h2>')
-        .replace(/^# (.*?)$/gm, '<h1 class="text-4xl font-bold mt-12 mb-6">$1</h1>')
-        .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
-        .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded text-sm">$1</code>')
-        .replace(/^- (.*?)$/gm, '<li class="ml-6">$1</li>')
-        .replace(/✅ (.*?)$/gm, '<li class="ml-6">✅ $1</li>')
-        .replace(/\n\n/g, '</p><p>');
-
-    return `<p>${html}</p>`;
 }
 
 function submitQuestion(): void {

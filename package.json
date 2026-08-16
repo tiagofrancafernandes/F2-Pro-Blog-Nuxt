@@ -21,11 +21,20 @@
         "@tailwindcss/typography": "^0.5.20",
         "@tailwindcss/vite": "^4.3.3",
         "fuse.js": "^7.5.0",
+        "globals": "^17.11.0",
+        "isomorphic-dompurify": "^3.22.0",
+        "markdown-it": "^15.0.0",
+        "md-editor-v3": "^6.5.6",
         "nuxt": "^4.5.2",
+        "radash": "^12.1.1",
         "rc9": "^3.0.1",
+        "sprintf-js": "^1.1.3",
         "tailwindcss": "^4.3.3",
+        "toastify-js": "^1.12.0",
+        "turndown": "^7.2.4",
         "vue": "^3.5.41",
-        "vue-router": "^5.2.0"
+        "vue-router": "^5.2.0",
+        "vue3-toastify": "^0.2.9"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^6.0.8",
