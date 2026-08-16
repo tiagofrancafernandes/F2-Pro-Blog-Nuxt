@@ -6,7 +6,9 @@
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <!-- Avatar -->
                     <div class="flex-shrink-0">
-                        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-red-500 dark:bg-red-800 flex items-center justify-center">
+                        <div
+                            class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-red-500 dark:bg-red-800 flex items-center justify-center"
+                        >
                             <Icon name="mdi:account-circle" class="w-24 h-24 sm:w-32 sm:h-32 text-red-200" />
                         </div>
                     </div>
@@ -143,7 +145,12 @@
                                     </h4>
                                     <div class="flex flex-wrap gap-2">
                                         <span
-                                            v-for="skill in ['Software Architecture', 'Performance', 'Database Optimization', 'API Design']"
+                                            v-for="skill in [
+                                                'Software Architecture',
+                                                'Performance',
+                                                'Database Optimization',
+                                                'API Design',
+                                            ]"
                                             :key="skill"
                                             class="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full font-medium"
                                         >
@@ -173,7 +180,9 @@
                         rel="noopener noreferrer"
                         class="group bg-white dark:bg-slate-900 rounded-lg overflow-hidden hover:shadow-lg transition-all"
                     >
-                        <div class="h-40 bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div
+                            class="h-40 bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center group-hover:scale-105 transition-transform"
+                        >
                             <Icon name="mdi:clock-outline" class="w-16 h-16 text-white" />
                         </div>
                         <div class="p-6">
@@ -189,7 +198,9 @@
                         rel="noopener noreferrer"
                         class="group bg-white dark:bg-slate-900 rounded-lg overflow-hidden hover:shadow-lg transition-all"
                     >
-                        <div class="h-40 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div
+                            class="h-40 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform"
+                        >
                             <Icon name="mdi:github" class="w-16 h-16 text-white" />
                         </div>
                         <div class="p-6">
@@ -205,7 +216,9 @@
                         rel="noopener noreferrer"
                         class="group bg-white dark:bg-slate-900 rounded-lg overflow-hidden hover:shadow-lg transition-all"
                     >
-                        <div class="h-40 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div
+                            class="h-40 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center group-hover:scale-105 transition-transform"
+                        >
                             <Icon name="mdi:laravel" class="w-16 h-16 text-white" />
                         </div>
                         <div class="p-6">
@@ -221,7 +234,9 @@
                         rel="noopener noreferrer"
                         class="group bg-white dark:bg-slate-900 rounded-lg overflow-hidden hover:shadow-lg transition-all"
                     >
-                        <div class="h-40 bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div
+                            class="h-40 bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center group-hover:scale-105 transition-transform"
+                        >
                             <Icon name="mdi:shopping" class="w-16 h-16 text-white" />
                         </div>
                         <div class="p-6">
@@ -237,11 +252,15 @@
                         rel="noopener noreferrer"
                         class="group bg-white dark:bg-slate-900 rounded-lg overflow-hidden hover:shadow-lg transition-all"
                     >
-                        <div class="h-40 bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div
+                            class="h-40 bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center group-hover:scale-105 transition-transform"
+                        >
                             <Icon name="mdi:palette" class="w-16 h-16 text-white" />
                         </div>
                         <div class="p-6">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">Tailwind v4 Cheat Sheet</h3>
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">
+                                Tailwind v4 Cheat Sheet
+                            </h3>
                             <p class="text-gray-600 dark:text-gray-400 text-sm">{{ t('projects.tailwind') }}</p>
                         </div>
                     </a>
@@ -253,7 +272,9 @@
                         rel="noopener noreferrer"
                         class="group bg-white dark:bg-slate-900 rounded-lg overflow-hidden hover:shadow-lg transition-all"
                     >
-                        <div class="h-40 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div
+                            class="h-40 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform"
+                        >
                             <Icon name="mdi:brain" class="w-16 h-16 text-white" />
                         </div>
                         <div class="p-6">
@@ -282,7 +303,10 @@
                                 rel="noopener noreferrer"
                                 class="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors group"
                             >
-                                <Icon name="mdi:github" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400" />
+                                <Icon
+                                    name="mdi:github"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">GitHub</p>
                                     <p class="text-sm text-gray-600 dark:text-gray-400">400+ {{ t('social.repos') }}</p>
@@ -295,7 +319,10 @@
                                 rel="noopener noreferrer"
                                 class="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors group"
                             >
-                                <Icon name="mdi:linkedin" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400" />
+                                <Icon
+                                    name="mdi:linkedin"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">LinkedIn</p>
                                     <p class="text-sm text-gray-600 dark:text-gray-400">{{ t('social.linkedin') }}</p>
@@ -308,7 +335,10 @@
                                 rel="noopener noreferrer"
                                 class="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors group"
                             >
-                                <Icon name="mdi:dev-to" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400" />
+                                <Icon
+                                    name="mdi:dev-to"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">DEV Community</p>
                                     <p class="text-sm text-gray-600 dark:text-gray-400">{{ t('social.dev') }}</p>
@@ -321,10 +351,15 @@
                                 rel="noopener noreferrer"
                                 class="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors group"
                             >
-                                <Icon name="mdi:stack-overflow" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400" />
+                                <Icon
+                                    name="mdi:stack-overflow"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">Stack Overflow</p>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ t('social.stackoverflow') }}</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                                        {{ t('social.stackoverflow') }}
+                                    </p>
                                 </div>
                             </a>
 
@@ -334,7 +369,10 @@
                                 rel="noopener noreferrer"
                                 class="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors group"
                             >
-                                <Icon name="mdi:code-braces" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400" />
+                                <Icon
+                                    name="mdi:code-braces"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">GitHub Gists</p>
                                     <p class="text-sm text-gray-600 dark:text-gray-400">{{ t('social.gists') }}</p>
@@ -401,11 +439,11 @@
 </template>
 
 <script setup lang="ts">
-    import { useI18n } from 'vue-i18n'
+import { useI18n } from 'vue-i18n';
 
-    const { t } = useI18n({
-        useScope: 'local',
-    })
+const { t } = useI18n({
+    useScope: 'local',
+});
 </script>
 
 <i18n lang="json">

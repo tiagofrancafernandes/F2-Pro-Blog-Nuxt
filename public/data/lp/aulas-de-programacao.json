@@ -1,51 +1,51 @@
 {
-  "id": "aulas-de-programacao",
-  "slug": "aulas-de-programacao",
-  "translations": {
-    "en-US": {
-      "title": "Programming Classes Online",
-      "subtitle": "Master programming with personalized online classes",
-      "description": "Learn programming from an expert instructor with years of experience in web development, backend systems, and software architecture.",
-      "content": "## About These Classes\n\nThese are personalized online programming classes designed to help you master modern development practices. Whether you're a beginner or looking to advance your skills, we tailor the curriculum to your needs.\n\n## What You'll Learn\n\n- Modern programming languages and frameworks\n- Software architecture and design patterns\n- Database design and optimization\n- DevOps and deployment practices\n- Best practices and industry standards\n\n## Class Format\n\n- **Duration**: Flexible (30min to 2hrs per session)\n- **Schedule**: Custom based on your availability\n- **Platform**: Zoom or Google Meet\n- **Support**: Access to resources and code examples\n\n## Technologies Covered\n\nPHP, Laravel, JavaScript, Vue.js, Nuxt, React, TypeScript, PostgreSQL, Docker, and more.\n\n## Why Choose These Classes?\n\n✅ Expert instructor with professional experience\n✅ Personalized curriculum\n✅ Real-world project examples\n✅ One-on-one guidance\n✅ Flexible scheduling\n✅ Affordable rates",
-      "cta": "Start Your Learning Journey"
+    "id": "aulas-de-programacao",
+    "slug": "aulas-de-programacao",
+    "translations": {
+        "en-US": {
+            "title": "Programming Classes Online",
+            "subtitle": "Master programming with personalized online classes",
+            "description": "Learn programming from an expert instructor with years of experience in web development, backend systems, and software architecture.",
+            "content": "## About These Classes\n\nThese are personalized online programming classes designed to help you master modern development practices. Whether you're a beginner or looking to advance your skills, we tailor the curriculum to your needs.\n\n## What You'll Learn\n\n- Modern programming languages and frameworks\n- Software architecture and design patterns\n- Database design and optimization\n- DevOps and deployment practices\n- Best practices and industry standards\n\n## Class Format\n\n- **Duration**: Flexible (30min to 2hrs per session)\n- **Schedule**: Custom based on your availability\n- **Platform**: Zoom or Google Meet\n- **Support**: Access to resources and code examples\n\n## Technologies Covered\n\nPHP, Laravel, JavaScript, Vue.js, Nuxt, React, TypeScript, PostgreSQL, Docker, and more.\n\n## Why Choose These Classes?\n\n✅ Expert instructor with professional experience\n✅ Personalized curriculum\n✅ Real-world project examples\n✅ One-on-one guidance\n✅ Flexible scheduling\n✅ Affordable rates",
+            "cta": "Start Your Learning Journey"
+        },
+        "pt-BR": {
+            "title": "Aulas de Programação Online",
+            "subtitle": "Domine programação com aulas particulares personalizadas",
+            "description": "Aprenda programação com um instrutor especialista com anos de experiência em desenvolvimento web, sistemas backend e arquitetura de software.",
+            "content": "## Sobre Estas Aulas\n\nEssas são aulas de programação personalizadas online projetadas para ajudar você a dominar as práticas modernas de desenvolvimento. Seja você iniciante ou buscando avançar suas habilidades, personalizamos o currículo de acordo com suas necessidades.\n\n## O Que Você Aprenderá\n\n- Linguagens de programação e frameworks modernos\n- Arquitetura de software e padrões de design\n- Design e otimização de banco de dados\n- Práticas de DevOps e deployment\n- Melhores práticas e padrões da indústria\n\n## Formato das Aulas\n\n- **Duração**: Flexível (30min a 2hrs por sessão)\n- **Horário**: Customizado conforme sua disponibilidade\n- **Plataforma**: Zoom ou Google Meet\n- **Suporte**: Acesso a recursos e exemplos de código\n\n## Tecnologias Abordadas\n\nPHP, Laravel, JavaScript, Vue.js, Nuxt, React, TypeScript, PostgreSQL, Docker e muito mais.\n\n## Por Que Escolher Estas Aulas?\n\n✅ Instrutor especialista com experiência profissional\n✅ Currículo personalizado\n✅ Exemplos de projetos reais\n✅ Orientação individual\n✅ Horários flexíveis\n✅ Preços acessíveis"
+        }
     },
-    "pt-BR": {
-      "title": "Aulas de Programação Online",
-      "subtitle": "Domine programação com aulas particulares personalizadas",
-      "description": "Aprenda programação com um instrutor especialista com anos de experiência em desenvolvimento web, sistemas backend e arquitetura de software.",
-      "content": "## Sobre Estas Aulas\n\nEssas são aulas de programação personalizadas online projetadas para ajudar você a dominar as práticas modernas de desenvolvimento. Seja você iniciante ou buscando avançar suas habilidades, personalizamos o currículo de acordo com suas necessidades.\n\n## O Que Você Aprenderá\n\n- Linguagens de programação e frameworks modernos\n- Arquitetura de software e padrões de design\n- Design e otimização de banco de dados\n- Práticas de DevOps e deployment\n- Melhores práticas e padrões da indústria\n\n## Formato das Aulas\n\n- **Duração**: Flexível (30min a 2hrs por sessão)\n- **Horário**: Customizado conforme sua disponibilidade\n- **Plataforma**: Zoom ou Google Meet\n- **Suporte**: Acesso a recursos e exemplos de código\n\n## Tecnologias Abordadas\n\nPHP, Laravel, JavaScript, Vue.js, Nuxt, React, TypeScript, PostgreSQL, Docker e muito mais.\n\n## Por Que Escolher Estas Aulas?\n\n✅ Instrutor especialista com experiência profissional\n✅ Currículo personalizado\n✅ Exemplos de projetos reais\n✅ Orientação individual\n✅ Horários flexíveis\n✅ Preços acessíveis"
+    "faqs": [
+        {
+            "question": "How long is each class session?",
+            "questionPt": "Quanto tempo dura cada aula?",
+            "answer": "Sessions are flexible and can range from 30 minutes to 2 hours, depending on your needs and what we're covering."
+        },
+        {
+            "question": "What if I have no programming experience?",
+            "questionPt": "E se eu não tiver experiência em programação?",
+            "answer": "No problem! We start from the basics and build up your skills gradually. The curriculum is personalized to your level."
+        },
+        {
+            "question": "Can I get a refund if I'm not satisfied?",
+            "questionPt": "Posso pedir reembolso se não ficar satisfeito?",
+            "answer": "Yes, if you're not satisfied with the first session, you can request a full refund, no questions asked."
+        },
+        {
+            "question": "How do I schedule a class?",
+            "questionPt": "Como agendar uma aula?",
+            "answer": "Simply reach out via the contact form below and let me know your availability. We'll find a time that works for both of us."
+        },
+        {
+            "question": "Do you provide course materials?",
+            "questionPt": "Vocês fornecem materiais do curso?",
+            "answer": "Yes! You'll have access to code examples, documentation, and resources to support your learning."
+        }
+    ],
+    "socialProof": {
+        "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
+        "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
+        "github": "https://github.com/tiagofrancafernandes"
     }
-  },
-  "faqs": [
-    {
-      "question": "How long is each class session?",
-      "questionPt": "Quanto tempo dura cada aula?",
-      "answer": "Sessions are flexible and can range from 30 minutes to 2 hours, depending on your needs and what we're covering."
-    },
-    {
-      "question": "What if I have no programming experience?",
-      "questionPt": "E se eu não tiver experiência em programação?",
-      "answer": "No problem! We start from the basics and build up your skills gradually. The curriculum is personalized to your level."
-    },
-    {
-      "question": "Can I get a refund if I'm not satisfied?",
-      "questionPt": "Posso pedir reembolso se não ficar satisfeito?",
-      "answer": "Yes, if you're not satisfied with the first session, you can request a full refund, no questions asked."
-    },
-    {
-      "question": "How do I schedule a class?",
-      "questionPt": "Como agendar uma aula?",
-      "answer": "Simply reach out via the contact form below and let me know your availability. We'll find a time that works for both of us."
-    },
-    {
-      "question": "Do you provide course materials?",
-      "questionPt": "Vocês fornecem materiais do curso?",
-      "answer": "Yes! You'll have access to code examples, documentation, and resources to support your learning."
-    }
-  ],
-  "socialProof": {
-    "superprof": "https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html",
-    "linkedin": "https://wwwhttps://linkedin.com/in/tiago-php",
-    "github": "https://github.com/tiagofrancafernandes"
-  }
 }

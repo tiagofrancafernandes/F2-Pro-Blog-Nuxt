@@ -23,7 +23,7 @@
                             'px-6 py-3 font-medium transition-colors border-b-2',
                             selectedTab === 'guided'
                                 ? 'border-red-600 text-red-600 dark:text-red-400'
-                                : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                                : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200',
                         ]"
                     >
                         <Icon name="mdi:sitemap" class="w-4 h-4 inline mr-2" />
@@ -35,7 +35,7 @@
                             'px-6 py-3 font-medium transition-colors border-b-2',
                             selectedTab === 'freetext'
                                 ? 'border-red-600 text-red-600 dark:text-red-400'
-                                : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                                : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200',
                         ]"
                     >
                         <Icon name="mdi:pencil" class="w-4 h-4 inline mr-2" />
@@ -60,7 +60,10 @@
                                     class="w-full p-6 text-left rounded-lg border-2 border-gray-200 dark:border-slate-700 hover:border-red-600 dark:hover:border-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all group"
                                 >
                                     <div class="flex items-start gap-4">
-                                        <Icon :name="service.icon" class="w-8 h-8 text-red-600 dark:text-red-400 flex-shrink-0 mt-1" />
+                                        <Icon
+                                            :name="service.icon"
+                                            class="w-8 h-8 text-red-600 dark:text-red-400 flex-shrink-0 mt-1"
+                                        />
                                         <div class="flex-1">
                                             <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">
                                                 {{ service.label }}
@@ -69,7 +72,10 @@
                                                 {{ service.description }}
                                             </p>
                                         </div>
-                                        <Icon name="mdi:chevron-right" class="w-6 h-6 text-gray-400 group-hover:text-red-600 flex-shrink-0 mt-1" />
+                                        <Icon
+                                            name="mdi:chevron-right"
+                                            class="w-6 h-6 text-gray-400 group-hover:text-red-600 flex-shrink-0 mt-1"
+                                        />
                                     </div>
                                 </button>
                             </div>
@@ -98,7 +104,10 @@
                                         <span class="font-medium text-gray-900 dark:text-white">
                                             {{ detail.label }}
                                         </span>
-                                        <Icon name="mdi:chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-red-600" />
+                                        <Icon
+                                            name="mdi:chevron-right"
+                                            class="w-5 h-5 text-gray-400 group-hover:text-red-600"
+                                        />
                                     </div>
                                 </button>
                             </div>
@@ -144,7 +153,10 @@
                                     </div>
 
                                     <!-- Knowledge Level -->
-                                    <div v-if="selectedTechs.length > 0" class="mt-8 pt-8 border-t border-gray-200 dark:border-slate-700">
+                                    <div
+                                        v-if="selectedTechs.length > 0"
+                                        class="mt-8 pt-8 border-t border-gray-200 dark:border-slate-700"
+                                    >
                                         <h3 class="font-bold text-gray-900 dark:text-white mb-4">
                                             {{ $t('hireMe.knowledgeLevel') }}
                                         </h3>
@@ -233,18 +245,32 @@
                             </h3>
 
                             <div class="space-y-3">
-                                <div v-if="selectedService" class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-red-600">
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.serviceList') }}</p>
-                                    <p class="font-semibold text-gray-900 dark:text-white">{{ selectedService.label }}</p>
+                                <div
+                                    v-if="selectedService"
+                                    class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-red-600"
+                                >
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                                        {{ $t('hireMe.serviceList') }}
+                                    </p>
+                                    <p class="font-semibold text-gray-900 dark:text-white">
+                                        {{ selectedService.label }}
+                                    </p>
                                 </div>
 
-                                <div v-if="selectedDetails" class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-red-600">
+                                <div
+                                    v-if="selectedDetails"
+                                    class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-red-600"
+                                >
                                     <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.type') }}</p>
-                                    <p class="font-semibold text-gray-900 dark:text-white">{{ selectedDetails.label }}</p>
+                                    <p class="font-semibold text-gray-900 dark:text-white">
+                                        {{ selectedDetails.label }}
+                                    </p>
                                 </div>
 
                                 <div v-if="selectedTechs.length > 0" class="p-3 bg-white dark:bg-slate-700 rounded-lg">
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">{{ $t('hireMe.technologies') }}</p>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">
+                                        {{ $t('hireMe.technologies') }}
+                                    </p>
                                     <div class="flex flex-wrap gap-2">
                                         <span
                                             v-for="tech in selectedTechs"
@@ -256,8 +282,13 @@
                                     </div>
                                 </div>
 
-                                <div v-if="selectedProjectTypes.length > 0" class="p-3 bg-white dark:bg-slate-700 rounded-lg">
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">{{ $t('hireMe.projectTypes') }}</p>
+                                <div
+                                    v-if="selectedProjectTypes.length > 0"
+                                    class="p-3 bg-white dark:bg-slate-700 rounded-lg"
+                                >
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">
+                                        {{ $t('hireMe.projectTypes') }}
+                                    </p>
                                     <div class="flex flex-wrap gap-2">
                                         <span
                                             v-for="type in selectedProjectTypes"
@@ -398,17 +429,26 @@
                 <div class="p-6 space-y-6">
                     <!-- Selection Summary Cards -->
                     <div class="space-y-3">
-                        <div v-if="selectedService" class="p-4 bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-900/10 rounded-lg border border-red-200 dark:border-red-800">
+                        <div
+                            v-if="selectedService"
+                            class="p-4 bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-900/10 rounded-lg border border-red-200 dark:border-red-800"
+                        >
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.serviceList') }}</p>
                             <p class="font-bold text-lg text-gray-900 dark:text-white">{{ selectedService.label }}</p>
                         </div>
 
-                        <div v-if="selectedDetails" class="p-4 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-900/10 rounded-lg border border-orange-200 dark:border-orange-800">
+                        <div
+                            v-if="selectedDetails"
+                            class="p-4 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-900/10 rounded-lg border border-orange-200 dark:border-orange-800"
+                        >
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.type') }}</p>
                             <p class="font-bold text-lg text-gray-900 dark:text-white">{{ selectedDetails.label }}</p>
                         </div>
 
-                        <div v-if="selectedTechs.length > 0" class="p-4 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/10 rounded-lg border border-blue-200 dark:border-blue-800">
+                        <div
+                            v-if="selectedTechs.length > 0"
+                            class="p-4 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/10 rounded-lg border border-blue-200 dark:border-blue-800"
+                        >
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ $t('hireMe.technologies') }}</p>
                             <div class="flex flex-wrap gap-2">
                                 <span
@@ -421,7 +461,10 @@
                             </div>
                         </div>
 
-                        <div v-if="selectedProjectTypes.length > 0" class="p-4 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-900/10 rounded-lg border border-purple-200 dark:border-purple-800">
+                        <div
+                            v-if="selectedProjectTypes.length > 0"
+                            class="p-4 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-900/10 rounded-lg border border-purple-200 dark:border-purple-800"
+                        >
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ $t('hireMe.projectTypes') }}</p>
                             <div class="flex flex-wrap gap-2">
                                 <span
@@ -486,7 +529,10 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <NuxtLink to="/lp/aulas-de-programacao" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <NuxtLink
+                        to="/lp/aulas-de-programacao"
+                        class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                    >
                         <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-32 flex items-center justify-center">
                             <Icon name="mdi:school" class="w-12 h-12 text-white" />
                         </div>
@@ -500,12 +546,19 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/lp/aula-particular-php" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-32 flex items-center justify-center">
+                    <NuxtLink
+                        to="/lp/aula-particular-php"
+                        class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                    >
+                        <div
+                            class="bg-gradient-to-r from-purple-500 to-purple-600 h-32 flex items-center justify-center"
+                        >
                             <span class="text-white font-bold text-2xl">PHP</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-purple-600">
+                            <h3
+                                class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-purple-600"
+                            >
                                 {{ $t('hireMe.phpClasses') }}
                             </h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400">
@@ -514,7 +567,10 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/lp/aula-particular-laravel" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <NuxtLink
+                        to="/lp/aula-particular-laravel"
+                        class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                    >
                         <div class="bg-gradient-to-r from-red-500 to-red-600 h-32 flex items-center justify-center">
                             <span class="text-white font-bold text-2xl">Laravel</span>
                         </div>
@@ -528,7 +584,10 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/lp/aula-particular-linux" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <NuxtLink
+                        to="/lp/aula-particular-linux"
+                        class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                    >
                         <div class="bg-gradient-to-r from-amber-500 to-amber-600 h-32 flex items-center justify-center">
                             <Icon name="mdi:linux" class="w-12 h-12 text-white" />
                         </div>
@@ -542,7 +601,10 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/lp/aula-particular-sql" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <NuxtLink
+                        to="/lp/aula-particular-sql"
+                        class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                    >
                         <div class="bg-gradient-to-r from-cyan-500 to-cyan-600 h-32 flex items-center justify-center">
                             <Icon name="mdi:database" class="w-12 h-12 text-white" />
                         </div>
@@ -556,7 +618,10 @@
                         </div>
                     </NuxtLink>
 
-                    <NuxtLink to="/lp/treinamento-empresarial" class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <NuxtLink
+                        to="/lp/treinamento-empresarial"
+                        class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                    >
                         <div class="bg-gradient-to-r from-green-500 to-green-600 h-32 flex items-center justify-center">
                             <Icon name="mdi:briefcase" class="w-12 h-12 text-white" />
                         </div>
@@ -572,7 +637,10 @@
                 </div>
 
                 <div class="mt-12 text-center">
-                    <NuxtLink to="/sitemap" class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors">
+                    <NuxtLink
+                        to="/sitemap"
+                        class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                    >
                         {{ $t('hireMe.viewAllPrograms') }}
                     </NuxtLink>
                 </div>
@@ -582,222 +650,220 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
-    import { useI18n } from 'vue-i18n'
-    import { useRoute } from 'vue-router'
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
 
-    const route = useRoute()
-    const { t } = useI18n()
+const route = useRoute();
+const { t } = useI18n();
 
-    const selectedTab = ref<'guided' | 'freetext'>('guided')
-    const selectedService = ref<any>(null)
-    const selectedDetails = ref<any>(null)
-    const selectedTechs = ref<string[]>([])
-    const selectedProjectTypes = ref<string[]>([])
-    const selectedAreas = ref<string[]>([])
-    const knowledgeLevel = ref('intermediate')
-    const showPreview = ref(false)
-    const additionalMessage = ref('')
+const selectedTab = ref<'guided' | 'freetext'>('guided');
+const selectedService = ref<any>(null);
+const selectedDetails = ref<any>(null);
+const selectedTechs = ref<string[]>([]);
+const selectedProjectTypes = ref<string[]>([]);
+const selectedAreas = ref<string[]>([]);
+const knowledgeLevel = ref('intermediate');
+const showPreview = ref(false);
+const additionalMessage = ref('');
 
-    const freeTextService = ref('')
-    const freeTextDescription = ref('')
-    const freeTextBudget = ref('')
-    const freeTextTimeline = ref('')
+const freeTextService = ref('');
+const freeTextDescription = ref('');
+const freeTextBudget = ref('');
+const freeTextTimeline = ref('');
 
-    const serviceOptions = [
-        {
-            id: 'development',
-            label: t('hireMe.serviceList.development'),
-            description: t('hireMe.serviceList.developmentDesc'),
-            icon: 'mdi:code-braces',
-            details: [
-                { id: 'fix', label: t('hireMe.detail.fixMaintenance') },
-                { id: 'create', label: t('hireMe.detail.createSoftware') },
-            ],
-        },
-        {
-            id: 'classes',
-            label: t('hireMe.serviceList.classes'),
-            description: t('hireMe.serviceList.classesDesc'),
-            icon: 'mdi:school',
-            details: [
-                { id: 'tech', label: t('hireMe.detail.technologies') },
-            ],
-        },
-        {
-            id: 'consulting',
-            label: t('hireMe.serviceList.consulting'),
-            description: t('hireMe.serviceList.consultingDesc'),
-            icon: 'mdi:briefcase',
-            details: [
-                { id: 'training', label: t('hireMe.detail.training') },
-            ],
-        },
-    ]
+const serviceOptions = [
+    {
+        id: 'development',
+        label: t('hireMe.serviceList.development'),
+        description: t('hireMe.serviceList.developmentDesc'),
+        icon: 'mdi:code-braces',
+        details: [
+            { id: 'fix', label: t('hireMe.detail.fixMaintenance') },
+            { id: 'create', label: t('hireMe.detail.createSoftware') },
+        ],
+    },
+    {
+        id: 'classes',
+        label: t('hireMe.serviceList.classes'),
+        description: t('hireMe.serviceList.classesDesc'),
+        icon: 'mdi:school',
+        details: [{ id: 'tech', label: t('hireMe.detail.technologies') }],
+    },
+    {
+        id: 'consulting',
+        label: t('hireMe.serviceList.consulting'),
+        description: t('hireMe.serviceList.consultingDesc'),
+        icon: 'mdi:briefcase',
+        details: [{ id: 'training', label: t('hireMe.detail.training') }],
+    },
+];
 
-    function selectService(service: any): void {
-        selectedService.value = service
-        selectedDetails.value = null
-        selectedTechs.value = []
-        selectedProjectTypes.value = []
-        selectedAreas.value = []
+function selectService(service: any): void {
+    selectedService.value = service;
+    selectedDetails.value = null;
+    selectedTechs.value = [];
+    selectedProjectTypes.value = [];
+    selectedAreas.value = [];
+}
+
+function selectDetails(detail: any): void {
+    selectedDetails.value = detail;
+}
+
+function getTechOptions() {
+    return [
+        { id: 'vue', label: 'Vue.js' },
+        { id: 'nuxt', label: 'Nuxt' },
+        { id: 'react', label: 'React' },
+        { id: 'typescript', label: 'TypeScript' },
+        { id: 'laravel', label: 'Laravel' },
+        { id: 'php', label: 'PHP' },
+        { id: 'postgresql', label: 'PostgreSQL' },
+        { id: 'docker', label: 'Docker' },
+        { id: 'tailwind', label: 'Tailwind CSS' },
+    ];
+}
+
+function getProjectTypes() {
+    return [
+        { id: 'mvp', label: t('hireMe.projectType.mvp') },
+        { id: 'dedicated', label: t('hireMe.projectType.dedicated') },
+        { id: 'upgrade', label: t('hireMe.projectType.upgrade') },
+        { id: 'migration', label: t('hireMe.projectType.migration') },
+    ];
+}
+
+function getConsultingAreas() {
+    return [
+        { id: 'architecture', label: t('hireMe.consulting.architecture') },
+        { id: 'performance', label: t('hireMe.consulting.performance') },
+        { id: 'scaling', label: t('hireMe.consulting.scaling') },
+        { id: 'security', label: t('hireMe.consulting.security') },
+    ];
+}
+
+function getTechLabel(techId: string): string {
+    const tech = getTechOptions().find((t) => t.id === techId);
+    return tech?.label || techId;
+}
+
+function getProjectTypeLabel(typeId: string): string {
+    const type = getProjectTypes().find((t) => t.id === typeId);
+    return type?.label || typeId;
+}
+
+function buildMessage(): string {
+    const lines: string[] = [];
+
+    lines.push('*' + t('hireMe.newRequest') + '*');
+    lines.push('');
+
+    if (selectedService.value) {
+        lines.push('*' + t('hireMe.serviceList') + ':* ' + selectedService.value.label);
     }
 
-    function selectDetails(detail: any): void {
-        selectedDetails.value = detail
+    if (selectedDetails.value) {
+        lines.push('*' + t('hireMe.type') + ':* ' + selectedDetails.value.label);
     }
 
-    function getTechOptions() {
-        return [
-            { id: 'vue', label: 'Vue.js' },
-            { id: 'nuxt', label: 'Nuxt' },
-            { id: 'react', label: 'React' },
-            { id: 'typescript', label: 'TypeScript' },
-            { id: 'laravel', label: 'Laravel' },
-            { id: 'php', label: 'PHP' },
-            { id: 'postgresql', label: 'PostgreSQL' },
-            { id: 'docker', label: 'Docker' },
-            { id: 'tailwind', label: 'Tailwind CSS' },
-        ]
+    if (selectedTechs.value.length > 0) {
+        lines.push('*' + t('hireMe.technologies') + ':* ' + selectedTechs.value.map(getTechLabel).join(', '));
     }
 
-    function getProjectTypes() {
-        return [
-            { id: 'mvp', label: t('hireMe.projectType.mvp') },
-            { id: 'dedicated', label: t('hireMe.projectType.dedicated') },
-            { id: 'upgrade', label: t('hireMe.projectType.upgrade') },
-            { id: 'migration', label: t('hireMe.projectType.migration') },
-        ]
+    if (knowledgeLevel.value) {
+        lines.push('*' + t('hireMe.knowledgeLevel') + ':* ' + t(`hireMe.level.${knowledgeLevel.value}`));
     }
 
-    function getConsultingAreas() {
-        return [
-            { id: 'architecture', label: t('hireMe.consulting.architecture') },
-            { id: 'performance', label: t('hireMe.consulting.performance') },
-            { id: 'scaling', label: t('hireMe.consulting.scaling') },
-            { id: 'security', label: t('hireMe.consulting.security') },
-        ]
+    if (selectedProjectTypes.value.length > 0) {
+        lines.push(
+            '*' + t('hireMe.projectTypes') + ':* ' + selectedProjectTypes.value.map(getProjectTypeLabel).join(', ')
+        );
     }
 
-    function getTechLabel(techId: string): string {
-        const tech = getTechOptions().find(t => t.id === techId)
-        return tech?.label || techId
+    if (additionalMessage.value.trim()) {
+        lines.push('');
+        lines.push('*' + t('hireMe.additionalMessage') + ':*');
+        lines.push(additionalMessage.value);
     }
 
-    function getProjectTypeLabel(typeId: string): string {
-        const type = getProjectTypes().find(t => t.id === typeId)
-        return type?.label || typeId
+    return lines.join('\n');
+}
+
+function onlyNumbers(value: any): string {
+    value = ['number', 'string'].includes(typeof value) ? String(value ?? '') : null;
+
+    if (!value) {
+        return '';
     }
 
-    function buildMessage(): string {
-        const lines: string[] = []
+    return value.replaceAll(/\D+/g, '');
+}
 
-        lines.push('*' + t('hireMe.newRequest') + '*')
-        lines.push('')
+function getWhatsAppNumber(): string {
+    const config = useAppConfig();
+    const waNumber = config.contact?.whatsapp?.number || '';
 
-        if (selectedService.value) {
-            lines.push('*' + t('hireMe.serviceList') + ':* ' + selectedService.value.label)
-        }
+    return waNumber;
+}
 
-        if (selectedDetails.value) {
-            lines.push('*' + t('hireMe.type') + ':* ' + selectedDetails.value.label)
-        }
+function hasWhatsAppConfigured(): boolean {
+    return getWhatsAppNumber().length > 0;
+}
 
-        if (selectedTechs.value.length > 0) {
-            lines.push('*' + t('hireMe.technologies') + ':* ' + selectedTechs.value.map(getTechLabel).join(', '))
-        }
+function getWhatsAppUrl(text: null | string = null, number: number | string | null = null): string {
+    const waNumber = onlyNumbers(number) || onlyNumbers(getWhatsAppNumber());
 
-        if (knowledgeLevel.value) {
-            lines.push('*' + t('hireMe.knowledgeLevel') + ':* ' + t(`hireMe.level.${knowledgeLevel.value}`))
-        }
+    text = typeof text === 'string' && text.trim()?.length ? text?.trim() : null;
 
-        if (selectedProjectTypes.value.length > 0) {
-            lines.push('*' + t('hireMe.projectTypes') + ':* ' + selectedProjectTypes.value.map(getProjectTypeLabel).join(', '))
-        }
+    const whatsappUrl = `https://wa.me/${waNumber}`;
 
-        if (additionalMessage.value.trim()) {
-            lines.push('')
-            lines.push('*' + t('hireMe.additionalMessage') + ':*')
-            lines.push(additionalMessage.value)
-        }
-
-        return lines.join('\n')
+    if (!text) {
+        return whatsappUrl;
     }
 
-    function onlyNumbers(value: any): string {
-        value = ['number', 'string'].includes(typeof value) ? String(value ?? '') : null;
+    const encodedMessage = encodeURIComponent(text);
 
-        if (!value) {
-            return ''
-        }
+    return `${whatsappUrl}?text=${encodedMessage}`;
+}
 
-        return value.replaceAll(/\D+/g, '');
+function sendViaWhatsApp(): void {
+    const message = buildMessage();
+    const whatsappUrl = getWhatsAppUrl(message);
+
+    window.open(whatsappUrl, '_blank');
+}
+
+function submitFreeText(): void {
+    const message = [
+        '*' + t('hireMe.newRequest') + '*',
+        '',
+        selectedService.value ? '*' + t('hireMe.serviceList') + ':* ' + freeTextService.value : '',
+        '',
+        '*' + t('hireMe.description') + ':*',
+        freeTextDescription.value,
+    ];
+
+    if (freeTextBudget.value.trim()) {
+        message.push('');
+        message.push('*' + t('hireMe.budget') + ':* ' + freeTextBudget.value);
     }
 
-    function getWhatsAppNumber(): string {
-        const config = useAppConfig()
-        const waNumber = config.contact?.whatsapp?.number || ''
-
-        return waNumber
+    if (freeTextTimeline.value.trim()) {
+        message.push('*' + t('hireMe.timeline') + ':* ' + freeTextTimeline.value);
     }
 
-    function hasWhatsAppConfigured(): boolean {
-        return getWhatsAppNumber().length > 0
-    }
+    const finalMessage = message.filter((line) => line.trim()).join('\n');
+    const whatsappUrl = getWhatsAppUrl(finalMessage);
 
-    function getWhatsAppUrl(text: null|string = null, number: number|string|null = null): string {
-        const waNumber = onlyNumbers(number) || onlyNumbers(getWhatsAppNumber());
+    window.open(whatsappUrl, '_blank');
+}
 
-        text = typeof text === 'string' && text.trim()?.length ? text?.trim() : null;
-
-        const whatsappUrl = `https://wa.me/${waNumber}`
-
-        if (!text) {
-            return whatsappUrl
-        }
-
-        const encodedMessage = encodeURIComponent(text)
-
-        return `${whatsappUrl}?text=${encodedMessage}`;
-    }
-
-    function sendViaWhatsApp(): void {
-        const message = buildMessage()
-        const whatsappUrl = getWhatsAppUrl(message)
-
-        window.open(whatsappUrl, '_blank')
-    }
-
-    function submitFreeText(): void {
-        const message = [
-            '*' + t('hireMe.newRequest') + '*',
-            '',
-            selectedService.value ? ('*' + t('hireMe.serviceList') + ':* ' + freeTextService.value) : '',
-            '',
-            '*' + t('hireMe.description') + ':*',
-            freeTextDescription.value,
-        ]
-
-        if (freeTextBudget.value.trim()) {
-            message.push('')
-            message.push('*' + t('hireMe.budget') + ':* ' + freeTextBudget.value)
-        }
-
-        if (freeTextTimeline.value.trim()) {
-            message.push('*' + t('hireMe.timeline') + ':* ' + freeTextTimeline.value)
-        }
-
-        const finalMessage = message.filter(line => line.trim()).join('\n')
-        const whatsappUrl = getWhatsAppUrl(finalMessage)
-
-        window.open(whatsappUrl, '_blank')
-    }
-
-    // Check for query param to pre-select classes
-    if (route.query.type === 'aulas' || route.query.type === 'classes') {
-        selectedTab.value = 'guided'
-        selectedService.value = serviceOptions[1]
-    }
+// Check for query param to pre-select classes
+if (route.query.type === 'aulas' || route.query.type === 'classes') {
+    selectedTab.value = 'guided';
+    selectedService.value = serviceOptions[1];
+}
 </script>
 
 <i18n lang="json">

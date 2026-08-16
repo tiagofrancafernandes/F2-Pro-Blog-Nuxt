@@ -1,27 +1,22 @@
 {
-  "id": 4,
-  "slug": "post-quatro",
-  "translations": {
-    "en-US": {
-      "title": "Vue 3 Composition API Deep Dive",
-      "description": "In-depth analysis of Vue 3 Composition API. Reactivity, composables, better code organization and development patterns.",
-      "content": "## Vue 3 Revolution\n\nThe Composition API is a new way to organize Vue components, offering superior flexibility to the Options API.\n\n## Reactivity Basics\n\n```javascript\nimport { ref, reactive, computed } from 'vue'\n\nconst count = ref(0)\nconst state = reactive({\n  user: {\n    name: 'John'\n  }\n})\n\nconst doubled = computed(() => count.value * 2)\n```\n\n## Setup Function\n\nThe `<script setup>` simplifies the syntax:\n\n```vue\n<script setup>\nimport { ref } from 'vue'\n\nconst count = ref(0)\nconst increment = () => {\n  count.value++\n}\n</script>\n```\n\n## Composables\n\nExtract reusable logic into composables:\n\n```javascript\nexport function useCounter() {\n  const count = ref(0)\n  const increment = () => count.value++\n  \n  return { count, increment }\n}\n```\n\n## Lifecycle\n\nLifecycle hooks work within setup:\n\n```javascript\nimport { onMounted, onUnmounted } from 'vue'\n\nonMounted(() => {\n  console.log('Component mounted')\n})\n\nonUnmounted(() => {\n  console.log('Component destroyed')\n})\n```\n\n## Conclusion\n\nThe Composition API offers power, flexibility and better code organization."
+    "id": 4,
+    "slug": "post-quatro",
+    "translations": {
+        "en-US": {
+            "title": "Vue 3 Composition API Deep Dive",
+            "description": "In-depth analysis of Vue 3 Composition API. Reactivity, composables, better code organization and development patterns.",
+            "content": "## Vue 3 Revolution\n\nThe Composition API is a new way to organize Vue components, offering superior flexibility to the Options API.\n\n## Reactivity Basics\n\n```javascript\nimport { ref, reactive, computed } from 'vue'\n\nconst count = ref(0)\nconst state = reactive({\n  user: {\n    name: 'John'\n  }\n})\n\nconst doubled = computed(() => count.value * 2)\n```\n\n## Setup Function\n\nThe `<script setup>` simplifies the syntax:\n\n```vue\n<script setup>\nimport { ref } from 'vue'\n\nconst count = ref(0)\nconst increment = () => {\n  count.value++\n}\n</script>\n```\n\n## Composables\n\nExtract reusable logic into composables:\n\n```javascript\nexport function useCounter() {\n  const count = ref(0)\n  const increment = () => count.value++\n  \n  return { count, increment }\n}\n```\n\n## Lifecycle\n\nLifecycle hooks work within setup:\n\n```javascript\nimport { onMounted, onUnmounted } from 'vue'\n\nonMounted(() => {\n  console.log('Component mounted')\n})\n\nonUnmounted(() => {\n  console.log('Component destroyed')\n})\n```\n\n## Conclusion\n\nThe Composition API offers power, flexibility and better code organization."
+        },
+        "pt-BR": {
+            "title": "Vue 3 Composition API Deep Dive",
+            "description": "Análise profunda da Composition API do Vue 3. Reatividade, composables, melhor organização de código e padrões de desenvolvimento.",
+            "content": "## Revolução Vue 3\n\nA Composition API é um novo jeito de organizar componentes Vue, oferecendo flexibilidade superior às Options API.\n\n## Básico de Reatividade\n\n```javascript\nimport { ref, reactive, computed } from 'vue'\n\nconst count = ref(0)\nconst state = reactive({\n  user: {\n    name: 'John'\n  }\n})\n\nconst doubled = computed(() => count.value * 2)\n```\n\n## Setup Function\n\nO `<script setup>` simplifica a sintaxe:\n\n```vue\n<script setup>\nimport { ref } from 'vue'\n\nconst count = ref(0)\nconst increment = () => {\n  count.value++\n}\n</script>\n```\n\n## Composables\n\nExtraia lógica reutilizável em composables:\n\n```javascript\nexport function useCounter() {\n  const count = ref(0)\n  const increment = () => count.value++\n  \n  return { count, increment }\n}\n```\n\n## Ciclo de Vida\n\nHooks de ciclo de vida funcionam dentro de setup:\n\n```javascript\nimport { onMounted, onUnmounted } from 'vue'\n\nonMounted(() => {\n  console.log('Component mounted')\n})\n\nonUnmounted(() => {\n  console.log('Component destroyed')\n})\n```\n\n## Conclusão\n\nA Composition API oferece poder, flexibilidade e melhor organização de código."
+        }
     },
-    "pt-BR": {
-      "title": "Vue 3 Composition API Deep Dive",
-      "description": "Análise profunda da Composition API do Vue 3. Reatividade, composables, melhor organização de código e padrões de desenvolvimento.",
-      "content": "## Revolução Vue 3\n\nA Composition API é um novo jeito de organizar componentes Vue, oferecendo flexibilidade superior às Options API.\n\n## Básico de Reatividade\n\n```javascript\nimport { ref, reactive, computed } from 'vue'\n\nconst count = ref(0)\nconst state = reactive({\n  user: {\n    name: 'John'\n  }\n})\n\nconst doubled = computed(() => count.value * 2)\n```\n\n## Setup Function\n\nO `<script setup>` simplifica a sintaxe:\n\n```vue\n<script setup>\nimport { ref } from 'vue'\n\nconst count = ref(0)\nconst increment = () => {\n  count.value++\n}\n</script>\n```\n\n## Composables\n\nExtraia lógica reutilizável em composables:\n\n```javascript\nexport function useCounter() {\n  const count = ref(0)\n  const increment = () => count.value++\n  \n  return { count, increment }\n}\n```\n\n## Ciclo de Vida\n\nHooks de ciclo de vida funcionam dentro de setup:\n\n```javascript\nimport { onMounted, onUnmounted } from 'vue'\n\nonMounted(() => {\n  console.log('Component mounted')\n})\n\nonUnmounted(() => {\n  console.log('Component destroyed')\n})\n```\n\n## Conclusão\n\nA Composition API oferece poder, flexibilidade e melhor organização de código."
-    }
-  },
-  "category": "frontend",
-  "tags": [
-    "vue3",
-    "frontend",
-    "javascript",
-    "reactivity"
-  ],
-  "date": "2024-08-07",
-  "readTime": 14,
-  "author": "Tiago França",
-  "status": "published"
+    "category": "frontend",
+    "tags": ["vue3", "frontend", "javascript", "reactivity"],
+    "date": "2024-08-07",
+    "readTime": 14,
+    "author": "Tiago França",
+    "status": "published"
 }

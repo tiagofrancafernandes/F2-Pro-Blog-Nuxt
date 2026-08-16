@@ -6,8 +6,8 @@
                 :class="[
                     {
                         // TODO: identificar se tem scroll ou se a página está com rolagem fora do topo (0)
-                        'py-2 md:py-3': true , // se feito scroll menor que X
-                        'py-1 md:py-1': false , // se feito scroll de X ou mais
+                        'py-2 md:py-3': true, // se feito scroll menor que X
+                        'py-1 md:py-1': false, // se feito scroll de X ou mais
                     },
                 ]"
             >
@@ -28,11 +28,7 @@
                         class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors whitespace-nowrap py-1 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800"
                     >
                         <span>{{ $t(`nav.${link.translationKey}`) }}</span>
-                        <Icon
-                            v-if="link.external"
-                            name="mdi:open-in-new"
-                            class="w-3 h-3"
-                        />
+                        <Icon v-if="link.external" name="mdi:open-in-new" class="w-3 h-3" />
                     </a>
                 </div>
             </div>
@@ -41,16 +37,16 @@
 </template>
 
 <script setup lang="ts">
-    interface QuickLink {
-        translationKey: string
-        href: string
-        external?: boolean
-    }
+interface QuickLink {
+    translationKey: string;
+    href: string;
+    external?: boolean;
+}
 
-    const quickLinks: QuickLink[] = [
-        { translationKey: 'tutorials', href: '/', external: false },
-        { translationKey: 'blog', href: '/', external: false },
-        { translationKey: 'portfolio', href: '#portfolio', external: false },
-        { translationKey: 'hireMe', href: '#contact', external: false },
-    ]
+const quickLinks: QuickLink[] = [
+    { translationKey: 'tutorials', href: '/', external: false },
+    { translationKey: 'blog', href: '/', external: false },
+    { translationKey: 'portfolio', href: '#portfolio', external: false },
+    { translationKey: 'hireMe', href: '#contact', external: false },
+];
 </script>

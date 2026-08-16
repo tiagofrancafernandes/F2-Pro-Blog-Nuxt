@@ -1,27 +1,22 @@
 {
-  "id": 3,
-  "slug": "post-tres",
-  "translations": {
-    "en-US": {
-      "title": "Docker & Containers for Modern Development",
-      "description": "Learn Docker and containerization to optimize your development workflow. Configuration, best practices and deployment with containers.",
-      "content": "## Why Docker?\n\nDocker revolutionized how we develop and deploy applications. It offers consistency between development, test, and production environments.\n\n## Fundamental Concepts\n\n### Images\nA Docker image is a template with all the necessary dependencies. It is created from a Dockerfile.\n\n### Containers\nA container is a running instance of an image. Isolated, lightweight and portable.\n\n## Basic Dockerfile\n\n```dockerfile\nFROM php:8.2-fpm\n\nWORKDIR /app\n\nCOPY . .\n\nRUN composer install\n\nEXPOSE 9000\n\nCMD [\"php-fpm\"]\n```\n\n## Docker Compose\n\nFor multi-container applications, use docker-compose:\n\n```yaml\nversion: '3'\nservices:\n  app:\n    build: .\n    ports:\n      - \"8000:8000\"\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: myapp\n```\n\n## Best Practices\n\n- Use official images as base\n- Minimize image size\n- Use `.dockerignore` to exclude files\n- Don't run as root\n- Use volumes for persistent data\n\n## Conclusion\n\nDocker is essential for modern development and efficient DevOps."
+    "id": 3,
+    "slug": "post-tres",
+    "translations": {
+        "en-US": {
+            "title": "Docker & Containers for Modern Development",
+            "description": "Learn Docker and containerization to optimize your development workflow. Configuration, best practices and deployment with containers.",
+            "content": "## Why Docker?\n\nDocker revolutionized how we develop and deploy applications. It offers consistency between development, test, and production environments.\n\n## Fundamental Concepts\n\n### Images\nA Docker image is a template with all the necessary dependencies. It is created from a Dockerfile.\n\n### Containers\nA container is a running instance of an image. Isolated, lightweight and portable.\n\n## Basic Dockerfile\n\n```dockerfile\nFROM php:8.2-fpm\n\nWORKDIR /app\n\nCOPY . .\n\nRUN composer install\n\nEXPOSE 9000\n\nCMD [\"php-fpm\"]\n```\n\n## Docker Compose\n\nFor multi-container applications, use docker-compose:\n\n```yaml\nversion: '3'\nservices:\n  app:\n    build: .\n    ports:\n      - \"8000:8000\"\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: myapp\n```\n\n## Best Practices\n\n- Use official images as base\n- Minimize image size\n- Use `.dockerignore` to exclude files\n- Don't run as root\n- Use volumes for persistent data\n\n## Conclusion\n\nDocker is essential for modern development and efficient DevOps."
+        },
+        "pt-BR": {
+            "title": "Docker e Containers para Desenvolvimento Moderno",
+            "description": "Aprenda Docker e containerização para otimizar seu workflow de desenvolvimento. Configuração, best practices e deploy com containers.",
+            "content": "## Por que Docker?\n\nDocker revolucionou como desenvolvemos e deployamos aplicações. Oferece consistência entre ambientes de desenvolvimento, teste e produção.\n\n## Conceitos Fundamentais\n\n### Imagens\nUma imagem Docker é um template com todas as dependências necessárias. É criada a partir de um Dockerfile.\n\n### Containers\nUm container é uma instância em execução de uma imagem. Isolado, leve e portável.\n\n## Dockerfile Básico\n\n```dockerfile\nFROM php:8.2-fpm\n\nWORKDIR /app\n\nCOPY . .\n\nRUN composer install\n\nEXPOSE 9000\n\nCMD [\"php-fpm\"]\n```\n\n## Docker Compose\n\nPara aplicações multi-container, use docker-compose:\n\n```yaml\nversion: '3'\nservices:\n  app:\n    build: .\n    ports:\n      - \"8000:8000\"\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: myapp\n```\n\n## Best Practices\n\n- Use imagens oficiais como base\n- Minimize o tamanho das imagens\n- Use `.dockerignore` para excluir arquivos\n- Não rode como root\n- Use volumes para dados persistentes\n\n## Conclusão\n\nDocker é essencial para desenvolvimento moderno e DevOps eficiente."
+        }
     },
-    "pt-BR": {
-      "title": "Docker e Containers para Desenvolvimento Moderno",
-      "description": "Aprenda Docker e containerização para otimizar seu workflow de desenvolvimento. Configuração, best practices e deploy com containers.",
-      "content": "## Por que Docker?\n\nDocker revolucionou como desenvolvemos e deployamos aplicações. Oferece consistência entre ambientes de desenvolvimento, teste e produção.\n\n## Conceitos Fundamentais\n\n### Imagens\nUma imagem Docker é um template com todas as dependências necessárias. É criada a partir de um Dockerfile.\n\n### Containers\nUm container é uma instância em execução de uma imagem. Isolado, leve e portável.\n\n## Dockerfile Básico\n\n```dockerfile\nFROM php:8.2-fpm\n\nWORKDIR /app\n\nCOPY . .\n\nRUN composer install\n\nEXPOSE 9000\n\nCMD [\"php-fpm\"]\n```\n\n## Docker Compose\n\nPara aplicações multi-container, use docker-compose:\n\n```yaml\nversion: '3'\nservices:\n  app:\n    build: .\n    ports:\n      - \"8000:8000\"\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_DB: myapp\n```\n\n## Best Practices\n\n- Use imagens oficiais como base\n- Minimize o tamanho das imagens\n- Use `.dockerignore` para excluir arquivos\n- Não rode como root\n- Use volumes para dados persistentes\n\n## Conclusão\n\nDocker é essencial para desenvolvimento moderno e DevOps eficiente."
-    }
-  },
-  "category": "devops",
-  "tags": [
-    "docker",
-    "devops",
-    "containers",
-    "deployment"
-  ],
-  "date": "2024-08-08",
-  "readTime": 15,
-  "author": "Tiago França",
-  "status": "published"
+    "category": "devops",
+    "tags": ["docker", "devops", "containers", "deployment"],
+    "date": "2024-08-08",
+    "readTime": 15,
+    "author": "Tiago França",
+    "status": "published"
 }

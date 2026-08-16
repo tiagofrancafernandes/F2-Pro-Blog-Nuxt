@@ -45,49 +45,49 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
-    import { useI18n } from 'vue-i18n'
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-    interface Post {
-        slug: string
-        title: string
-        author: string
-        date: string
-        readTime: number
-        category: string
-        tags: string[]
-        content: string
+interface Post {
+    slug: string;
+    title: string;
+    author: string;
+    date: string;
+    readTime: number;
+    category: string;
+    tags: string[];
+    content: string;
+}
+
+interface PostProps {
+    post: Post;
+}
+
+const props = defineProps<PostProps>();
+
+const linkCopied = ref(false);
+const aiCopied = ref(false);
+const { locale } = useI18n();
+
+async function copyLink(): Promise<void> {
+    const url = `${typeof window !== 'undefined' ? window.location.origin : ''}${typeof window !== 'undefined' ? window.location.pathname : ''}`;
+
+    try {
+        await navigator.clipboard.writeText(url);
+        linkCopied.value = true;
+        setTimeout(() => {
+            linkCopied.value = false;
+        }, 2000);
+    } catch (error) {
+        console.error('Failed to copy link:', error);
     }
+}
 
-    interface PostProps {
-        post: Post
-    }
+async function copyForAI(): Promise<void> {
+    const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
+    const fullUrl = `${siteUrl}/posts/${props.post.slug}`;
 
-    const props = defineProps<PostProps>()
-
-    const linkCopied = ref(false)
-    const aiCopied = ref(false)
-    const { locale } = useI18n()
-
-    async function copyLink(): Promise<void> {
-        const url = `${typeof window !== 'undefined' ? window.location.origin : ''}${typeof window !== 'undefined' ? window.location.pathname : ''}`
-
-        try {
-            await navigator.clipboard.writeText(url)
-            linkCopied.value = true
-            setTimeout(() => {
-                linkCopied.value = false
-            }, 2000)
-        } catch (error) {
-            console.error('Failed to copy link:', error)
-        }
-    }
-
-    async function copyForAI(): Promise<void> {
-        const siteUrl = typeof window !== 'undefined' ? window.location.origin : ''
-        const fullUrl = `${siteUrl}/posts/${props.post.slug}`
-
-        const markdownContent = `---
+    const markdownContent = `---
 title: "${props.post.title}"
 author: "${props.post.author}"
 date: "${props.post.date}"
@@ -105,22 +105,22 @@ ${props.post.content}
 
 **Source:** ${fullUrl}
 **Published:** ${new Date(props.post.date).toLocaleDateString(locale.value === 'pt-BR' ? 'pt-BR' : 'en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        })}
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    })}
 **Author:** ${props.post.author}
 **© 2026 Tiago França. All rights reserved.**
-`
+`;
 
-        try {
-            await navigator.clipboard.writeText(markdownContent)
-            aiCopied.value = true
-            setTimeout(() => {
-                aiCopied.value = false
-            }, 2000)
-        } catch (error) {
-            console.error('Failed to copy for AI:', error)
-        }
+    try {
+        await navigator.clipboard.writeText(markdownContent);
+        aiCopied.value = true;
+        setTimeout(() => {
+            aiCopied.value = false;
+        }, 2000);
+    } catch (error) {
+        console.error('Failed to copy for AI:', error);
     }
+}
 </script>

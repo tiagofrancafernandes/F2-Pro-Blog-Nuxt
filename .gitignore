@@ -40,3 +40,4 @@ _ide_helper*
 .vite
 dist*
 
+.apprc

@@ -1,27 +1,22 @@
 {
-  "id": 2,
-  "slug": "post-dois",
-  "translations": {
-    "en-US": {
-      "title": "PostgreSQL Query Optimization Techniques",
-      "description": "Advanced optimization techniques for queries in PostgreSQL. Indexes, query plans and performance tuning for production.",
-      "content": "## Database Performance\n\nOptimizing queries is essential for maintaining application performance. PostgreSQL offers powerful tools for analysis and optimization.\n\n## EXPLAIN ANALYZE\n\nThe `EXPLAIN ANALYZE` tool shows how PostgreSQL executes your query:\n\n```sql\nEXPLAIN ANALYZE\nSELECT * FROM users WHERE email = 'user@example.com';\n```\n\nThis reveals:\n- Seq Scan vs Index Scan\n- Estimated rows vs Actual rows\n- I/O costs\n\n## Appropriate Indexes\n\nIndexes are crucial for performance:\n\n- Simple indexes on frequently filtered columns\n- Composite indexes for multiple columns\n- Partial indexes for specific queries\n- BRIN indexes for sequential data\n\n## Vacuum and Analyze\n\nKeep your database clean:\n\n```sql\nVACUUM ANALYZE users;\n```\n\nThis removes dead tuples and updates statistics.\n\n## Conclusion\n\nRegularly monitor and optimize your queries to maintain consistent performance."
+    "id": 2,
+    "slug": "post-dois",
+    "translations": {
+        "en-US": {
+            "title": "PostgreSQL Query Optimization Techniques",
+            "description": "Advanced optimization techniques for queries in PostgreSQL. Indexes, query plans and performance tuning for production.",
+            "content": "## Database Performance\n\nOptimizing queries is essential for maintaining application performance. PostgreSQL offers powerful tools for analysis and optimization.\n\n## EXPLAIN ANALYZE\n\nThe `EXPLAIN ANALYZE` tool shows how PostgreSQL executes your query:\n\n```sql\nEXPLAIN ANALYZE\nSELECT * FROM users WHERE email = 'user@example.com';\n```\n\nThis reveals:\n- Seq Scan vs Index Scan\n- Estimated rows vs Actual rows\n- I/O costs\n\n## Appropriate Indexes\n\nIndexes are crucial for performance:\n\n- Simple indexes on frequently filtered columns\n- Composite indexes for multiple columns\n- Partial indexes for specific queries\n- BRIN indexes for sequential data\n\n## Vacuum and Analyze\n\nKeep your database clean:\n\n```sql\nVACUUM ANALYZE users;\n```\n\nThis removes dead tuples and updates statistics.\n\n## Conclusion\n\nRegularly monitor and optimize your queries to maintain consistent performance."
+        },
+        "pt-BR": {
+            "title": "Técnicas de Otimização de Queries PostgreSQL",
+            "description": "Técnicas avançadas de otimização de queries em PostgreSQL. Índices, execução de planos e tuning de performance para produção.",
+            "content": "## Performance em Banco de Dados\n\nOptimizar queries é essencial para manter uma aplicação performática. PostgreSQL oferece ferramentas poderosas para análise e otimização.\n\n## EXPLAIN ANALYZE\n\nA ferramenta `EXPLAIN ANALYZE` mostra como PostgreSQL executa sua query:\n\n```sql\nEXPLAIN ANALYZE\nSELECT * FROM users WHERE email = 'user@example.com';\n```\n\nIsso revela:\n- Seq Scan vs Index Scan\n- Estimated rows vs Actual rows\n- I/O costs\n\n## Índices Apropriados\n\nÍndices são cruciais para performance:\n\n- Índices simples em colunas de filtro frequente\n- Índices compostos para múltiplas colunas\n- Índices parciais para queries específicas\n- Índices BRIN para dados sequenciais\n\n## Vacuum e Analyze\n\nMantenha seu banco limpo:\n\n```sql\nVACUUM ANALYZE users;\n```\n\nEsto remove dead tuples e atualiza estatísticas.\n\n## Conclusão\n\nRegularmente monitore e otimize suas queries para manter performance consistente."
+        }
     },
-    "pt-BR": {
-      "title": "Técnicas de Otimização de Queries PostgreSQL",
-      "description": "Técnicas avançadas de otimização de queries em PostgreSQL. Índices, execução de planos e tuning de performance para produção.",
-      "content": "## Performance em Banco de Dados\n\nOptimizar queries é essencial para manter uma aplicação performática. PostgreSQL oferece ferramentas poderosas para análise e otimização.\n\n## EXPLAIN ANALYZE\n\nA ferramenta `EXPLAIN ANALYZE` mostra como PostgreSQL executa sua query:\n\n```sql\nEXPLAIN ANALYZE\nSELECT * FROM users WHERE email = 'user@example.com';\n```\n\nIsso revela:\n- Seq Scan vs Index Scan\n- Estimated rows vs Actual rows\n- I/O costs\n\n## Índices Apropriados\n\nÍndices são cruciais para performance:\n\n- Índices simples em colunas de filtro frequente\n- Índices compostos para múltiplas colunas\n- Índices parciais para queries específicas\n- Índices BRIN para dados sequenciais\n\n## Vacuum e Analyze\n\nMantenha seu banco limpo:\n\n```sql\nVACUUM ANALYZE users;\n```\n\nEsto remove dead tuples e atualiza estatísticas.\n\n## Conclusão\n\nRegularmente monitore e otimize suas queries para manter performance consistente."
-    }
-  },
-  "category": "database",
-  "tags": [
-    "postgresql",
-    "database",
-    "sql",
-    "performance"
-  ],
-  "date": "2024-08-09",
-  "readTime": 12,
-  "author": "Tiago França",
-  "status": "published"
+    "category": "database",
+    "tags": ["postgresql", "database", "sql", "performance"],
+    "date": "2024-08-09",
+    "readTime": 12,
+    "author": "Tiago França",
+    "status": "published"
 }

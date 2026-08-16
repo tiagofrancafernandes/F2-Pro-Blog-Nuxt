@@ -42,7 +42,9 @@
 
                             <!-- Categories Filter -->
                             <div class="mb-8 pb-8 border-b border-gray-200 dark:border-slate-700">
-                                <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                                <h3
+                                    class="text-sm font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2"
+                                >
                                     <Icon name="mdi:folder" class="w-4 h-4" />
                                     {{ $t('search.categories') }}
                                 </h3>
@@ -59,11 +61,16 @@
                                             @change="updateUrl"
                                             class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
                                         />
-                                        <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                                        <span
+                                            class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"
+                                        >
                                             {{ category }}
                                         </span>
                                     </label>
-                                    <label v-if="selectedCategory" class="flex items-center gap-3 cursor-pointer group mt-3">
+                                    <label
+                                        v-if="selectedCategory"
+                                        class="flex items-center gap-3 cursor-pointer group mt-3"
+                                    >
                                         <input
                                             type="radio"
                                             value=""
@@ -71,7 +78,9 @@
                                             @change="updateUrl"
                                             class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
                                         />
-                                        <span class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors">
+                                        <span
+                                            class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors"
+                                        >
                                             {{ $t('search.allCategories') }}
                                         </span>
                                     </label>
@@ -80,7 +89,9 @@
 
                             <!-- Tags Filter -->
                             <div>
-                                <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                                <h3
+                                    class="text-sm font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2"
+                                >
                                     <Icon name="mdi:tag-multiple" class="w-4 h-4" />
                                     {{ $t('search.tags') }}
                                 </h3>
@@ -97,7 +108,9 @@
                                             @change="updateUrl"
                                             class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
                                         />
-                                        <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                                        <span
+                                            class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"
+                                        >
                                             {{ tag }}
                                         </span>
                                     </label>
@@ -119,28 +132,52 @@
                     <div class="lg:col-span-3">
                         <!-- Active Filters Display -->
                         <div v-if="hasActiveFilters" class="mb-8 pb-8 border-b border-gray-200 dark:border-slate-700">
-                            <h3 class="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-4 uppercase tracking-wider">
+                            <h3
+                                class="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-4 uppercase tracking-wider"
+                            >
                                 {{ $t('search.activeFilters') }}
                             </h3>
                             <div class="flex flex-wrap gap-2">
                                 <!-- Search Query Badge -->
-                                <div v-if="searchQuery" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                                <div
+                                    v-if="searchQuery"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
+                                >
                                     <span class="text-sm font-medium">{{ searchQuery }}</span>
-                                    <button @click="searchQuery = ''; updateUrl()" class="ml-2 hover:opacity-70">
+                                    <button
+                                        @click="
+                                            searchQuery = '';
+                                            updateUrl();
+                                        "
+                                        class="ml-2 hover:opacity-70"
+                                    >
                                         <Icon name="mdi:close" class="w-4 h-4" />
                                     </button>
                                 </div>
 
                                 <!-- Category Badge -->
-                                <div v-if="selectedCategory" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">
+                                <div
+                                    v-if="selectedCategory"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+                                >
                                     <span class="text-sm font-medium">{{ selectedCategory }}</span>
-                                    <button @click="selectedCategory = ''; updateUrl()" class="ml-2 hover:opacity-70">
+                                    <button
+                                        @click="
+                                            selectedCategory = '';
+                                            updateUrl();
+                                        "
+                                        class="ml-2 hover:opacity-70"
+                                    >
                                         <Icon name="mdi:close" class="w-4 h-4" />
                                     </button>
                                 </div>
 
                                 <!-- Tag Badges -->
-                                <div v-for="tag in selectedTags" :key="tag" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300">
+                                <div
+                                    v-for="tag in selectedTags"
+                                    :key="tag"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300"
+                                >
                                     <span class="text-sm font-medium">{{ tag }}</span>
                                     <button @click="removeTag(tag)" class="ml-2 hover:opacity-70">
                                         <Icon name="mdi:close" class="w-4 h-4" />
@@ -151,7 +188,10 @@
 
                         <!-- No Filters Message -->
                         <div v-else class="text-center py-16">
-                            <Icon name="mdi:magnify" class="w-12 h-12 text-gray-400 dark:text-gray-500 mx-auto mb-4 opacity-50" />
+                            <Icon
+                                name="mdi:magnify"
+                                class="w-12 h-12 text-gray-400 dark:text-gray-500 mx-auto mb-4 opacity-50"
+                            />
                             <p class="text-gray-600 dark:text-gray-400 text-lg font-medium">
                                 {{ $t('search.noFilters') }}
                             </p>
@@ -169,7 +209,10 @@
 
                         <!-- No Results -->
                         <div v-if="hasActiveFilters && filteredPosts.length === 0" class="text-center py-16">
-                            <Icon name="mdi:file-document-outline" class="w-16 h-16 text-gray-400 dark:text-gray-500 mx-auto mb-4 opacity-50" />
+                            <Icon
+                                name="mdi:file-document-outline"
+                                class="w-16 h-16 text-gray-400 dark:text-gray-500 mx-auto mb-4 opacity-50"
+                            />
                             <p class="text-gray-600 dark:text-gray-400 text-xl font-medium">
                                 {{ $t('search.noResults') }}
                             </p>
@@ -214,11 +257,10 @@
                                             </span>
                                         </div>
 
-                                        <NuxtLink
-                                            :to="`/posts/${post.slug}`"
-                                            class="block group/link mb-2"
-                                        >
-                                            <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover/link:text-red-600 dark:group-hover/link:text-red-400 transition-colors">
+                                        <NuxtLink :to="`/posts/${post.slug}`" class="block group/link mb-2">
+                                            <h3
+                                                class="text-xl font-bold text-gray-900 dark:text-white group-hover/link:text-red-600 dark:group-hover/link:text-red-400 transition-colors"
+                                            >
                                                 {{ post.title }}
                                             </h3>
                                         </NuxtLink>
@@ -229,7 +271,9 @@
                                     </div>
 
                                     <!-- Tags & CTA -->
-                                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                    <div
+                                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                                    >
                                         <div class="flex flex-wrap gap-2">
                                             <NuxtLink
                                                 v-for="tag in post.tags"
@@ -260,178 +304,179 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, computed, onMounted } from 'vue'
-    import { useRoute, useRouter } from 'vue-router'
-    import { useI18n } from 'vue-i18n'
+import { ref, computed, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
-    interface PostData {
-        id: number
-        slug: string
-        translations: {
-            'en-US': {
-                title: string
-                description: string
-                content: string
-            }
-            'pt-BR': {
-                title: string
-                description: string
-                content: string
-            }
-        }
-        date: string
-        readTime: number
-        category: string
-        tags: string[]
-        coverImage?: string
-        status: 'published' | 'draft' | 'archived'
+interface PostData {
+    id: number;
+    slug: string;
+    translations: {
+        'en-US': {
+            title: string;
+            description: string;
+            content: string;
+        };
+        'pt-BR': {
+            title: string;
+            description: string;
+            content: string;
+        };
+    };
+    date: string;
+    readTime: number;
+    category: string;
+    tags: string[];
+    coverImage?: string;
+    status: 'published' | 'draft' | 'archived';
+}
+
+interface Post {
+    id: number;
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+    readTime: number;
+    category: string;
+    tags: string[];
+    coverImage?: string;
+    status: 'published' | 'draft' | 'archived';
+}
+
+const route = useRoute();
+const router = useRouter();
+const { locale, t } = useI18n();
+
+const allPosts = ref<Post[]>([]);
+const searchQuery = ref('');
+const selectedTags = ref<string[]>([]);
+const selectedCategory = ref('');
+
+const allCategories = computed(() => {
+    const categories = new Set<string>();
+    allPosts.value.forEach((post) => categories.add(post.category));
+    return Array.from(categories).sort();
+});
+
+const allTags = computed(() => {
+    const tags = new Set<string>();
+    allPosts.value.forEach((post) => {
+        post.tags.forEach((tag) => tags.add(tag));
+    });
+    return Array.from(tags).sort();
+});
+
+const hasActiveFilters = computed(() => {
+    return searchQuery.value || selectedTags.value.length > 0 || selectedCategory.value;
+});
+
+const filteredPosts = computed(() => {
+    return allPosts.value.filter((post) => {
+        const matchesSearch =
+            !searchQuery.value ||
+            post.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+            post.description.toLowerCase().includes(searchQuery.value.toLowerCase());
+
+        const matchesCategory = !selectedCategory.value || post.category === selectedCategory.value;
+
+        const matchesTags =
+            selectedTags.value.length === 0 || selectedTags.value.some((tag) => post.tags.includes(tag));
+
+        return matchesSearch && matchesCategory && matchesTags;
+    });
+});
+
+function formatDate(date: string): string {
+    return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+    });
+}
+
+function removeTag(tag: string): void {
+    selectedTags.value = selectedTags.value.filter((t) => t !== tag);
+    updateUrl();
+}
+
+function clearAllFilters(): void {
+    searchQuery.value = '';
+    selectedTags.value = [];
+    selectedCategory.value = '';
+    router.push('/posts/search');
+}
+
+function updateUrl(): void {
+    const params = new URLSearchParams();
+
+    if (searchQuery.value) {
+        params.set('q', searchQuery.value);
     }
 
-    interface Post {
-        id: number
-        slug: string
-        title: string
-        description: string
-        date: string
-        readTime: number
-        category: string
-        tags: string[]
-        coverImage?: string
-        status: 'published' | 'draft' | 'archived'
+    if (selectedCategory.value) {
+        params.set('category', selectedCategory.value);
     }
 
-    const route = useRoute()
-    const router = useRouter()
-    const { locale, t } = useI18n()
-
-    const allPosts = ref<Post[]>([])
-    const searchQuery = ref('')
-    const selectedTags = ref<string[]>([])
-    const selectedCategory = ref('')
-
-    const allCategories = computed(() => {
-        const categories = new Set<string>()
-        allPosts.value.forEach((post) => categories.add(post.category))
-        return Array.from(categories).sort()
-    })
-
-    const allTags = computed(() => {
-        const tags = new Set<string>()
-        allPosts.value.forEach((post) => {
-            post.tags.forEach((tag) => tags.add(tag))
-        })
-        return Array.from(tags).sort()
-    })
-
-    const hasActiveFilters = computed(() => {
-        return searchQuery.value || selectedTags.value.length > 0 || selectedCategory.value
-    })
-
-    const filteredPosts = computed(() => {
-        return allPosts.value.filter((post) => {
-            const matchesSearch = !searchQuery.value ||
-                post.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-                post.description.toLowerCase().includes(searchQuery.value.toLowerCase())
-
-            const matchesCategory = !selectedCategory.value || post.category === selectedCategory.value
-
-            const matchesTags = selectedTags.value.length === 0 ||
-                selectedTags.value.some((tag) => post.tags.includes(tag))
-
-            return matchesSearch && matchesCategory && matchesTags
-        })
-    })
-
-    function formatDate(date: string): string {
-        return new Date(date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-        })
+    if (selectedTags.value.length > 0) {
+        params.set('tags', selectedTags.value.join(','));
     }
 
-    function removeTag(tag: string): void {
-        selectedTags.value = selectedTags.value.filter((t) => t !== tag)
-        updateUrl()
+    const queryString = params.toString();
+    router.push(`/posts/search${queryString ? `?${queryString}` : ''}`);
+}
+
+function loadFiltersFromRoute(): void {
+    const q = route.query.q as string | undefined;
+    const category = route.query.category as string | undefined;
+    const tags = route.query.tags as string | undefined;
+
+    if (q) {
+        searchQuery.value = q;
     }
 
-    function clearAllFilters(): void {
-        searchQuery.value = ''
-        selectedTags.value = []
-        selectedCategory.value = ''
-        router.push('/posts/search')
+    if (category) {
+        selectedCategory.value = category;
     }
 
-    function updateUrl(): void {
-        const params = new URLSearchParams()
-
-        if (searchQuery.value) {
-            params.set('q', searchQuery.value)
-        }
-
-        if (selectedCategory.value) {
-            params.set('category', selectedCategory.value)
-        }
-
-        if (selectedTags.value.length > 0) {
-            params.set('tags', selectedTags.value.join(','))
-        }
-
-        const queryString = params.toString()
-        router.push(`/posts/search${queryString ? `?${queryString}` : ''}`)
+    if (tags) {
+        selectedTags.value = tags.split(',').filter((tag) => tag.trim());
     }
+}
 
-    function loadFiltersFromRoute(): void {
-        const q = route.query.q as string | undefined
-        const category = route.query.category as string | undefined
-        const tags = route.query.tags as string | undefined
+function mapPostData(data: PostData): Post {
+    const currentLocale = locale.value as 'en-US' | 'pt-BR';
+    const translations = data.translations[currentLocale] || data.translations['en-US'];
 
-        if (q) {
-            searchQuery.value = q
+    return {
+        id: data.id,
+        slug: data.slug,
+        title: translations.title,
+        description: translations.description,
+        date: data.date,
+        readTime: data.readTime,
+        category: data.category,
+        tags: data.tags,
+        coverImage: data.coverImage,
+        status: data.status,
+    };
+}
+
+onMounted(async () => {
+    try {
+        const response = await fetch('/data/posts/index.json');
+
+        if (!response.ok) {
+            return;
         }
 
-        if (category) {
-            selectedCategory.value = category
-        }
+        const data = await response.json();
+        const posts = data.posts || [];
 
-        if (tags) {
-            selectedTags.value = tags.split(',').filter((tag) => tag.trim())
-        }
+        allPosts.value = posts.map((post: PostData) => mapPostData(post));
+        loadFiltersFromRoute();
+    } catch (error) {
+        console.error('Failed to fetch posts:', error);
     }
-
-    function mapPostData(data: PostData): Post {
-        const currentLocale = locale.value as 'en-US' | 'pt-BR'
-        const translations = data.translations[currentLocale] || data.translations['en-US']
-
-        return {
-            id: data.id,
-            slug: data.slug,
-            title: translations.title,
-            description: translations.description,
-            date: data.date,
-            readTime: data.readTime,
-            category: data.category,
-            tags: data.tags,
-            coverImage: data.coverImage,
-            status: data.status,
-        }
-    }
-
-    onMounted(async () => {
-        try {
-            const response = await fetch('/data/posts/index.json')
-
-            if (!response.ok) {
-                return
-            }
-
-            const data = await response.json()
-            const posts = data.posts || []
-
-            allPosts.value = posts.map((post: PostData) => mapPostData(post))
-            loadFiltersFromRoute()
-        } catch (error) {
-            console.error('Failed to fetch posts:', error)
-        }
-    })
+});
 </script>
