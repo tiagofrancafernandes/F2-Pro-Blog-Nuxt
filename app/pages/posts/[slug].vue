@@ -91,32 +91,13 @@
 
                                 <!-- Share -->
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
-                                    <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
-                                        {{ $t('post.share') }}
-                                    </h3>
-                                    <div class="flex gap-2">
-                                        <a
-                                            href="#share-twitter"
-                                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
-                                            aria-label="Share on Twitter"
-                                        >
-                                            <Icon name="mdi:twitter" class="w-4 h-4" />
-                                        </a>
-                                        <a
-                                            href="#share-linkedin"
-                                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
-                                            aria-label="Share on LinkedIn"
-                                        >
-                                            <Icon name="mdi:linkedin" class="w-4 h-4" />
-                                        </a>
-                                        <button
-                                            @click="copyLink"
-                                            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-red-600 hover:text-white transition-colors"
-                                            aria-label="Copy link"
-                                        >
-                                            <Icon name="mdi:link" class="w-4 h-4" />
-                                        </button>
-                                    </div>
+                                    <SocialShare
+                                        :url="shareUrl"
+                                        :title="getPostTitle()"
+                                        :description="post?.description"
+                                        :hashtags="post?.tags"
+                                        :label="$t('post.share')"
+                                    />
                                 </div>
 
                                 <!-- Navigation -->
@@ -149,7 +130,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useMarkdown } from '~/composables/useMarkdown';
@@ -204,6 +185,14 @@ const { renderMarkdown, extractHeadings: extractMarkdownHeadings } = useMarkdown
 const post = ref<Post | null>(null);
 const isLoading = ref(true);
 const headings = ref<Heading[]>([]);
+
+const shareUrl = computed(() => {
+    if (!process.server) {
+        return `${window.location.origin}/posts/${route.params.slug}`;
+    }
+
+    return '';
+});
 
 function getPostTitle(): string {
     if (!post.value) {
