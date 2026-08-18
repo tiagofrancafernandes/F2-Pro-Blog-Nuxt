@@ -12,20 +12,30 @@
                 ]"
             >
                 <!-- Resources Label -->
-                <div class="flex items-center gap-2 flex-shrink-0 text-gray-600 dark:text-gray-400 text-sm font-medium">
+                <div class="hidden md:flex items-center gap-2 flex-shrink-0 text-gray-600 dark:text-gray-400 text-sm font-medium">
                     <Icon name="mdi:bookmark-multiple" class="w-4 h-4" />
                     <span class="uppercase text-xs tracking-wider">{{ $t('nav.resources') }}</span>
                 </div>
 
                 <!-- Quick Links -->
-                <div class="flex items-center gap-2 sm:gap-6 flex-shrink-0">
+                <div class="flex flex-wrap md:flex-nowrap items-center gap-2 sm:gap-2 flex-shrink-0">
                     <a
                         v-for="link in quickLinks"
                         :key="link.translationKey"
                         :href="link.href"
                         :target="link.external ? '_blank' : undefined"
                         :rel="link.external ? 'noopener noreferrer' : undefined"
-                        class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors whitespace-nowrap py-1 px-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800"
+                        :class="[
+                            'flex min-w-2/12',
+                            {
+                                'justify-between': link?.external,
+                                'justify-center': !link?.external,
+                            },
+                            'border border-gray-100/20 items-center gap-2',
+                            'text-sm text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400',
+                            'transition-colors whitespace-nowrap py-1 px-2',
+                            'rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800',
+                        ]"
                     >
                         <span>{{ $t(`${link.translationKey}`) }}</span>
                         <Icon v-if="link.external" name="mdi:open-in-new" class="w-3 h-3" />
@@ -46,7 +56,6 @@ interface QuickLink {
 
 const quickLinks: QuickLink[] = [
     { show: true, translationKey: 'nav.tutorials', href: '/', external: false },
-    { show: true, translationKey: 'nav.blog', href: '/', external: false },
     { show: true, translationKey: 'nav.portfolio', href: '#portfolio', external: false },
     { show: true, translationKey: 'nav.hireMe', href: '/hire-me', external: false },
     { show: true, translationKey: 'nav.cv', href: '/l/cv', external: true },

@@ -12,7 +12,7 @@ export default {
             },
             nav: {
                 home: 'Home',
-                posts: 'Posts',
+                posts: 'Blog',
                 about: 'About',
                 classes: 'Private Classes',
                 resources: 'Resources',
@@ -183,7 +183,7 @@ export default {
             },
             nav: {
                 home: 'Início',
-                posts: 'Posts',
+                posts: 'Blog',
                 about: 'Sobre',
                 classes: 'Aulas Particulares',
                 resources: 'Recursos',

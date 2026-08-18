@@ -239,7 +239,10 @@
 
                     <!-- Summary Sidebar -->
                     <div class="lg:col-span-1">
-                        <div class="bg-gray-50 dark:bg-slate-800 rounded-lg p-6 sticky top-24">
+                        <div
+                            v-if="selectedService"
+                            class="bg-gray-50 dark:bg-slate-800 rounded-lg p-6 sticky top-24"
+                        >
                             <h3 class="font-bold text-gray-900 dark:text-white mb-4">
                                 {{ $t('hireMe.summary') }}
                             </h3>
