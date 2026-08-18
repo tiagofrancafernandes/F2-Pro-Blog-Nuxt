@@ -130,10 +130,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useMarkdown } from '~/composables/useMarkdown';
+import { useSEOMeta, generateOGImage } from '~/composables/useSEOMeta';
 
 interface PostData {
     id: number;
@@ -193,6 +194,24 @@ const shareUrl = computed(() => {
 
     return '';
 });
+
+watch(
+    () => post.value,
+    (newPost) => {
+        if (newPost) {
+            useSEOMeta({
+                title: `${newPost.title} - Tiago França Blog`,
+                description: newPost.description,
+                image: generateOGImage(newPost.title, newPost.category),
+                url: `${window.location.origin}/posts/${route.params.slug}`,
+                type: 'article',
+                author: newPost.title,
+                publishedDate: newPost.date,
+            });
+        }
+    },
+    { immediate: true }
+);
 
 function getPostTitle(): string {
     if (!post.value) {
