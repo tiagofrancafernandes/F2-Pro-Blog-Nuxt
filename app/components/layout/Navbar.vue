@@ -4,7 +4,7 @@
             <div class="flex h-16 items-center justify-between">
                 <!-- Logo -->
                 <NuxtLink to="/" class="flex items-center gap-2 font-bold text-xl">
-                    <span class="text-red-600 dark:text-red-400">Tiago</span>
+                    <span class="text-emerald-600 dark:text-emerald-400">Tiago</span>
                     <span class="text-gray-700 dark:text-gray-300">França</span>
                 </NuxtLink>
 
@@ -12,25 +12,25 @@
                 <div class="hidden md:flex items-center gap-8">
                     <NuxtLink
                         to="/"
-                        class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                        class="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                     >
                         {{ $t('nav.home') }}
                     </NuxtLink>
                     <NuxtLink
                         to="/"
-                        class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                        class="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                     >
                         {{ $t('nav.posts') }}
                     </NuxtLink>
                     <NuxtLink
                         to="/about"
-                        class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                        class="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                     >
                         {{ $t('nav.about') }}
                     </NuxtLink>
                     <NuxtLink
                         to="/hire-me?type=classes"
-                        class="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                        class="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                     >
                         {{ $t('nav.classes') }}
                     </NuxtLink>
@@ -67,21 +67,21 @@
             <div v-if="isMenuOpen" class="md:hidden border-t border-gray-200 dark:border-slate-700 py-4 space-y-3">
                 <NuxtLink
                     to="/"
-                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400"
+                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                     @click="isMenuOpen = false"
                 >
                     {{ $t('nav.home') }}
                 </NuxtLink>
                 <NuxtLink
                     to="/"
-                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400"
+                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                     @click="isMenuOpen = false"
                 >
                     {{ $t('nav.posts') }}
                 </NuxtLink>
                 <NuxtLink
                     to="/about"
-                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400"
+                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                     @click="isMenuOpen = false"
                 >
                     {{ $t('nav.about') }}

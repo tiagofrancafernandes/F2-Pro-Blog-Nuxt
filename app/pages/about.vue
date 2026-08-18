@@ -1,13 +1,13 @@
 <template>
     <div class="min-h-screen bg-white dark:bg-slate-900">
         <!-- Hero Section -->
-        <section class="bg-red-600 dark:bg-red-700 text-white py-16 sm:py-24">
+        <section class="bg-emerald-600 dark:bg-emerald-700 text-white py-16 sm:py-24">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <!-- Avatar -->
                     <div class="flex-shrink-0">
                         <div
-                            class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-red-500 dark:bg-red-800 flex items-center justify-center"
+                            class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-emerald-500 dark:bg-emerald-800 flex items-center justify-center"
                         >
                             <Icon name="mdi:account-circle" class="w-24 h-24 sm:w-32 sm:h-32 text-red-200" />
                         </div>
@@ -18,7 +18,7 @@
                         <h1 class="text-4xl sm:text-5xl font-bold mb-4">
                             {{ t('hero.name') }}
                         </h1>
-                        <p class="text-xl text-red-100 mb-6">
+                        <p class="text-xl text-emerald-100 mb-6">
                             {{ t('hero.title') }}
                         </p>
                         <p class="text-red-50 max-w-2xl text-lg leading-relaxed mb-8">
@@ -27,7 +27,7 @@
                         <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
                             <a
                                 href="#contact"
-                                class="px-6 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-red-50 transition-colors"
+                                class="px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-emerald-50 transition-colors"
                             >
                                 {{ t('cta.contact') }}
                             </a>
@@ -35,7 +35,7 @@
                                 href="https://tiagofranca.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="px-6 py-3 bg-red-700 text-white font-semibold rounded-lg hover:bg-red-800 transition-colors"
+                                class="px-6 py-3 bg-emerald-700 text-white font-semibold rounded-lg hover:bg-red-800 transition-colors"
                             >
                                 {{ t('cta.website') }}
                             </a>
@@ -99,7 +99,7 @@
                                         <span
                                             v-for="skill in ['PHP', 'Laravel', 'PostgreSQL', 'REST APIs']"
                                             :key="skill"
-                                            class="text-xs px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full font-medium"
+                                            class="text-xs px-3 py-1 bg-red-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full font-medium"
                                         >
                                             {{ skill }}
                                         </span>
@@ -305,7 +305,7 @@
                             >
                                 <Icon
                                     name="mdi:github"
-                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
                                 />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">GitHub</p>
@@ -321,7 +321,7 @@
                             >
                                 <Icon
                                     name="mdi:linkedin"
-                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
                                 />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">LinkedIn</p>
@@ -337,7 +337,7 @@
                             >
                                 <Icon
                                     name="mdi:dev-to"
-                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
                                 />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">DEV Community</p>
@@ -353,7 +353,7 @@
                             >
                                 <Icon
                                     name="mdi:stack-overflow"
-                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
                                 />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">Stack Overflow</p>
@@ -371,7 +371,7 @@
                             >
                                 <Icon
                                     name="mdi:code-braces"
-                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400"
+                                    class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
                                 />
                                 <div>
                                     <p class="font-semibold text-gray-900 dark:text-white">GitHub Gists</p>
@@ -390,12 +390,12 @@
                         <div class="space-y-6">
                             <div class="p-6 rounded-lg bg-gray-50 dark:bg-slate-800">
                                 <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                                    <Icon name="mdi:email" class="w-5 h-5 text-red-600" />
+                                    <Icon name="mdi:email" class="w-5 h-5 text-emerald-600" />
                                     {{ t('contact.email') }}
                                 </h3>
                                 <a
                                     href="mailto:devtiagofranca@gmail.com"
-                                    class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                    class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                                 >
                                     devtiagofranca@gmail.com
                                 </a>
@@ -403,14 +403,14 @@
 
                             <div class="p-6 rounded-lg bg-gray-50 dark:bg-slate-800">
                                 <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                                    <Icon name="mdi:language" class="w-5 h-5 text-red-600" />
+                                    <Icon name="mdi:language" class="w-5 h-5 text-emerald-600" />
                                     {{ t('contact.website') }}
                                 </h3>
                                 <a
                                     href="https://tiagofranca.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                    class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                                 >
                                     tiagofranca.com
                                 </a>
@@ -418,14 +418,14 @@
 
                             <div class="p-6 rounded-lg bg-gray-50 dark:bg-slate-800">
                                 <h3 class="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                                    <Icon name="mdi:teach" class="w-5 h-5 text-red-600" />
+                                    <Icon name="mdi:teach" class="w-5 h-5 text-emerald-600" />
                                     {{ t('contact.mentoring') }}
                                 </h3>
                                 <a
                                     href="https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                    class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                                 >
                                     {{ t('contact.superprof') }}
                                 </a>
