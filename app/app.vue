@@ -11,4 +11,9 @@
 
 <script setup lang="ts">
 const colorMode = useColorMode();
+
+useSEOMeta({
+    title: 'Tiago França - Senior Backend Engineer',
+    description: 'Expert backend developer specializing in PHP, Laravel, APIs, and system architecture.',
+});
 </script>
