@@ -7,13 +7,13 @@
                 <h3 class="text-2xl font-bold mb-2">
                     {{ $t('post.hireMeTitle') || 'Ready to Work Together?' }}
                 </h3>
-                <p class="text-red-100">
+                <p class="text-emerald-100">
                     {{ $t('post.hireMeDescription') || "Let's discuss your next project and how I can help." }}
                 </p>
             </div>
             <a
                 href="#contact"
-                class="flex-shrink-0 px-6 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"
+                class="flex-shrink-0 px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-emerald-50 transition-colors whitespace-nowrap"
             >
                 {{ $t('post.hireMeButton') || 'Hire Me' }}
             </a>

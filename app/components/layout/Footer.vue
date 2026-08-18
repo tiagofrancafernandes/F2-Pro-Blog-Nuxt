@@ -39,21 +39,21 @@
                         <a
                             href="https://twitter.com"
                             target="_blank"
-                            class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors"
+                            class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-emerald-600 hover:text-white transition-colors"
                         >
                             <Icon name="mdi:twitter" class="w-5 h-5" />
                         </a>
                         <a
                             href="https://github.com/tiagofrancafernandes"
                             target="_blank"
-                            class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors"
+                            class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-emerald-600 hover:text-white transition-colors"
                         >
                             <Icon name="mdi:github" class="w-5 h-5" />
                         </a>
                         <a
                             href="https://wwwhttps://linkedin.com/in/tiago-php"
                             target="_blank"
-                            class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-red-600 hover:text-white transition-colors"
+                            class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-emerald-600 hover:text-white transition-colors"
                         >
                             <Icon name="mdi:linkedin" class="w-5 h-5" />
                         </a>
@@ -62,7 +62,7 @@
 
                 <!-- Services Section -->
                 <div>
-                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-red-500">Services</h3>
+                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-emerald-500">Services</h3>
                     <ul class="space-y-3">
                         <li>
                             <a href="#backend" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
@@ -94,7 +94,7 @@
 
                 <!-- Technologies Section -->
                 <div>
-                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-red-500">Technologies</h3>
+                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-emerald-500">Technologies</h3>
                     <ul class="space-y-3">
                         <li>
                             <a href="#php" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
@@ -126,7 +126,7 @@
 
                 <!-- Growth Section -->
                 <div>
-                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-red-500">
+                    <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-emerald-500">
                         {{ $t('footer.resources') }}
                     </h3>
                     <ul class="space-y-3">
@@ -171,7 +171,7 @@
                         <p class="text-gray-300 text-sm mb-4">Let's build something amazing together.</p>
                         <NuxtLink
                             to="/hire-me"
-                            class="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors text-sm font-medium"
+                            class="inline-block px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors text-sm font-medium"
                         >
                             Hire Me
                         </NuxtLink>
@@ -251,7 +251,7 @@ function getThemeButtonClass(mode: string): string {
     const baseClass = 'p-2 rounded transition-colors text-gray-400';
 
     if (colorMode.preference === mode) {
-        return `${baseClass} bg-red-600 text-white`;
+        return `${baseClass} bg-emerald-600 text-white`;
     }
 
     return `${baseClass} hover:text-gray-300`;

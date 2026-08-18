@@ -1,12 +1,12 @@
 <template>
     <div class="min-h-screen bg-white dark:bg-slate-900">
         <!-- Hero Section -->
-        <section class="bg-red-600 dark:bg-red-700 text-white py-16 sm:py-24">
+        <section class="bg-emerald-600 dark:bg-emerald-700 text-white py-16 sm:py-24">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <h1 class="text-4xl sm:text-5xl font-bold mb-4">
                     {{ $t('sitemap.title') }}
                 </h1>
-                <p class="text-red-100 text-lg max-w-2xl">
+                <p class="text-emerald-100 text-lg max-w-2xl">
                     {{ $t('sitemap.description') }}
                 </p>
             </div>
@@ -26,17 +26,17 @@
                             v-for="page in landingPages"
                             :key="page.slug"
                             :to="`/lp/${page.slug}`"
-                            class="p-6 border-2 border-gray-200 dark:border-slate-700 rounded-lg hover:border-red-600 dark:hover:border-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all group"
+                            class="p-6 border-2 border-gray-200 dark:border-slate-700 rounded-lg hover:border-emerald-600 dark:hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-all group"
                         >
                             <div class="flex items-start justify-between mb-3">
                                 <h3
-                                    class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-red-600 transition-colors"
+                                    class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors"
                                 >
                                     {{ getPageTitle(page) }}
                                 </h3>
                                 <Icon
                                     name="mdi:chevron-right"
-                                    class="w-5 h-5 text-gray-400 group-hover:text-red-600 flex-shrink-0"
+                                    class="w-5 h-5 text-gray-400 group-hover:text-emerald-600 flex-shrink-0"
                                 />
                             </div>
                             <p class="text-sm text-gray-600 dark:text-gray-400">
@@ -56,7 +56,7 @@
                         <li>
                             <NuxtLink
                                 to="/"
-                                class="text-lg text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                class="text-lg text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                             >
                                 {{ $t('nav.home') }}
                             </NuxtLink>
@@ -64,7 +64,7 @@
                         <li>
                             <NuxtLink
                                 to="/"
-                                class="text-lg text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                class="text-lg text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                             >
                                 {{ $t('nav.posts') }}
                             </NuxtLink>
@@ -72,7 +72,7 @@
                         <li>
                             <NuxtLink
                                 to="/about"
-                                class="text-lg text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                class="text-lg text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                             >
                                 {{ $t('nav.about') }}
                             </NuxtLink>
@@ -80,7 +80,7 @@
                         <li>
                             <NuxtLink
                                 to="/hire-me"
-                                class="text-lg text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                class="text-lg text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                             >
                                 {{ $t('nav.hireMe') }}
                             </NuxtLink>

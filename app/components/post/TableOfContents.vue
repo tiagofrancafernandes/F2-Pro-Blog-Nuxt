@@ -21,14 +21,14 @@
                 <!-- Active indicator bar -->
                 <div
                     v-if="activeHeading === heading.id"
-                    class="absolute left-0 top-0 bottom-0 w-1 bg-red-600 rounded-r"
+                    class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-600 rounded-r"
                 />
 
                 <span
                     :class="[
                         'text-xs font-semibold mr-2',
                         activeHeading === heading.id
-                            ? 'text-red-600 dark:text-red-400'
+                            ? 'text-emerald-600 dark:text-emerald-400'
                             : 'text-gray-400 dark:text-gray-600',
                     ]"
                 >

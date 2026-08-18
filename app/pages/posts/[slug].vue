@@ -2,9 +2,9 @@
     <div v-if="!isLoading">
         <div v-if="post">
             <!-- Hero -->
-            <section class="bg-red-600 dark:bg-red-700 text-white py-12 sm:py-16">
+            <section class="bg-emerald-600 dark:bg-emerald-700 text-white py-12 sm:py-16">
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                    <div class="mb-4 flex items-center gap-2 text-red-100">
+                    <div class="mb-4 flex items-center gap-2 text-emerald-100">
                         <NuxtLink to="/" class="hover:text-white">{{ $t('nav.home') }}</NuxtLink>
                         <span>/</span>
                         <NuxtLink :to="`/posts/search?category=${post?.category}`" class="hover:text-white">
@@ -19,7 +19,7 @@
                             {{ post.status.toUpperCase() }}
                         </span>
                     </div>
-                    <div class="flex flex-wrap gap-4 text-red-100 text-sm">
+                    <div class="flex flex-wrap gap-4 text-emerald-100 text-sm">
                         <span>{{ formatDate(post.date) }}</span>
                         <span>{{ post.readTime }} {{ $t('posts.readTime') }}</span>
                         <span>{{ post.category }}</span>
@@ -58,11 +58,11 @@
                             </article>
 
                             <!-- CTA Section -->
-                            <div class="mt-16 p-8 bg-red-600 dark:bg-red-700 text-white rounded-lg">
+                            <div class="mt-16 p-8 bg-emerald-600 dark:bg-emerald-700 text-white rounded-lg">
                                 <h2 class="text-2xl font-bold mb-2">{{ $t('post.cta') }}</h2>
                                 <p class="mb-4">{{ $t('post.ctaDescription') }}</p>
                                 <button
-                                    class="px-6 py-2 bg-white text-red-600 font-semibold rounded hover:bg-red-50 transition-colors"
+                                    class="px-6 py-2 bg-white text-emerald-600 font-semibold rounded hover:bg-emerald-50 transition-colors"
                                 >
                                     {{ $t('post.ctaButton') }}
                                 </button>
@@ -82,7 +82,7 @@
                                             v-for="tag in post.tags"
                                             :key="tag"
                                             :to="`/posts/search?tags=${tag}`"
-                                            class="text-xs px-2 py-1 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-red-600 dark:hover:bg-red-600 hover:text-white transition-colors"
+                                            class="text-xs px-2 py-1 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-emerald-600 dark:hover:bg-emerald-600 hover:text-white transition-colors"
                                         >
                                             {{ tag }}
                                         </NuxtLink>
@@ -104,7 +104,7 @@
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
                                     <NuxtLink
                                         to="/"
-                                        class="block text-center px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors font-medium"
+                                        class="block text-center px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors font-medium"
                                     >
                                         {{ $t('post.backToPosts') }}
                                     </NuxtLink>
@@ -118,7 +118,7 @@
 
         <div v-else class="text-center py-16">
             <p class="text-gray-600 dark:text-gray-400">{{ $t('posts.noResults') }}</p>
-            <NuxtLink to="/" class="text-red-600 dark:text-red-400 hover:text-red-700 mt-4 inline-block">
+            <NuxtLink to="/" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 mt-4 inline-block">
                 {{ $t('post.backToPosts') }}
             </NuxtLink>
         </div>

@@ -4,7 +4,7 @@
         <div class="flex gap-2">
             <a
                 href="#twitter"
-                class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-red-600 hover:text-white transition-colors"
+                class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-emerald-600 hover:text-white transition-colors"
                 title="Share on Twitter"
                 aria-label="Share on Twitter"
             >
@@ -12,7 +12,7 @@
             </a>
             <a
                 href="#linkedin"
-                class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-red-600 hover:text-white transition-colors"
+                class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-emerald-600 hover:text-white transition-colors"
                 title="Share on LinkedIn"
                 aria-label="Share on LinkedIn"
             >
@@ -20,7 +20,7 @@
             </a>
             <button
                 @click="copyLink"
-                class="flex-1 px-3 py-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-red-600 hover:text-white transition-colors text-sm font-medium"
+                class="flex-1 px-3 py-2 rounded-lg bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-400 hover:bg-emerald-600 hover:text-white transition-colors text-sm font-medium"
                 :title="linkCopied ? 'Copied!' : 'Copy link'"
             >
                 {{ linkCopied ? '✓ Copied' : 'Copy Link' }}

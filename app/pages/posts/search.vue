@@ -1,12 +1,12 @@
 <template>
     <div class="min-h-screen bg-white dark:bg-slate-900">
         <!-- Header Section -->
-        <section class="bg-red-600 dark:bg-red-700 text-white py-12 sm:py-16">
+        <section class="bg-emerald-600 dark:bg-emerald-700 text-white py-12 sm:py-16">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <h1 class="text-4xl sm:text-5xl font-bold mb-4">
                     {{ $t('search.title') }}
                 </h1>
-                <p class="text-red-100 text-lg max-w-2xl">
+                <p class="text-emerald-100 text-lg max-w-2xl">
                     {{ $t('search.description') }}
                 </p>
             </div>
@@ -33,7 +33,7 @@
                                     />
                                     <button
                                         type="submit"
-                                        class="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
+                                        class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors font-medium"
                                     >
                                         <Icon name="mdi:magnify" class="w-5 h-5" />
                                     </button>
@@ -59,10 +59,10 @@
                                             :value="category"
                                             v-model="selectedCategory"
                                             @change="updateUrl"
-                                            class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
+                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
                                         />
                                         <span
-                                            class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"
+                                            class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors"
                                         >
                                             {{ category }}
                                         </span>
@@ -76,7 +76,7 @@
                                             value=""
                                             v-model="selectedCategory"
                                             @change="updateUrl"
-                                            class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
+                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
                                         />
                                         <span
                                             class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors"
@@ -106,10 +106,10 @@
                                             :value="tag"
                                             v-model="selectedTags"
                                             @change="updateUrl"
-                                            class="w-4 h-4 text-red-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
+                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
                                         />
                                         <span
-                                            class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"
+                                            class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors"
                                         >
                                             {{ tag }}
                                         </span>
@@ -226,7 +226,7 @@
                             <article
                                 v-for="post in filteredPosts"
                                 :key="post.slug"
-                                class="flex flex-col sm:flex-row gap-6 p-6 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-red-400 dark:hover:border-red-500 hover:shadow-lg transition-all group"
+                                class="flex flex-col sm:flex-row gap-6 p-6 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-red-400 dark:hover:border-emerald-500 hover:shadow-lg transition-all group"
                             >
                                 <!-- Image -->
                                 <div class="flex-shrink-0 w-full sm:w-48 h-32 sm:h-40 rounded-lg overflow-hidden">
@@ -245,7 +245,7 @@
                                         <div class="flex flex-wrap items-center gap-2 mb-3">
                                             <NuxtLink
                                                 :to="`/posts/search?category=${post.category}`"
-                                                class="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-wider hover:text-red-700 dark:hover:text-red-300 transition-colors"
+                                                class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider hover:text-emerald-700 dark:hover:text-red-300 transition-colors"
                                             >
                                                 {{ post.category }}
                                             </NuxtLink>
@@ -259,7 +259,7 @@
 
                                         <NuxtLink :to="`/posts/${post.slug}`" class="block group/link mb-2">
                                             <h3
-                                                class="text-xl font-bold text-gray-900 dark:text-white group-hover/link:text-red-600 dark:group-hover/link:text-red-400 transition-colors"
+                                                class="text-xl font-bold text-gray-900 dark:text-white group-hover/link:text-emerald-600 dark:group-hover/link:text-emerald-400 transition-colors"
                                             >
                                                 {{ post.title }}
                                             </h3>
@@ -279,7 +279,7 @@
                                                 v-for="tag in post.tags"
                                                 :key="tag"
                                                 :to="`/posts/search?tags=${tag}`"
-                                                class="text-xs px-3 py-1 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-700 dark:hover:text-red-400 transition-colors"
+                                                class="text-xs px-3 py-1 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-red-100 dark:hover:bg-emerald-900/30 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                                             >
                                                 {{ tag }}
                                             </NuxtLink>
@@ -287,7 +287,7 @@
 
                                         <NuxtLink
                                             :to="`/posts/${post.slug}`"
-                                            class="inline-flex items-center gap-2 px-4 py-2 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium text-sm transition-colors"
+                                            class="inline-flex items-center gap-2 px-4 py-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium text-sm transition-colors"
                                         >
                                             {{ $t('posts.readMore') }}
                                             <Icon name="mdi:arrow-right" class="w-4 h-4" />

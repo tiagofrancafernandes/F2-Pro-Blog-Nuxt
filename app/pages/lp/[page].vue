@@ -1,12 +1,12 @@
 <template>
     <div v-if="!isLoading" class="min-h-screen bg-white dark:bg-slate-900">
         <!-- Hero Section -->
-        <section class="bg-red-600 dark:bg-red-700 text-white py-16 sm:py-24">
+        <section class="bg-emerald-600 dark:bg-emerald-700 text-white py-16 sm:py-24">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <h1 class="text-4xl sm:text-5xl font-bold mb-4">
                     {{ pageData.translations[locale]?.title }}
                 </h1>
-                <p class="text-red-100 text-lg max-w-2xl mb-8">
+                <p class="text-emerald-100 text-lg max-w-2xl mb-8">
                     {{ pageData.translations[locale]?.subtitle }}
                 </p>
 
@@ -16,7 +16,7 @@
                         href="https://www.superprof.com.br/aulas-programacao-php-laravel-basico-avancado-sem-restricao-idade.html"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-white text-emerald-600 rounded-lg hover:bg-emerald-50 transition-colors font-medium"
                     >
                         <Icon name="mdi:star" class="w-5 h-5" />
                         Superprof
@@ -25,7 +25,7 @@
                         href="https://wwwhttps://linkedin.com/in/tiago-php"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-white text-emerald-600 rounded-lg hover:bg-emerald-50 transition-colors font-medium"
                     >
                         <Icon name="mdi:linkedin" class="w-5 h-5" />
                         LinkedIn
@@ -34,7 +34,7 @@
                         href="https://github.com/tiagofrancafernandes"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-white text-red-600 rounded-lg hover:bg-red-50 transition-colors font-medium"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-white text-emerald-600 rounded-lg hover:bg-emerald-50 transition-colors font-medium"
                     >
                         <Icon name="mdi:github" class="w-5 h-5" />
                         GitHub
@@ -135,7 +135,7 @@
 
                         <button
                             type="submit"
-                            class="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                            class="w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
                         >
                             {{ $t('lp.submitQuestion') }}
                         </button>
@@ -168,7 +168,7 @@
                                         type="checkbox"
                                         :value="tech"
                                         v-model="form.techKnow"
-                                        class="w-4 h-4 text-red-600 rounded"
+                                        class="w-4 h-4 text-emerald-600 rounded"
                                     />
                                     <span class="text-gray-700 dark:text-gray-300">{{ tech }}</span>
                                 </label>
@@ -190,7 +190,7 @@
                                         type="checkbox"
                                         :value="tech"
                                         v-model="form.techWantToLearn"
-                                        class="w-4 h-4 text-red-600 rounded"
+                                        class="w-4 h-4 text-emerald-600 rounded"
                                     />
                                     <span class="text-gray-700 dark:text-gray-300">{{ tech }}</span>
                                 </label>
@@ -252,7 +252,7 @@
                                 <p class="text-gray-600 dark:text-gray-400 mb-4">
                                     {{ locale === 'pt-BR' ? program.pt.description : program.en.description }}
                                 </p>
-                                <p class="text-sm font-semibold text-red-600 dark:text-red-400">
+                                <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
                                     Duration: {{ program.duration }}
                                 </p>
                             </div>
@@ -270,7 +270,7 @@
                             <div v-for="(benefit, bIndex) in block.benefits" :key="bIndex" class="flex items-start gap-4">
                                 <Icon
                                     name="mdi:check-circle"
-                                    class="w-6 h-6 text-red-600 dark:text-red-400 flex-shrink-0 mt-1"
+                                    class="w-6 h-6 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-1"
                                 />
                                 <p class="text-lg text-gray-700 dark:text-gray-300">
                                     {{ locale === 'pt-BR' ? benefit.pt : benefit.en }}
@@ -365,7 +365,7 @@
 
                             <button
                                 type="submit"
-                                class="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                                class="w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
                             >
                                 {{ $t('lp.submitQuestion') }}
                             </button>
@@ -374,18 +374,18 @@
                 </section>
 
                 <!-- CTA Block -->
-                <section v-else-if="block.type === 'cta'" class="py-16 sm:py-24 bg-red-600 dark:bg-red-700 text-white">
+                <section v-else-if="block.type === 'cta'" class="py-16 sm:py-24 bg-emerald-600 dark:bg-emerald-700 text-white">
                     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
                         <h2 class="text-4xl font-bold mb-4">
                             {{ locale === 'pt-BR' ? block.translations['pt-BR']?.title : block.translations['en-US']?.title }}
                         </h2>
-                        <p class="text-xl text-red-100 mb-8">
+                        <p class="text-xl text-emerald-100 mb-8">
                             {{ locale === 'pt-BR' ? block.translations['pt-BR']?.subtitle : block.translations['en-US']?.subtitle }}
                         </p>
                         <button
                             v-if="hasWhatsAppConfigured()"
                             @click="submitQuestion"
-                            class="inline-block px-8 py-3 bg-white text-red-600 font-bold rounded-lg hover:bg-red-50 transition-colors"
+                            class="inline-block px-8 py-3 bg-white text-emerald-600 font-bold rounded-lg hover:bg-emerald-50 transition-colors"
                         >
                             {{ locale === 'pt-BR' ? block.translations['pt-BR']?.buttonText : block.translations['en-US']?.buttonText }}
                         </button>

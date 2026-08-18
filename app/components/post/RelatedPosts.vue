@@ -10,11 +10,11 @@
                 :to="`/posts/${post.slug}`"
                 class="group bg-gray-50 dark:bg-slate-800 rounded-lg p-6 hover:shadow-lg dark:hover:shadow-xl transition-shadow"
             >
-                <div class="text-xs font-semibold text-red-600 dark:text-red-400 mb-2">
+                <div class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
                     {{ $t('post.tutorial') || 'TUTORIAL' }}
                 </div>
                 <h4
-                    class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"
+                    class="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors"
                 >
                     {{ getPostTitle(post) }}
                 </h4>
@@ -27,7 +27,7 @@
                     </span>
                     <Icon
                         name="mdi:arrow-right"
-                        class="w-4 h-4 text-red-600 dark:text-red-400 group-hover:translate-x-1 transition-transform"
+                        class="w-4 h-4 text-emerald-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform"
                     />
                 </div>
             </NuxtLink>

@@ -32,7 +32,7 @@
                                 'justify-center': !link?.external,
                             },
                             'border border-gray-100/20 items-center gap-2',
-                            'text-sm text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400',
+                            'text-sm text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400',
                             'transition-colors whitespace-nowrap py-1 px-2',
                             'rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800',
                         ]"

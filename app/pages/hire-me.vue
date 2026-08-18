@@ -1,12 +1,12 @@
 <template>
     <div class="min-h-screen bg-white dark:bg-slate-900">
         <!-- Hero Section -->
-        <section class="bg-red-600 dark:bg-red-700 text-white py-12 sm:py-16">
+        <section class="bg-emerald-600 dark:bg-emerald-700 text-white py-12 sm:py-16">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <h1 class="text-4xl sm:text-5xl font-bold mb-4">
                     {{ $t('hireMe.title') }}
                 </h1>
-                <p class="text-red-100 text-lg max-w-2xl">
+                <p class="text-emerald-100 text-lg max-w-2xl">
                     {{ $t('hireMe.subtitle') }}
                 </p>
             </div>
@@ -22,7 +22,7 @@
                         :class="[
                             'px-6 py-3 font-medium transition-colors border-b-2',
                             selectedTab === 'guided'
-                                ? 'border-red-600 text-red-600 dark:text-red-400'
+                                ? 'border-emerald-600 text-emerald-600 dark:text-emerald-400'
                                 : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200',
                         ]"
                     >
@@ -34,7 +34,7 @@
                         :class="[
                             'px-6 py-3 font-medium transition-colors border-b-2',
                             selectedTab === 'freetext'
-                                ? 'border-red-600 text-red-600 dark:text-red-400'
+                                ? 'border-emerald-600 text-emerald-600 dark:text-emerald-400'
                                 : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200',
                         ]"
                     >
@@ -57,12 +57,12 @@
                                     v-for="service in serviceOptions"
                                     :key="service.id"
                                     @click="selectService(service)"
-                                    class="w-full p-6 text-left rounded-lg border-2 border-gray-200 dark:border-slate-700 hover:border-red-600 dark:hover:border-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all group"
+                                    class="w-full p-6 text-left rounded-lg border-2 border-gray-200 dark:border-slate-700 hover:border-emerald-600 dark:hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-all group"
                                 >
                                     <div class="flex items-start gap-4">
                                         <Icon
                                             :name="service.icon"
-                                            class="w-8 h-8 text-red-600 dark:text-red-400 flex-shrink-0 mt-1"
+                                            class="w-8 h-8 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-1"
                                         />
                                         <div class="flex-1">
                                             <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">
@@ -74,7 +74,7 @@
                                         </div>
                                         <Icon
                                             name="mdi:chevron-right"
-                                            class="w-6 h-6 text-gray-400 group-hover:text-red-600 flex-shrink-0 mt-1"
+                                            class="w-6 h-6 text-gray-400 group-hover:text-emerald-600 flex-shrink-0 mt-1"
                                         />
                                     </div>
                                 </button>
@@ -84,7 +84,7 @@
                             <div v-else-if="!selectedDetails" class="space-y-3">
                                 <button
                                     @click="selectedService = null"
-                                    class="mb-6 flex items-center gap-2 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                    class="mb-6 flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                                 >
                                     <Icon name="mdi:chevron-left" class="w-5 h-5" />
                                     {{ $t('hireMe.back') }}
@@ -98,7 +98,7 @@
                                     v-for="detail in selectedService.details"
                                     :key="detail.id"
                                     @click="selectDetails(detail)"
-                                    class="w-full p-4 text-left rounded-lg border-2 border-gray-200 dark:border-slate-700 hover:border-red-600 dark:hover:border-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all group"
+                                    class="w-full p-4 text-left rounded-lg border-2 border-gray-200 dark:border-slate-700 hover:border-emerald-600 dark:hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-all group"
                                 >
                                     <div class="flex items-center justify-between">
                                         <span class="font-medium text-gray-900 dark:text-white">
@@ -106,7 +106,7 @@
                                         </span>
                                         <Icon
                                             name="mdi:chevron-right"
-                                            class="w-5 h-5 text-gray-400 group-hover:text-red-600"
+                                            class="w-5 h-5 text-gray-400 group-hover:text-emerald-600"
                                         />
                                     </div>
                                 </button>
@@ -116,7 +116,7 @@
                             <div v-else class="space-y-3">
                                 <button
                                     @click="selectedDetails = null"
-                                    class="mb-6 flex items-center gap-2 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium"
+                                    class="mb-6 flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium"
                                 >
                                     <Icon name="mdi:chevron-left" class="w-5 h-5" />
                                     {{ $t('hireMe.back') }}
@@ -142,7 +142,7 @@
                                                 type="checkbox"
                                                 :value="tech.id"
                                                 v-model="selectedTechs"
-                                                class="w-4 h-4 text-red-600 rounded"
+                                                class="w-4 h-4 text-emerald-600 rounded"
                                             />
                                             <div class="flex-1">
                                                 <div class="font-medium text-gray-900 dark:text-white">
@@ -170,7 +170,7 @@
                                                     type="radio"
                                                     :value="level"
                                                     v-model="knowledgeLevel"
-                                                    class="w-4 h-4 text-red-600"
+                                                    class="w-4 h-4 text-emerald-600"
                                                 />
                                                 <span class="font-medium text-gray-900 dark:text-white">
                                                     {{ $t(`hireMe.level.${level}`) }}
@@ -196,7 +196,7 @@
                                                 type="checkbox"
                                                 :value="type.id"
                                                 v-model="selectedProjectTypes"
-                                                class="w-4 h-4 text-red-600 rounded"
+                                                class="w-4 h-4 text-emerald-600 rounded"
                                             />
                                             <div class="flex-1">
                                                 <div class="font-medium text-gray-900 dark:text-white">
@@ -223,7 +223,7 @@
                                                 type="checkbox"
                                                 :value="area.id"
                                                 v-model="selectedAreas"
-                                                class="w-4 h-4 text-red-600 rounded"
+                                                class="w-4 h-4 text-emerald-600 rounded"
                                             />
                                             <div class="flex-1">
                                                 <div class="font-medium text-gray-900 dark:text-white">
@@ -250,7 +250,7 @@
                             <div class="space-y-3">
                                 <div
                                     v-if="selectedService"
-                                    class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-red-600"
+                                    class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-emerald-600"
                                 >
                                     <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">
                                         {{ $t('hireMe.serviceList') }}
@@ -262,7 +262,7 @@
 
                                 <div
                                     v-if="selectedDetails"
-                                    class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-red-600"
+                                    class="p-3 bg-white dark:bg-slate-700 rounded-lg border-l-4 border-emerald-600"
                                 >
                                     <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.type') }}</p>
                                     <p class="font-semibold text-gray-900 dark:text-white">
@@ -278,7 +278,7 @@
                                         <span
                                             v-for="tech in selectedTechs"
                                             :key="tech"
-                                            class="text-xs px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full"
+                                            class="text-xs px-2 py-1 bg-red-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full"
                                         >
                                             {{ getTechLabel(tech) }}
                                         </span>
@@ -296,7 +296,7 @@
                                         <span
                                             v-for="type in selectedProjectTypes"
                                             :key="type"
-                                            class="text-xs px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full"
+                                            class="text-xs px-2 py-1 bg-red-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full"
                                         >
                                             {{ getProjectTypeLabel(type) }}
                                         </span>
@@ -309,7 +309,7 @@
                                 <button
                                     v-if="hasWhatsAppConfigured()"
                                     @click="showPreview = true"
-                                    class="w-full px-4 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                                    class="w-full px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
                                 >
                                     {{ $t('hireMe.sendRequest') }}
                                 </button>
@@ -394,7 +394,7 @@
                             <button
                                 v-if="hasWhatsAppConfigured()"
                                 type="submit"
-                                class="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                                class="w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
                             >
                                 {{ $t('hireMe.sendMessage') }}
                             </button>
@@ -434,7 +434,7 @@
                     <div class="space-y-3">
                         <div
                             v-if="selectedService"
-                            class="p-4 bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-900/10 rounded-lg border border-red-200 dark:border-red-800"
+                            class="p-4 bg-gradient-to-r from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-900/10 rounded-lg border border-red-200 dark:border-emerald-800"
                         >
                             <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ $t('hireMe.serviceList') }}</p>
                             <p class="font-bold text-lg text-gray-900 dark:text-white">{{ selectedService.label }}</p>
@@ -578,7 +578,7 @@
                             <span class="text-white font-bold text-2xl">Laravel</span>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-red-600">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-emerald-600">
                                 {{ $t('hireMe.laravelClasses') }}
                             </h3>
                             <p class="text-sm text-gray-600 dark:text-gray-400">
@@ -642,7 +642,7 @@
                 <div class="mt-12 text-center">
                     <NuxtLink
                         to="/sitemap"
-                        class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+                        class="inline-block px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors"
                     >
                         {{ $t('hireMe.viewAllPrograms') }}
                     </NuxtLink>
