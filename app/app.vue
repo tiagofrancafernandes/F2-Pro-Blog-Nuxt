@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen flex flex-col bg-white dark:bg-neutral-900">
-        <Navbar />
-        <QuickLinks />
+        <Navbar :is-scrolled="isScrolled" :scroll-y="scrollY" />
+        <QuickLinks :is-scrolled="isScrolled" :scroll-y="scrollY" />
         <main class="flex-1">
             <NuxtPage />
         </main>
@@ -11,6 +11,7 @@
 
 <script setup lang="ts">
 const colorMode = useColorMode();
+const { scrollY, isScrolled } = useScroll(20);
 
 useSEOMeta({
     title: 'Tiago França - Senior Backend Engineer',

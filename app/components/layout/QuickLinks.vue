@@ -1,13 +1,28 @@
 <template>
-    <div class="border-b border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-16 z-40">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div
+        class="border-b border-gray-100 dark:border-slate-500/40 bg-white dark:bg-slate-900 sticky z-40 transition-all duration-200"
+        :class="[
+            {
+                'top-16': !isScrolled,
+                'top-12': isScrolled,
+            },
+        ]"
+    >
+        <div
+            :class="[
+                'mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-200',
+                {
+                    'max-w-6xl': !isScrolled,
+                    'max-w-7xl': isScrolled,
+                }
+            ]"
+        >
             <div
-                class="flex items-center gap-4 sm:gap-8 overflow-x-auto"
+                class="flex items-center gap-4 sm:gap-8 overflow-x-auto transition-all duration-200"
                 :class="[
                     {
-                        // TODO: identificar se tem scroll ou se a página está com rolagem fora do topo (0)
-                        'py-2 md:py-3': true, // se feito scroll menor que X
-                        'py-1 md:py-1': false, // se feito scroll de X ou mais
+                        'py-2 md:py-3': !isScrolled,
+                        'py-1 md:py-1': isScrolled,
                     },
                 ]"
             >
@@ -19,27 +34,28 @@
 
                 <!-- Quick Links -->
                 <div class="flex flex-wrap md:flex-nowrap items-center gap-2 sm:gap-2 flex-shrink-0">
-                    <a
+                    <NuxtLink
                         v-for="link in quickLinks"
                         :key="link.translationKey"
-                        :href="link.href"
+                        :to="link.href"
                         :target="link.external ? '_blank' : undefined"
+                        :external="link.external ? true : undefined"
                         :rel="link.external ? 'noopener noreferrer' : undefined"
                         :class="[
-                            'flex min-w-2/12',
+                            'flex min-w-[fit]',
                             {
                                 'justify-between': link?.external,
                                 'justify-center': !link?.external,
                             },
-                            'border border-gray-100/20 items-center gap-2',
-                            'text-sm text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400',
+                            'border border-gray-100/10 items-center gap-2',
+                            'text-sm text-gray-700 dark:text-gray-300 hover:text-emerald-600 hover:border-emerald-400 dark:hover:text-emerald-400',
                             'transition-colors whitespace-nowrap py-1 px-2',
-                            'rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800',
+                            'rounded-sm hover:bg-gray-100 dark:hover:bg-slate-800',
                         ]"
                     >
                         <span>{{ $t(`${link.translationKey}`) }}</span>
                         <Icon v-if="link.external" name="mdi:open-in-new" class="w-3 h-3" />
-                    </a>
+                    </NuxtLink>
                 </div>
             </div>
         </div>
@@ -47,6 +63,16 @@
 </template>
 
 <script setup lang="ts">
+interface Props {
+    isScrolled?: boolean;
+    scrollY?: number;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    isScrolled: false,
+    scrollY: 0,
+});
+
 interface QuickLink {
     translationKey: string;
     href: string;

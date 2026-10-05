@@ -1,7 +1,28 @@
 <template>
-    <nav class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700 shadow-sm">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
+    <nav
+        class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-500/40 transition-all duration-200"
+        :class="[
+            isScrolled ? 'shadow-md' : 'shadow-sm',
+        ]"
+    >
+        <div
+            :class="[
+                'mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-200',
+                {
+                    'max-w-6xl': !isScrolled,
+                    'max-w-7xl': isScrolled,
+                }
+            ]"
+        >
+            <div
+                :class="[
+                    'flex items-center justify-between transition-all duration-200',
+                    {
+                        'h-16': !isScrolled,
+                        'h-12': isScrolled,
+                    }
+                ]"
+            >
                 <!-- Logo -->
                 <NuxtLink to="/" class="flex items-center gap-2 font-bold text-xl">
                     <span class="text-emerald-600 dark:text-emerald-400">Tiago</span>
@@ -38,20 +59,20 @@
                     <!-- Search Bar -->
                     <form
                         @submit.prevent="handleSearch"
-                        class="hidden lg:flex items-center gap-2 bg-gray-100 dark:bg-slate-800 rounded-lg px-3 py-1 focus-within:ring-2 focus-within:ring-red-600"
+                        class="hidden lg:flex items-center gap-2 bg-gray-100 dark:bg-slate-800 rounded-lg px-2 py-0 focus-within:ring-1 focus-within:ring-emerald-600/40"
                     >
                         <Icon name="mdi:magnify" class="w-4 h-4 text-gray-500 dark:text-gray-400" />
                         <input
                             v-model="searchInput"
                             type="text"
                             :placeholder="$t('nav.search')"
-                            class="bg-transparent text-sm text-gray-700 dark:text-gray-300 placeholder-gray-500 dark:placeholder-gray-400 border-none outline-none w-32"
+                            class="bg-transparent text-sm text-gray-700 dark:text-gray-300 placeholder-gray-500 dark:placeholder-gray-400 border-none outline-none w-32 ring-0"
                         />
                     </form>
                 </div>
 
                 <!-- Right Actions -->
-                <div class="flex items-center gap-2">
+                <div class="flex md:hidden items-center gap-2">
                     <!-- Mobile Menu Button -->
                     <button
                         @click="isMenuOpen = !isMenuOpen"
@@ -94,6 +115,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
+interface Props {
+    isScrolled?: boolean;
+    scrollY?: number;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    isScrolled: false,
+    scrollY: 0,
+});
 
 const router = useRouter();
 const isMenuOpen = ref(false);
