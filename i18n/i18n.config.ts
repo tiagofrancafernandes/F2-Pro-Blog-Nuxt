@@ -174,6 +174,13 @@ export default {
                 sendViaWhatsApp: 'Send via WhatsApp',
                 whatsappNotConfigured: 'WhatsApp is not configured',
             },
+            sitemap:{
+                title: 'Sitemap',
+                mainPages: 'Main Pages',
+                landingPages: 'Pages',
+                linkTree: 'Link tree',
+                pageLinks: 'Links',
+            },
         },
         'pt-BR': {
             /* General use */
@@ -346,6 +353,13 @@ export default {
                 viewAllPrograms: 'Ver Todos os Programas',
                 sendViaWhatsApp: 'Enviar via WhatsApp',
                 whatsappNotConfigured: 'WhatsApp não está configurado',
+            },
+            sitemap:{
+                title: 'Sitemap',
+                mainPages: 'Main Pages',
+                landingPages: 'Pages',
+                linkTree: 'Link tree',
+                pageLinks: 'Links',
             },
         },
     },

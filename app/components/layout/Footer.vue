@@ -230,6 +230,7 @@
             >
                 <p>© 2026 Tiago França. All rights reserved.</p>
                 <div class="flex gap-6">
+                    <NuxtLink to="/sitemap" class="hover:text-emerald-500 transition-colors">Sitemap</NuxtLink>
                     <NuxtLink to="#privacy" class="hover:text-emerald-500 transition-colors">Privacy Policy</NuxtLink>
                     <NuxtLink to="#terms" class="hover:text-emerald-500 transition-colors">Terms of Service</NuxtLink>
                 </div>
