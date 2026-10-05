@@ -1,9 +1,9 @@
 # Blog Expandível: Features Fundamentais — Design Spec
 
-**Date:** 2026-08-11  
-**Status:** Approved  
-**Scope:** Search, Tags, Reading Time, Social Share, Disqus Integration  
-**Architecture:** Client-side composables + static JSON data  
+**Date:** 2026-08-11
+**Status:** Approved
+**Scope:** Search, Tags, Reading Time, Social Share, Disqus Integration
+**Architecture:** Client-side composables + static JSON data
 
 ---
 
@@ -29,7 +29,7 @@ Add foundational features to the blog that enhance discoverability, engagement, 
 
 **Index:** Title + Description + Tags (not full content, keeps bundle small)
 
-**UX:** 
+**UX:**
 - SearchModal component triggered by navbar search icon
 - Keyboard shortcut: `Cmd/Ctrl + K`
 - Real-time filtering as user types
@@ -75,7 +75,7 @@ Add foundational features to the blog that enhance discoverability, engagement, 
 - Standard UX signal (users expect it)
 - Minimal computation cost (linear scan of text)
 
-**Formula:** 
+**Formula:**
 ```
 readTime = Math.ceil(wordCount / 200)
 // 200 words/minute = Medium's standard
@@ -214,7 +214,7 @@ Each composable is stateless, pure function, easily testable.
 ## Data Flow
 
 ```
-server/data/posts/index.json
+public/data/posts/index.json
     ↓
     ├─ Tags: extracted by useTags()
     ├─ Content: measured by useReadingTime()
@@ -303,14 +303,14 @@ This design is intentionally thin on the first iteration—room to grow:
 
 ## Success Criteria
 
-✅ **Search:** User can find posts by keyword in < 500ms  
-✅ **Tags:** All posts organized by tag, counts accurate  
-✅ **Reading Time:** Displays correctly on all devices  
-✅ **Social Share:** All 5 buttons work, copy link shows toast  
-✅ **Disqus:** Loads when shortname set, hidden when not  
-✅ **Performance:** No bundle size increase > 15KB  
-✅ **Mobile:** All features functional on mobile  
-✅ **Dark mode:** All components work in dark mode  
+✅ **Search:** User can find posts by keyword in < 500ms
+✅ **Tags:** All posts organized by tag, counts accurate
+✅ **Reading Time:** Displays correctly on all devices
+✅ **Social Share:** All 5 buttons work, copy link shows toast
+✅ **Disqus:** Loads when shortname set, hidden when not
+✅ **Performance:** No bundle size increase > 15KB
+✅ **Mobile:** All features functional on mobile
+✅ **Dark mode:** All components work in dark mode
 
 ---
 
@@ -393,4 +393,3 @@ nuxt.config.ts (may add fuse.js)
 | Version | Date | Status |
 |---------|------|--------|
 | 1.0 | 2026-08-11 | Approved, Ready for Implementation |
-

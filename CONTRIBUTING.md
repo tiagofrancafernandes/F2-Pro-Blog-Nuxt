@@ -218,7 +218,7 @@ npx serve .output/public --listen 3000
 
 ## 🚀 Adicionando Posts
 
-### 1. Adicionar entrada em `server/data/posts/index.json`
+### 1. Adicionar entrada em `public/data/posts/index.json`
 
 ```json
 {
@@ -235,7 +235,7 @@ npx serve .output/public --listen 3000
 }
 ```
 
-### 2. Criar arquivo `server/data/posts/data/novo-post.json`
+### 2. Criar arquivo `public/data/posts/data/novo-post.json`
 
 ```json
 {

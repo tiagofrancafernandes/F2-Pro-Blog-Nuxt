@@ -4,7 +4,7 @@
 
 **Goal:** Criar um blog system Nuxt 4 completo com design replicado, documentação, estrutura de dados e UI responsiva mobile-first.
 
-**Architecture:** Sistema modular com separação clara: (1) design-system centralizado, (2) documentação de regras (AGENTS.md, CLAUDE.md), (3) estrutura de dados estática em server/data/, (4) componentes UI reutilizáveis, (5) pages dinâmicas com Nuxt routing.
+**Architecture:** Sistema modular com separação clara: (1) design-system centralizado, (2) documentação de regras (AGENTS.md, CLAUDE.md), (3) estrutura de dados estática em public/data/, (4) componentes UI reutilizáveis, (5) pages dinâmicas com Nuxt routing.
 
 **Tech Stack:** Nuxt 4, Vue 3 Composition API, TailwindCSS v4, @nuxt/icon (Iconify), @nuxtjs/color-mode (dark mode), @nuxtjs/i18n (i18n), app.config.ts (dynamic paleta).
 
@@ -13,7 +13,7 @@
 - Todas as regras de código em `UNIVERSAL-CODE-STYLE-RULES.md` são obrigatórias
 - AGENTS.md e CLAUDE.md devem referenciar `design-system/DESIGN.md` e `design-system/design.json`
 - Paleta de cores gerenciada via `app.config.ts` (dinâmica, não hardcoded)
-- Dados de posts vêm de `server/data/posts/` (estrutura A: index.json + arquivos individuais)
+- Dados de posts vêm de `public/data/posts/` (estrutura A: index.json + arquivos individuais)
 - Imagens dummy: `https://picsum.photos` com IDs fixos
 - Mobile-first, mas boa apresentação em desktop
 - Nome do blog dinâmico via `nuxt.config.ts` (padrão: "Tiago França")
@@ -66,14 +66,14 @@ App config com paleta dinâmica e blog metadata.
 
 ---
 
-### Task 6: Criar Estrutura de Dados (server/data/posts/)
+### Task 6: Criar Estrutura de Dados (public/data/posts/)
 
 **Files:**
-- Create: `server/data/posts/index.json`
-- Create: `server/data/posts/data/post-um.json`
-- Create: `server/data/posts/data/post-dois.json`
-- Create: `server/data/posts/data/post-tres.json`
-- Create: `server/data/posts/data/post-quatro.json`
+- Create: `public/data/posts/index.json`
+- Create: `public/data/posts/data/post-um.json`
+- Create: `public/data/posts/data/post-dois.json`
+- Create: `public/data/posts/data/post-tres.json`
+- Create: `public/data/posts/data/post-quatro.json`
 
 Posts data structure com 4 exemplos.
 

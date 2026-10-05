@@ -72,7 +72,7 @@ npx serve .output/public --listen 3000
 │   ├── index.vue                   # Home (hero + post grid)
 │   └── posts/[slug].vue            # Post detail (dynamic routing)
 │
-├── server/data/posts/
+├── public/data/posts/
 │   ├── index.json                  # Posts index
 │   └── data/
 │       ├── post-um.json
@@ -351,6 +351,6 @@ MIT
 
 ---
 
-**Author**: Tiago França  
-**Email**: devtiagofranca@gmail.com  
+**Author**: Tiago França
+**Email**: devtiagofranca@gmail.com
 **Last Updated**: 2026-08-11

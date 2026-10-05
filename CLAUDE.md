@@ -343,10 +343,10 @@ const { posts, isLoading, error } = usePosts()
 
 ### 4.1 Posts Data Location
 
-**Structure:** `server/data/posts/`
+**Structure:** `public/data/posts/`
 
 ```
-server/data/posts/
+public/data/posts/
 ├── index.json              # Post index/manifest
 └── data/
     ├── post-um.json        # Individual post data
@@ -381,7 +381,7 @@ server/data/posts/
 
 ### 4.3 Individual Post Format
 
-**File:** `server/data/posts/data/post-um.json`
+**File:** `public/data/posts/data/post-um.json`
 
 ```json
 {
@@ -409,7 +409,7 @@ server/data/posts/
 export function usePosts() {
     async function fetchPosts(): Promise<Post[]> {
         try {
-            const response = await fetch('/server/data/posts/index.json')
+            const response = await fetch('/data/posts/index.json')
 
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`)
@@ -427,7 +427,7 @@ export function usePosts() {
 
     async function fetchPostBySlug(slug: string): Promise<Post | null> {
         try {
-            const response = await fetch(`/server/data/posts/data/${slug}.json`)
+            const response = await fetch(`/data/posts/data/${slug}.json`)
 
             if (!response.ok) {
                 return null
@@ -566,7 +566,7 @@ Before considering work complete, verify in the browser:
 - [ ] Button states visible
 
 **Navigation & Data:**
-- [ ] Home page loads posts from server/data/posts/
+- [ ] Home page loads posts from `data/posts/`
 - [ ] Post detail page loads individual post
 - [ ] URL slug routing works (`/posts/post-um`)
 - [ ] Back navigation works
@@ -679,7 +679,7 @@ For new tasks on this project:
 5. Write component with TypeScript + Composition API
 6. Use object syntax for conditional classes
 7. Test on desktop, mobile, dark mode
-8. Verify data flow from `server/data/posts/`
+8. Verify data flow from `/data/posts/`
 9. Commit with proper message format
 10. Self-review code quality checklist
 
