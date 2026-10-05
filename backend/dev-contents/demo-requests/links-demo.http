@@ -1,0 +1,39 @@
+### Demonstration Requests for Links API and Redirection Routes
+
+@baseUrl = http://localhost:3000
+
+### 1. Redirect to CV (Default locale / pt-BR)
+GET {{baseUrl}}/l/cv
+Accept: text/html
+
+### 2. Redirect to CV with English locale query
+GET {{baseUrl}}/l/cv?lang=en
+Accept: text/html
+
+### 3. Get CV link data in JSON format
+GET {{baseUrl}}/l/cv
+Accept: application/json
+
+### 4. Redirect to LinkedIn
+GET {{baseUrl}}/l/linkedin
+Accept: text/html
+
+### 5. Redirect to GitHub
+GET {{baseUrl}}/l/github
+Accept: text/html
+
+### 6. Redirect to WhatsApp
+GET {{baseUrl}}/l/whatsapp
+Accept: text/html
+
+### 7. Redirect to SuperProf
+GET {{baseUrl}}/l/superprof
+Accept: text/html
+
+### 8. Attempt access to inactive link (should return 404)
+GET {{baseUrl}}/l/campanha-xyz
+Accept: text/html
+
+### 9. List all active links via public API
+GET {{baseUrl}}/public/links
+Accept: application/json
