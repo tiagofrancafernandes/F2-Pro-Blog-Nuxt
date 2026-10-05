@@ -2,6 +2,26 @@ export function useWhatsApp() {
     const runtimeConfig = useRuntimeConfig()
     const appConfig = useAppConfig()
 
+    function deobfuscateString(encoded: string): string {
+        if (!encoded) {
+            return ''
+        }
+
+        try {
+            const key = 42
+            const binary = typeof atob !== 'undefined'
+                ? atob(encoded)
+                : Buffer.from(encoded, 'base64').toString('binary')
+
+            return Array.from(binary)
+                .map((c) => String.fromCharCode(c.charCodeAt(0) ^ key))
+                .reverse()
+                .join('')
+        } catch {
+            return ''
+        }
+    }
+
     function sanitizePhoneNumber(value: string | number | null | undefined): string {
         if (!value) {
             return ''
@@ -15,6 +35,15 @@ export function useWhatsApp() {
     function getWhatsAppNumber(customNumber?: string | number | null): string {
         if (customNumber) {
             return sanitizePhoneNumber(customNumber)
+        }
+
+        const phoneToken = (runtimeConfig.public?.contact as any)?.phoneToken
+
+        if (phoneToken) {
+            const decoded = deobfuscateString(phoneToken)
+            if (decoded) {
+                return sanitizePhoneNumber(decoded)
+            }
         }
 
         const runtimeNumber =

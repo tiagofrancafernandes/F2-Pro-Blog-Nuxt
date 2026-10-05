@@ -1,6 +1,20 @@
 import { fileURLToPath } from 'node:url';
 import tailwindcss from "@tailwindcss/vite";
 
+function obfuscateConfigString(str: string): string {
+    if (!str) {
+        return '';
+    }
+
+    const key = 42;
+    const xorChars = Array.from(str)
+        .reverse()
+        .map((c) => String.fromCharCode(c.charCodeAt(0) ^ key))
+        .join('');
+
+    return Buffer.from(xorChars, 'binary').toString('base64');
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
@@ -204,11 +218,9 @@ export default defineNuxtConfig({
             githubUrl: process.env.NUXT_PUBLIC_GITHUB_URL || '',
             linkedinUrl: process.env.NUXT_PUBLIC_LINKEDIN_URL || '',
             googleAnalyticsId: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_ID || '',
-            whatsappNumber: process.env.NUXT_PUBLIC_WHATSAPP_NUMBER || '',
             contact: {
-                whatsapp: {
-                    number: process.env.NUXT_PUBLIC_WHATSAPP_NUMBER || '',
-                },
+                phoneToken: obfuscateConfigString(process.env.NUXT_PUBLIC_WHATSAPP_NUMBER || '5541984402684'),
+                emailToken: obfuscateConfigString(process.env.NUXT_PUBLIC_CONTACT_EMAIL || 'devtiagofranca@gmail.com'),
             },
         },
     },

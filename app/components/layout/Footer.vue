@@ -16,22 +16,59 @@
                         </p>
                     </div>
 
-                    <!-- Contact Info -->
+                    <!-- Contact Info (Anti-Crawler Protected) -->
                     <div class="space-y-3">
-                        <NuxtLink
-                            to="mailto:devtiagofranca@gmail.com"
-                            class="flex items-center gap-3 text-gray-300 hover:text-emerald-500 transition-colors text-sm"
-                        >
-                            <Icon name="mdi:email" class="w-5 h-5" />
-                            devtiagofranca@gmail.com
-                        </NuxtLink>
-                        <NuxtLink
-                            to="tel:+5511999999999"
-                            class="flex items-center gap-3 text-gray-300 hover:text-emerald-500 transition-colors text-sm"
-                        >
-                            <Icon name="mdi:phone" class="w-5 h-5" />
-                            +55 (11) 99999-9999
-                        </NuxtLink>
+                        <div class="flex items-center gap-2 text-sm text-gray-300">
+                            <button
+                                type="button"
+                                @click="handleEmailClick"
+                                class="flex items-center gap-3 hover:text-emerald-500 transition-colors text-left group cursor-pointer"
+                                :title="isEmailRevealed ? 'Enviar e-mail' : 'Clique para exibir e-mail'"
+                            >
+                                <Icon name="mdi:email" class="w-5 h-5 flex-shrink-0 text-emerald-500" />
+                                <span :class="{ 'font-mono text-gray-400': !isEmailRevealed }">
+                                    {{ formattedEmail }}
+                                </span>
+                            </button>
+                            <button
+                                type="button"
+                                @click="toggleEmailReveal"
+                                class="p-1 text-gray-500 hover:text-emerald-400 transition-colors cursor-pointer"
+                                :title="isEmailRevealed ? 'Ocultar e-mail' : 'Exibir e-mail'"
+                                aria-label="Toggle email visibility"
+                            >
+                                <Icon
+                                    :name="isEmailRevealed ? 'mdi:eye-off-outline' : 'mdi:eye-outline'"
+                                    class="w-4 h-4"
+                                />
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-2 text-sm text-gray-300">
+                            <button
+                                type="button"
+                                @click="handlePhoneClick"
+                                class="flex items-center gap-3 hover:text-emerald-500 transition-colors text-left group cursor-pointer"
+                                :title="isPhoneRevealed ? 'Abrir no WhatsApp' : 'Clique para exibir telefone/WhatsApp'"
+                            >
+                                <Icon name="mdi:whatsapp" class="w-5 h-5 flex-shrink-0 text-emerald-500" />
+                                <span :class="{ 'font-mono text-gray-400': !isPhoneRevealed }">
+                                    {{ formattedPhone }}
+                                </span>
+                            </button>
+                            <button
+                                type="button"
+                                @click="togglePhoneReveal"
+                                class="p-1 text-gray-500 hover:text-emerald-400 transition-colors cursor-pointer"
+                                :title="isPhoneRevealed ? 'Ocultar telefone' : 'Exibir telefone'"
+                                aria-label="Toggle phone visibility"
+                            >
+                                <Icon
+                                    :name="isPhoneRevealed ? 'mdi:eye-off-outline' : 'mdi:eye-outline'"
+                                    class="w-4 h-4"
+                                />
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Social Links -->
@@ -246,8 +283,21 @@
 </template>
 
 <script setup lang="ts">
+import { useObfuscatedContact } from '~/composables/useObfuscatedContact';
+
 const colorMode = useColorMode();
 const { locale } = useI18n();
+
+const {
+    isPhoneRevealed,
+    isEmailRevealed,
+    formattedPhone,
+    formattedEmail,
+    togglePhoneReveal,
+    toggleEmailReveal,
+    handlePhoneClick,
+    handleEmailClick,
+} = useObfuscatedContact();
 
 type localeValues = "en-US" | "en" | "pt-BR" | "pt";
 
