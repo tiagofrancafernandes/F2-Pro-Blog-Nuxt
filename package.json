@@ -43,5 +43,8 @@
         "happy-dom": "^20.11.2",
         "prettier": "^3.9.6",
         "vitest": "^4.1.10"
+    },
+    "overrides": {
+        "jsdom": "26.1.0"
     }
 }
