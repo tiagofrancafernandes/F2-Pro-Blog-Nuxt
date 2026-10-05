@@ -128,8 +128,8 @@
         </div>
     </div>
 
-    <div v-else class="flex text-center py-16 justify-center content-center min-h-48 lg:py-24">
-        <span class="text-gray-600 dark:text-gray-400">{{ $t('post.loading') }}</span>
+    <div v-else class="flex flex-col items-center justify-center py-20 min-h-64">
+        <LoadingSpinner size="lg" :text="$t('post.loading')" />
     </div>
 </template>
 
