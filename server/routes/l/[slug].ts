@@ -1,5 +1,6 @@
 import { readFileSync, existsSync } from 'node:fs'
 import { resolve, join } from 'node:path'
+import defaultLinksData from '@@/server/data/links/index.json'
 
 interface LinkTranslation {
     title: string
@@ -23,21 +24,25 @@ interface LinksData {
     links: Link[]
 }
 
-function resolveLinksFilePath(): string {
+function getLinksData(): LinksData {
     const candidates = [
         join(process.cwd(), 'server', 'data', 'links', 'index.json'),
         resolve('./server/data/links/index.json'),
         join(process.cwd(), 'public', 'data', 'links', 'index.json'),
-        resolve('./public/data/links/index.json'),
     ]
 
     for (const candidate of candidates) {
         if (existsSync(candidate)) {
-            return candidate
+            try {
+                const content = readFileSync(candidate, 'utf-8')
+                return JSON.parse(content)
+            } catch {
+                // Ignore read error and fallback
+            }
         }
     }
 
-    return candidates[0]
+    return defaultLinksData as LinksData
 }
 
 function detectRequestLocale(event: any): 'en-US' | 'pt-BR' {
@@ -98,18 +103,7 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        const linksFilePath = resolveLinksFilePath()
-
-        if (!existsSync(linksFilePath)) {
-            throw createError({
-                statusCode: 404,
-                statusMessage: 'Links database not found',
-            })
-        }
-
-        const fileContent = readFileSync(linksFilePath, 'utf-8')
-        const data: LinksData = JSON.parse(fileContent)
-
+        const data = getLinksData()
         const link = data.links?.find((l) => l.slug === slug)
 
         if (!link) {
@@ -157,7 +151,7 @@ export default defineEventHandler(async (event) => {
             throw error
         }
 
-        console.error('Error reading links file:', error)
+        console.error('Error processing link redirect:', error)
 
         throw createError({
             statusCode: 500,

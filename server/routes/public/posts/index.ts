@@ -1,35 +1,41 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import { readFileSync, existsSync } from 'node:fs'
+import { join } from 'node:path'
+import defaultPostsData from '../../../../public/data/posts/index.json'
+
+function getPostsData(): any {
+    const filePath = join(process.cwd(), 'public', 'data', 'posts', 'index.json')
+
+    if (existsSync(filePath)) {
+        try {
+            const content = readFileSync(filePath, 'utf-8')
+            return JSON.parse(content)
+        } catch {
+            // Ignore and use default
+        }
+    }
+
+    return defaultPostsData
+}
 
 export default defineEventHandler(async (event) => {
     try {
-        const filePath = path.join(process.cwd(), 'public', 'data', 'posts', `index.json`);
+        const data = getPostsData()
+        let posts = data?.posts || []
+        posts = Array.isArray(posts) ? posts.filter((item: any) => item?.status === 'published') : []
 
-        if (!fs.existsSync(filePath)) {
-            throw createError({
-                statusCode: 404,
-                statusMessage: `Index not found`,
-            });
-        }
+        setHeader(event, 'Content-Type', 'application/json')
 
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(content);
-        let posts = data?.posts || [];
-        posts = Array.isArray(posts) ? posts.filter((i: any) => i?.status === 'published') : [];
-
-        setHeader(event, 'Content-Type', 'application/json');
-
-        return posts;
+        return posts
     } catch (error) {
         if (error instanceof Error && 'statusCode' in error) {
-            throw error;
+            throw error
         }
 
-        console.error(`Error serving post list:`, error);
+        console.error('Error serving post list:', error)
 
         throw createError({
             statusCode: 500,
-            statusMessage: `Failed to list post`,
-        });
+            statusMessage: 'Failed to list posts',
+        })
     }
-});
+})
