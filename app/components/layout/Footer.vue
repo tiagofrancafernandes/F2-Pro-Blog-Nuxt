@@ -228,11 +228,17 @@
             <div
                 class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400"
             >
-                <p>© 2026 Tiago França. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <NuxtLink to="/sitemap" class="hover:text-emerald-500 transition-colors">Sitemap</NuxtLink>
-                    <NuxtLink to="#privacy" class="hover:text-emerald-500 transition-colors">Privacy Policy</NuxtLink>
-                    <NuxtLink to="#terms" class="hover:text-emerald-500 transition-colors">Terms of Service</NuxtLink>
+                <p>{{ $t('footer.copyright') }}</p>
+                <div class="flex flex-wrap gap-6 items-center">
+                    <NuxtLink to="/sitemap" class="hover:text-emerald-500 transition-colors">
+                        {{ $t('sitemap.title') }}
+                    </NuxtLink>
+                    <NuxtLink to="/p/privacy-policy" class="hover:text-emerald-500 transition-colors">
+                        {{ $t('footer.privacyPolicy') }}
+                    </NuxtLink>
+                    <NuxtLink to="/p/terms-of-service" class="hover:text-emerald-500 transition-colors">
+                        {{ $t('footer.termsOfService') }}
+                    </NuxtLink>
                 </div>
             </div>
         </div>

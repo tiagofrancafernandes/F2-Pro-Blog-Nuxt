@@ -1,0 +1,31 @@
+### Demonstration Requests for Pages API and Routes
+
+@baseUrl = http://localhost:3000
+
+### 1. List all published static pages
+GET {{baseUrl}}/public/pages
+Accept: application/json
+
+### 2. Get Privacy Policy page by primary slug
+GET {{baseUrl}}/public/pages/privacy-policy
+Accept: application/json
+
+### 3. Get Privacy Policy page by alias (privacy)
+GET {{baseUrl}}/public/pages/privacy
+Accept: application/json
+
+### 4. Get Terms of Service page by primary slug
+GET {{baseUrl}}/public/pages/terms-of-service
+Accept: application/json
+
+### 5. Get Terms of Service page by alias (terms)
+GET {{baseUrl}}/public/pages/terms
+Accept: application/json
+
+### 6. View Privacy Policy via frontend route /p/privacy-policy
+GET {{baseUrl}}/p/privacy-policy
+Accept: text/html
+
+### 7. View Terms of Service via frontend route /page/terms-of-service
+GET {{baseUrl}}/page/terms-of-service
+Accept: text/html

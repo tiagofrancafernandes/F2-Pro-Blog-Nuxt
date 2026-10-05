@@ -43,6 +43,8 @@ export default {
                 follow: 'Follow',
                 copyright: '© 2026 Tiago França. All rights reserved.',
                 resources: 'Resources',
+                privacyPolicy: 'Privacy Policy',
+                termsOfService: 'Terms of Service',
             },
             post: {
                 loading: 'Loading post content...',
@@ -223,6 +225,8 @@ export default {
                 follow: 'Seguir',
                 copyright: '© 2026 Tiago França. Todos os direitos reservados.',
                 resources: 'Recursos',
+                privacyPolicy: 'Política de Privacidade',
+                termsOfService: 'Termos de Serviço',
             },
             post: {
                 loading: 'Carregando conteúdo do post...',

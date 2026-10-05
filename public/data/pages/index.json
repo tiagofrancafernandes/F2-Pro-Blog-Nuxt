@@ -1,0 +1,40 @@
+{
+    "pages": [
+        {
+            "id": "privacy-policy",
+            "slug": "privacy-policy",
+            "aliases": ["privacy", "politica-de-privacidade"],
+            "status": "published",
+            "date": "2026-01-01",
+            "updatedAt": "2026-10-01",
+            "translations": {
+                "en-US": {
+                    "title": "Privacy Policy",
+                    "description": "Privacy Policy and data protection terms for Tiago França's website, blog, and services."
+                },
+                "pt-BR": {
+                    "title": "Política de Privacidade",
+                    "description": "Política de Privacidade e termos de proteção de dados do site pessoal, blog e serviços de Tiago França."
+                }
+            }
+        },
+        {
+            "id": "terms-of-service",
+            "slug": "terms-of-service",
+            "aliases": ["terms", "termos-de-servico", "termos-de-uso"],
+            "status": "published",
+            "date": "2026-01-01",
+            "updatedAt": "2026-10-01",
+            "translations": {
+                "en-US": {
+                    "title": "Terms of Service",
+                    "description": "Terms of Service governing the use of Tiago França's website, blog, and consulting services."
+                },
+                "pt-BR": {
+                    "title": "Termos de Serviço",
+                    "description": "Termos de Serviço que regem a utilização do site, blog e serviços de consultoria de Tiago França."
+                }
+            }
+        }
+    ]
+}
