@@ -136,7 +136,7 @@
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                            <NuxtLink to="/posts" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 {{ $t('nav.posts') }}
                             </NuxtLink>
                         </li>
@@ -146,18 +146,13 @@
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="#tutorials" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
-                                Tutorials
+                            <NuxtLink to="/posts" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                                {{ $t('nav.tutorials') }}
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="#guides" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
-                                Guides
-                            </NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="#portfolio" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
-                                Portfolio
+                            <NuxtLink to="/portfolio" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                                {{ $t('nav.portfolio') }}
                             </NuxtLink>
                         </li>
                     </ul>

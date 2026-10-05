@@ -38,7 +38,13 @@
                         {{ $t('nav.home') }}
                     </NuxtLink>
                     <NuxtLink
-                        to="/"
+                        to="/portfolio"
+                        class="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                    >
+                        {{ $t('nav.portfolio') }}
+                    </NuxtLink>
+                    <NuxtLink
+                        to="/posts"
                         class="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                     >
                         {{ $t('nav.posts') }}
@@ -94,7 +100,14 @@
                     {{ $t('nav.home') }}
                 </NuxtLink>
                 <NuxtLink
-                    to="/"
+                    to="/portfolio"
+                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+                    @click="isMenuOpen = false"
+                >
+                    {{ $t('nav.portfolio') }}
+                </NuxtLink>
+                <NuxtLink
+                    to="/posts"
                     class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
                     @click="isMenuOpen = false"
                 >
@@ -106,6 +119,13 @@
                     @click="isMenuOpen = false"
                 >
                     {{ $t('nav.about') }}
+                </NuxtLink>
+                <NuxtLink
+                    to="/hire-me?type=classes"
+                    class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+                    @click="isMenuOpen = false"
+                >
+                    {{ $t('nav.classes') }}
                 </NuxtLink>
             </div>
         </div>

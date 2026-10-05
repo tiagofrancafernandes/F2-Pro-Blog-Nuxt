@@ -1,14 +1,14 @@
 <template>
     <div
-        class="inline-flex flex-col items-center justify-center gap-3"
-        :class="containerClass"
+        class="flex flex-col items-center justify-center gap-3 py-6"
+        :class="{ 'w-full': fullWidth }"
         role="status"
         aria-live="polite"
     >
         <svg
             :class="[
-                'animate-spin text-emerald-600 dark:text-emerald-400',
-                sizeClasses[size] || sizeClasses.md,
+                'animate-spin text-emerald-500 dark:text-emerald-400',
+                sizeClasses,
             ]"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -29,7 +29,11 @@
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             />
         </svg>
-        <span v-if="text" class="text-sm font-medium text-gray-600 dark:text-gray-300">
+
+        <span
+            v-if="text"
+            class="text-sm font-medium text-gray-600 dark:text-gray-300"
+        >
             {{ text }}
         </span>
         <span class="sr-only">{{ text || 'Carregando...' }}</span>
@@ -37,22 +41,29 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-    size?: 'sm' | 'md' | 'lg' | 'xl';
-    text?: string;
-    containerClass?: string;
-}
+    import { computed } from 'vue'
 
-const props = withDefaults(defineProps<Props>(), {
-    size: 'md',
-    text: '',
-    containerClass: '',
-});
+    interface Props {
+        size?: 'sm' | 'md' | 'lg'
+        text?: string
+        fullWidth?: boolean
+    }
 
-const sizeClasses: Record<string, string> = {
-    sm: 'w-4 h-4',
-    md: 'w-6 h-6',
-    lg: 'w-8 h-8',
-    xl: 'w-12 h-12',
-};
+    const props = withDefaults(defineProps<Props>(), {
+        size: 'md',
+        text: '',
+        fullWidth: true,
+    })
+
+    const sizeClasses = computed(() => {
+        if (props.size === 'sm') {
+            return 'w-5 h-5'
+        }
+
+        if (props.size === 'lg') {
+            return 'w-10 h-10'
+        }
+
+        return 'w-7 h-7'
+    })
 </script>

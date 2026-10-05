@@ -1,0 +1,74 @@
+{
+    "faqs": [
+        {
+            "id": "faq-services",
+            "category": "services",
+            "translations": {
+                "en-US": {
+                    "question": "What kind of projects and services do you take on?",
+                    "answer": "I specialize in backend software architecture, mission-critical REST & GraphQL APIs, database optimization (PostgreSQL/MySQL), cloud migrations, and high-concurrency systems using PHP/Laravel and Node.js. I also provide technical consulting and 1-on-1 developer mentorship."
+                },
+                "pt-BR": {
+                    "question": "Que tipos de projetos e serviços você desenvolve?",
+                    "answer": "Sou especialista em arquitetura de software backend, APIs REST e GraphQL de missão crítica, otimização de bancos de dados (PostgreSQL/MySQL), migrações para nuvem e sistemas de alta concorrência com PHP/Laravel e Node.js. Também presto consultoria técnica e mentoria individual para desenvolvedores."
+                }
+            }
+        },
+        {
+            "id": "faq-process",
+            "category": "process",
+            "translations": {
+                "en-US": {
+                    "question": "How does the engagement and development process work?",
+                    "answer": "We start with a technical discovery session to understand your architecture, deadlines, and business goals. Following that, I present an architectural blueprint and project milestones. Work is conducted in transparent, agile sprints with continuous integration and direct communication."
+                },
+                "pt-BR": {
+                    "question": "Como funciona o processo de contratação e desenvolvimento?",
+                    "answer": "Iniciamos com uma conversa de alinhamento técnico para mapear suas necessidades, prazos e metas de negócio. Em seguida, elaboro a proposta de arquitetura e cronograma de entregas. O desenvolvimento é conduzido em sprints transparentes com integração contínua e comunicação direta."
+                }
+            }
+        },
+        {
+            "id": "faq-technologies",
+            "category": "stack",
+            "translations": {
+                "en-US": {
+                    "question": "What is your primary technology stack?",
+                    "answer": "My core backend stack includes modern PHP (8.x) & Laravel, Node.js/TypeScript, PostgreSQL, Redis, RabbitMQ, and Docker. On the frontend and tooling side, I work with Vue 3, Nuxt 4, and TailwindCSS for fullstack applications."
+                },
+                "pt-BR": {
+                    "question": "Qual é a sua stack tecnológica principal?",
+                    "answer": "Minha stack principal de backend é composta por PHP moderno (8.x) & Laravel, Node.js/TypeScript, PostgreSQL, Redis, RabbitMQ e Docker. No frontend e ferramental, atuo com Vue 3, Nuxt 4 e TailwindCSS para soluções completas."
+                }
+            }
+        },
+        {
+            "id": "faq-classes",
+            "category": "education",
+            "translations": {
+                "en-US": {
+                    "question": "Do you offer private programming classes or corporate workshops?",
+                    "answer": "Yes! I offer personalized one-on-one programming classes ranging from beginner fundamentals to advanced software architecture, design patterns, and Laravel mastery. You can request a session via the Hire Me page."
+                },
+                "pt-BR": {
+                    "question": "Você oferece aulas particulares de programação ou treinamentos?",
+                    "answer": "Sim! Ofereço aulas particulares e mentorias individuais personalizadas, desde conceitos fundamentais até tópicos avançados de arquitetura de software, padrões de projeto e ecossistema Laravel. Você pode solicitar uma aula na página Contrate-me."
+                }
+            }
+        },
+        {
+            "id": "faq-availability",
+            "category": "availability",
+            "translations": {
+                "en-US": {
+                    "question": "Are you available for international and remote contracts?",
+                    "answer": "Yes, I am fully set up for remote collaboration worldwide, accommodating different time zones with fluent English and Portuguese communication and asynchronous reporting."
+                },
+                "pt-BR": {
+                    "question": "Você está disponível para contratos remotos nacionais ou internacionais?",
+                    "answer": "Sim, atuo 100% de forma remota para empresas no Brasil e no exterior, com flexibilidade de fuso horário, comunicação fluente em português e inglês e fluxo de trabalho assíncrono transparente."
+                }
+            }
+        }
+    ]
+}

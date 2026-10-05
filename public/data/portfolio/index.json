@@ -1,0 +1,207 @@
+{
+    "items": [
+        {
+            "id": "case-payment-gateway",
+            "slug": "gateway-pagamentos-alta-performance",
+            "type": "case",
+            "featured": true,
+            "category": "backend",
+            "technologies": ["PHP", "Laravel", "Redis", "PostgreSQL", "Docker", "AWS"],
+            "repositoryUrl": "https://github.com/tiagofrancafernandes",
+            "previewUrl": "https://tiagofranca.com",
+            "coverImage": "https://placehold.co/600x400/065f46/ffffff?text=Payment+Gateway+Architecture",
+            "date": "2024-05",
+            "metrics": "99.99% uptime | < 50ms latency | PCI DSS",
+            "translations": {
+                "en-US": {
+                    "title": "High-Performance Payment Gateway",
+                    "description": "Architected a PCI-compliant payment orchestration engine processing millions in transactional volume with sub-50ms latency and high fault tolerance.",
+                    "role": "Lead Backend Architect",
+                    "client": "Fintech Enterprise",
+                    "impact": "Processed over $15M/month with 99.99% uptime and zero transaction loss."
+                },
+                "pt-BR": {
+                    "title": "Gateway de Pagamentos de Alta Performance",
+                    "description": "Arquitetura e desenvolvimento de motor de orquestração de pagamentos em conformidade com PCI DSS, processando alto volume com latência inferior a 50ms.",
+                    "role": "Arquiteto Backend Líder",
+                    "client": "Fintech Enterprise",
+                    "impact": "Processamento de mais de R$ 75M/mês com 99,99% de disponibilidade e tolerância a falhas."
+                }
+            }
+        },
+        {
+            "id": "case-multitenant-billing",
+            "slug": "motor-cobranca-saas-multitenant",
+            "type": "case",
+            "featured": true,
+            "category": "saas",
+            "technologies": ["PHP 8", "Laravel", "Stripe API", "Webhooks", "PostgreSQL", "RabbitMQ"],
+            "repositoryUrl": "https://github.com/tiagofrancafernandes",
+            "previewUrl": "https://tiagofranca.com",
+            "coverImage": "https://placehold.co/600x400/047857/ffffff?text=SaaS+Billing+Engine",
+            "date": "2024-02",
+            "metrics": "50k+ active tenants | Automated recurring billing",
+            "translations": {
+                "en-US": {
+                    "title": "Multi-Tenant SaaS Subscription & Billing Engine",
+                    "description": "Built an automated recurring billing and invoice generation system handling complex tiered usage, proration, and multiple currency gateways.",
+                    "role": "Senior Software Engineer",
+                    "client": "B2B SaaS Platform",
+                    "impact": "Automated billing for 50,000+ businesses, reducing payment friction by 40%."
+                },
+                "pt-BR": {
+                    "title": "Motor de Cobrança e Assinaturas SaaS Multi-Tenant",
+                    "description": "Construção de sistema automatizado de cobrança recorrente e faturamento com suporte a múltiplos planos, rateios e webhooks assíncronos.",
+                    "role": "Engenheiro de Software Sênior",
+                    "client": "Plataforma SaaS B2B",
+                    "impact": "Faturamento automatizado para mais de 50.000 empresas, reduzindo inadimplência em 40%."
+                }
+            }
+        },
+        {
+            "id": "case-fleet-telemetry",
+            "slug": "api-telemetria-frotas-tempo-real",
+            "type": "case",
+            "featured": true,
+            "category": "iot",
+            "technologies": ["Node.js", "WebSockets", "Go", "TimescaleDB", "Redis", "Docker"],
+            "repositoryUrl": "https://github.com/tiagofrancafernandes",
+            "previewUrl": "https://tiagofranca.com",
+            "coverImage": "https://placehold.co/600x400/0f766e/ffffff?text=Fleet+Telemetry+API",
+            "date": "2023-11",
+            "metrics": "15,000 events/sec | Sub-second real-time tracking",
+            "translations": {
+                "en-US": {
+                    "title": "Real-Time Fleet Telemetry & IoT Ingestion API",
+                    "description": "Designed a high-throughput stream processing pipeline ingesting telemetry coordinates from thousands of connected vehicles simultaneously.",
+                    "role": "Distributed Systems Specialist",
+                    "client": "Logistics & Transport Co.",
+                    "impact": "Scaled system to handle 15,000 GPS events/sec with real-time route tracing and alerts."
+                },
+                "pt-BR": {
+                    "title": "API de Telemetria e Rastreamento de Frotas em Tempo Real",
+                    "description": "Pipeline de ingestão de dados massivos e eventos telemétricos via WebSockets com persistência otimizada em séries temporais.",
+                    "role": "Especialista em Sistemas Distribuídos",
+                    "client": "Empresa de Logística e Transportes",
+                    "impact": "Suporte a 15.000 eventos/segundo com rastreamento ao vivo e alertas instantâneos de geofencing."
+                }
+            }
+        },
+        {
+            "id": "case-logistics-optimizer",
+            "slug": "otimizador-rotas-entregas-concorrencia",
+            "type": "case",
+            "featured": false,
+            "category": "backend",
+            "technologies": ["PHP", "Laravel", "Graph Algorithms", "PostGIS", "Redis"],
+            "repositoryUrl": "https://github.com/tiagofrancafernandes",
+            "previewUrl": "https://tiagofranca.com",
+            "coverImage": "https://placehold.co/600x400/115e59/ffffff?text=Route+Optimization+Engine",
+            "date": "2023-08",
+            "metrics": "35% faster delivery routing | 200k daily deliveries",
+            "translations": {
+                "en-US": {
+                    "title": "Delivery Route Optimization Engine",
+                    "description": "Optimized delivery route calculation and dispatch algorithms for a nationwide last-mile delivery operator.",
+                    "role": "Backend Consultant",
+                    "client": "Express Logistics Network",
+                    "impact": "Decreased route dispatch calculation time by 60% and fuel overhead by 18%."
+                },
+                "pt-BR": {
+                    "title": "Otimizador de Rotas e Despacho de Entregas",
+                    "description": "Algoritmos e serviços para cálculo de roteirização e agrupamento inteligente de pedidos para malha logística nacional.",
+                    "role": "Consultor Backend",
+                    "client": "Rede de Entregas Expressas",
+                    "impact": "Redução de 60% no tempo de cálculo de rotas e economia de 18% em custos operacionais de frota."
+                }
+            }
+        },
+        {
+            "id": "project-antigravity-tooling",
+            "slug": "antigravity-developer-tools",
+            "type": "project",
+            "featured": true,
+            "category": "devtools",
+            "technologies": ["TypeScript", "Node.js", "Vite", "CLI", "Vitest"],
+            "repositoryUrl": "https://github.com/tiagofrancafernandes",
+            "previewUrl": null,
+            "coverImage": "https://placehold.co/600x400/1e293b/34d399?text=Antigravity+CLI+Tools",
+            "date": "2024-07",
+            "metrics": "Open Source | Modern CLI Tooling",
+            "translations": {
+                "en-US": {
+                    "title": "Antigravity Developer Tooling & CLI Suite",
+                    "description": "Modular CLI workflow tools and productivity plugins designed for rapid prototyping and automated code quality auditing.",
+                    "role": "Author & Maintainer",
+                    "client": "Open Source Community",
+                    "impact": "Speeds up environment boot-up and lint compliance across multiple distributed repositories."
+                },
+                "pt-BR": {
+                    "title": "Ferramentas para Desenvolvedores Antigravity CLI",
+                    "description": "Conjunto de utilitários de linha de comando para automação de tarefas, scaffolding rápido e garantia de conformidade de código.",
+                    "role": "Autor e Mantenedor",
+                    "client": "Comunidade Open Source",
+                    "impact": "Agiliza o setup de projetos e validações de qualidade em ambientes de microsserviços."
+                }
+            }
+        },
+        {
+            "id": "project-microservices-bus",
+            "slug": "starter-kit-barramento-microsservicos",
+            "type": "project",
+            "featured": false,
+            "category": "architecture",
+            "technologies": ["Laravel", "RabbitMQ", "Docker", "OpenAPI", "PHP 8"],
+            "repositoryUrl": "https://github.com/tiagofrancafernandes",
+            "previewUrl": null,
+            "coverImage": "https://placehold.co/600x400/1e1b4b/38bdf8?text=Microservices+Starter+Hub",
+            "date": "2024-04",
+            "metrics": "Clean Architecture | DDD | Outbox Pattern",
+            "translations": {
+                "en-US": {
+                    "title": "Event-Driven Microservices Starter Hub",
+                    "description": "Production-ready scaffolding for event-driven systems implementing transactional outbox patterns and resilient dead-letter queues.",
+                    "role": "Creator",
+                    "client": "Open Source",
+                    "impact": "Eliminated distributed data inconsistency in async message processing."
+                },
+                "pt-BR": {
+                    "title": "Starter Kit de Microsserviços Orientados a Eventos",
+                    "description": "Template estruturado para arquiteturas assíncronas implementando Transactional Outbox Pattern e filas de reprocessamento seguro.",
+                    "role": "Criador",
+                    "client": "Open Source",
+                    "impact": "Elimina perda de mensagens e inconsistências em operações distribuídas assíncronas."
+                }
+            }
+        },
+        {
+            "id": "project-headless-blog",
+            "slug": "plataforma-blog-headless-nuxt",
+            "type": "project",
+            "featured": false,
+            "category": "fullstack",
+            "technologies": ["Nuxt 4", "Vue 3", "TailwindCSS v4", "TypeScript", "Vercel"],
+            "repositoryUrl": "https://github.com/tiagofrancafernandes/F2-Pro-Blog-Nuxt",
+            "previewUrl": "https://f2-pro-blog-nuxt.vercel.app",
+            "coverImage": "https://placehold.co/600x400/0f172a/10b981?text=Nuxt+4+Blog+%26+Portfolio",
+            "date": "2024-08",
+            "metrics": "100/100 Lighthouse | Pure SSG/JAMstack",
+            "translations": {
+                "en-US": {
+                    "title": "Nuxt 4 Headless Blog & Developer Portfolio",
+                    "description": "Ultra-fast developer portfolio and technical blog built with Nuxt 4, Vue 3 Composition API, and TailwindCSS v4 with full internationalization.",
+                    "role": "Fullstack Architect",
+                    "client": "Personal Project",
+                    "impact": "Sub-second page load times with 100/100 Lighthouse performance and SEO scores."
+                },
+                "pt-BR": {
+                    "title": "Blog Técnico e Portfólio em Nuxt 4",
+                    "description": "Blog e portfólio de alta velocidade construído com Nuxt 4, Vue 3 Composition API, TailwindCSS v4 e suporte nativo a múltiplos idiomas.",
+                    "role": "Arquiteto Fullstack",
+                    "client": "Projeto Pessoal",
+                    "impact": "Pontuação 100/100 no Lighthouse com renderização estática e performance instantânea."
+                }
+            }
+        }
+    ]
+}

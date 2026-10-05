@@ -81,8 +81,8 @@ interface QuickLink {
 }
 
 const quickLinks: QuickLink[] = [
-    { show: true, translationKey: 'nav.tutorials', href: '/', external: false },
-    { show: true, translationKey: 'nav.portfolio', href: '#portfolio', external: false },
+    { show: true, translationKey: 'nav.tutorials', href: '/posts', external: false },
+    { show: true, translationKey: 'nav.portfolio', href: '/portfolio', external: false },
     { show: true, translationKey: 'nav.hireMe', href: '/hire-me', external: false },
     { show: true, translationKey: 'nav.cv', href: '/l/cv', external: true },
     { show: true, translationKey: 'general.linkedin', href: '/l/linkedin', external: true },

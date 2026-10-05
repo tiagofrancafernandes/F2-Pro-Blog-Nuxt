@@ -4,14 +4,16 @@
             <!-- Hero -->
             <section class="bg-emerald-600 dark:bg-emerald-700 text-white py-12 sm:py-16">
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                    <div class="mb-4 flex items-center gap-2 text-emerald-100">
+                    <div class="mb-4 flex items-center gap-2 text-emerald-100 text-sm">
                         <NuxtLink to="/" class="hover:text-white">{{ $t('nav.home') }}</NuxtLink>
+                        <span>/</span>
+                        <NuxtLink to="/posts" class="hover:text-white">{{ $t('nav.posts') }}</NuxtLink>
                         <span>/</span>
                         <NuxtLink :to="`/posts/search?category=${post?.category}`" class="hover:text-white">
                             {{ post?.category }}
                         </NuxtLink>
                         <span>/</span>
-                        <span>{{ getPostTitle() }}</span>
+                        <span class="truncate max-w-[200px] sm:max-w-xs">{{ getPostTitle() }}</span>
                     </div>
                     <div class="flex items-start justify-between mb-4">
                         <h1 class="text-4xl sm:text-5xl font-bold">{{ getPostTitle() }}</h1>
@@ -107,7 +109,7 @@
                                 <!-- Navigation -->
                                 <div class="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
                                     <NuxtLink
-                                        to="/"
+                                        to="/posts"
                                         class="block text-center px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors font-medium"
                                     >
                                         {{ $t('post.backToPosts') }}
@@ -122,7 +124,7 @@
 
         <div v-else class="text-center py-16">
             <p class="text-gray-600 dark:text-gray-400">{{ $t('post.noPostContent') }}</p>
-            <NuxtLink to="/" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 mt-4 inline-block">
+            <NuxtLink to="/posts" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 mt-4 inline-block">
                 {{ $t('post.backToPosts') }}
             </NuxtLink>
         </div>
