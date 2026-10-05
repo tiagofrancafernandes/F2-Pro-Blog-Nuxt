@@ -1,15 +1,15 @@
-import { computed } from 'vue';
+import { computed, toValue, type MaybeRefOrGetter } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 interface SEOMetaOptions {
-    title?: string;
-    description?: string;
-    image?: string;
-    url?: string;
-    type?: 'website' | 'article';
-    author?: string;
-    publishedDate?: string;
-    modifiedDate?: string;
+    title?: MaybeRefOrGetter<string | undefined>;
+    description?: MaybeRefOrGetter<string | undefined>;
+    image?: MaybeRefOrGetter<string | undefined>;
+    url?: MaybeRefOrGetter<string | undefined>;
+    type?: MaybeRefOrGetter<'website' | 'article' | undefined>;
+    author?: MaybeRefOrGetter<string | undefined>;
+    publishedDate?: MaybeRefOrGetter<string | undefined>;
+    modifiedDate?: MaybeRefOrGetter<string | undefined>;
 }
 
 const FAVICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#42b983"/><text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial">T</text></svg>`;
@@ -23,11 +23,15 @@ export function useSEOMeta(options: SEOMetaOptions = {}) {
     const blogDescription = config.blogDescription || 'Senior Backend Engineer';
     const blogAuthor = config.blogAuthor || 'Tiago França';
 
-    const title = computed(() => options.title || blogTitle);
-    const description = computed(() => options.description || blogDescription);
-    const image = computed(() => options.image || `${baseUrl}/og-image.svg`);
-    const url = computed(() => options.url || baseUrl);
+    const title = computed(() => toValue(options.title) || blogTitle);
+    const description = computed(() => toValue(options.description) || blogDescription);
+    const image = computed(() => toValue(options.image) || `${baseUrl}/og-image.svg`);
+    const url = computed(() => toValue(options.url) || baseUrl);
     const localeTag = computed(() => (locale.value === 'pt-BR' ? 'pt_BR' : 'en_US'));
+    const isArticle = computed(() => toValue(options.type) === 'article');
+    const articlePublishedTime = computed(() => toValue(options.publishedDate));
+    const articleModifiedTime = computed(() => toValue(options.modifiedDate));
+    const articleAuthor = computed(() => toValue(options.author) || blogAuthor);
 
     useHead({
         // Favicon
@@ -55,7 +59,7 @@ export function useSEOMeta(options: SEOMetaOptions = {}) {
         description: description as any,
         ogTitle: title as any,
         ogDescription: description as any,
-        ogType: (options.type || 'website') as any,
+        ogType: computed(() => toValue(options.type) || 'website') as any,
         ogImage: image as any,
         ogImageWidth: 1200,
         ogImageHeight: 630,
@@ -73,11 +77,9 @@ export function useSEOMeta(options: SEOMetaOptions = {}) {
         twitterCreator: '@tiagofranca',
 
         // Article Specific
-        ...(options.type === 'article' && {
-            articlePublishedTime: options.publishedDate,
-            articleModifiedTime: options.modifiedDate,
-            articleAuthor: options.author || blogAuthor,
-        }),
+        articlePublishedTime: computed(() => (isArticle.value ? articlePublishedTime.value : undefined)) as any,
+        articleModifiedTime: computed(() => (isArticle.value ? articleModifiedTime.value : undefined)) as any,
+        articleAuthor: computed(() => (isArticle.value ? articleAuthor.value : undefined)) as any,
     });
 }
 

@@ -21,8 +21,11 @@
                     </div>
                     <div class="flex flex-wrap gap-4 text-emerald-100 text-sm">
                         <span>{{ formatDate(post.date) }}</span>
-                        <span>{{ post.readTime }} {{ $t('posts.readTime') }}</span>
-                        <span>{{ post.category }}</span>
+                        <span>{{ post.readTime }} {{ $t('post.readTime') }}</span>
+                        <NuxtLink
+                            :to="`/posts/search?category=${post.category}`"
+                            class="hover:underline"
+                        >{{ post.category }}</NuxtLink>
                     </div>
                 </div>
             </section>
@@ -61,11 +64,12 @@
                             <div class="mt-16 p-8 bg-emerald-600 dark:bg-emerald-700 text-white rounded-lg">
                                 <h2 class="text-2xl font-bold mb-2">{{ $t('post.cta') }}</h2>
                                 <p class="mb-4">{{ $t('post.ctaDescription') }}</p>
-                                <button
+                                <NuxtLink
+                                    to="/hire-me"
                                     class="px-6 py-2 bg-white text-emerald-600 font-semibold rounded hover:bg-emerald-50 transition-colors"
                                 >
                                     {{ $t('post.ctaButton') }}
-                                </button>
+                                </NuxtLink>
                             </div>
                         </div>
 
@@ -117,20 +121,20 @@
         </div>
 
         <div v-else class="text-center py-16">
-            <p class="text-gray-600 dark:text-gray-400">{{ $t('posts.noResults') }}</p>
+            <p class="text-gray-600 dark:text-gray-400">{{ $t('post.noPostContent') }}</p>
             <NuxtLink to="/" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 mt-4 inline-block">
                 {{ $t('post.backToPosts') }}
             </NuxtLink>
         </div>
     </div>
 
-    <div v-else class="flex text-center py-16 justify-center content-center min-h-48 py-24">
+    <div v-else class="flex text-center py-16 justify-center content-center min-h-48 lg:py-24">
         <span class="text-gray-600 dark:text-gray-400">{{ $t('post.loading') }}</span>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from 'vue';
+// import { ref, onMounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useMarkdown } from '~/composables/useMarkdown';
@@ -184,34 +188,26 @@ const { locale } = useI18n();
 const { renderMarkdown, extractHeadings: extractMarkdownHeadings } = useMarkdown();
 
 const post = ref<Post | null>(null);
-const isLoading = ref(true);
+const isLoading = ref<boolean>(true);
 const headings = ref<Heading[]>([]);
 
 const shareUrl = computed(() => {
-    if (!process.server) {
+    if (!import.meta.server) {
         return `${window.location.origin}/posts/${route.params.slug}`;
     }
 
     return '';
 });
 
-watch(
-    () => post.value,
-    (newPost) => {
-        if (newPost) {
-            useSEOMeta({
-                title: `${newPost.title} - Tiago França Blog`,
-                description: newPost.description,
-                image: generateOGImage(newPost.title, newPost.category),
-                url: `${window.location.origin}/posts/${route.params.slug}`,
-                type: 'article',
-                author: newPost.title,
-                publishedDate: newPost.date,
-            });
-        }
-    },
-    { immediate: true }
-);
+useSEOMeta({
+    title: () => (post.value ? `${post.value.title} - Tiago França Blog` : undefined),
+    description: () => post.value?.description,
+    image: () => (post.value ? generateOGImage(post.value.title, post.value.category) : undefined),
+    url: () => (!import.meta.server ? `${window.location.origin}/posts/${route.params.slug}` : undefined),
+    type: 'article',
+    author: () => post.value?.title,
+    publishedDate: () => post.value?.date,
+});
 
 function getPostTitle(): string {
     if (!post.value) {
@@ -289,11 +285,17 @@ function mapPostData(data: PostData): Post {
 
 onMounted(async () => {
     if (isLoading.value === false) {
-        return;
+        // return;
     }
+
+    setTimeout(() => {
+        isLoading.value = false;
+    }, 1000);
+
 
     try {
         const slug = route.params.slug as string;
+
         const response = await fetch(`/data/posts/data/${slug}.json`);
 
         if (!response.ok) {
@@ -303,6 +305,11 @@ onMounted(async () => {
         }
 
         const data: PostData = await response.json();
+
+        if (import.meta.client) {
+            console.log('slug', slug);
+            console.log('response', {response, 'response.ok': response.ok, 'post data': data});
+        }
         post.value = mapPostData(data);
         headings.value = extractMarkdownHeadings(post.value.content || '');
     } catch (error) {
