@@ -230,12 +230,14 @@
                             >
                                 <!-- Image -->
                                 <div class="flex-shrink-0 w-full sm:w-48 h-32 sm:h-40 rounded-lg overflow-hidden">
-                                    <ImageWithFallback
-                                        :src="post.coverImage"
-                                        :alt="post.title"
-                                        container-class="w-full h-full"
-                                        image-class="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                                    />
+                                    <NuxtLink :to="`/posts/${post.slug}`">
+                                        <ImageWithFallback
+                                            :src="post.coverImage"
+                                            :alt="post.title"
+                                            container-class="w-full h-full"
+                                            image-class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                                        />
+                                    </NuxtLink>
                                 </div>
 
                                 <!-- Content -->

@@ -7,7 +7,7 @@
                 <div class="md:col-span-1">
                     <div class="mb-6">
                         <div class="flex items-center gap-2 font-bold text-2xl mb-4">
-                            <span class="text-red-500">Tiago</span>
+                            <span class="text-emerald-500">Tiago</span>
                             <span class="text-white">França</span>
                         </div>
                         <p class="text-gray-300 text-sm leading-relaxed">
@@ -18,45 +18,45 @@
 
                     <!-- Contact Info -->
                     <div class="space-y-3">
-                        <a
-                            href="mailto:devtiagofranca@gmail.com"
-                            class="flex items-center gap-3 text-gray-300 hover:text-red-500 transition-colors text-sm"
+                        <NuxtLink
+                            to="mailto:devtiagofranca@gmail.com"
+                            class="flex items-center gap-3 text-gray-300 hover:text-emerald-500 transition-colors text-sm"
                         >
                             <Icon name="mdi:email" class="w-5 h-5" />
                             devtiagofranca@gmail.com
-                        </a>
-                        <a
-                            href="tel:+5511999999999"
-                            class="flex items-center gap-3 text-gray-300 hover:text-red-500 transition-colors text-sm"
+                        </NuxtLink>
+                        <NuxtLink
+                            to="tel:+5511999999999"
+                            class="flex items-center gap-3 text-gray-300 hover:text-emerald-500 transition-colors text-sm"
                         >
                             <Icon name="mdi:phone" class="w-5 h-5" />
                             +55 (11) 99999-9999
-                        </a>
+                        </NuxtLink>
                     </div>
 
                     <!-- Social Links -->
                     <div class="flex gap-3 mt-6">
-                        <a
-                            href="https://twitter.com"
+                        <NuxtLink
+                            to="https://twitter.com"
                             target="_blank"
                             class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-emerald-600 hover:text-white transition-colors"
                         >
                             <Icon name="mdi:twitter" class="w-5 h-5" />
-                        </a>
-                        <a
-                            href="https://github.com/tiagofrancafernandes"
+                        </NuxtLink>
+                        <NuxtLink
+                            to="https://github.com/tiagofrancafernandes"
                             target="_blank"
                             class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-emerald-600 hover:text-white transition-colors"
                         >
                             <Icon name="mdi:github" class="w-5 h-5" />
-                        </a>
-                        <a
-                            href="https://wwwhttps://linkedin.com/in/tiago-php"
+                        </NuxtLink>
+                        <NuxtLink
+                            to="https://wwwhttps://linkedin.com/in/tiago-php"
                             target="_blank"
                             class="p-2 rounded-lg bg-slate-800 text-gray-300 hover:bg-emerald-600 hover:text-white transition-colors"
                         >
                             <Icon name="mdi:linkedin" class="w-5 h-5" />
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
 
@@ -65,29 +65,29 @@
                     <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-emerald-500">Services</h3>
                     <ul class="space-y-3">
                         <li>
-                            <a href="#backend" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#backend" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Backend Development
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#api" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#api" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 API Design
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#database" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#database" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Database Optimization
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#architecture" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#architecture" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 System Architecture
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#consulting" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#consulting" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Technical Consulting
-                            </a>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -97,29 +97,29 @@
                     <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-emerald-500">Technologies</h3>
                     <ul class="space-y-3">
                         <li>
-                            <a href="#php" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#php" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 PHP & Laravel
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#node" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#node" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Node.js
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#database" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#database" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 PostgreSQL
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#docker" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#docker" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Docker
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#vue" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#vue" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Vue & Nuxt
-                            </a>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -131,34 +131,34 @@
                     </h3>
                     <ul class="space-y-3">
                         <li>
-                            <NuxtLink to="/about" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="/about" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 {{ $t('nav.about') }}
                             </NuxtLink>
                         </li>
                         <li>
-                            <a href="/" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="/" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 {{ $t('nav.posts') }}
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/hire-me" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="/hire-me" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 {{ $t('nav.hireMe') }}
                             </NuxtLink>
                         </li>
                         <li>
-                            <a href="#tutorials" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#tutorials" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Tutorials
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#guides" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#guides" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Guides
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li>
-                            <a href="#portfolio" class="text-gray-300 hover:text-red-500 transition-colors text-sm">
+                            <NuxtLink to="#portfolio" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Portfolio
-                            </a>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -166,7 +166,7 @@
                 <!-- CTA Section -->
                 <div class="flex flex-col justify-between">
                     <div class="bg-slate-900 rounded-lg p-6 border border-slate-800">
-                        <Icon name="mdi:star" class="w-6 h-6 text-red-500 mb-3" />
+                        <Icon name="mdi:star" class="w-6 h-6 text-emerald-500 mb-3" />
                         <h4 class="text-white font-semibold mb-2">Need a Developer?</h4>
                         <p class="text-gray-300 text-sm mb-4">Let's build something amazing together.</p>
                         <NuxtLink
@@ -235,8 +235,8 @@
             >
                 <p>© 2026 Tiago França. All rights reserved.</p>
                 <div class="flex gap-6">
-                    <a href="#privacy" class="hover:text-red-500 transition-colors">Privacy Policy</a>
-                    <a href="#terms" class="hover:text-red-500 transition-colors">Terms of Service</a>
+                    <NuxtLink to="#privacy" class="hover:text-emerald-500 transition-colors">Privacy Policy</NuxtLink>
+                    <NuxtLink to="#terms" class="hover:text-emerald-500 transition-colors">Terms of Service</NuxtLink>
                 </div>
             </div>
         </div>
@@ -246,6 +246,8 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
 const { locale } = useI18n();
+
+type localeValues = "en-US" | "en" | "pt-BR" | "pt";
 
 function getThemeButtonClass(mode: string): string {
     const baseClass = 'p-2 rounded transition-colors text-gray-400';
@@ -259,7 +261,7 @@ function getThemeButtonClass(mode: string): string {
 
 function changeLanguage(event: Event) {
     const target = event.target as HTMLSelectElement;
-    locale.value = target.value;
+    locale.value = (target.value || 'en') as localeValues;
     localStorage.setItem('i18n_locale', target.value);
 }
 </script>

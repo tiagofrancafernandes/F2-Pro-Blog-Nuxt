@@ -50,7 +50,7 @@
                     <article
                         v-for="post in filteredPosts"
                         :key="post.slug"
-                        class="shadow shadow-gray-200 dark:shadow-slate-700 rounded-lg overflow-hidden hover:shadow-md dark:hover:shadow-lg hover:shadow-red-400 dark:hover:shadow-red-500 transition-all group"
+                        class="shadow shadow-gray-200 dark:shadow-slate-700 rounded-lg overflow-hidden hover:shadow-md dark:hover:shadow-lg hover:shadow-emerald-400 dark:hover:shadow-emerald-500 transition-all group"
                     >
                         <NuxtLink
                             :to="`/posts/${post.slug}`">
