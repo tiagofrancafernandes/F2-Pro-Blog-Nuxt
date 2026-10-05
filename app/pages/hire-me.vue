@@ -899,7 +899,7 @@ if (route.query.type === 'aulas' || route.query.type === 'classes') {
             "corporateTraining": "Corporate Training",
             "corporateTrainingDesc": "Team training programs for companies and organizations",
             "viewAllPrograms": "View All Programs",
-            "service": {
+            "serviceList": {
                 "development": "Development/Product Creation",
                 "developmentDesc": "Build new software or fix existing ones",
                 "classes": "Private Classes",

@@ -23,7 +23,7 @@ export default {
                 linkedin: 'LinkedIn',
                 github: 'GitHub',
                 hireMe: 'Hire Me',
-                search: 'Search articles...',
+                search: 'Search...',
             },
             hero: {
                 title: 'Real Insights on Development, Architecture & Business',
@@ -34,6 +34,7 @@ export default {
             posts: {
                 loading: 'Loading posts...',
                 noResults: 'No posts found in this category.',
+                search: 'Search articles',
                 readMore: 'Read More',
                 readTime: 'min read',
             },
@@ -70,7 +71,7 @@ export default {
                 hireMeButton: 'Hire Me',
             },
             search: {
-                title: 'Search Articles',
+                title: 'Search',
                 description: 'Find articles by search, category, or tags',
                 searchTerm: 'Search Term',
                 searchPlaceholder: 'Enter keywords...',
@@ -205,7 +206,7 @@ export default {
                 linkedin: 'LinkedIn',
                 github: 'GitHub',
                 hireMe: 'Contrate-me',
-                search: 'Pesquisar artigos...',
+                search: 'Pesquisar...',
             },
             hero: {
                 title: 'Insights Reais sobre Desenvolvimento, Arquitetura e Negócios',
@@ -215,6 +216,7 @@ export default {
             },
             posts: {
                 loading: 'Carregando posts...',
+                search: 'Pesquisar artigos',
                 noResults: 'Nenhum post encontrado nesta categoria.',
                 readMore: 'Ler Mais',
                 readTime: 'min de leitura',
@@ -252,7 +254,7 @@ export default {
                 hireMeButton: 'Contrate-me',
             },
             search: {
-                title: 'Pesquisar Artigos',
+                title: 'Pesquisar',
                 description: 'Encontre artigos por pesquisa, categoria ou tags',
                 searchTerm: 'Termo de Pesquisa',
                 searchPlaceholder: 'Digite palavras-chave...',

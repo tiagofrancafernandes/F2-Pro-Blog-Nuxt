@@ -82,10 +82,10 @@
                     <!-- Mobile Menu Button -->
                     <button
                         @click="isMenuOpen = !isMenuOpen"
-                        class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-gray-700 dark:text-gray-300"
+                        class="md:hidden p-0 rounded-lg hover:bg-transparent dark:hover:bg-slate-800 transition-colors text-gray-700 dark:text-gray-300"
                         aria-label="Toggle menu"
                     >
-                        <Icon name="mdi:menu" class="w-5 h-5" />
+                        <Icon name="mdi:menu" class="!w-10 !h-10" />
                     </button>
                 </div>
             </div>

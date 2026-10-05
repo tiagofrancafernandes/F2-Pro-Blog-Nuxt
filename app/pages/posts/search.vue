@@ -29,7 +29,7 @@
                                         v-model="searchQuery"
                                         type="text"
                                         :placeholder="$t('search.searchPlaceholder')"
-                                        class="flex-1 w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+                                        class="flex-1 w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-600"
                                     />
                                     <button
                                         type="submit"
@@ -59,7 +59,7 @@
                                             :value="category"
                                             v-model="selectedCategory"
                                             @change="updateUrl"
-                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
+                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-slate-600 cursor-pointer"
                                         />
                                         <span
                                             class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors"
@@ -76,7 +76,7 @@
                                             value=""
                                             v-model="selectedCategory"
                                             @change="updateUrl"
-                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
+                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-slate-600 cursor-pointer"
                                         />
                                         <span
                                             class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors"
@@ -95,7 +95,7 @@
                                     <Icon name="mdi:tag-multiple" class="w-4 h-4" />
                                     {{ $t('search.tags') }}
                                 </h3>
-                                <div class="space-y-2 max-h-64 overflow-y-auto">
+                                <div class="space-y-2 max-h-64 overflow-y-auto px-2">
                                     <label
                                         v-for="tag in allTags"
                                         :key="tag"
@@ -106,7 +106,7 @@
                                             :value="tag"
                                             v-model="selectedTags"
                                             @change="updateUrl"
-                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-red-600 cursor-pointer"
+                                            class="w-4 h-4 text-emerald-600 rounded focus:ring-2 focus:ring-slate-600 cursor-pointer"
                                         />
                                         <span
                                             class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors"
@@ -226,7 +226,7 @@
                             <article
                                 v-for="post in filteredPosts"
                                 :key="post.slug"
-                                class="flex flex-col sm:flex-row gap-6 p-6 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-red-400 dark:hover:border-emerald-500 hover:shadow-lg transition-all group"
+                                class="flex flex-col sm:flex-row gap-6 p-6 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-emerald-500 hover:shadow-lg transition-all group"
                             >
                                 <!-- Image -->
                                 <div class="flex-shrink-0 w-full sm:w-48 h-32 sm:h-40 rounded-lg overflow-hidden">
@@ -247,7 +247,7 @@
                                         <div class="flex flex-wrap items-center gap-2 mb-3">
                                             <NuxtLink
                                                 :to="`/posts/search?category=${post.category}`"
-                                                class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider hover:text-emerald-700 dark:hover:text-red-300 transition-colors"
+                                                class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider hover:text-emerald-700 dark:hover:text-slate-300 transition-colors"
                                             >
                                                 {{ post.category }}
                                             </NuxtLink>
@@ -281,7 +281,7 @@
                                                 v-for="tag in post.tags"
                                                 :key="tag"
                                                 :to="`/posts/search?tags=${tag}`"
-                                                class="text-xs px-3 py-1 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-red-100 dark:hover:bg-emerald-900/30 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                                                class="text-xs px-3 py-1 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-slate-100 dark:hover:bg-emerald-900/30 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                                             >
                                                 {{ tag }}
                                             </NuxtLink>
@@ -289,7 +289,7 @@
 
                                         <NuxtLink
                                             :to="`/posts/${post.slug}`"
-                                            class="inline-flex items-center gap-2 px-4 py-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-red-300 font-medium text-sm transition-colors"
+                                            class="inline-flex items-center gap-2 px-4 py-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-slate-300 font-medium text-sm transition-colors"
                                         >
                                             {{ $t('posts.readMore') }}
                                             <Icon name="mdi:arrow-right" class="w-4 h-4" />

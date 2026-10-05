@@ -19,9 +19,9 @@
         </section>
 
         <!-- Filters Section -->
-        <section class="border-b border-gray-200 dark:border-slate-800 py-6 bg-gray-50/50 dark:bg-slate-900/50 sticky top-16 z-30 backdrop-blur-md">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <section class="border-b border-gray-200 dark:border-slate-800 bg-gray-50/50 dark:bg-slate-900/50 sticky top-16 z-30 backdrop-blur-md">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3">
                     <!-- Type Filter Tabs -->
                     <div class="flex items-center gap-2">
                         <button

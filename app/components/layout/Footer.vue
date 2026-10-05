@@ -134,27 +134,27 @@
                     <h3 class="text-white font-semibold mb-6 pb-3 border-b-2 border-emerald-500">Technologies</h3>
                     <ul class="space-y-3">
                         <li>
-                            <NuxtLink to="#php" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                            <NuxtLink to="/posts/search?q=php" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 PHP & Laravel
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="#node" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                            <NuxtLink to="/posts/search?q=node" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Node.js
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="#database" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                            <NuxtLink to="/posts/search?q=database" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 PostgreSQL
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="#docker" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                            <NuxtLink to="/posts/search?q=docker" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Docker
                             </NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="#vue" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
+                            <NuxtLink to="/posts/search?q=vue" class="text-gray-300 hover:text-emerald-500 transition-colors text-sm">
                                 Vue & Nuxt
                             </NuxtLink>
                         </li>
