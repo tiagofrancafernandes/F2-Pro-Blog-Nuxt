@@ -2,78 +2,78 @@
 
 [🇺🇸 English](./README.md) | [🇧🇷 Português](./README.pt-br.md)
 
-A modern and responsive blog built with **Nuxt 4**, **Vue 3 Composition API**, and **TailwindCSS v4**. Complete system featuring a design system, SEO, dark mode, and dynamic environment configuration.
+Um blog moderno e responsivo construído com **Nuxt 4**, **Vue 3 Composition API**, e **TailwindCSS v4**. Sistema completo com design system, SEO, dark mode e configuração ambiental dinâmica.
 
 ## ✨ Features
 
-- **🎨 Complete Design System**: Design tokens (colors, typography, spacing, shadows)
-- **🌓 Native Dark Mode**: Theme switching with persistence
-- **📱 Responsive & Mobile-First**: Fully optimized for mobile, tablet, and desktop
-- **🔍 SEO Optimized**: OpenGraph, Twitter Cards, Structured Data, Canonical URLs
+- **🎨 Design System Completo**: Tokens de design (cores, tipografia, espaçamento, shadows)
+- **🌓 Dark Mode Nativo**: Alternância de tema com persistência
+- **📱 Mobile-First Responsivo**: Totalmente otimizado para mobile/tablet/desktop
+- **🔍 SEO Otimizado**: OpenGraph, Twitter Cards, Structured Data, Canonical URLs
 - **⚡ Performance**: Static Site Generation (SSG), gzip ~630KB
-- **🌍 Multi-Environment**: Configuration via environment variables (local/staging/production)
-- **♿ Accessibility**: WCAG AA compliant, keyboard navigation, semantic HTML
-- **📦 Zero Bloat**: Minimal and clean dependencies without unnecessary overhead
+- **🌍 Multi-Ambiente**: Configuração via environment variables (local/staging/production)
+- **♿ Acessibilidade**: WCAG AA compliant, keyboard navigation, semantic HTML
+- **📦 Zero Dependencies**: Sem dependências desnecessárias
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Node.js 18+
-- pnpm (or npm/yarn)
+- pnpm (ou npm/yarn)
 
 ### Setup
 
 ```bash
-# Clone the repository
-git clone <your-repo>
+# Clonar repositório
+git clone <seu-repo>
 cd vue-blog-system--rapid-developers-inspired
 
-# Install dependencies
+# Instalar dependências
 pnpm install
 
-# Setup environment variables
+# Setup environment
 cp .env.example .env.local
-# Edit .env.local as needed
+# Editar .env.local conforme necessário
 
-# Start development server
+# Iniciar dev server
 pnpm dev
-# Opens at http://localhost:3000
+# Abre em http://localhost:3000
 ```
 
 ### Build
 
 ```bash
-# Build for SSG
+# Build para SSG
 pnpm build
 
-# Preview production build
+# Preview do build
 npx serve .output/public --listen 3000
 ```
 
-## 📁 Project Structure
+## 📁 Estrutura do Projeto
 
 ```
 .
 ├── app.vue                          # Root component
-├── app.config.ts                    # Dynamic configuration (env vars)
-├── nuxt.config.ts                   # Nuxt configuration
+├── app.config.ts                    # Configuração dinâmica (env vars)
+├── nuxt.config.ts                   # Configuração Nuxt
 ├── tsconfig.json                    # TypeScript config
 │
 ├── components/
 │   ├── layout/
-│   │   ├── Navbar.vue              # Sticky navbar + dark mode toggle
-│   │   ├── Sidebar.vue             # Sidebar with categories
-│   │   └── Footer.vue              # Footer
+│   │   ├── Navbar.vue              # Menu fixo + dark mode toggle
+│   │   ├── Sidebar.vue             # Menu lateral com categorias
+│   │   └── Footer.vue              # Rodapé
 │   └── posts/
-│       ├── PostCard.vue            # Post card (grid)
-│       └── PostDetail.vue          # Full post detail
+│       ├── PostCard.vue            # Card de post (grid)
+│       └── PostDetail.vue          # Detalhe completo do post
 │
 ├── pages/
-│   ├── index.vue                   # Home (hero + post grid)
-│   └── posts/[slug].vue            # Post detail (dynamic routing)
+│   ├── index.vue                   # Home (hero + grid de posts)
+│   └── posts/[slug].vue            # Post detail (routing dinâmico)
 │
 ├── server/data/posts/
-│   ├── index.json                  # Posts index
+│   ├── index.json                  # Índice de posts
 │   └── data/
 │       ├── post-um.json
 │       ├── post-dois.json
@@ -81,18 +81,18 @@ npx serve .output/public --listen 3000
 │       └── post-quatro.json
 │
 ├── design-system/
-│   ├── design.json                 # Design tokens (colors, typography, spacing)
-│   └── DESIGN.md                   # Design guide
+│   ├── design.json                 # Design tokens (cores, typo, spacing)
+│   └── DESIGN.md                   # Guia de design
 │
 └── docs/
-    ├── CLAUDE.md                   # Development standards
-    ├── AGENTS.md                   # Agent/LLM guidelines
-    └── UNIVERSAL-CODE-STYLE-RULES.md  # Code style rules
+    ├── CLAUDE.md                   # Padrões de desenvolvimento
+    ├── AGENTS.md                   # Instruções para agents
+    └── UNIVERSAL-CODE-STYLE-RULES.md  # Regras de código
 ```
 
 ## 🎨 Design System
 
-### Colors
+### Cores
 
 **Light Mode:**
 - `primary`: #2563eb (Blue)
@@ -100,13 +100,13 @@ npx serve .output/public --listen 3000
 - `success`: #10b981 (Green)
 - `warning`: #f59e0b (Amber)
 - `error`: #ef4444 (Red)
-- `neutral`: Grayscale (50-900)
+- `neutral`: Escala de cinza (50-900)
 
 **Dark Mode:**
-- Automatic with `@nuxtjs/color-mode`
-- Dynamic CSS variables via `app.config.ts`
+- Automático com `@nuxtjs/color-mode`
+- CSS variables dinâmicas via `app.config.ts`
 
-### Typography
+### Tipografia
 
 ```
 Headings:
@@ -133,35 +133,35 @@ xl: 2rem (32px)
 3xl: 4rem (64px)
 ```
 
-See `design-system/design.json` for full reference.
+Veja `design-system/design.json` para referência completa.
 
-## 🔧 Configuration (Environment Variables)
+## 🔧 Configuração (Environment Variables)
 
-Create `.env.local` (not committed to git) with:
+Crie `.env.local` (não commitado) com:
 
 ```bash
 # Local Development
 NUXT_PUBLIC_SITE_URL=http://localhost:3000
 NUXT_PUBLIC_BLOG_TITLE=Tiago França
 NUXT_PUBLIC_BLOG_AUTHOR=Tiago França
-NUXT_PUBLIC_BLOG_DESCRIPTION=Explore articles about development...
+NUXT_PUBLIC_BLOG_DESCRIPTION=Explore artigos sobre desenvolvimento...
 
 # Production
-# NUXT_PUBLIC_SITE_URL=https://your-domain.com
+# NUXT_PUBLIC_SITE_URL=https://seu-dominio.com
 
 # Social (Optional)
-# NUXT_PUBLIC_TWITTER_HANDLE=@your_twitter
-# NUXT_PUBLIC_GITHUB_URL=https://github.com/your-username
+# NUXT_PUBLIC_TWITTER_HANDLE=@seu_twitter
+# NUXT_PUBLIC_GITHUB_URL=https://github.com/seu-usuario
 
 # Analytics (Optional)
 # NUXT_PUBLIC_GOOGLE_ANALYTICS_ID=UA-XXXXXXXXX-X
 ```
 
-See `.env.example` for the complete template.
+Veja `.env.example` para template completo.
 
-## 📝 Post Structure
+## 📝 Estrutura de Posts
 
-### index.json (Index)
+### index.json (Índice)
 
 ```json
 {
@@ -169,7 +169,7 @@ See `.env.example` for the complete template.
     {
       "id": 1,
       "slug": "post-um",
-      "title": "Post Title",
+      "title": "Título do Post",
       "category": "backend",
       "status": "published",
       "date": "2024-08-10"
@@ -178,15 +178,15 @@ See `.env.example` for the complete template.
 }
 ```
 
-### data/{slug}.json (Detail)
+### data/{slug}.json (Detalhe)
 
 ```json
 {
   "id": 1,
   "slug": "post-um",
-  "title": "Full Title",
-  "description": "Meta description for SEO",
-  "content": "# Markdown content here",
+  "title": "Título Completo",
+  "description": "Meta description para SEO",
+  "content": "# Markdown content aqui",
   "author": "Tiago França",
   "publishedAt": "2024-08-10T10:30:00Z",
   "updatedAt": "2024-08-11T14:20:00Z",
@@ -200,17 +200,17 @@ See `.env.example` for the complete template.
 
 ## 🔍 SEO & Meta Tags
 
-Each page includes:
+Cada página inclui:
 - ✅ Open Graph (og:title, og:description, og:image, og:type)
 - ✅ Twitter Card (twitter:card, twitter:title, twitter:description)
-- ✅ Canonical URL (dynamic via env)
+- ✅ Canonical URL (dinâmica via env)
 - ✅ Meta Description, Keywords, Author
 - ✅ Robots Meta (index, follow)
-- ✅ UTF-8 Charset
+- ✅ Charset UTF-8
 
-Implemented via `useHead()` across pages.
+Implementado via `useHead()` em pages.
 
-## 📱 Responsiveness
+## 📱 Responsividade
 
 ### Breakpoints (Tailwind)
 
@@ -222,22 +222,22 @@ xl: 1280px (desktop)
 2xl: 1536px (desktop large)
 ```
 
-### Responsive Components
+### Componentes Responsivos
 
-- **Navbar**: Desktop menu + mobile hamburger
-- **Sidebar**: Hidden on mobile, visible on md+
-- **Grid**: 1 column on mobile, 2 columns on tablet (md), 3 columns on desktop (lg)
-- **Typography**: Responsive scaling via Tailwind
+- **Navbar**: Menu desktop + hamburger mobile
+- **Sidebar**: Oculto mobile, visível md+
+- **Grid**: 1 coluna mobile, 2 tablet (md), 3 desktop (lg)
+- **Typography**: Escalas responsivas via Tailwind
 
 ## 🎯 Vue 3 Composition API Standards
 
-All components follow these conventions:
+Todos os componentes seguem:
 
 ```vue
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 
-// Validation first
+// Validação primeiro
 if (!props.data) {
     throw new Error('Data is required')
 }
@@ -263,13 +263,13 @@ function increment() {
 ## 🧪 Testing
 
 ```bash
-# Type checking
+# Verificar tipos
 pnpm vue-tsc --noEmit
 
 # Build
 pnpm build
 
-# Lint (if configured)
+# Lint (se configurado)
 pnpm lint
 ```
 
@@ -278,15 +278,15 @@ pnpm lint
 **Metrics:**
 - Total Size: ~2.4 MB (634 KB gzip)
 - Static Pages: Pre-rendered (SSG)
-- CSS: v4 CSS-first (automatic tree-shaking)
+- CSS: v4 CSS-first (auto tree-shaking)
 - Images: External (picsum.photos)
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Vercel (Recomendado)
 
 ```bash
-# Link repository
+# Conectar repo
 vercel link
 
 # Deploy
@@ -295,7 +295,7 @@ vercel --prod
 
 **Environment Variables (Vercel Console):**
 ```
-NUXT_PUBLIC_SITE_URL=https://your-domain.com
+NUXT_PUBLIC_SITE_URL=https://seu-dominio.com
 NUXT_PUBLIC_BLOG_TITLE=Tiago França
 NUXT_PUBLIC_BLOG_AUTHOR=Tiago França
 NUXT_PUBLIC_BLOG_DESCRIPTION=...
@@ -304,30 +304,30 @@ NUXT_PUBLIC_BLOG_DESCRIPTION=...
 ### Netlify
 
 ```bash
-# Connect repository via Netlify UI
+# Conectar repo via Netlify UI
 # Build command: pnpm build
 # Publish directory: .output/public
 
-# Environment variables on Netlify
-NUXT_PUBLIC_SITE_URL=https://your-domain.com
+# Environment variables no Netlify
+NUXT_PUBLIC_SITE_URL=https://seu-dominio.com
 ...
 ```
 
-### Static Hosting (Vercel, GitHub Pages, etc.)
+### Static Hosting (Vercel, GitHub Pages, etc)
 
 ```bash
 pnpm build
 # Deploy ./output/public
 ```
 
-## 📚 Documentation
+## 📚 Documentação
 
-- **[CLAUDE.md](./CLAUDE.md)** — Project development standards
-- **[AGENTS.md](./AGENTS.md)** — Guidelines for agents/LLMs
-- **[UNIVERSAL-CODE-STYLE-RULES.md](./UNIVERSAL-CODE-STYLE-RULES.md)** — Code style rules (mandatory)
-- **[design-system/DESIGN.md](./design-system/DESIGN.md)** — Design philosophy
+- **[CLAUDE.md](./CLAUDE.md)** — Padrões de desenvolvimento projeto
+- **[AGENTS.md](./AGENTS.md)** — Instruções para agents/LLMs
+- **[UNIVERSAL-CODE-STYLE-RULES.md](./UNIVERSAL-CODE-STYLE-RULES.md)** — Regras de código (obrigatório)
+- **[design-system/DESIGN.md](./design-system/DESIGN.md)** — Filosofia de design
 
-## 🔗 Useful Links
+## 🔗 Links Úteis
 
 - [Nuxt 4 Docs](https://nuxt.com/docs)
 - [Vue 3 Composition API](https://vuejs.org/guide/introduction.html)
@@ -351,6 +351,6 @@ MIT
 
 ---
 
-**Author**: Tiago França  
+**Autor**: Tiago França  
 **Email**: devtiagofranca@gmail.com  
-**Last Updated**: 2026-08-11
+**Última Atualização**: 2026-08-11
