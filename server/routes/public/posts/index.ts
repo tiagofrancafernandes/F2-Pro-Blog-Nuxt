@@ -1,6 +1,6 @@
 import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
-import defaultPostsData from '../../../../public/data/posts/index.json'
+import defaultPostsData from '@@/public/data/posts/index.json'
 
 function getPostsData(): any {
     const filePath = join(process.cwd(), 'public', 'data', 'posts', 'index.json')
