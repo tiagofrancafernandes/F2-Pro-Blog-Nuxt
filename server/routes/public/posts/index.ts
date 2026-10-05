@@ -3,7 +3,7 @@ import path from 'node:path';
 
 export default defineEventHandler(async (event) => {
     try {
-        const filePath = path.join(process.cwd(), 'server', 'data', 'posts', `index.json`);
+        const filePath = path.join(process.cwd(), 'public', 'data', 'posts', `index.json`);
 
         if (!fs.existsSync(filePath)) {
             throw createError({

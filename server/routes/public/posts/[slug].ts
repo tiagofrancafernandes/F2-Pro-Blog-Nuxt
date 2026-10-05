@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        const filePath = path.join(process.cwd(), 'server', 'data', 'posts', 'data', `${slug}.json`);
+        const filePath = path.join(process.cwd(), 'public', 'data', 'posts', 'data', `${slug}.json`);
 
         if (!fs.existsSync(filePath)) {
             throw createError({
