@@ -537,7 +537,7 @@
                         class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                     >
                         <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-32 flex items-center justify-center">
-                            <Icon name="mdi:school" class="w-12 h-12 text-white" />
+                            <Icon name="mdi:school" class="!w-12 !h-12 text-white" />
                         </div>
                         <div class="p-6">
                             <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">
@@ -592,7 +592,7 @@
                         class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                     >
                         <div class="bg-gradient-to-r from-amber-500 to-amber-600 h-32 flex items-center justify-center">
-                            <Icon name="mdi:linux" class="w-12 h-12 text-white" />
+                            <Icon name="mdi:linux" class="!w-12 !h-12 text-white" />
                         </div>
                         <div class="p-6">
                             <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-amber-600">
@@ -609,7 +609,7 @@
                         class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                     >
                         <div class="bg-gradient-to-r from-cyan-500 to-cyan-600 h-32 flex items-center justify-center">
-                            <Icon name="mdi:database" class="w-12 h-12 text-white" />
+                            <Icon name="mdi:database" class="!w-12 !h-12 text-white" />
                         </div>
                         <div class="p-6">
                             <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-cyan-600">
@@ -626,7 +626,7 @@
                         class="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                     >
                         <div class="bg-gradient-to-r from-green-500 to-green-600 h-32 flex items-center justify-center">
-                            <Icon name="mdi:briefcase" class="w-12 h-12 text-white" />
+                            <Icon name="mdi:briefcase" class="!w-12 !h-12 text-white" />
                         </div>
                         <div class="p-6">
                             <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2 group-hover:text-green-600">
@@ -656,9 +656,11 @@
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
+import { useWhatsApp } from '~/composables/useWhatsApp';
 
 const route = useRoute();
 const { t } = useI18n();
+const { getWhatsAppNumber, hasWhatsAppConfigured, getWhatsAppUrl, openWhatsApp } = useWhatsApp();
 
 const selectedTab = ref<'guided' | 'freetext'>('guided');
 const selectedService = ref<any>(null);
@@ -803,38 +805,9 @@ function onlyNumbers(value: any): string {
     return value.replaceAll(/\D+/g, '');
 }
 
-function getWhatsAppNumber(): string {
-    const config = useAppConfig();
-    const waNumber = config.contact?.whatsapp?.number || '';
-
-    return waNumber;
-}
-
-function hasWhatsAppConfigured(): boolean {
-    return getWhatsAppNumber().length > 0;
-}
-
-function getWhatsAppUrl(text: null | string = null, number: number | string | null = null): string {
-    const waNumber = onlyNumbers(number) || onlyNumbers(getWhatsAppNumber());
-
-    text = typeof text === 'string' && text.trim()?.length ? text?.trim() : null;
-
-    const whatsappUrl = `https://wa.me/${waNumber}`;
-
-    if (!text) {
-        return whatsappUrl;
-    }
-
-    const encodedMessage = encodeURIComponent(text);
-
-    return `${whatsappUrl}?text=${encodedMessage}`;
-}
-
 function sendViaWhatsApp(): void {
     const message = buildMessage();
-    const whatsappUrl = getWhatsAppUrl(message);
-
-    window.open(whatsappUrl, '_blank');
+    openWhatsApp(message);
 }
 
 function submitFreeText(): void {
@@ -857,9 +830,7 @@ function submitFreeText(): void {
     }
 
     const finalMessage = message.filter((line) => line.trim()).join('\n');
-    const whatsappUrl = getWhatsAppUrl(finalMessage);
-
-    window.open(whatsappUrl, '_blank');
+    openWhatsApp(finalMessage);
 }
 
 // Check for query param to pre-select classes

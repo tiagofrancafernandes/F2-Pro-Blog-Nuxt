@@ -185,21 +185,21 @@
             "previewUrl": "https://f2-pro-blog-nuxt.vercel.app",
             "coverImage": "https://placehold.co/600x400/0f172a/10b981?text=Nuxt+4+Blog+%26+Portfolio",
             "date": "2024-08",
-            "metrics": "100/100 Lighthouse | Pure SSG/JAMstack",
+            "metrics": "94/100 Lighthouse | Pure SSG/JAMstack",
             "translations": {
                 "en-US": {
                     "title": "Nuxt 4 Headless Blog & Developer Portfolio",
                     "description": "Ultra-fast developer portfolio and technical blog built with Nuxt 4, Vue 3 Composition API, and TailwindCSS v4 with full internationalization.",
                     "role": "Fullstack Architect",
                     "client": "Personal Project",
-                    "impact": "Sub-second page load times with 100/100 Lighthouse performance and SEO scores."
+                    "impact": "Sub-second page load times with 94/100 Lighthouse performance and SEO scores."
                 },
                 "pt-BR": {
                     "title": "Blog Técnico e Portfólio em Nuxt 4",
                     "description": "Blog e portfólio de alta velocidade construído com Nuxt 4, Vue 3 Composition API, TailwindCSS v4 e suporte nativo a múltiplos idiomas.",
                     "role": "Arquiteto Fullstack",
                     "client": "Projeto Pessoal",
-                    "impact": "Pontuação 100/100 no Lighthouse com renderização estática e performance instantânea."
+                    "impact": "Pontuação 94/100 no Lighthouse com renderização estática e performance instantânea."
                 }
             }
         }

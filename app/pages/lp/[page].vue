@@ -405,10 +405,12 @@ import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useMarkdown } from '~/composables/useMarkdown';
+import { useWhatsApp } from '~/composables/useWhatsApp';
 
 const route = useRoute();
 const { locale } = useI18n();
 const { renderMarkdown } = useMarkdown();
+const { getWhatsAppNumber, hasWhatsAppConfigured, openWhatsApp } = useWhatsApp();
 
 const pageData = ref<any>(null);
 const isLoading = ref(true);
@@ -441,15 +443,6 @@ function isBlockFaqExpanded(blockIndex: number, faqIndex: number): boolean {
     return expandedBlockFaq.value[blockIndex] === faqIndex;
 }
 
-function getWhatsAppNumber(): string {
-    const config = useAppConfig();
-    return config.contact?.whatsapp?.number || '';
-}
-
-function hasWhatsAppConfigured(): boolean {
-    return getWhatsAppNumber().length > 0;
-}
-
 function submitQuestion(): void {
     const message = [
         `*New Question from LP: ${pageData.value.slug}*`,
@@ -461,8 +454,7 @@ function submitQuestion(): void {
         form.value.question,
     ].join('\n');
 
-    const whatsappUrl = `https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    openWhatsApp(message);
 }
 
 function submitTechPreferences(): void {
@@ -476,8 +468,7 @@ function submitTechPreferences(): void {
         form.value.techWantToLearn.length > 0 ? form.value.techWantToLearn.join(', ') : 'None selected',
     ].join('\n');
 
-    const whatsappUrl = `https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    openWhatsApp(message);
 }
 
 onMounted(async () => {

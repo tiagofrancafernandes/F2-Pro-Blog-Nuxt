@@ -228,7 +228,7 @@
             <div
                 class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400"
             >
-                <p>{{ $t('footer.copyright') }}</p>
+                <p>&copy; {{ (new Date())?.getFullYear() }} Tiago França. {{ $t('footer.copyright') }}</p>
                 <div class="flex flex-wrap gap-6 items-center">
                     <NuxtLink to="/sitemap" class="hover:text-emerald-500 transition-colors">
                         {{ $t('sitemap.title') }}

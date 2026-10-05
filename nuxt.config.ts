@@ -204,6 +204,12 @@ export default defineNuxtConfig({
             githubUrl: process.env.NUXT_PUBLIC_GITHUB_URL || '',
             linkedinUrl: process.env.NUXT_PUBLIC_LINKEDIN_URL || '',
             googleAnalyticsId: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_ID || '',
+            whatsappNumber: process.env.NUXT_PUBLIC_WHATSAPP_NUMBER || '',
+            contact: {
+                whatsapp: {
+                    number: process.env.NUXT_PUBLIC_WHATSAPP_NUMBER || '',
+                },
+            },
         },
     },
 
